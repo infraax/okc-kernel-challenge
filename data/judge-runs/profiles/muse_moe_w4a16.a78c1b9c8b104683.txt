@@ -1,0 +1,75 @@
+okc run a78c1b9c8b104683 on muse_moe_w4a16
+submission  kernels/muse_moe_w4a16/measure_altA_v1.py
+status      ok
+passed      true
+speedup     1.4422507977104437
+speedup_ci  [1.4206170357447871 1.4638845596761003]
+score_us    9324.661162503315
+tests       5/5 passed
+
+scored shapes (µs; speed of light is the reference's bound)
+case                                                         sglang      yours  speedup        sol  
+bs=1 load=decode 1 sharding=ep8                               78.46      42.24   1.857x      11.42  
+bs=16 load=decode 16 sharding=ep8                            196.46     142.23   1.381x      52.52  
+bs=32 load=decode 32 sharding=ep8                            206.53     186.83   1.105x      70.76  
+bs=8 load=verify 1 sharding=ep8                              142.75      98.29   1.452x      37.32  
+bs=128 load=verify 16 sharding=ep8                           473.42     317.68   1.490x     101.34  
+bs=256 load=verify 32 sharding=ep8                           615.15     419.55   1.466x     108.94  
+
+profile 0: bs=1 load=decode 1 sharding=ep8
+kernel                                                           GPU time  share  calls
+void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...      27.0 µs  51.5%      1
+void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const...      19.2 µs  36.7%      1
+_epilogue_kernel                                                   5.0 µs   9.5%      1
+smallm_route_kernel(int const*, int*, int*, int, int, int)         1.2 µs   2.3%      1
+total                                                             52.4 µs
+GPU busy (kernels overlap: PDL or streams)                        46.8 µs
+an overlapping kernel's time includes any wait for the one before it, so the rows add up to more
+
+profile 1: bs=16 load=decode 16 sharding=ep8
+kernel                                                           GPU time  share  calls
+void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...      83.7 µs  57.3%      1
+void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...      56.3 µs  38.5%      1
+_epilogue_kernel                                                   5.0 µs   3.4%      1
+smallm_route_kernel(int const*, int*, int*, int, int, int)         1.2 µs   0.9%      1
+total                                                            146.2 µs
+GPU busy (kernels overlap: PDL or streams)                       133.2 µs
+an overlapping kernel's time includes any wait for the one before it, so the rows add up to more
+
+profile 2: bs=32 load=decode 32 sharding=ep8
+kernel                                                           GPU time  share  calls
+void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 con...     127.9 µs  61.3%      1
+void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 co...      74.7 µs  35.8%      1
+_post_expert_norm_weighted_sum_kernel                              3.5 µs   1.7%      1
+largem_route_kernel(int const*, int*, int*, int*, int, in...       2.7 µs   1.3%      1
+total                                                            208.9 µs
+GPU busy (kernels overlap: PDL or streams)                       197.2 µs
+an overlapping kernel's time includes any wait for the one before it, so the rows add up to more
+
+profile 3: bs=8 load=verify 1 sharding=ep8
+kernel                                                           GPU time  share  calls
+void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...      65.7 µs  52.2%      1
+void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...      55.5 µs  44.1%      1
+_epilogue_kernel                                                   3.5 µs   2.7%      1
+smallm_route_kernel(int const*, int*, int*, int, int, int)         1.2 µs   0.9%      1
+total                                                            125.9 µs
+GPU busy (kernels overlap: PDL or streams)                       113.4 µs
+an overlapping kernel's time includes any wait for the one before it, so the rows add up to more
+
+profile 4: bs=128 load=verify 16 sharding=ep8
+kernel                                                           GPU time  share  calls
+void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 con...     199.3 µs  63.6%      1
+void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 co...     103.5 µs  33.0%      1
+largem_route_kernel(int const*, int*, int*, int*, int, in...       6.0 µs   1.9%      1
+_post_expert_norm_weighted_sum_kernel                              4.7 µs   1.5%      1
+total                                                            313.4 µs
+GPU busy (kernels overlap: PDL or streams)                       308.5 µs
+an overlapping kernel's time includes any wait for the one before it, so the rows add up to more
+
+profile 5: bs=256 load=verify 32 sharding=ep8
+kernel                                                           GPU time  share  calls
+void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 con...     270.8 µs  63.4%      1
+void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 co...     140.4 µs  32.9%      1
+largem_route_kernel(int const*, int*, int*, int*, int, in...      10.8 µs   2.5%      1
+_post_expert_norm_weighted_sum_kernel                              5.1 µs   1.2%      1
+total                                                            427.0 µs

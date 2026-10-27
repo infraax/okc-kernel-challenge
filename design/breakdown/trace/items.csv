@@ -1,0 +1,651 @@
+problem,shape,label,weight,pos,kind,name,family,start_us,dur_us,stream
+muse_attention_decode,6,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.0,kernel,_attn_kernel,attention,0.0,5.76,0
+muse_attention_decode,6,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.1,kernel,_reduce_kernel,attention_reduce,6.34,2.78,0
+muse_attention_decode,6,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.1,gap,(gap),other,5.76,0.58,0
+muse_attention_decode,6,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8",46.0,-,head,(head),other,0.0,4.22,-
+muse_attention_decode,6,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8",46.0,-,tail,(tail),other,9.12,4.13,-
+muse_attention_decode,0,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1",46.0,0.0,kernel,_attn_kernel,attention,0.0,4.8,0
+muse_attention_decode,0,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1",46.0,0.1,kernel,_reduce_kernel,attention_reduce,5.09,2.59,0
+muse_attention_decode,0,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1",46.0,0.1,gap,(gap),other,4.8,0.29,0
+muse_attention_decode,0,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1",46.0,-,head,(head),other,0.0,4.14,-
+muse_attention_decode,0,"batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1",46.0,-,tail,(tail),other,7.68,4.07,-
+muse_attention_decode,8,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.0,kernel,_attn_kernel,attention,0.0,11.12,0
+muse_attention_decode,8,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.1,kernel,_reduce_kernel,attention_reduce,11.7,5.73,0
+muse_attention_decode,8,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.1,gap,(gap),other,11.12,0.58,0
+muse_attention_decode,8,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,-,head,(head),other,0.0,4.18,-
+muse_attention_decode,8,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,-,tail,(tail),other,17.43,3.98,-
+muse_attention_decode,2,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.0,kernel,_attn_kernel,attention,0.0,9.82,0
+muse_attention_decode,2,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.1,kernel,_reduce_kernel,attention_reduce,10.11,3.04,0
+muse_attention_decode,2,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.1,gap,(gap),other,9.82,0.29,0
+muse_attention_decode,2,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,-,head,(head),other,0.0,4.02,-
+muse_attention_decode,2,"batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,-,tail,(tail),other,13.149999999999999,3.82,-
+muse_attention_decode,10,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.0,kernel,_attn_kernel,attention,0.0,17.26,0
+muse_attention_decode,10,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.1,kernel,_reduce_kernel,attention_reduce,17.84,8.13,0
+muse_attention_decode,10,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.1,gap,(gap),other,17.26,0.58,0
+muse_attention_decode,10,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,-,head,(head),other,0.0,4.13,-
+muse_attention_decode,10,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,-,tail,(tail),other,25.97,3.9,-
+muse_attention_decode,4,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.0,kernel,_attn_kernel,attention,0.0,13.44,0
+muse_attention_decode,4,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.1,kernel,_reduce_kernel,attention_reduce,14.08,2.98,0
+muse_attention_decode,4,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.1,gap,(gap),other,13.47,0.61,0
+muse_attention_decode,4,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,-,head,(head),other,0.0,4.4,-
+muse_attention_decode,4,"batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,-,tail,(tail),other,17.06,3.95,-
+muse_attention_decode,7,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8",16.0,7.0,kernel,_full_kernel,other,0.0,16.77,0
+muse_attention_decode,7,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8",16.0,7.1,kernel,_reduce_kernel,attention_reduce,17.06,3.81,0
+muse_attention_decode,7,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8",16.0,7.1,gap,(gap),other,16.77,0.29,0
+muse_attention_decode,7,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8",16.0,-,head,(head),other,0.0,3.92,-
+muse_attention_decode,7,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8",16.0,-,tail,(tail),other,20.869999999999997,3.78,-
+muse_attention_decode,1,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1",16.0,1.0,kernel,_full_cat_kernel,other,0.0,11.7,0
+muse_attention_decode,1,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1",16.0,1.1,kernel,_reduce_kernel,attention_reduce,11.97,3.2,0
+muse_attention_decode,1,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1",16.0,1.1,gap,(gap),other,11.680000000000001,0.29,0
+muse_attention_decode,1,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1",16.0,-,head,(head),other,0.0,3.98,-
+muse_attention_decode,1,"batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1",16.0,-,tail,(tail),other,15.170000000000002,3.84,-
+muse_attention_decode,9,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.0,kernel,_full_kernel,other,0.0,181.28,0
+muse_attention_decode,9,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.1,kernel,_reduce_kernel,attention_reduce,181.86,6.4,0
+muse_attention_decode,9,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.1,gap,(gap),other,181.28,0.58,0
+muse_attention_decode,9,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,-,head,(head),other,0.0,4.03,-
+muse_attention_decode,9,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,-,tail,(tail),other,188.26000000000002,3.87,-
+muse_attention_decode,11,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.0,kernel,_full_kernel,other,0.0,355.23,0
+muse_attention_decode,11,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.1,kernel,_reduce_kernel,attention_reduce,355.84,9.15,0
+muse_attention_decode,11,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.1,gap,(gap),other,355.22999999999996,0.61,0
+muse_attention_decode,11,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,-,head,(head),other,0.0,4.29,-
+muse_attention_decode,11,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,-,tail,(tail),other,364.98999999999995,4.0,-
+muse_attention_decode,3,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.0,kernel,_full_cat_kernel,other,0.0,100.08,0
+muse_attention_decode,3,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.1,kernel,_reduce_kernel,attention_reduce,100.66,3.58,0
+muse_attention_decode,3,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.1,gap,(gap),other,100.08,0.58,0
+muse_attention_decode,3,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic",16.0,-,head,(head),other,0.0,4.24,-
+muse_attention_decode,3,"batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic",16.0,-,tail,(tail),other,104.24,3.92,-
+muse_attention_decode,5,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.0,kernel,_full_cat_kernel,other,0.0,187.04,0
+muse_attention_decode,5,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.1,kernel,_reduce_kernel,attention_reduce,187.73,3.58,0
+muse_attention_decode,5,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.1,gap,(gap),other,187.14999999999998,0.58,0
+muse_attention_decode,5,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic",16.0,-,head,(head),other,0.0,4.08,-
+muse_attention_decode,5,"batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic",16.0,-,tail,(tail),other,191.31,3.87,-
+muse_bf16_proj,18,"layer=unpooler,load=verify_1,m=8",62.0,18.0,kernel,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,4.93,0
+muse_bf16_proj,18,"layer=unpooler,load=verify_1,m=8",62.0,18.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),5.26,1.89,0
+muse_bf16_proj,18,"layer=unpooler,load=verify_1,m=8",62.0,18.1,gap,(gap),other,4.9399999999999995,0.32,0
+muse_bf16_proj,18,"layer=unpooler,load=verify_1,m=8",62.0,-,head,(head),other,0.0,4.26,-
+muse_bf16_proj,18,"layer=unpooler,load=verify_1,m=8",62.0,-,tail,(tail),other,7.1499999999999995,3.95,-
+muse_bf16_proj,9,"layer=router,load=decode_16,m=16",62.0,9.0,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,0.0,0.64,0
+muse_bf16_proj,9,"layer=router,load=decode_16,m=16",62.0,9.1,kernel,_gemv_splitk,dense_gemm,1.3,6.21,0
+muse_bf16_proj,9,"layer=router,load=decode_16,m=16",62.0,9.1,gap,(gap),other,0.6900000000000001,0.61,0
+muse_bf16_proj,9,"layer=router,load=decode_16,m=16",62.0,-,head,(head),other,0.0,4.19,-
+muse_bf16_proj,9,"layer=router,load=decode_16,m=16",62.0,-,tail,(tail),other,7.51,3.84,-
+muse_bf16_proj,24,"layer=router,load=verify_16,m=128",62.0,24.0,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,0.0,0.7,0
+muse_bf16_proj,24,"layer=router,load=verify_16,m=128",62.0,24.1,kernel,_gemv_splitk,dense_gemm,1.28,8.78,0
+muse_bf16_proj,24,"layer=router,load=verify_16,m=128",62.0,24.1,gap,(gap),other,0.7000000000000001,0.58,0
+muse_bf16_proj,24,"layer=router,load=verify_16,m=128",62.0,-,head,(head),other,0.0,4.03,-
+muse_bf16_proj,24,"layer=router,load=verify_16,m=128",62.0,-,tail,(tail),other,10.059999999999999,3.78,-
+muse_bf16_proj,4,"layer=router,load=decode_1,m=1",62.0,4.0,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,0.0,0.67,0
+muse_bf16_proj,4,"layer=router,load=decode_1,m=1",62.0,4.1,kernel,_gemv_splitk,dense_gemm,1.38,5.5,0
+muse_bf16_proj,4,"layer=router,load=decode_1,m=1",62.0,4.1,gap,(gap),other,0.7399999999999999,0.64,0
+muse_bf16_proj,4,"layer=router,load=decode_1,m=1",62.0,-,head,(head),other,0.0,4.16,-
+muse_bf16_proj,4,"layer=router,load=decode_1,m=1",62.0,-,tail,(tail),other,6.88,3.81,-
+muse_bf16_proj,14,"layer=router,load=decode_32,m=32",62.0,14.0,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,0.0,0.67,0
+muse_bf16_proj,14,"layer=router,load=decode_32,m=32",62.0,14.1,kernel,_gemv_splitk,dense_gemm,1.31,6.11,0
+muse_bf16_proj,14,"layer=router,load=decode_32,m=32",62.0,14.1,gap,(gap),other,0.7000000000000001,0.61,0
+muse_bf16_proj,14,"layer=router,load=decode_32,m=32",62.0,-,head,(head),other,0.0,4.1,-
+muse_bf16_proj,14,"layer=router,load=decode_32,m=32",62.0,-,tail,(tail),other,7.42,3.79,-
+muse_bf16_proj,29,"layer=router,load=verify_32,m=256",62.0,29.0,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,0.0,0.74,0
+muse_bf16_proj,29,"layer=router,load=verify_32,m=256",62.0,29.1,kernel,_gemv_splitk,dense_gemm,1.34,10.99,0
+muse_bf16_proj,29,"layer=router,load=verify_32,m=256",62.0,29.1,gap,(gap),other,0.7300000000000001,0.61,0
+muse_bf16_proj,29,"layer=router,load=verify_32,m=256",62.0,-,head,(head),other,0.0,4.19,-
+muse_bf16_proj,29,"layer=router,load=verify_32,m=256",62.0,-,tail,(tail),other,12.33,3.87,-
+muse_bf16_proj,3,"layer=unpooler,load=decode_1,m=1",62.0,3.0,kernel,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,4.93,0
+muse_bf16_proj,3,"layer=unpooler,load=decode_1,m=1",62.0,3.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),4.96,1.79,0
+muse_bf16_proj,3,"layer=unpooler,load=decode_1,m=1",62.0,3.1,gap,(gap),other,4.93,0.03,0
+muse_bf16_proj,3,"layer=unpooler,load=decode_1,m=1",62.0,-,head,(head),other,0.0,3.98,-
+muse_bf16_proj,3,"layer=unpooler,load=decode_1,m=1",62.0,-,tail,(tail),other,6.75,3.63,-
+muse_bf16_proj,19,"layer=router,load=verify_1,m=8",62.0,19.0,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,0.0,0.64,0
+muse_bf16_proj,19,"layer=router,load=verify_1,m=8",62.0,19.1,kernel,_gemv_splitk,dense_gemm,0.93,5.42,0
+muse_bf16_proj,19,"layer=router,load=verify_1,m=8",62.0,19.1,gap,(gap),other,0.6400000000000001,0.29,0
+muse_bf16_proj,19,"layer=router,load=verify_1,m=8",62.0,-,head,(head),other,0.0,3.81,-
+muse_bf16_proj,19,"layer=router,load=verify_1,m=8",62.0,-,tail,(tail),other,6.35,3.57,-
+muse_bf16_proj,11,"layer=o,load=decode_32,m=32",62.0,11.0,kernel,_gemv_splitk,dense_gemm,0.0,6.8,0
+muse_bf16_proj,11,"layer=o,load=decode_32,m=32",62.0,-,head,(head),other,0.0,4.02,-
+muse_bf16_proj,11,"layer=o,load=decode_32,m=32",62.0,-,tail,(tail),other,6.8,3.79,-
+muse_bf16_proj,16,"layer=o,load=verify_1,m=8",62.0,16.0,kernel,_gemv_splitk,dense_gemm,0.0,6.42,0
+muse_bf16_proj,16,"layer=o,load=verify_1,m=8",62.0,-,head,(head),other,0.0,3.98,-
+muse_bf16_proj,16,"layer=o,load=verify_1,m=8",62.0,-,tail,(tail),other,6.42,3.79,-
+muse_bf16_proj,6,"layer=o,load=decode_16,m=16",62.0,6.0,kernel,_gemv_splitk,dense_gemm,0.0,6.4,0
+muse_bf16_proj,6,"layer=o,load=decode_16,m=16",62.0,-,head,(head),other,0.0,3.98,-
+muse_bf16_proj,6,"layer=o,load=decode_16,m=16",62.0,-,tail,(tail),other,6.4,3.76,-
+muse_bf16_proj,1,"layer=o,load=decode_1,m=1",62.0,1.0,kernel,_gemv_splitk,dense_gemm,0.0,6.35,0
+muse_bf16_proj,1,"layer=o,load=decode_1,m=1",62.0,-,head,(head),other,0.0,3.71,-
+muse_bf16_proj,1,"layer=o,load=decode_1,m=1",62.0,-,tail,(tail),other,6.35,3.6,-
+muse_bf16_proj,26,"layer=o,load=verify_32,m=256",62.0,26.0,kernel,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),0.0,8.75,0
+muse_bf16_proj,26,"layer=o,load=verify_32,m=256",62.0,-,head,(head),other,0.0,4.02,-
+muse_bf16_proj,26,"layer=o,load=verify_32,m=256",62.0,-,tail,(tail),other,8.75,3.81,-
+muse_bf16_proj,21,"layer=o,load=verify_16,m=128",62.0,21.0,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),0.0,6.91,0
+muse_bf16_proj,21,"layer=o,load=verify_16,m=128",62.0,-,head,(head),other,0.0,3.7,-
+muse_bf16_proj,21,"layer=o,load=verify_16,m=128",62.0,-,tail,(tail),other,6.91,3.65,-
+muse_bf16_proj,20,"layer=qkv_gate,load=verify_16,m=128",62.0,20.0,kernel,nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN,dense_gemm(cublas),0.0,13.62,0
+muse_bf16_proj,20,"layer=qkv_gate,load=verify_16,m=128",62.0,20.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),13.57,3.33,0
+muse_bf16_proj,20,"layer=qkv_gate,load=verify_16,m=128",62.0,-,head,(head),other,0.0,3.9,-
+muse_bf16_proj,20,"layer=qkv_gate,load=verify_16,m=128",62.0,-,tail,(tail),other,16.9,3.57,-
+muse_bf16_proj,15,"layer=qkv_gate,load=verify_1,m=8",62.0,15.0,kernel,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,12.38,0
+muse_bf16_proj,15,"layer=qkv_gate,load=verify_1,m=8",62.0,15.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.72,2.02,0
+muse_bf16_proj,15,"layer=qkv_gate,load=verify_1,m=8",62.0,15.1,gap,(gap),other,12.4,0.32,0
+muse_bf16_proj,15,"layer=qkv_gate,load=verify_1,m=8",62.0,-,head,(head),other,0.0,4.26,-
+muse_bf16_proj,15,"layer=qkv_gate,load=verify_1,m=8",62.0,-,tail,(tail),other,14.74,3.81,-
+muse_bf16_proj,25,"layer=qkv_gate,load=verify_32,m=256",62.0,25.0,kernel,nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN,dense_gemm(cublas),0.0,19.12,0
+muse_bf16_proj,25,"layer=qkv_gate,load=verify_32,m=256",62.0,-,head,(head),other,0.0,3.94,-
+muse_bf16_proj,25,"layer=qkv_gate,load=verify_32,m=256",62.0,-,tail,(tail),other,19.12,3.71,-
+muse_bf16_proj,5,"layer=qkv_gate,load=decode_16,m=16",62.0,5.0,kernel,nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.98,0
+muse_bf16_proj,5,"layer=qkv_gate,load=decode_16,m=16",62.0,5.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.37,2.02,0
+muse_bf16_proj,5,"layer=qkv_gate,load=decode_16,m=16",62.0,5.1,gap,(gap),other,12.02,0.35,0
+muse_bf16_proj,5,"layer=qkv_gate,load=decode_16,m=16",62.0,-,head,(head),other,0.0,4.25,-
+muse_bf16_proj,5,"layer=qkv_gate,load=decode_16,m=16",62.0,-,tail,(tail),other,14.389999999999999,3.84,-
+muse_bf16_proj,10,"layer=qkv_gate,load=decode_32,m=32",62.0,10.0,kernel,nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.89,0
+muse_bf16_proj,10,"layer=qkv_gate,load=decode_32,m=32",62.0,10.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.22,2.11,0
+muse_bf16_proj,10,"layer=qkv_gate,load=decode_32,m=32",62.0,10.1,gap,(gap),other,11.9,0.32,0
+muse_bf16_proj,10,"layer=qkv_gate,load=decode_32,m=32",62.0,-,head,(head),other,0.0,4.34,-
+muse_bf16_proj,10,"layer=qkv_gate,load=decode_32,m=32",62.0,-,tail,(tail),other,14.33,3.82,-
+muse_bf16_proj,0,"layer=qkv_gate,load=decode_1,m=1",62.0,0.0,kernel,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.23,0
+muse_bf16_proj,0,"layer=qkv_gate,load=decode_1,m=1",62.0,0.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),11.26,1.98,0
+muse_bf16_proj,0,"layer=qkv_gate,load=decode_1,m=1",62.0,0.1,gap,(gap),other,11.23,0.03,0
+muse_bf16_proj,0,"layer=qkv_gate,load=decode_1,m=1",62.0,-,head,(head),other,0.0,3.95,-
+muse_bf16_proj,0,"layer=qkv_gate,load=decode_1,m=1",62.0,-,tail,(tail),other,13.24,3.87,-
+muse_bf16_proj,22,"layer=pooler,load=verify_16,m=128",62.0,22.0,kernel,nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT,dense_gemm(cublas),0.0,24.48,0
+muse_bf16_proj,22,"layer=pooler,load=verify_16,m=128",62.0,-,head,(head),other,0.0,3.71,-
+muse_bf16_proj,22,"layer=pooler,load=verify_16,m=128",62.0,-,tail,(tail),other,24.48,3.62,-
+muse_bf16_proj,27,"layer=pooler,load=verify_32,m=256",62.0,27.0,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),0.0,29.26,0
+muse_bf16_proj,27,"layer=pooler,load=verify_32,m=256",62.0,-,head,(head),other,0.0,4.08,-
+muse_bf16_proj,27,"layer=pooler,load=verify_32,m=256",62.0,-,tail,(tail),other,29.26,3.73,-
+muse_bf16_proj,12,"layer=pooler,load=decode_32,m=32",62.0,12.0,kernel,_gemv_splitk,dense_gemm,0.0,19.46,0
+muse_bf16_proj,12,"layer=pooler,load=decode_32,m=32",62.0,-,head,(head),other,0.0,4.03,-
+muse_bf16_proj,12,"layer=pooler,load=decode_32,m=32",62.0,-,tail,(tail),other,19.46,3.7,-
+muse_bf16_proj,7,"layer=pooler,load=decode_16,m=16",62.0,7.0,kernel,_gemv_splitk,dense_gemm,0.0,18.75,0
+muse_bf16_proj,7,"layer=pooler,load=decode_16,m=16",62.0,-,head,(head),other,0.0,4.03,-
+muse_bf16_proj,7,"layer=pooler,load=decode_16,m=16",62.0,-,tail,(tail),other,18.75,3.73,-
+muse_bf16_proj,28,"layer=unpooler,load=verify_32,m=256",62.0,28.0,kernel,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),0.0,24.11,0
+muse_bf16_proj,28,"layer=unpooler,load=verify_32,m=256",62.0,-,head,(head),other,0.0,4.06,-
+muse_bf16_proj,28,"layer=unpooler,load=verify_32,m=256",62.0,-,tail,(tail),other,24.11,3.74,-
+muse_bf16_proj,17,"layer=pooler,load=verify_1,m=8",62.0,17.0,kernel,_gemv_splitk,dense_gemm,0.0,18.69,0
+muse_bf16_proj,17,"layer=pooler,load=verify_1,m=8",62.0,-,head,(head),other,0.0,3.94,-
+muse_bf16_proj,17,"layer=pooler,load=verify_1,m=8",62.0,-,tail,(tail),other,18.69,3.78,-
+muse_bf16_proj,2,"layer=pooler,load=decode_1,m=1",62.0,2.0,kernel,_gemv_splitk,dense_gemm,0.0,18.53,0
+muse_bf16_proj,2,"layer=pooler,load=decode_1,m=1",62.0,-,head,(head),other,0.0,3.63,-
+muse_bf16_proj,2,"layer=pooler,load=decode_1,m=1",62.0,-,tail,(tail),other,18.53,3.57,-
+muse_bf16_proj,23,"layer=unpooler,load=verify_16,m=128",62.0,23.0,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),0.0,18.79,0
+muse_bf16_proj,23,"layer=unpooler,load=verify_16,m=128",62.0,-,head,(head),other,0.0,3.92,-
+muse_bf16_proj,23,"layer=unpooler,load=verify_16,m=128",62.0,-,tail,(tail),other,18.79,3.81,-
+muse_bf16_proj,8,"layer=unpooler,load=decode_16,m=16",62.0,8.0,kernel,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),0.0,17.49,0
+muse_bf16_proj,8,"layer=unpooler,load=decode_16,m=16",62.0,-,head,(head),other,0.0,4.16,-
+muse_bf16_proj,8,"layer=unpooler,load=decode_16,m=16",62.0,-,tail,(tail),other,17.49,3.78,-
+muse_bf16_proj,13,"layer=unpooler,load=decode_32,m=32",62.0,13.0,kernel,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),0.0,17.78,0
+muse_bf16_proj,13,"layer=unpooler,load=decode_32,m=32",62.0,-,head,(head),other,0.0,3.98,-
+muse_bf16_proj,13,"layer=unpooler,load=decode_32,m=32",62.0,-,tail,(tail),other,17.78,3.74,-
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.0,kernel,nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN,dense_gemm(cublas),0.0,19.74,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.1,kernel,_attn_kernel,attention,20.03,17.12,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.1,gap,(gap),other,19.77,0.26,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.2,kernel,_reduce_kernel,attention_reduce,38.03,7.84,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.2,gap,(gap),other,37.33,0.7,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.3,kernel,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),46.32,9.12,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.3,gap,(gap),other,45.89,0.43,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.4,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, true, false, false, false, false,",norm/residual,56.02,8.45,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.4,gap,(gap),other,55.92,0.1,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.5,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),64.99,33.52,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.5,gap,(gap),other,64.53999999999999,0.45,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.6,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,65.22,3.33,1
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.7,kernel,_gemv_splitk,dense_gemm,69.14,38.27,1
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.8,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,107.1,3.07,1
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.8,gap,(gap),other,107.03999999999999,0.06,1
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.9,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,111.1,6.22,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.9,gap,(gap),other,110.24,0.86,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.10,kernel,_local_ids_kernel,other,117.66,1.09,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.10,gap,(gap),other,117.24,0.42,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.11,kernel,"void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon",routing,119.2,3.22,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.11,gap,(gap),other,118.79,0.41,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.12,kernel,"void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)",other,122.89,2.53,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.12,gap,(gap),other,122.47,0.42,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.13,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),125.87,335.36,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.13,gap,(gap),other,125.42,0.45,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.14,kernel,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals",activation,462.8,5.73,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.14,gap,(gap),other,461.79,1.01,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.15,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),468.96,174.53,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.15,gap,(gap),other,468.57,0.39,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.16,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,644.25,5.41,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.16,gap,(gap),other,643.71,0.54,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.17,kernel,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),650.01,25.2,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.17,gap,(gap),other,649.59,0.42,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,10.18,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, true, false, true, false, true, t",norm/residual,675.36,7.54,0
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,-,head,(head),other,0.0,6.86,-
+muse_decode_layer,10,"batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic",46.0,-,tail,(tail),other,682.9,3.94,-
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.0,kernel,nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN,dense_gemm(cublas),0.0,13.76,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),14.53,3.04,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.1,gap,(gap),other,13.86,0.67,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.2,kernel,_attn_kernel,attention,18.05,10.96,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.2,gap,(gap),other,17.67,0.38,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.3,kernel,_reduce_kernel,attention_reduce,29.7,5.42,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.3,gap,(gap),other,29.029999999999998,0.67,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.4,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),35.57,7.07,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.4,gap,(gap),other,35.15,0.42,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false,",norm/residual,42.98,4.43,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.5,gap,(gap),other,42.82,0.16,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.6,kernel,nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT,dense_gemm(cublas),47.86,26.53,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.6,gap,(gap),other,47.44,0.42,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,48.08,3.49,1
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.8,kernel,_gemv_splitk,dense_gemm,52.4,28.66,1
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,81.34,2.91,1
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.9,gap,(gap),other,81.24000000000001,0.1,1
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,85.12,5.94,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.10,gap,(gap),other,84.29,0.83,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.11,kernel,_local_ids_kernel,other,91.62,1.06,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.11,gap,(gap),other,91.2,0.42,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.12,kernel,"void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon",routing,93.14,2.88,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.12,gap,(gap),other,92.66,0.48,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.13,kernel,"void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)",other,96.42,1.86,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.13,gap,(gap),other,96.0,0.42,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.14,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),98.66,261.78,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.14,gap,(gap),other,98.28,0.38,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.15,kernel,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals",activation,361.3,3.84,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.15,gap,(gap),other,360.37,0.93,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.16,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),365.65,136.69,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.16,gap,(gap),other,365.27,0.38,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.17,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,502.99,5.1,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.17,gap,(gap),other,502.43,0.56,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.18,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),508.49,20.54,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.18,gap,(gap),other,508.07,0.42,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,529.41,5.28,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,8.19,gap,(gap),other,529.38,0.03,0
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,-,head,(head),other,0.0,3.82,-
+muse_decode_layer,8,"batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic",46.0,-,tail,(tail),other,534.6899999999999,3.89,-
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.0,kernel,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,12.35,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),13.17,1.79,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.1,gap,(gap),other,12.43,0.74,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.2,kernel,_attn_kernel,attention,15.34,5.78,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.2,gap,(gap),other,14.92,0.42,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.3,kernel,_reduce_kernel,attention_reduce,21.95,2.43,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.3,gap,(gap),other,21.21,0.74,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.4,kernel,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),24.93,6.5,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.4,gap,(gap),other,24.45,0.48,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, true, false, t",norm/residual,31.52,4.91,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.5,gap,(gap),other,31.39,0.13,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.6,kernel,_gemv_splitk,dense_gemm,36.93,20.37,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.6,gap,(gap),other,36.45,0.48,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,37.12,4.24,1
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.8,kernel,_gemv_splitk,dense_gemm,41.66,22.35,1
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,64.22,2.93,1
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.9,gap,(gap),other,64.16,0.06,1
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,67.57,5.98,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.10,gap,(gap),other,67.14999999999999,0.42,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.11,kernel,"smallm_route_kernel(int const*, int*, int*, int, int const*, int)",moe_gemm(cuda smallm),73.98,1.58,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.11,gap,(gap),other,73.56,0.42,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.12,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),75.01,64.43,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.13,kernel,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),128.62,50.98,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.14,kernel,_epilogue_kernel,moe_epilogue,180.08,3.71,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.14,gap,(gap),other,179.66000000000003,0.42,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.15,kernel,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),184.27,5.38,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.15,gap,(gap),other,183.85000000000002,0.42,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.16,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),190.42,1.76,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.16,gap,(gap),other,189.78,0.64,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.17,kernel,"void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>,",elementwise,192.77,0.98,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.17,gap,(gap),other,192.35000000000002,0.42,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.18,kernel,"void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native:",elementwise,194.08,2.11,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.18,gap,(gap),other,193.73000000000002,0.35,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,196.38,4.18,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,6.19,gap,(gap),other,196.19,0.19,0
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,-,head,(head),other,0.0,3.92,-
+muse_decode_layer,6,"batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8",46.0,-,tail,(tail),other,200.56,3.94,-
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.0,kernel,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,12.59,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),13.42,1.79,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.1,gap,(gap),other,12.59,0.83,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.2,kernel,_attn_kernel,attention,15.6,4.96,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.2,gap,(gap),other,15.18,0.42,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.3,kernel,_reduce_kernel,attention_reduce,20.94,2.43,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.3,gap,(gap),other,20.560000000000002,0.38,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.4,kernel,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),23.95,6.62,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.4,gap,(gap),other,23.529999999999998,0.42,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, true, false, t",norm/residual,30.82,4.69,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.5,gap,(gap),other,30.75,0.07,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.6,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,36.03,3.44,1
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.6,gap,(gap),other,35.39,0.64,1
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.7,kernel,_gemv_splitk,dense_gemm,36.11,19.2,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.8,kernel,_gemv_splitk,dense_gemm,40.82,22.02,1
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,62.75,2.88,1
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.9,gap,(gap),other,62.69,0.06,1
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,66.11,6.26,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.10,gap,(gap),other,65.69,0.42,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.11,kernel,"smallm_route_kernel(int const*, int*, int*, int, int const*, int)",moe_gemm(cuda smallm),72.96,1.5,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.11,gap,(gap),other,72.53999999999999,0.42,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.12,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),73.92,16.93,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.13,kernel,"void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),75.95,27.54,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.14,kernel,_epilogue_kernel,moe_epilogue,104.14,5.9,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.14,gap,(gap),other,103.44,0.7,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.15,kernel,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),110.58,5.18,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.15,gap,(gap),other,110.0,0.58,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.16,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),116.58,1.65,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.16,gap,(gap),other,115.97,0.61,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.17,kernel,"void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>,",elementwise,118.69,0.83,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.17,gap,(gap),other,118.28999999999999,0.4,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.18,kernel,Memcpy DtoD (Device -> Device),other,119.94,0.85,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.18,gap,(gap),other,119.52,0.42,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,121.26,3.95,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,0.19,gap,(gap),other,120.81,0.45,0
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,-,head,(head),other,0.0,4.13,-
+muse_decode_layer,0,"batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1",46.0,-,tail,(tail),other,125.21000000000001,3.98,-
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.0,kernel,nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.98,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.74,1.92,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.1,gap,(gap),other,12.07,0.67,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.2,kernel,_attn_kernel,attention,15.07,13.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.2,gap,(gap),other,14.69,0.38,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.3,kernel,_reduce_kernel,attention_reduce,29.01,2.64,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.3,gap,(gap),other,28.560000000000002,0.45,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.4,kernel,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),32.16,6.88,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.4,gap,(gap),other,31.739999999999995,0.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false,",norm/residual,39.28,3.84,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.5,gap,(gap),other,39.15,0.13,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.6,kernel,_gemv_splitk,dense_gemm,43.6,23.71,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.6,gap,(gap),other,43.18,0.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,43.76,2.91,1
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.8,kernel,_gemv_splitk,dense_gemm,47.04,10.38,1
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,57.81,5.06,1
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,68.38,5.82,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.10,gap,(gap),other,67.61,0.77,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.11,kernel,_local_ids_kernel,other,74.75,1.18,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.11,gap,(gap),other,74.33,0.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.12,kernel,"void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon",routing,76.35,2.82,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.12,gap,(gap),other,75.96,0.39,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.13,kernel,"void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)",other,79.58,1.38,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.13,gap,(gap),other,79.16,0.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.14,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),81.38,64.59,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.14,gap,(gap),other,80.96,0.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.15,kernel,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals",activation,147.06,2.21,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.15,gap,(gap),other,146.13,0.93,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.16,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),149.78,37.01,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.16,gap,(gap),other,149.36,0.42,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.17,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,187.31,4.0,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.17,gap,(gap),other,186.78,0.53,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.18,kernel,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),191.73,19.65,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.18,gap,(gap),other,191.29999999999998,0.43,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,211.42,4.61,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,4.19,gap,(gap),other,211.39,0.03,0
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,-,head,(head),other,0.0,3.84,-
+muse_decode_layer,4,"batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic",46.0,-,tail,(tail),other,216.03,3.95,-
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.0,kernel,nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.84,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.77,1.86,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.1,gap,(gap),other,11.87,0.9,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.2,kernel,_attn_kernel,attention,15.04,10.03,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.2,gap,(gap),other,14.659999999999998,0.38,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.3,kernel,_reduce_kernel,attention_reduce,25.49,2.64,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.3,gap,(gap),other,25.099999999999998,0.39,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.4,kernel,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),28.58,6.53,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.4,gap,(gap),other,28.13,0.45,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false,",norm/residual,35.39,3.78,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.5,gap,(gap),other,35.26,0.13,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.6,kernel,_gemv_splitk,dense_gemm,39.74,22.74,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.6,gap,(gap),other,39.29,0.45,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,39.9,4.26,1
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.8,kernel,_gemv_splitk,dense_gemm,45.17,14.35,1
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,59.52,3.1,1
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,63.28,5.62,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.10,gap,(gap),other,62.86,0.42,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.11,kernel,"smallm_route_kernel(int const*, int*, int*, int, int const*, int)",moe_gemm(cuda smallm),69.31,1.57,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.11,gap,(gap),other,68.89,0.42,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.12,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),70.3,46.13,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.13,kernel,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),109.18,34.22,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.14,kernel,_epilogue_kernel,moe_epilogue,144.08,5.7,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.14,gap,(gap),other,143.66000000000003,0.42,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.15,kernel,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),150.18,19.98,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.15,gap,(gap),other,149.76000000000002,0.42,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.16,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,170.22,4.32,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,2.16,gap,(gap),other,170.19,0.03,0
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,-,head,(head),other,0.0,4.06,-
+muse_decode_layer,2,"batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic",46.0,-,tail,(tail),other,174.54,3.94,-
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.0,kernel,nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN,dense_gemm(cublas),0.0,19.74,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.1,kernel,_attn_kernel,attention,20.1,337.18,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.1,gap,(gap),other,19.880000000000003,0.22,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.2,kernel,_reduce_kernel,attention_reduce,357.42,16.11,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.2,gap,(gap),other,357.16,0.26,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.3,kernel,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),374.18,9.06,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.3,gap,(gap),other,373.86,0.32,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.4,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, true, false, false, false, false,",norm/residual,383.58,8.37,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.4,gap,(gap),other,383.5,0.08,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.5,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),392.45,33.47,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.5,gap,(gap),other,392.0,0.45,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.6,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,392.69,3.36,1
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.7,kernel,_gemv_splitk,dense_gemm,396.89,38.4,1
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.8,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,435.3,3.04,1
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.8,gap,(gap),other,435.24,0.06,1
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.9,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,439.38,6.13,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.9,gap,(gap),other,438.55,0.83,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.10,kernel,_local_ids_kernel,other,445.87,1.06,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.10,gap,(gap),other,445.47,0.4,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.11,kernel,"void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon",routing,447.39,3.17,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.11,gap,(gap),other,446.96999999999997,0.42,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.12,kernel,"void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)",other,451.07,2.53,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.12,gap,(gap),other,450.64,0.43,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.13,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),454.01,375.95,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.13,gap,(gap),other,453.59,0.42,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.14,kernel,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals",activation,830.72,5.76,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.14,gap,(gap),other,829.86,0.86,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.15,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),836.89,194.27,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.15,gap,(gap),other,836.4399999999999,0.45,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.16,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,1031.65,5.14,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.16,gap,(gap),other,1031.1100000000001,0.54,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.17,kernel,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),1037.42,24.91,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.17,gap,(gap),other,1037.0,0.42,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,11.18,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, true, false, true, false, true, t",norm/residual,1062.69,7.65,0
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,-,head,(head),other,0.0,6.59,-
+muse_decode_layer,11,"batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic",16.0,-,tail,(tail),other,1070.3400000000001,3.86,-
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.0,kernel,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,12.0,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.78,1.76,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.1,gap,(gap),other,12.059999999999999,0.72,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.2,kernel,_attn_kernel,attention,14.94,15.76,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.2,gap,(gap),other,14.559999999999999,0.38,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.3,kernel,_reduce_kernel,attention_reduce,31.26,3.57,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.3,gap,(gap),other,30.830000000000002,0.43,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.4,kernel,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),35.25,6.62,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.4,gap,(gap),other,34.83,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, true, false, t",norm/residual,42.0,4.7,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.5,gap,(gap),other,41.87,0.13,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.6,kernel,_gemv_splitk,dense_gemm,47.14,21.06,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.6,gap,(gap),other,46.660000000000004,0.48,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,47.31,3.52,1
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.8,kernel,_gemv_splitk,dense_gemm,51.54,23.65,1
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,75.33,2.85,1
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.9,gap,(gap),other,75.23,0.1,1
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,78.59,6.16,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.10,gap,(gap),other,78.17,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.11,kernel,"smallm_route_kernel(int const*, int*, int*, int, int const*, int)",moe_gemm(cuda smallm),85.31,1.41,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.11,gap,(gap),other,84.89,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.12,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),86.3,26.21,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.13,kernel,"void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),88.34,37.3,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.14,kernel,_epilogue_kernel,moe_epilogue,126.05,5.94,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.14,gap,(gap),other,125.63,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.15,kernel,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),132.61,5.22,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.15,gap,(gap),other,132.03,0.58,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.16,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),138.43,1.73,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.16,gap,(gap),other,137.79000000000002,0.64,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.17,kernel,"void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>,",elementwise,140.59,0.86,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.17,gap,(gap),other,140.17000000000002,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.18,kernel,Memcpy DtoD (Device -> Device),other,141.87,0.96,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.18,gap,(gap),other,141.45000000000002,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,143.3,4.0,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,1.19,gap,(gap),other,142.88000000000002,0.42,0
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,-,head,(head),other,0.0,4.02,-
+muse_decode_layer,1,"batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1",16.0,-,tail,(tail),other,147.3,3.98,-
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.0,kernel,nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN,dense_gemm(cublas),0.0,13.82,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),14.53,3.04,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.1,gap,(gap),other,13.86,0.67,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.2,kernel,_attn_kernel,attention,17.95,180.59,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.2,gap,(gap),other,17.57,0.38,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.3,kernel,_reduce_kernel,attention_reduce,198.9,14.96,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.3,gap,(gap),other,198.64000000000001,0.26,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.4,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),214.18,7.58,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.4,gap,(gap),other,213.86,0.32,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false,",norm/residual,221.92,4.53,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.5,gap,(gap),other,221.76,0.16,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.6,kernel,nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT,dense_gemm(cublas),226.88,26.21,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.6,gap,(gap),other,226.43,0.45,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,227.12,3.34,1
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.8,kernel,_gemv_splitk,dense_gemm,231.22,28.61,1
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,260.02,3.01,1
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.9,gap,(gap),other,259.91999999999996,0.1,1
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,264.11,6.02,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.10,gap,(gap),other,263.21000000000004,0.9,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.11,kernel,_local_ids_kernel,other,270.59,1.12,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.11,gap,(gap),other,270.21,0.38,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.12,kernel,"void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon",routing,272.24,2.85,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.12,gap,(gap),other,271.82,0.42,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.13,kernel,"void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)",other,275.54,1.92,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.13,gap,(gap),other,275.13,0.41,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.14,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),277.94,214.8,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.14,gap,(gap),other,277.52,0.42,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.15,kernel,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals",activation,493.77,3.86,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.15,gap,(gap),other,492.84,0.93,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.16,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),498.1,112.82,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.16,gap,(gap),other,497.72,0.38,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.17,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,611.29,4.9,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.17,gap,(gap),other,610.9699999999999,0.32,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.18,kernel,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),616.61,20.53,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.18,gap,(gap),other,616.16,0.45,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,637.37,5.22,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,9.19,gap,(gap),other,637.34,0.03,0
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,-,head,(head),other,0.0,3.84,-
+muse_decode_layer,9,"batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic",16.0,-,tail,(tail),other,642.59,3.97,-
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.0,kernel,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,12.45,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),13.42,1.86,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.1,gap,(gap),other,12.46,0.96,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.2,kernel,_attn_kernel,attention,15.71,16.24,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.2,gap,(gap),other,15.32,0.39,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.3,kernel,_reduce_kernel,attention_reduce,32.42,3.62,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.3,gap,(gap),other,32.0,0.42,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.4,kernel,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),36.59,6.85,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.4,gap,(gap),other,36.160000000000004,0.43,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, true, false, t",norm/residual,43.58,4.9,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.5,gap,(gap),other,43.449999999999996,0.13,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.6,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,49.22,4.19,1
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.6,gap,(gap),other,48.55,0.67,1
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.7,kernel,_gemv_splitk,dense_gemm,49.31,21.09,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.8,kernel,_gemv_splitk,dense_gemm,54.13,23.17,1
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,77.5,2.93,1
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.9,gap,(gap),other,77.4,0.1,1
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,80.85,5.95,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.10,gap,(gap),other,80.42999999999999,0.42,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.11,kernel,"smallm_route_kernel(int const*, int*, int*, int, int const*, int)",moe_gemm(cuda smallm),87.22,1.57,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.11,gap,(gap),other,86.8,0.42,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.12,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),88.22,52.4,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.13,kernel,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),131.41,36.64,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.14,kernel,_epilogue_kernel,moe_epilogue,168.53,3.6,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.14,gap,(gap),other,168.18,0.35,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.15,kernel,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),172.56,5.28,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.15,gap,(gap),other,172.13,0.43,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.16,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),178.45,1.73,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.16,gap,(gap),other,177.83999999999997,0.61,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.17,kernel,"void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>,",elementwise,180.8,0.93,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.17,gap,(gap),other,180.35000000000002,0.45,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.18,kernel,"void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native:",elementwise,182.11,2.11,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.18,gap,(gap),other,181.69000000000003,0.42,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,184.54,4.14,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,7.19,gap,(gap),other,184.35,0.19,0
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,-,head,(head),other,0.0,4.06,-
+muse_decode_layer,7,"batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8",16.0,-,tail,(tail),other,188.67999999999998,3.9,-
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.0,kernel,nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.94,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.77,1.92,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.1,gap,(gap),other,12.07,0.7,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.2,kernel,_attn_kernel,attention,15.12,314.88,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.2,gap,(gap),other,14.739999999999998,0.38,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.3,kernel,_reduce_kernel,attention_reduce,330.7,5.95,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.3,gap,(gap),other,330.44,0.26,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.4,kernel,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),337.06,6.78,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.4,gap,(gap),other,336.61,0.45,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false,",norm/residual,344.1,3.81,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.5,gap,(gap),other,343.97,0.13,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.6,kernel,_gemv_splitk,dense_gemm,348.5,23.71,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.6,gap,(gap),other,348.02,0.48,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,348.67,2.94,1
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.8,kernel,_gemv_splitk,dense_gemm,352.19,10.93,1
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,363.55,5.02,1
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,373.38,5.84,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.10,gap,(gap),other,372.53,0.85,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.11,kernel,_local_ids_kernel,other,379.54,1.1,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.11,gap,(gap),other,379.12,0.42,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.12,kernel,"void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon",routing,381.04,2.82,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.12,gap,(gap),other,380.62,0.42,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.13,kernel,"void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)",other,384.22,1.41,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.13,gap,(gap),other,383.87,0.35,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.14,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),386.06,71.87,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.14,gap,(gap),other,385.64,0.42,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.15,kernel,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals",activation,458.96,2.24,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.15,gap,(gap),other,458.09999999999997,0.86,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.16,kernel,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l",moe_gemm(marlin),461.65,40.59,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.16,gap,(gap),other,461.25,0.4,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.17,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,502.67,4.02,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.17,gap,(gap),other,502.13,0.54,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.18,kernel,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),507.1,19.74,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.18,gap,(gap),other,506.68,0.42,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,5.19,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,527.13,4.59,0
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,-,head,(head),other,0.0,3.94,-
+muse_decode_layer,5,"batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic",16.0,-,tail,(tail),other,531.72,3.9,-
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.0,kernel,nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),0.0,11.87,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.1,kernel,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16",dense_gemm(cublas),12.74,1.82,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.1,gap,(gap),other,11.94,0.8,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.2,kernel,_attn_kernel,attention,14.99,160.27,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.2,gap,(gap),other,14.61,0.38,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.3,kernel,_reduce_kernel,attention_reduce,175.66,4.13,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.3,gap,(gap),other,175.37,0.29,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.4,kernel,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),180.27,6.82,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.4,gap,(gap),other,179.82000000000002,0.45,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.5,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false,",norm/residual,187.34,3.73,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.5,gap,(gap),other,187.18,0.16,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.6,kernel,_gemv_splitk,dense_gemm,191.47,23.02,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.6,gap,(gap),other,191.02,0.45,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.7,kernel,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr",elementwise,191.66,4.14,1
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.8,kernel,_gemv_splitk,dense_gemm,196.94,14.61,1
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.9,kernel,"void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true",routing,211.2,3.07,1
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.10,kernel,"void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,",norm/residual,214.9,5.73,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.10,gap,(gap),other,214.48000000000002,0.42,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.11,kernel,"smallm_route_kernel(int const*, int*, int*, int, int const*, int)",moe_gemm(cuda smallm),220.96,1.44,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.11,gap,(gap),other,220.54000000000002,0.42,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.12,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),221.89,53.68,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.13,kernel,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),266.94,38.06,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.14,kernel,_epilogue_kernel,moe_epilogue,305.6,5.66,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.14,gap,(gap),other,305.18,0.42,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.15,kernel,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),311.66,20.03,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.15,gap,(gap),other,311.21000000000004,0.45,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.16,kernel,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr",norm/residual,331.84,4.29,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,3.16,gap,(gap),other,331.81,0.03,0
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,-,head,(head),other,0.0,3.98,-
+muse_decode_layer,3,"batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic",16.0,-,tail,(tail),other,336.13,3.89,-
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,0.0,kernel,"smallm_route_kernel(int const*, int*, int*, int, int, int)",moe_gemm(cuda smallm),0.0,1.42,0
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,0.1,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),0.59,27.02,0
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,0.2,kernel,"void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),2.61,38.26,0
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,0.3,kernel,_epilogue_kernel,moe_epilogue,40.86,6.51,0
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,0.3,gap,(gap),other,40.8,0.06,0
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,-,head,(head),other,0.0,4.56,-
+muse_moe_w4a16,0,"bs=1,load=decode_1,sharding=ep8",60.0,-,tail,(tail),other,47.37,3.89,-
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,5.0,kernel,"largem_route_kernel(int const*, int*, int*, int*, int, int, int)",other,0.0,10.66,0
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,5.1,kernel,"void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 const*, float const*, unsigned int c",other,0.99,322.1,0
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,5.2,kernel,"void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 const*, float const*, unsigned int",other,320.91,161.82,0
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,5.3,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,482.85,5.22,0
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,5.3,gap,(gap),other,482.59000000000003,0.26,0
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,-,head,(head),other,0.0,4.8,-
+muse_moe_w4a16,5,"bs=256,load=verify_32,sharding=ep8",60.0,-,tail,(tail),other,488.07000000000005,4.05,-
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,4.0,kernel,"largem_route_kernel(int const*, int*, int*, int*, int, int, int)",other,0.0,6.26,0
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,4.1,kernel,"void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 const*, float const*, unsigned int c",other,1.02,230.05,0
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,4.2,kernel,"void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 const*, float const*, unsigned int",other,224.38,120.54,0
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,4.3,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,345.35,4.54,0
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,4.3,gap,(gap),other,344.87,0.48,0
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,-,head,(head),other,0.0,4.7,-
+muse_moe_w4a16,4,"bs=128,load=verify_16,sharding=ep8",60.0,-,tail,(tail),other,349.89000000000004,4.06,-
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,2.0,kernel,"largem_route_kernel(int const*, int*, int*, int*, int, int, int)",other,0.0,3.06,0
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,2.1,kernel,"void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 const*, float const*, unsigned int c",other,0.99,146.96,0
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,2.2,kernel,"void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 const*, float const*, unsigned int",other,137.7,81.42,0
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,2.3,kernel,_post_expert_norm_weighted_sum_kernel,norm/residual,219.65,4.19,0
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,2.3,gap,(gap),other,219.23000000000002,0.42,0
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,-,head,(head),other,0.0,4.69,-
+muse_moe_w4a16,2,"bs=32,load=decode_32,sharding=ep8",60.0,-,tail,(tail),other,223.84,3.97,-
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,3.0,kernel,"smallm_route_kernel(int const*, int*, int*, int, int, int)",moe_gemm(cuda smallm),0.0,1.31,0
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,3.1,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),0.9,53.23,0
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,3.2,kernel,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),44.22,37.86,0
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,3.3,kernel,_epilogue_kernel,moe_epilogue,82.74,3.87,0
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,3.3,gap,(gap),other,82.28999999999999,0.45,0
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,-,head,(head),other,0.0,4.67,-
+muse_moe_w4a16,3,"bs=8,load=verify_1,sharding=ep8",60.0,-,tail,(tail),other,86.61,4.13,-
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,1.0,kernel,"smallm_route_kernel(int const*, int*, int*, int, int, int)",moe_gemm(cuda smallm),0.0,1.34,0
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,1.1,kernel,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons",moe_gemm(cuda smallm),1.01,48.45,0
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,1.2,kernel,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con",moe_gemm(cuda smallm),40.62,35.94,0
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,1.3,kernel,_epilogue_kernel,moe_epilogue,77.06,6.19,0
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,1.3,gap,(gap),other,76.64,0.42,0
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,-,head,(head),other,0.0,4.72,-
+muse_moe_w4a16,1,"bs=16,load=decode_16,sharding=ep8",60.0,-,tail,(tail),other,83.25,4.0,-

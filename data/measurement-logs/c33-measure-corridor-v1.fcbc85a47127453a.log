@@ -1,0 +1,175 @@
+7 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:31:26 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+MC progress d1f t=101s
+MC progress v1f t=106s
+MC progress d16s t=110s
+MC progress d16f t=111s
+MC progress d32s t=115s
+MC progress d32f t=117s
+S corridor v1: gpu=NVIDIA_H200 used=117s of 280s ovh=4.70us(subtracted) seeds=3 reps=5 capable=True smallm_twin=pending prefetch_kernels=gemv_splitk,router_fix_kernel,unpool_kernel,pre_norm_kernel,epilogue_kernel+small-M GEMM2
+S untouched: cuBLAS nvjet / splitKreduce, SGLang norm_residual / routing kernels, Marlin (T=32), attention kernels, small-M GEMM1 (weights depend on the routing)
+S #0 d1s layer us: PDL_OFF=116.2 WAITFIRST=114.7(x1.013) TOOLS_LIGHT=113.8(x1.021) TOOLS_FULL=120.0(x0.968) PRIO=116.9(x0.994) TOOLS_LIGHT+PRIO=114.6(x1.014)
+S #1 d1f layer us: PDL_OFF=123.4 WAITFIRST=123.3(x1.001) TOOLS_LIGHT=122.6(x1.007) TOOLS_FULL=127.6(x0.967) PRIO=123.9(x0.996) TOOLS_LIGHT+PRIO=122.2(x1.009)
+S #7 v1f layer us: PDL_OFF=172.3 WAITFIRST=172.0(x1.001) TOOLS_LIGHT=170.8(x1.008 DIFF) TOOLS_FULL=178.6(x0.965 DIFF) PRIO=172.4(x0.999 DIFF) TOOLS_LIGHT+PRIO=171.3(x1.006 DIFF)
+S #2 d16s layer us: PDL_OFF=180.7 WAITFIRST=179.5(x1.007 DIFF) TOOLS_LIGHT=180.1(x1.003 DIFF) TOOLS_FULL=185.5(x0.974 DIFF) PRIO=180.5(x1.001 DIFF) TOOLS_LIGHT+PRIO=179.4(x1.007 DIFF)
+S #3 d16f layer us: PDL_OFF=262.4 WAITFIRST=262.8(x0.999 DIFF) TOOLS_LIGHT=262.3(x1.000) TOOLS_FULL=268.4(x0.978 DIFF) PRIO=263.8(x0.995) TOOLS_LIGHT+PRIO=261.6(x1.003)
+S #4 d32s layer us: PDL_OFF=262.2 WAITFIRST=260.7(x1.006 DIFF) TOOLS_LIGHT=261.7(x1.002 DIFF) TOOLS_FULL=265.4(x0.988 DIFF) PRIO=261.5(x1.003 DIFF) TOOLS_LIGHT+PRIO=261.3(x1.003 DIFF)
+S #5 d32f layer us: PDL_OFF=424.9 WAITFIRST=424.4(x1.001 DIFF) TOOLS_LIGHT=424.3(x1.001 DIFF) TOOLS_FULL=428.4(x0.992 DIFF) PRIO=425.2(x0.999 DIFF) TOOLS_LIGHT+PRIO=425.6(x0.998 DIFF)
+D T1 decode gain vs PDL_OFF (us, weighted 46:16): WAITFIRST=+1.1 TOOLS_LIGHT=+2.0 TOOLS_FULL=-3.9 PRIO=-0.7 TOOLS_LIGHT+PRIO=+1.5 => TOOLS_FULL clearly worse than LIGHT -> corridor congestion confirmed: keep LIGHT, cap smaller
+S graph d1s: PDL_OFF:k16 prio{0: 16} pdl_edges=6/16 WAITFIRST:k16 prio{0: 16} pdl_edges=10/16 TOOLS_LIGHT:k16 prio{0: 16} pdl_edges=13/16 PRIO:k16 prio{-1: 14, 0: 2} pdl_edges=6/16
+S graph d1f: PDL_OFF:k16 prio{0: 16} pdl_edges=6/16 WAITFIRST:k16 prio{0: 16} pdl_edges=8/16 TOOLS_LIGHT:k16 prio{0: 16} pdl_edges=11/16 PRIO:k16 prio{-1: 14, 0: 2} pdl_edges=6/16
+S PRIO survives graph capture: YES (14 of 16 kernel nodes carry a high priority, d1s)
+S programmatic (PDL) edges in the captured graphs: d1s/WAITFIRST=10 d1s/TOOLS_LIGHT=13 d1f/WAITFIRST=8 d1f/TOOLS_LIGHT=11
+S bitwise vs the board: PDL_OFF=DIFF WAITFIRST=DIFF TOOLS_LIGHT=DIFF TOOLS_FULL=DIFF PRIO=DIFF TOOLS_LIGHT+PRIO=DIFF
+H d1s PDL_OFF n=16 sumdur=140.4 sumgap=+25.5 overlapped_edges=2 | nvjet_sm90_tst_1:12.7/+0.0 splitKreduce_ker:1.9/+0.8 _attn_kernel:4.9/+0.4 _reduce_kernel:2.5/+0.4 nvjet_sm90_tst_6:6.7/+0.4 muse_spark_norm_:4.8/+0.1 _gemv_splitk:22.6/+0.4 _router_fix_kern:18.1/+36.5 routing_kernel:3.6/+0.1 _pre_norm_kernel:2.4/+0.3 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.9/-0.5 w4_smallm_kernel:27.5/-15.1 _epilogue_kernel:4.3/+0.5 _unpool_kernel:6.1/+0.4 muse_spark_norm_:4.0/+0.2
+H d1s WAITFIRST n=16 sumdur=136.1 sumgap=+20.3 overlapped_edges=4 | nvjet_sm90_tst_1:12.7/+0.0 splitKreduce_ker:1.8/+0.3 _attn_kernel:5.3/-0.7 _reduce_kernel:2.5/+0.4 nvjet_sm90_tst_6:6.5/+0.5 muse_spark_norm_:4.5/+0.1 _gemv_splitk:22.5/-1.0 _router_fix_kern:13.2/+34.5 routing_kernel:3.9/+0.1 _pre_norm_kernel:2.2/+0.3 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.8/-0.5 w4_smallm_kernel:28.0/-15.5 _epilogue_kernel:4.3/+0.6 _unpool_kernel:6.1/+0.4 muse_spark_norm_:4.0/+0.2
+H d1s TOOLS_LIGHT n=16 sumdur=151.5 sumgap=+8.3 overlapped_edges=8 | nvjet_sm90_tst_1:12.6/+0.0 splitKreduce_ker:1.9/+0.4 _attn_kernel:5.2/-0.7 _reduce_kernel:2.7/+0.4 nvjet_sm90_tst_6:6.6/+0.4 muse_spark_norm_:4.6/+0.1 _mc_gemv_splitk:23.4/-0.6 _mc_router_fix_k:19.5/+34.0 routing_kernel:11.6/-9.2 _mc_pre_norm_ker:1.6/-0.1 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.7/-0.5 w4_smallm_kernel:27.9/-15.3 _mc_epilogue_ker:4.1/+0.2 _mc_unpool_kerne:7.4/-0.4 muse_spark_norm_:4.4/-0.8
+H d1s TOOLS_FULL n=16 sumdur=156.3 sumgap=+12.3 overlapped_edges=8 | nvjet_sm90_tst_1:12.6/+0.0 splitKreduce_ker:1.9/+0.4 _attn_kernel:5.3/-0.7 _reduce_kernel:2.6/+0.5 nvjet_sm90_tst_6:6.7/+0.4 muse_spark_norm_:4.6/+0.1 _mc_gemv_splitk:29.0/-0.5 _mc_router_fix_k:21.0/+34.3 routing_kernel:8.8/-5.7 _mc_pre_norm_ker:1.6/-0.1 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.8/-0.5 w4_smallm_kernel:28.0/-15.5 _mc_epilogue_ker:4.1/+0.2 _mc_unpool_kerne:7.4/-0.4 muse_spark_norm_:4.4/-0.8
+H d1f PDL_OFF n=16 sumdur=146.9 sumgap=+33.0 overlapped_edges=2 | nvjet_sm90_tst_1:12.5/+0.0 splitKreduce_ker:1.9/+0.9 _full_cat_kernel:11.8/+0.4 _reduce_kernel:2.8/+0.4 nvjet_sm90_tst_6:6.7/+0.4 muse_spark_norm_:4.7/+0.2 _gemv_splitk:22.7/+0.5 _router_fix_kern:18.6/+43.9 routing_kernel:2.9/+0.0 _pre_norm_kernel:2.4/+0.3 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.7/-0.5 w4_smallm_kernel:27.5/-14.9 _epilogue_kernel:4.3/+0.4 _unpool_kernel:6.0/+0.5 muse_spark_norm_:3.9/+0.2
+H d1f WAITFIRST n=16 sumdur=134.9 sumgap=+41.4 overlapped_edges=3 | nvjet_sm90_tst_1:12.6/+0.0 splitKreduce_ker:1.9/+1.0 _full_cat_kernel:11.7/+0.4 _reduce_kernel:2.8/+0.4 nvjet_sm90_tst_6:6.7/+0.4 muse_spark_norm_:4.8/+0.1 _gemv_splitk:22.8/-1.0 _router_fix_kern:14.6/+43.6 routing_kernel:3.9/+0.1 _pre_norm_kernel:2.4/+0.3 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.8/-0.3 w4_smallm_kernel:17.9/-5.4 _epilogue_kernel:4.5/+0.7 _unpool_kernel:6.1/+0.4 muse_spark_norm_:3.9/+0.1
+H d1f TOOLS_LIGHT n=16 sumdur=159.4 sumgap=+18.3 overlapped_edges=6 | nvjet_sm90_tst_1:12.5/+0.0 splitKreduce_ker:1.9/+0.7 _full_cat_kernel:11.8/+0.5 _reduce_kernel:2.9/+0.4 nvjet_sm90_tst_6:6.8/+0.4 muse_spark_norm_:4.7/+0.1 _mc_gemv_splitk:23.0/-0.6 _mc_router_fix_k:20.0/+42.6 routing_kernel:11.8/-9.4 _mc_pre_norm_ker:1.7/-0.0 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.8/-0.5 w4_smallm_kernel:28.0/-15.6 _mc_epilogue_ker:4.1/+0.3 _mc_unpool_kerne:7.4/-0.3 muse_spark_norm_:4.6/-0.8
+H d1f TOOLS_FULL n=16 sumdur=163.1 sumgap=+22.7 overlapped_edges=7 | nvjet_sm90_tst_1:12.5/+0.0 splitKreduce_ker:1.9/+0.8 _full_cat_kernel:11.8/+0.4 _reduce_kernel:2.8/+0.5 nvjet_sm90_tst_6:6.8/+0.4 muse_spark_norm_:4.7/+0.1 _mc_gemv_splitk:29.1/-0.6 _mc_router_fix_k:21.0/+43.0 routing_kernel:8.4/-5.8 _mc_pre_norm_ker:1.7/-0.1 smallm_route_ker:1.5/+0.4 w4_smallm_kernel:16.8/-0.5 w4_smallm_kernel:27.9/-15.3 _mc_epilogue_ker:4.1/+0.3 _mc_unpool_kerne:7.4/-0.3 muse_spark_norm_:4.6/-0.9
+S 8 B lines dropped for the 14 KB cap (the S lines hold the seed medians)
+B layer d1s seed=11 | PDL_OFF us=105.92 x=1.000 OK
+B layer d1s seed=11 | WAITFIRST us=103.87 x=1.020 OK
+B layer d1s seed=11 | TOOLS_LIGHT us=103.14 x=1.027 OK
+B layer d1s seed=11 | TOOLS_FULL us=109.09 x=0.971 OK
+B layer d1s seed=11 | PRIO us=106.34 x=0.996 OK
+B layer d1s seed=11 | TOOLS_LIGHT+PRIO us=103.07 x=1.028 OK
+B layer d1s seed=12 | PDL_OFF us=117.44 x=1.000 OK
+B layer d1s seed=12 | WAITFIRST us=114.69 x=1.024 OK
+B layer d1s seed=12 | TOOLS_LIGHT us=113.76 x=1.032 OK
+B layer d1s seed=12 | TOOLS_FULL us=120.48 x=0.975 OK
+B layer d1s seed=12 | PRIO us=117.02 x=1.004 OK
+B layer d1s seed=12 | TOOLS_LIGHT+PRIO us=115.36 x=1.018 OK
+B layer d1s seed=13 | PDL_OFF us=116.16 x=1.000 OK
+B layer d1s seed=13 | WAITFIRST us=116.00 x=1.001 OK
+B layer d1s seed=13 | TOOLS_LIGHT us=114.18 x=1.017 OK
+B layer d1s seed=13 | TOOLS_FULL us=120.00 x=0.968 OK
+B layer d1s seed=13 | PRIO us=116.90 x=0.994 OK
+B layer d1s seed=13 | TOOLS_LIGHT+PRIO us=114.59 x=1.014 OK
+B layer d1f seed=11 | PDL_OFF us=114.14 x=1.000 OK
+B layer d1f seed=11 | WAITFIRST us=113.60 x=1.005 OK
+B layer d1f seed=11 | TOOLS_LIGHT us=112.06 x=1.019 OK
+B layer d1f seed=11 | TOOLS_FULL us=117.54 x=0.971 OK
+B layer d1f seed=11 | PRIO us=113.95 x=1.002 OK
+B layer d1f seed=11 | TOOLS_LIGHT+PRIO us=111.58 x=1.023 OK
+B layer d1f seed=12 | PDL_OFF us=123.39 x=1.000 OK
+B layer d1f seed=12 | WAITFIRST us=123.30 x=1.001 OK
+B layer d1f seed=12 | TOOLS_LIGHT us=122.98 x=1.003 OK
+B layer d1f seed=12 | TOOLS_FULL us=128.29 x=0.962 OK
+B layer d1f seed=12 | PRIO us=124.64 x=0.990 OK
+B layer d1f seed=12 | TOOLS_LIGHT+PRIO us=122.24 x=1.009 OK
+B layer d1f seed=13 | PDL_OFF us=124.26 x=1.000 OK
+B layer d1f seed=13 | WAITFIRST us=123.26 x=1.008 OK
+B layer d1f seed=13 | TOOLS_LIGHT us=122.59 x=1.014 OK
+B layer d1f seed=13 | TOOLS_FULL us=127.55 x=0.974 OK
+B layer d1f seed=13 | PRIO us=123.90 x=1.003 OK
+B layer d1f seed=13 | TOOLS_LIGHT+PRIO us=122.66 x=1.013 OK
+B layer v1f seed=11 | PDL_OFF us=172.26 x=1.000 OK
+B layer v1f seed=11 | WAITFIRST us=172.00 x=1.001 OK
+B layer v1f seed=11 | TOOLS_LIGHT us=170.46 x=1.011 OK
+B layer v1f seed=11 | TOOLS_FULL us=178.59 x=0.965 OK
+B layer v1f seed=11 | PRIO us=171.10 x=1.007 OK
+B layer v1f seed=11 | TOOLS_LIGHT+PRIO us=171.26 x=1.006 OK
+B layer v1f seed=12 | PDL_OFF us=171.65 x=1.000 OK
+B layer v1f seed=12 | WAITFIRST us=171.20 x=1.003 OK
+B layer v1f seed=12 | TOOLS_LIGHT us=170.82 x=1.005 OK
+B layer v1f seed=12 | TOOLS_FULL us=178.56 x=0.961 OK
+B layer v1f seed=12 | PRIO us=172.35 x=0.996 OK
+B layer v1f seed=12 | TOOLS_LIGHT+PRIO us=170.05 x=1.009 DIFF(2.2e-05,board-self-DIFF)
+B layer v1f seed=13 | PDL_OFF us=201.95 x=1.000 OK
+B layer v1f seed=13 | WAITFIRST us=201.79 x=1.001 OK
+B layer v1f seed=13 | TOOLS_LIGHT us=201.89 x=1.000 DIFF(0.0e+00)
+B layer v1f seed=13 | TOOLS_FULL us=209.12 x=0.966 DIFF(1.9e-06)
+B layer v1f seed=13 | PRIO us=202.62 x=0.997 DIFF(1.1e-04)
+B layer v1f seed=13 | TOOLS_LIGHT+PRIO us=201.02 x=1.005 DIFF(1.1e-04)
+B layer d16s seed=11 | PDL_OFF us=180.70 x=1.000 OK
+B layer d16s seed=11 | WAITFIRST us=179.46 x=1.007 DIFF(5.9e-05,board-self-DIFF)
+B layer d16s seed=11 | TOOLS_LIGHT us=180.13 x=1.003 DIFF(9.7e-05,board-self-DIFF)
+B layer d16s seed=11 | TOOLS_FULL us=185.50 x=0.974 DIFF(7.7e-05,board-self-DIFF)
+B layer d16s seed=11 | PRIO us=180.54 x=1.001 DIFF(7.8e-05,board-self-DIFF)
+B layer d16s seed=11 | TOOLS_LIGHT+PRIO us=179.42 x=1.007 DIFF(2.1e-05,board-self-DIFF)
+B layer d16s seed=12 | PDL_OFF us=172.86 x=1.000 DIFF(7.3e-05)
+B layer d16s seed=12 | WAITFIRST us=173.31 x=0.997 DIFF(7.3e-05)
+B layer d16s seed=12 | TOOLS_LIGHT us=173.95 x=0.994 OK
+B layer d16s seed=12 | TOOLS_FULL us=179.71 x=0.962 DIFF(7.3e-05)
+B layer d16s seed=12 | PRIO us=173.47 x=0.996 OK
+B layer d16s seed=12 | TOOLS_LIGHT+PRIO us=174.24 x=0.992 DIFF(1.1e-05)
+B layer d16s seed=13 | PDL_OFF us=203.71 x=1.000 OK
+B layer d16s seed=13 | WAITFIRST us=204.22 x=0.997 OK
+B layer d16s seed=13 | TOOLS_LIGHT us=206.24 x=0.988 DIFF(2.8e-05)
+B layer d16s seed=13 | TOOLS_FULL us=210.05 x=0.970 OK
+B layer d16s seed=13 | PRIO us=206.37 x=0.987 OK
+B layer d16s seed=13 | TOOLS_LIGHT+PRIO us=205.22 x=0.993 DIFF(2.7e-06)
+B layer d16f seed=11 | PDL_OFF us=276.38 x=1.000 OK
+B layer d16f seed=11 | WAITFIRST us=276.83 x=0.998 DIFF(1.3e-04)
+B layer d16f seed=11 | TOOLS_LIGHT us=276.32 x=1.000 OK
+B layer d16f seed=11 | TOOLS_FULL us=282.94 x=0.977 DIFF(9.2e-05)
+B layer d16f seed=11 | PRIO us=277.82 x=0.995 OK
+B layer d16f seed=11 | TOOLS_LIGHT+PRIO us=276.86 x=0.998 OK
+B layer d16f seed=12 | PDL_OFF us=260.99 x=1.000 OK
+B layer d16f seed=12 | WAITFIRST us=260.96 x=1.000 OK
+B layer d16f seed=12 | TOOLS_LIGHT us=260.22 x=1.003 OK
+B layer d16f seed=12 | TOOLS_FULL us=266.62 x=0.979 OK
+B layer d16f seed=12 | PRIO us=261.28 x=0.999 OK
+B layer d16f seed=12 | TOOLS_LIGHT+PRIO us=261.12 x=1.000 OK
+B layer d16f seed=13 | PDL_OFF us=262.40 x=1.000 DIFF(4.0e-06)
+B layer d16f seed=13 | WAITFIRST us=262.75 x=0.999 OK
+B layer d16f seed=13 | TOOLS_LIGHT us=262.34 x=1.000 OK
+B layer d16f seed=13 | TOOLS_FULL us=268.35 x=0.978 OK
+B layer d16f seed=13 | PRIO us=263.78 x=0.995 OK
+B layer d16f seed=13 | TOOLS_LIGHT+PRIO us=261.63 x=1.003 OK
+B layer d32s seed=11 | PDL_OFF us=263.81 x=1.000 DIFF(2.6e-04)
+B layer d32s seed=11 | WAITFIRST us=260.70 x=1.012 DIFF(1.6e-04)
+B layer d32s seed=11 | TOOLS_LIGHT us=261.73 x=1.008 DIFF(2.7e-04)
+B layer d32s seed=11 | TOOLS_FULL us=267.46 x=0.986 OK
+B layer d32s seed=11 | PRIO us=264.32 x=0.998 OK
+B layer d32s seed=11 | TOOLS_LIGHT+PRIO us=263.49 x=1.001 DIFF(2.7e-04)
+B layer d32s seed=12 | PDL_OFF us=262.24 x=1.000 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=12 | WAITFIRST us=260.77 x=1.006 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=12 | TOOLS_LIGHT us=262.30 x=1.000 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=12 | TOOLS_FULL us=265.44 x=0.988 DIFF(2.3e-04,board-self-DIFF)
+B layer d32s seed=12 | PRIO us=261.54 x=1.003 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=12 | TOOLS_LIGHT+PRIO us=261.34 x=1.003 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=13 | PDL_OFF us=230.75 x=1.000 DIFF(1.8e-04,board-self-DIFF)
+B layer d32s seed=13 | WAITFIRST us=228.70 x=1.009 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=13 | TOOLS_LIGHT us=229.41 x=1.006 DIFF(1.8e-04,board-self-DIFF)
+B layer d32s seed=13 | TOOLS_FULL us=235.07 x=0.982 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=13 | PRIO us=230.37 x=1.002 DIFF(1.9e-04,board-self-DIFF)
+B layer d32s seed=13 | TOOLS_LIGHT+PRIO us=230.18 x=1.003 DIFF(2.2e-04,board-self-DIFF)
+B layer d32f seed=11 | PDL_OFF us=425.44 x=1.000 DIFF(7.4e-05,board-self-DIFF)
+B layer d32f seed=11 | WAITFIRST us=425.50 x=1.000 DIFF(1.9e-04,board-self-DIFF)
+B layer d32f seed=11 | TOOLS_LIGHT us=425.82 x=0.999 DIFF(3.0e-04,board-self-DIFF)
+B layer d32f seed=11 | TOOLS_FULL us=431.39 x=0.986 DIFF(1.9e-04,board-self-DIFF)
+B layer d32f seed=11 | PRIO us=426.34 x=0.998 DIFF(1.9e-04,board-self-DIFF)
+B layer d32f seed=11 | TOOLS_LIGHT+PRIO us=426.94 x=0.996 DIFF(2.9e-04,board-self-DIFF)
+B layer d32f seed=12 | PDL_OFF us=413.09 x=1.000 DIFF(3.8e-04,board-self-DIFF)
+B layer d32f seed=12 | WAITFIRST us=413.18 x=1.000 DIFF(3.2e-04,board-self-DIFF)
+B layer d32f seed=12 | TOOLS_LIGHT us=412.64 x=1.001 DIFF(1.9e-04,board-self-DIFF)
+B layer d32f seed=12 | TOOLS_FULL us=418.50 x=0.987 DIFF(2.9e-04,board-self-DIFF)
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:32:59 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+

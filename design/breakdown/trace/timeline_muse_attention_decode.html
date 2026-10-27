@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<style>
+body { font-family: sans-serif; margin: 20px; background: #fafafa; }
+h1, h2, h3 { color: #333; }
+.shape { margin-bottom: 40px; background: white; padding: 10px; border: 1px solid #ccc; }
+.err { color: red; font-weight: bold; }
+.lane { font-size: 12px; fill: #666; }
+svg { border: 1px solid #eee; background: #fff; }
+</style>
+<title>Timeline: muse_attention_decode</title>
+</head><body>
+<h1>Timeline: muse_attention_decode</h1>
+<div class='shape'>
+<h3>Shape 6 (weight: 46.0, wall: 13.71 &mu;s, span: 9.23 &mu;s, sol: 0.12 &mu;s)<br><i>batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='757.8947368421053' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[6.0] _attn_kernel
+Start: 0.00 μs
+Dur: 5.76 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='914.2105263157896' y='25' width='365.7894736842105' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[6.1] _reduce_kernel
+Start: 6.34 μs
+Dur: 2.78 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 0 (weight: 46.0, wall: 12.11 &mu;s, span: 7.7 &mu;s, sol: 0.11 &mu;s)<br><i>batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='750.0' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[0.0] _attn_kernel
+Start: 0.00 μs
+Dur: 4.80 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='875.3125' y='25' width='404.6875' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[0.1] _reduce_kernel
+Start: 5.09 μs
+Dur: 2.59 μs
+Gap before: 0.29 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 8 (weight: 46.0, wall: 21.87 &mu;s, span: 17.47 &mu;s, sol: 1.86 &mu;s)<br><i>batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='765.5765920826161' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[8.0] _attn_kernel
+Start: 0.00 μs
+Dur: 11.12 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='885.5077452667813' y='25' width='394.4922547332186' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[8.1] _reduce_kernel
+Start: 11.70 μs
+Dur: 5.73 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 2 (weight: 46.0, wall: 17.2 &mu;s, span: 13.12 &mu;s, sol: 1.65 &mu;s)<br><i>batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='896.1216730038024' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[2.0] _attn_kernel
+Start: 0.00 μs
+Dur: 9.82 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1002.5855513307985' y='25' width='277.41444866920153' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[2.1] _reduce_kernel
+Start: 10.11 μs
+Dur: 3.04 μs
+Gap before: 0.29 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 10 (weight: 46.0, wall: 30.29 &mu;s, span: 26.08 &mu;s, sol: 3.72 &mu;s)<br><i>batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='797.5356180207933' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[10.0] _attn_kernel
+Start: 0.00 μs
+Dur: 17.26 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='904.335772044667' y='25' width='375.66422795533316' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[10.1] _reduce_kernel
+Start: 17.84 μs
+Dur: 8.13 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 4 (weight: 46.0, wall: 21.47 &mu;s, span: 17.04 &mu;s, sol: 3.29 &mu;s)<br><i>batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='945.3692848769051' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[4.0] _attn_kernel
+Start: 0.00 μs
+Dur: 13.44 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1070.3868698710435' y='25' width='209.61313012895664' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[4.1] _reduce_kernel
+Start: 14.08 μs
+Dur: 2.98 μs
+Gap before: 0.61 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 7 (weight: 16.0, wall: 24.82 &mu;s, span: 20.9 &mu;s, sol: 4.28 &mu;s)<br><i>batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='964.2549113560135' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[7.0] _full_kernel
+Start: 0.00 μs
+Dur: 16.77 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1060.9295639674174' y='25' width='219.07043603258268' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[7.1] _reduce_kernel
+Start: 17.06 μs
+Dur: 3.81 μs
+Gap before: 0.29 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 1 (weight: 16.0, wall: 19.23 &mu;s, span: 15.17 &mu;s, sol: 4.27 &mu;s)<br><i>batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='925.5108767303888' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[1.0] _full_cat_kernel
+Start: 0.00 μs
+Dur: 11.70 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1026.8688200395518' y='25' width='253.1311799604482' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[1.1] _reduce_kernel
+Start: 11.97 μs
+Dur: 3.20 μs
+Gap before: 0.29 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 9 (weight: 16.0, wall: 192.5 &mu;s, span: 188.24 &mu;s, sol: 63.39 &mu;s)<br><i>batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1155.5083395304366' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[9.0] _full_kernel
+Start: 0.00 μs
+Dur: 181.28 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1239.2053542972485' y='25' width='40.79464570275152' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[9.1] _reduce_kernel
+Start: 181.86 μs
+Dur: 6.40 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 11 (weight: 16.0, wall: 369.87 &mu;s, span: 365.14 &mu;s, sol: 126.78 &mu;s)<br><i>batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1167.911449628757' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[11.0] _full_kernel
+Start: 0.00 μs
+Dur: 355.23 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1249.9169840269597' y='25' width='30.08301597304036' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[11.1] _reduce_kernel
+Start: 355.84 μs
+Dur: 9.15 μs
+Gap before: 0.61 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 3 (weight: 16.0, wall: 108.38 &mu;s, span: 104.18 &mu;s, sol: 63.18 &mu;s)<br><i>batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1152.1105141980047' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[3.0] _full_cat_kernel
+Start: 0.00 μs
+Dur: 100.08 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1238.787413660783' y='25' width='41.2125863392172' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[3.1] _reduce_kernel
+Start: 100.66 μs
+Dur: 3.58 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 5 (weight: 16.0, wall: 195.42 &mu;s, span: 191.38 &mu;s, sol: 126.35 &mu;s)<br><i>batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1173.2162458836442' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[5.0] _full_cat_kernel
+Start: 0.00 μs
+Dur: 187.04 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1257.544299827505' y='25' width='22.455700172494904' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[5.1] _reduce_kernel
+Start: 187.73 μs
+Dur: 3.58 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+</body></html>

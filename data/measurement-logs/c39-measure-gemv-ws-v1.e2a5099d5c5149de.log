@@ -1,0 +1,239 @@
+tmp/muse_bf16_proj-wykhl4s3/sandbox/tmp/tmpxft_00000084_00000000-3_cuda.fatbin
+#$ gcc -std=c++20 -D__CUDA_ARCH__=900 -D__CUDA_ARCH_LIST__=900 -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -fPIC -O3 -Wno-psabi "-I/usr/local/cuda/bin/../targets/x86_64-linux/include"   -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include" -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include" -isystem "/usr/local/cuda/include" -isystem "/usr/include/python3.12" "-isystem" "/usr/local/cuda/bin/../targets/x86_64-linux/include/cccl"   -m64 "/tmp/muse_bf16_proj-wykhl4s3/sandbox/tmp/tmpxft_00000084_00000000-6_cuda.cudafe1.cpp" -o "cuda.cuda.o" 
+[3/3] ccache c++ main.o cuda.cuda.o -shared -L/opt/sglang/lib/python3.12/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda/lib64 -lcudart -o okc_gw_76e1703d5919.so
+MEAS-GW attributes:
+w16_gemv<1,1,8,1,0> regs=66 local=0 static=16 maxDynamic=232432
+w16_gemv<1,1,16,1,0> regs=98 local=0 static=16 maxDynamic=232432
+w16_gemv<1,2,16,1,0> regs=110 local=0 static=16 maxDynamic=232432
+w16_gemv<1,1,16,0,0> regs=106 local=0 static=16 maxDynamic=232432
+w16_gemv<2,1,16,1,0> regs=124 local=0 static=16 maxDynamic=232432
+w16_gemv<2,1,16,0,0> regs=140 local=0 static=16 maxDynamic=232432
+w16_gemv<2,2,16,0,0> regs=128 local=0 static=16 maxDynamic=232432
+w16_gemv<1,1,16,1,1> regs=98 local=0 static=16 maxDynamic=232432
+w16_gemv<1,2,16,1,1> regs=114 local=0 static=16 maxDynamic=232432
+w16_gemv<2,1,16,0,1> regs=132 local=0 static=16 maxDynamic=232432
+MEAS-GW start t=42s replay_ovh=4.96us
+MEAS-GW p qkv_gate.1 43s
+MEAS-GW p o.1 43s
+MEAS-GW p pooler.1 44s
+MEAS-GW p unpooler.1 44s
+MEAS-GW p router.1 44s
+MEAS-GW p qkv_gate.8 44s
+MEAS-GW p o.8 45s
+MEAS-GW p pooler.8 45s
+MEAS-GW p unpooler.8 45s
+MEAS-GW p router.8 45s
+MEAS-GW p qkv_gate.16 46s
+MEAS-GW p o.16 46s
+MEAS-GW p pooler.16 46s
+MEAS-GW p unpooler.16 46s
+MEAS-GW p router.16 47s
+MEAS-GW p qkv_gate.32 47s
+MEAS-GW p o.32 47s
+MEAS-GW p pooler.32 47s
+MEAS-GW p unpooler.32 48s
+MEAS-GW p router.32 48s
+S gemv ws v1: NVIDIA_H200 torch=2.14.1+cu130 inst=10 build=42s replay_ovh=4.96us seeds=3x5 flush=128MB t=48s
+S us = graph replay minus replay_ovh (median of seeds of medians); cu = torch.matmul (router: the baseline path); board = director_v2's _PLAN cell; ws = the best correct WS variant (name ws.<MT><RPW><U><XS>.w<warps>.s<split>); TB/s on unique bytes (W + x + out); err = relative L2 vs FP64 (tol 1e-2, router 1e-4)
+S qkv_gate m=1  cu=13.06 board=13.41 ws=18.53 ws.1181.w2.s4 x_board=0.72 x_cu=0.70 TB/s(cu/board/ws)=2.89/2.82/2.04 err=1.6e-04 OK bad=0
+S qkv_gate m=8  cu=13.54 board=14.59 ws=25.18 ws.1181.w4.s4 x_board=0.57 x_cu=0.54 TB/s(cu/board/ws)=2.80/2.60/1.51 err=1.3e-04 OK bad=0
+S qkv_gate m=16 cu=13.38 board=13.79 ws=29.38 ws.1181.w8.s4 x_board=0.47 x_cu=0.46 TB/s(cu/board/ws)=2.85/2.76/1.30 err=1.2e-04 OK bad=0
+S qkv_gate m=32 cu=13.57 board=14.21 ws=42.14 ws.21160.w4.s4 x_board=0.34 x_cu=0.32 TB/s(cu/board/ws)=2.83/2.70/0.91 err=1.2e-04 OK bad=0
+S o        m=1  cu=6.08 board=5.70 ws=7.97 ws.1181.w2.s1 x_board=0.71 x_cu=0.76 TB/s(cu/board/ws)=2.76/2.95/2.11 err=1.2e-04 OK bad=0
+S o        m=8  cu=5.76 board=5.89 ws=9.09 ws.1181.w8.s1 x_board=0.65 x_cu=0.63 TB/s(cu/board/ws)=2.94/2.87/1.86 err=8.8e-05 OK bad=0
+S o        m=16 cu=5.95 board=5.95 ws=9.89 ws.12161.w8.s4 x_board=0.60 x_cu=0.60 TB/s(cu/board/ws)=2.87/2.87/1.73 err=4.2e-05 OK bad=0
+S o        m=32 cu=6.11 board=6.21 ws=13.31 ws.21161.w8.s2 x_board=0.47 x_cu=0.46 TB/s(cu/board/ws)=2.84/2.80/1.30 err=4.0e-05 OK bad=0
+S pooler   m=1  cu=20.22 board=18.14 ws=26.46 ws.1181.w8.s4 x_board=0.68 x_cu=0.76 TB/s(cu/board/ws)=3.32/3.70/2.54 err=2.7e-04 OK bad=0
+S pooler   m=8  cu=20.42 board=18.72 ws=28.80 ws.1181.w8.s4 x_board=0.65 x_cu=0.71 TB/s(cu/board/ws)=3.30/3.60/2.34 err=1.6e-04 OK bad=0
+S pooler   m=16 cu=20.77 board=18.14 ws=32.48 ws.1181.w8.s4 x_board=0.56 x_cu=0.64 TB/s(cu/board/ws)=3.25/3.72/2.08 err=1.3e-04 OK bad=0
+S pooler   m=32 cu=21.47 board=18.98 ws=59.81 ws.21161.w8.s4 x_board=0.32 x_cu=0.36 TB/s(cu/board/ws)=3.16/3.58/1.14 err=1.2e-04 OK bad=0
+S unpooler m=1  cu=6.59 board=5.02 ws=6.85 ws.1181.w2.s4 x_board=0.73 x_cu=0.96 TB/s(cu/board/ws)=1.27/1.67/1.23 err=8.0e-06 OK bad=0
+S unpooler m=8  cu=6.85 board=5.18 ws=9.86 ws.11161.w4.s4 x_board=0.53 x_cu=0.69 TB/s(cu/board/ws)=1.24/1.63/0.86 err=5.1e-05 OK bad=0
+S unpooler m=16 cu=16.51 board=16.99 ws=30.59 ws.12161.w8.s4 x_board=0.56 x_cu=0.54 TB/s(cu/board/ws)=4.09/3.97/2.21 err=9.2e-05 OK bad=0
+S unpooler m=32 cu=17.15 board=17.76 ws=44.13 ws.22160.w4.s4 x_board=0.40 x_cu=0.39 TB/s(cu/board/ws)=3.96/3.82/1.54 err=8.2e-05 OK bad=0
+S router   m=1  cu=10.46 board=5.95 ws=13.95 ws.11161.w2.s4 x_board=0.42 x_cu=0.75 TB/s(cu/board/ws)=0.80/1.41/0.60 err=5.5e-06 OK bad=0
+S router   m=8  cu=26.50 board=5.92 ws=21.73 ws.11161.w4.s4 x_board=0.27 x_cu=1.22 TB/s(cu/board/ws)=0.32/1.44/0.39 err=5.2e-06 OK bad=0
+S router   m=16 cu=15.84 board=6.14 ws=29.28 ws.11161.w4.s4 x_board=0.21 x_cu=0.54 TB/s(cu/board/ws)=0.55/1.41/0.30 err=5.2e-06 OK bad=0
+S router   m=32 cu=16.03 board=7.07 ws=42.53 ws.21160.w1.s4 x_board=0.17 x_cu=0.38 TB/s(cu/board/ws)=0.56/1.26/0.21 err=5.2e-06 OK bad=0
+D gemv ws: beats the board by >= 5% on 0 of 20 cells: none | 0 WS variants outside the correctness bound (BAD in the B lines)
+B gemv qkv_gate m=1 | board us=13.41 x=1.00
+B gemv qkv_gate m=1 | cublas us=13.06 x=1.03
+B gemv qkv_gate m=1 | ws.1181.w2.s4 us=18.53 x=0.72
+B gemv qkv_gate m=1 | ws.1181.w1.s4 us=18.85 x=0.71
+B gemv qkv_gate m=1 | ws.11161.w2.s4 us=18.88 x=0.71
+B gemv qkv_gate m=1 | ws.11161.w1.s4 us=18.91 x=0.71
+B gemv qkv_gate m=8 | board us=14.59 x=1.00
+B gemv qkv_gate m=8 | cublas us=13.54 x=1.07
+B gemv qkv_gate m=8 | ws.1181.w4.s4 us=25.18 x=0.57
+B gemv qkv_gate m=8 | ws.11161.w4.s4 us=25.44 x=0.57
+B gemv qkv_gate m=8 | ws.1181.w8.s4 us=25.89 x=0.56
+B gemv qkv_gate m=8 | ws.11161.w8.s4 us=26.98 x=0.54
+B gemv qkv_gate m=16 | board us=13.79 x=1.00
+B gemv qkv_gate m=16 | cublas us=13.38 x=1.03
+B gemv qkv_gate m=16 | ws.1181.w8.s4 us=29.38 x=0.47
+B gemv qkv_gate m=16 | ws.11161.w8.s4 us=29.57 x=0.47
+B gemv qkv_gate m=16 | ws.11161.w4.s4 us=32.06 x=0.43
+B gemv qkv_gate m=16 | ws.12161.w8.s4 us=32.35 x=0.43
+B gemv qkv_gate m=32 | board us=14.21 x=1.00
+B gemv qkv_gate m=32 | cublas us=13.57 x=1.05
+B gemv qkv_gate m=32 | ws.21160.w4.s4 us=42.14 x=0.34
+B gemv qkv_gate m=32 | ws.21160.w1.s4 us=42.18 x=0.33
+B gemv qkv_gate m=32 | ws.21160.w2.s4 us=42.59 x=0.33
+B gemv qkv_gate m=32 | ws.21161.w8.s4 us=51.58 x=0.28
+B gemv o m=1 | board us=5.70 x=1.00
+B gemv o m=1 | cublas us=6.08 x=0.92
+B gemv o m=1 | ws.1181.w2.s1 us=7.97 x=0.71
+B gemv o m=1 | ws.1181.w4.s1 us=8.03 x=0.71
+B gemv o m=1 | ws.11161.w4.s1 us=8.22 x=0.69
+B gemv o m=1 | ws.11161.w2.s1 us=8.26 x=0.69
+B gemv o m=8 | board us=5.89 x=1.00
+B gemv o m=8 | cublas us=5.76 x=0.98
+B gemv o m=8 | ws.1181.w8.s1 us=9.09 x=0.65
+B gemv o m=8 | ws.11161.w8.s1 us=9.38 x=0.63
+B gemv o m=8 | ws.12161.w8.s4 us=9.60 x=0.61
+B gemv o m=8 | ws.1181.w8.s2 us=9.70 x=0.60
+B gemv o m=16 | board us=5.95 x=1.00
+B gemv o m=16 | cublas us=5.95 x=0.99
+B gemv o m=16 | ws.12161.w8.s4 us=9.89 x=0.60
+B gemv o m=16 | ws.12161.w4.s4 us=10.27 x=0.58
+B gemv o m=16 | ws.1181.w8.s2 us=10.37 x=0.57
+B gemv o m=16 | ws.11161.w8.s2 us=10.43 x=0.57
+B gemv o m=32 | board us=6.21 x=1.00
+B gemv o m=32 | cublas us=6.11 x=1.02
+B gemv o m=32 | ws.21161.w8.s2 us=13.31 x=0.47
+B gemv o m=32 | ws.22160.w4.s4 us=14.88 x=0.42
+B gemv o m=32 | ws.22160.w2.s4 us=15.49 x=0.40
+B gemv o m=32 | ws.22160.w8.s4 us=15.49 x=0.40
+B gemv pooler m=1 | board us=18.14 x=1.00
+B gemv pooler m=1 | cublas us=20.22 x=0.89
+B gemv pooler m=1 | ws.1181.w8.s4 us=26.46 x=0.68
+B gemv pooler m=1 | ws.1181.w4.s4 us=26.53 x=0.68
+B gemv pooler m=1 | ws.1181.w2.s4 us=26.88 x=0.67
+B gemv pooler m=1 | ws.11161.w4.s4 us=27.71 x=0.65
+B gemv pooler m=8 | board us=18.72 x=1.00
+B gemv pooler m=8 | cublas us=20.42 x=0.92
+B gemv pooler m=8 | ws.1181.w8.s4 us=28.80 x=0.65
+B gemv pooler m=8 | ws.11161.w8.s4 us=30.08 x=0.62
+B gemv pooler m=8 | ws.1181.w4.s4 us=32.35 x=0.58
+B gemv pooler m=8 | ws.11161.w4.s4 us=32.54 x=0.58
+B gemv pooler m=16 | board us=18.14 x=1.00
+B gemv pooler m=16 | cublas us=20.77 x=0.88
+B gemv pooler m=16 | ws.1181.w8.s4 us=32.48 x=0.56
+B gemv pooler m=16 | ws.11161.w8.s4 us=33.18 x=0.54
+B gemv pooler m=16 | ws.12161.w8.s4 us=35.20 x=0.51
+B gemv pooler m=16 | ws.1181.w8.s2 us=40.51 x=0.45
+B gemv pooler m=32 | board us=18.98 x=1.00
+B gemv pooler m=32 | cublas us=21.47 x=0.88
+B gemv pooler m=32 | ws.21161.w8.s4 us=59.81 x=0.32
+B gemv pooler m=32 | ws.21160.w2.s4 us=66.75 x=0.28
+B gemv pooler m=32 | ws.22160.w2.s4 us=67.78 x=0.28
+B gemv pooler m=32 | ws.22160.w1.s4 us=68.32 x=0.28
+B gemv unpooler m=1 | board us=5.02 x=1.00
+B gemv unpooler m=1 | cublas us=6.59 x=0.76
+B gemv unpooler m=1 | ws.1181.w2.s4 us=6.85 x=0.73
+B gemv unpooler m=1 | ws.1181.w4.s4 us=6.88 x=0.73
+B gemv unpooler m=1 | ws.11161.w4.s4 us=6.98 x=0.72
+B gemv unpooler m=1 | ws.11161.w2.s4 us=7.01 x=0.72
+B gemv unpooler m=8 | board us=5.18 x=1.00
+B gemv unpooler m=8 | cublas us=6.85 x=0.76
+B gemv unpooler m=8 | ws.11161.w4.s4 us=9.86 x=0.53
+B gemv unpooler m=8 | ws.1181.w8.s4 us=9.89 x=0.52
+B gemv unpooler m=8 | ws.1181.w4.s4 us=10.02 x=0.52
+B gemv unpooler m=8 | ws.11161.w8.s4 us=10.24 x=0.50
+B gemv unpooler m=16 | board us=16.99 x=1.00
+B gemv unpooler m=16 | cublas us=16.51 x=1.03
+B gemv unpooler m=16 | ws.12161.w8.s4 us=30.59 x=0.56
+B gemv unpooler m=16 | ws.1181.w8.s2 us=32.42 x=0.53
+B gemv unpooler m=16 | ws.12161.w4.s4 us=33.22 x=0.51
+B gemv unpooler m=16 | ws.11161.w8.s2 us=33.70 x=0.50
+B gemv unpooler m=32 | board us=17.76 x=1.00
+B gemv unpooler m=32 | cublas us=17.15 x=1.03
+B gemv unpooler m=32 | ws.22160.w4.s4 us=44.13 x=0.40
+B gemv unpooler m=32 | ws.21161.w8.s4 us=44.93 x=0.40
+B gemv unpooler m=32 | ws.22160.w2.s4 us=45.66 x=0.40
+B gemv unpooler m=32 | ws.22160.w8.s4 us=46.05 x=0.39
+B gemv router m=1 | board us=5.95 x=1.00
+B gemv router m=1 | cublas us=10.46 x=0.57
+B gemv router m=1 | ws.11161.w2.s4 us=13.95 x=0.42
+B gemv router m=1 | ws.11161.w1.s4 us=15.36 x=0.39
+B gemv router m=1 | ws.11161.w4.s4 us=15.36 x=0.39
+B gemv router m=1 | ws.12161.w2.s4 us=20.29 x=0.30
+B gemv router m=8 | board us=5.92 x=1.00
+B gemv router m=8 | cublas us=26.50 x=0.22
+B gemv router m=8 | ws.11161.w4.s4 us=21.73 x=0.27
+B gemv router m=8 | ws.11161.w2.s4 us=25.41 x=0.23
+B gemv router m=8 | ws.11161.w8.s4 us=26.72 x=0.22
+B gemv router m=8 | ws.12161.w4.s4 us=31.46 x=0.19
+B gemv router m=16 | board us=6.14 x=1.00
+B gemv router m=16 | cublas us=15.84 x=0.39
+B gemv router m=16 | ws.11161.w4.s4 us=29.28 x=0.21
+B gemv router m=16 | ws.11161.w8.s4 us=30.21 x=0.20
+B gemv router m=16 | ws.12161.w4.s4 us=38.98 x=0.16
+B gemv router m=16 | ws.11161.w2.s4 us=40.70 x=0.15
+B gemv router m=32 | board us=7.07 x=1.00
+B gemv router m=32 | cublas us=16.03 x=0.44
+B gemv router m=32 | ws.21160.w1.s4 us=42.53 x=0.17
+B gemv router m=32 | ws.21160.w2.s4 us=45.34 x=0.16
+B gemv router m=32 | ws.21160.w4.s4 us=50.18 x=0.14
+B gemv router m=32 | ws.21160.w8.s4 us=58.37 x=0.12
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:55:09 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+

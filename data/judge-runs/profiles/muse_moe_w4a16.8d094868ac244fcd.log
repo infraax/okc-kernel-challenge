@@ -1,0 +1,43 @@
+okc-diag HAVE_SGLANG=True
+MEAS-MOE start gpu=NVIDIA H200 triton=3.8.0 torch=2.14.1+cu130 budget=200s screen=31 finals=151
+CFGSIG n=1572 crc=f3042344 shapes=6
+R moe m=1 pairs=3 local=1 distinct=3
+R moe m=8 pairs=16 local=8 distinct=4
+R moe m=16 pairs=30 local=16 distinct=3
+R moe m=32 pairs=66 local=32 distinct=3
+R moe m=128 pairs=375 local=128 distinct=3
+R moe m=256 pairs=713 local=256 distinct=4
+MEAS-MOE phase setup t=2s timed=0 unrun=1572
+MEAS-MOE phase dev0 t=2s timed=6 unrun=1566
+MEAS-MOE phase dev1 t=14s timed=156 unrun=1416
+MEAS-MOE phase dev2 t=18s timed=510 unrun=1062
+MEAS-MOE phase dev3 t=25s timed=1152 unrun=420
+MEAS-MOE phase dev4 t=31s timed=1512 unrun=60
+MEAS-MOE phase dev5 t=31s timed=1512 unrun=60
+MEAS-MOE phase finals t=33s timed=1512 unrun=60
+MEAS-MOE phase a4 t=38s timed=1572 unrun=0
+T64 moe.m1 GhhTGDoYbRiaFxAX8xf2Fo0WGhgzF00XZhmzGYMZsxnwGPMXUxk6GMMXahm6GKYY/RhgGUAZShmdGNAXAxkNGFAXUxlAGGAYFhmaGXMZsBngGCoYJhktGKMXcBldGGMYIBiWGHoY3RjjFyoXTRhDF9YWUxhqF6AX5hidGXYZ9hmzGLMXUxnzF3MXDRkDGBMYQBq9GpoaMxsGGuYYjRodGYoYNhpzGY0ZBhqNGhMa1hqQGa0YGhrqGCoYExoaGVYZMxrjGmoaFhv6GRMZUxodGZYYKhpDGWMZUBnWGYoZWhrzGNAXuhk9GJYXNhl2GFMYrR1aHjAeXR/aHTMdwB7mHW0dIB7KHTMe6h7WH70fLSDKHi0eth8gH6YeWh/AHjofVh6NH00f+h+QHhoeYB/AHjAeOh+qHvYeth6tH0ofMyDDHlYe7R8DH4oeQx+THl0fDR7KHm0eUB/gHX0d3R4tHo0dcB7aHXYemiLmI4MkpiUmI2AiZiQQJL0ikyPGIrYj1iP6JLoltiZaJE0j0yVQJf0jwyStI8AkfSOgJHAloCbwI/0ifSX6JKYjZiRtI2oknSPtJK0lzSYzJA0joyXmJIojkCSmI7Ak2iIKJJYkAyaDI7MiliRgJAAjyiPaIrMjIydqKcApmivDJxon3SmaKb0nYCgtJ2AoYyhmKh0rsyxNKQ0o6iowKoMotilzKFApEygqKs0qUyzTKH0n5irjKVYoZikjKGopTShWKu0qoCzmKNonHStTKpModik6KHoppie6KUYq2it9KJYnJirKKeMntiiWJ80oYCKtHaoZJhuzHA0ZjRnDGQYYcxmjFxAX
+T64 moe.m8 lh0jHgMeqh66HSod/R0tHRodSh6QHToeAx7AHooeIB8THn0d0x7WHa0dth4jHgofcB3dHaMdTR5THdMcFh5qHa0cBh5KHQMerR0wHhYewB6KHTAdoB56HUAd7R1WHWAejR4NH9AekB9WHr0dRh+WHtodvR56HuYeGh/QH30fDSANH5Yeeh/tHqYeWh/wHpAfhh4zH+0ekx9jHgoe8x5mHgAeEx+NHiMfsx6AHzAfbR/dHnoeSh/GHgoeZh+aHhMf3SMGJHYksCTQI0MjHSTDIxAjGiTdI2YkOiSQJKYkQyX9I4YjaiQjJF0jQCQwJI0kiiP9I/MjwyR9I/YiQCTaIwMjJiTDI4Mk0CMWJHokIyX9I2YjOiRDJFYjSiT2I40k5inAKrYr0CswKnMp0yrQKqMpYCqwKcoqWioNK7YrpiywKgYqZitQKxYqGisWKiYrtilQKhorAyzNKUMp0yq2KnopWirTKdAqCirNKoYrUyxdKqopFitKK9opyiotKhor4C+zMcAxYzIAMDov4zHdMIAvdjBzL4YwQDAKMvoxZjNgMKovszLtMUMwNjHgLzAx6i9AMa0xBjMTMO0uJjJqMYAvkDDALwMx8y/mMdMxVjOGMIAvvTLaMdov+jAGMC0xTSojI0ogvSCqIYAeGh8AH30dcB7mHIYc
+T64 moe.m16 tiGNIloi4CKgIXYhLSLQIWohliIdIpoiLSLKIoYi7SJAIs0hxiJDIuMhliJaIgAjsCBzIfAgzSGdIHAgViGzIHYgViEmIZ0hECG9IWohNiI2IQYh8CEtId0gpiGKIRoi8Bq2G1MbGhzQGsoZwBttGtAZVht2Gu0aNhuKHKAboBwwGzoaDRxqGgAa3RvmGiAbahpqG8Ya0BsjGhoZIBumGRoZKhvKGXMavRrzGzYb+hu2GuYZihsqGpAZQxsqGo0aOh9QINYfQyFdH+Me7SCAH0Mf2h+2H4Mgth8KIYAgACIKIG0fliFtIPAf0CBTIAohgx7gH1Mf3SAwH50ecyCTH80eth9aHxAgPR+tIFoghiHWHzYfGiEWIFAfYCD9H5AgHSTtJdoltieAJA0kZibgJX0kSiXaJNMlpiRQJmomECjzJGYkGicwJiAlxiUTJTYmtiONJbAlPSddJM0jYCaAJTMkLSV2JIolfSQNJlomLShKJVAktibKJeMkyiXNJAYm2igGK0ArVi1wKcAo6itgK2MpMCqdKdAqSimjK80rti3wKSYp/SuGK50pgCqzKfoqrSjtKvMqNi0jKZMoUyvGKiYp7Sn9KEoqEylQK4ArzS3aKQYpFiwgK3YpUCpzKa0qpi/9JgokzSQjJaAi9iJAI90h0CIzIRMh
+T64 moe.m32 wDQGNc00FjVaNDM0tjSNND00QzUDNf01YzVgNY01FjYdNQ010zX2NZ01GjbDNUM32jLDMuYyZjOaMooyIzNgM8AyqjNTM1M0wDMDNDA0qjTTM50zXTQ9NL0zyjQ9NIY1XSK9I4AjUyTNIoAizSNAI4YizSPjIhMkoCNqJKokjSX6I1ojAyVDJGojgCQTJB0leiGgIsYiqiPQIT0h3SIqIqoh0yIwIkoj4yKtI70jjSTqImoi8CNjI7MiDSRTI3AkWh9WIdMgFiOwH3YfwyH9IMYfSiA2IEoh4B8zIpohUCSAIE0gvSITInAgdiGaIB0imh4NITogDSM6H9YeaiFwIB0f9h+WH70gTR/zIS0hCiT2H6ofhiJ2IQAg9iA9IOMh8yN6JmMl7SedJAYkOiewJcokYCX6JGAmqiQmJ6YmNimWJfAkMCiwJpolUyadJUAnRiMWJlYlFihTJJojGidTJXokViWQJAMmdiQAJzYm5igaJZok4yc9JqolJiZjJSonqiiAK9Mq3S2NKb0oXSyKK9opTSqTKaMrfSldLA0soC6zKiAq3S1ALNMqcCu6KnosZiggK90qgy2GKXYoLSytKnMpQCpqKS0rTSljLB0sfS5QKqApJi3TK6oqVitgKhMsxijtJaMm+iY2JN0k5iSAI2YjoCTTIsYi
+T64 moe.m128 MMl9xyrHRsfqxpbGQMc9x4DHqskGydDLU8fKx83HWsd2x6DH7cZDx43H/cnNyL3LFsFdwZrB1sG6wCDBXcHDwEDAtsOQwjPEcMEgwTbBBsHWwKrAvcBwwEbAhsOWwnrEE3RQdN1z03R6czpzhnTadPZzRnbgdA14AHMWdFZ0zXStc31zIHRtdO1zQ3YwdSZ49m/GcLZwrXFWcEZwPXHmcHNwEHOqceZ0DXD9cK1wtnEzcBNw9nATcWpwAHPAcQZ15lMtVS1VrVYNVCpUQ1WtVTpU01a9VXpYRlOdVNNUpla6U4BUnVUKVspTGlfwVfpXplFtU+BTfVXNUr1SmlLgUuZSVlWwUyBXcFEtU2NT3VQwUjBSClRAVLpSvVSNUwBXMFFmU3BUplVdUuZRAFTmVDZTDVWjU51X81B2U0BUs1WwUpNSvVMDVd1SbVUAVG1X7U9QUlpTulQtUcpQ81KtU91R3VNqUiBWsE+GUdZSs1QAUQ1RvVKQUxpSwFTTUiZWNkY2SrNKUE6tSOpHMEzWS/ZJtkvaSI1Os0UQSnNKAE6WSJpH/UujS4BJ4EsKSRBOIEU9SYBJfU29RyBHRksjS01Jo0rQR0ZN+kRNSZNJxk1gR2ZGfUvNStBIPUrDR9NM7VY2VI1UYFXKUipTg1P2UQNSilNwUTNR
+T64 moe.m256 /f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3/CtZD17bXQNgw19PW2tfD13rXA9yT2dPd1tYN1+PWANgW1vbWrdeN1z3Xyts92ZDejc9t0DDQ+tC6z6rPttAq0CrQLdWW0aDXOs9dz3bPKtDGzrrOnc+WzzPPs9Ta0ZbXQJjdmUCa4JzGmN2YOpsTm3qag51Am02hZpijmqqa05qTmcqZOprDm1CaU56gm0Ohw5S9lvaWcJdzleqVDZZal9OVgJqTl4CdtpTtlqCWc5iQlVaV8JZWlxOWg5qdlzadrYp9jXON6pB2i52L8479jv2MbZDgjYqTs4qTjfqNYJBmi1OLyo6ajqaMQJDajd2TzYjQiiCLU44diQ2Jc4ywi52JDY49i+qQqojGigCLio0aiSOJSouGi7qJs40ti7OQDXzNfnOAioN9fRZ9g4AtgX1+PYJwfsqFI3tKf5aApoJqfZp8AIANgdN9bYLjfv2E3XnWfP19LYEae6N6MH4Wf+17BoD9fD2D9nkQfVZ+A4Eme5N6MH7gfo18bYAjffqD0IAmftCAAH9gfSN+E31dfG18oH2te6N7
+MEAS-MOE done in 37.8s
+K moe m=1 bm 8:57.7 16:60.0 32:74.8 48:88.0 64:100.1 | al a0:57.7 a4:58.5 a2:59.7 a3:60.5 a1:60.8 | r1 t:57.7 n:58.8 f:59.0 z:59.6 | r2 t:57.7 f:59.0 z:59.4 n:61.3 | ep t1024w8:57.7 t2048w8:59.0 t2048w4:60.5 t1024w4:61.5
+K moe m=8 bm 8:73.0 16:76.1 32:89.5 48:105.6 64:120.1 | al a0:73.0 a2:73.4 a3:74.7 a1:75.5 | r1 f:73.0 t:73.4 n:74.7 z:76.6 | r2 f:73.0 t:73.4 z:75.0 n:76.4 | ep t2048w8:73.0 t1024w8:73.4 t2048w4:74.0 t1024w4:75.5
+K moe m=16 bm 16:64.3 32:78.1 8:83.0 48:91.4 64:103.9 | al a2:64.3 a3:65.4 a0:66.0 a1:66.6 | r1 f:64.3 t:64.3 n:65.7 z:67.7 | r2 t:64.3 z:66.0 f:66.9 n:69.4 | ep t1024w8:64.3 t2048w8:84.7 t2048w4:85.0 t1024w4:86.7
+K moe m=32 bm 32:78.3 16:85.1 48:90.3 64:103.4 8:129.4 | al a2:78.3 a3:80.1 a0:80.3 a1:81.6 | r1 f:78.3 t:79.6 z:81.8 n:82.5 | r2 f:78.3 t:78.9 z:80.9 n:84.6 | ep sg:78.3 t2048w8:89.0 t2048w4:89.2 t1024w8:90.6
+K moe m=128 bm 64:176.6 48:204.0 32:208.5 16:286.6 8:492.2 | al a3:176.6 a2:177.0 a1:178.4 a0:179.7 | r1 f:176.6 t:182.7 n:188.2 z:190.0 | r2 f:176.6 t:180.2 z:183.7 n:187.5 | ep sg:176.6 t2048w8:207.9 t2048w4:208.5 t1024w4:209.8
+K moe m=256 bm 64:312.0 48:349.9 32:380.7 16:529.2 8:923.8 | al a2:312.0 a3:312.2 a1:315.2 a0:316.5 | r1 f:312.0 t:315.1 n:322.5 z:327.7 | r2 f:312.0 t:313.8 n:319.6 z:320.0 | ep sg:312.0 t2048w8:316.5 t2048w4:316.6 t1024w4:318.4
+S moe m=1 align=6.08 w13=30.69 act=6.34 w2=23.04 epi=10.50 ids=5.63 nop=5.44 sum=82.27
+S moe m=8 align=8.16 w13=39.17 act=6.56 w2=26.98 epi=10.72 ids=5.63 nop=5.63 sum=97.22
+S moe m=16 align=9.18 w13=46.34 act=6.69 w2=30.14 epi=10.75 ids=5.60 nop=5.54 sum=108.70
+S moe m=32 align=9.41 w13=48.22 act=6.94 w2=31.71 epi=8.77 ids=5.76 nop=5.57 sum=110.82
+S moe m=128 align=9.82 w13=127.10 act=8.83 w2=71.33 epi=9.25 ids=5.86 nop=5.44 sum=232.19
+S moe m=256 align=10.91 w13=192.70 act=10.85 w2=107.94 epi=10.37 ids=5.66 nop=5.54 sum=338.43
+B moe m=1 base=61.63 | top-5 b8.a0.rtt.t1024w8:57.73 b8.a4.rtt.t1024w8:58.46 b8.a0.rnt.t1024w8:58.78 b8.a0.rff.t2048w8:59.04 b8.a0.rft.t1024w8:59.04 | ok=312 fail=0 bad=0
+B moe m=8 base=75.39 | top-5 b8.a0.rff.t2048w8:73.02 b8.a2.rtt.t1024w8:73.41 b8.a2.rft.t1024w8:73.79 b8.a0.rff.t2048w4:73.98 b8.a3.rft.t1024w8:74.72 | ok=252 fail=0 bad=0
+B moe m=16 base=86.40 | top-5 b16.a2.rft.t1024w8:64.26 b16.a2.rtt.t1024w8:64.26 b16.a3.rtt.t1024w8:65.44 b16.a2.rnt.t1024w8:65.66 b16.a0.rtt.t1024w8:66.08 | ok=252 fail=0 bad=0
+B moe m=32 base=88.03 | top-5 b32.a2.rff.sg:78.34 b32.a2.rft.sg:78.94 b32.a2.rtt.sg:79.65 b32.a2.rtf.sg:79.94 b32.a0.rff.sg:80.26 | ok=252 fail=0 bad=0
+B moe m=128 base=208.45 | top-5 b64.a3.rff.sg:176.58 b64.a2.rff.sg:176.96 b64.a1.rff.sg:178.43 b64.a0.rff.sg:179.74 b64.a3.rft.sg:180.22 | ok=252 fail=0 bad=0
+B moe m=256 base=316.54 | top-5 b64.a2.rff.sg:311.97 b64.a3.rff.sg:312.22 b64.a3.rft.sg:313.79 b64.a2.rft.sg:313.95 b64.a3.rtf.sg:315.26 | ok=252 fail=0 bad=0

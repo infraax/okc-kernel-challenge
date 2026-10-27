@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<style>
+body { font-family: sans-serif; margin: 20px; background: #fafafa; }
+h1, h2, h3 { color: #333; }
+.shape { margin-bottom: 40px; background: white; padding: 10px; border: 1px solid #ccc; }
+.err { color: red; font-weight: bold; }
+.lane { font-size: 12px; fill: #666; }
+svg { border: 1px solid #eee; background: #fff; }
+</style>
+<title>Timeline: muse_bf16_proj</title>
+</head><body>
+<h1>Timeline: muse_bf16_proj</h1>
+<div class='shape'>
+<h3>Shape 18 (weight: 62.0, wall: 11.65 &mu;s, span: 7.15 &mu;s, sol: 1.76 &mu;s)<br><i>layer=unpooler,load=verify_1,m=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='827.4125874125874' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[18.0] nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 4.93 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='962.7972027972028' y='25' width='317.2027972027972' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[18.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 5.26 μs
+Dur: 1.89 μs
+Gap before: 0.32 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 9 (weight: 62.0, wall: 11.84 &mu;s, span: 7.52 &mu;s, sol: 1.81 &mu;s)<br><i>layer=router,load=decode_16,m=16</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='102.2636484687084' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[9.0] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 0.00 μs
+Dur: 0.64 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='287.7230359520639' y='25' width='992.2769640479362' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[9.1] _gemv_splitk
+Start: 1.30 μs
+Dur: 6.21 μs
+Gap before: 0.61 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 24 (weight: 62.0, wall: 14.29 &mu;s, span: 10.06 &mu;s, sol: 2.21 &mu;s)<br><i>layer=router,load=verify_16,m=128</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='83.49900596421472' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[24.0] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 0.00 μs
+Dur: 0.70 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='232.68389662027835' y='25' width='1047.3161033797219' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[24.1] _gemv_splitk
+Start: 1.28 μs
+Dur: 8.78 μs
+Gap before: 0.58 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 4 (weight: 62.0, wall: 11.17 &mu;s, span: 6.91 &mu;s, sol: 1.75 &mu;s)<br><i>layer=router,load=decode_1,m=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='116.86046511627907' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[4.0] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 0.00 μs
+Dur: 0.67 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='320.6976744186046' y='25' width='959.3023255813953' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[4.1] _gemv_splitk
+Start: 1.38 μs
+Dur: 5.50 μs
+Gap before: 0.64 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 14 (weight: 62.0, wall: 11.63 &mu;s, span: 7.46 &mu;s, sol: 1.86 &mu;s)<br><i>layer=router,load=decode_32,m=32</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='108.35579514824798' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[14.0] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 0.00 μs
+Dur: 0.67 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='291.8598382749326' y='25' width='988.1401617250674' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[14.1] _gemv_splitk
+Start: 1.31 μs
+Dur: 6.11 μs
+Gap before: 0.61 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 29 (weight: 62.0, wall: 16.66 &mu;s, span: 12.35 &mu;s, sol: 2.68 &mu;s)<br><i>layer=router,load=verify_32,m=256</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='72.01946472019465' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[29.0] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 0.00 μs
+Dur: 0.74 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='210.41362530413627' y='25' width='1069.5863746958637' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[29.1] _gemv_splitk
+Start: 1.34 μs
+Dur: 10.99 μs
+Gap before: 0.61 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 3 (weight: 62.0, wall: 10.78 &mu;s, span: 6.78 &mu;s, sol: 1.75 &mu;s)<br><i>layer=unpooler,load=decode_1,m=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='876.4444444444443' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[3.0] nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 4.93 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='961.7777777777777' y='25' width='318.22222222222223' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[3.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 4.96 μs
+Dur: 1.79 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 19 (weight: 62.0, wall: 10.35 &mu;s, span: 6.38 &mu;s, sol: 1.78 &mu;s)<br><i>layer=router,load=verify_1,m=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='120.94488188976379' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[19.0] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 0.00 μs
+Dur: 0.64 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='255.748031496063' y='25' width='1024.251968503937' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[19.1] _gemv_splitk
+Start: 0.93 μs
+Dur: 5.42 μs
+Gap before: 0.29 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 11 (weight: 62.0, wall: 10.93 &mu;s, span: 6.8 &mu;s, sol: 3.62 &mu;s)<br><i>layer=o,load=decode_32,m=32</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[11.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 6.80 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 16 (weight: 62.0, wall: 10.48 &mu;s, span: 6.42 &mu;s, sol: 3.53 &mu;s)<br><i>layer=o,load=verify_1,m=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[16.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 6.42 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 6 (weight: 62.0, wall: 10.46 &mu;s, span: 6.4 &mu;s, sol: 3.56 &mu;s)<br><i>layer=o,load=decode_16,m=16</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[6.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 6.40 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 1 (weight: 62.0, wall: 10.13 &mu;s, span: 6.35 &mu;s, sol: 3.5 &mu;s)<br><i>layer=o,load=decode_1,m=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[1.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 6.35 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 26 (weight: 62.0, wall: 12.83 &mu;s, span: 8.75 &mu;s, sol: 4.48 &mu;s)<br><i>layer=o,load=verify_32,m=256</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[26.0] nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+Start: 0.00 μs
+Dur: 8.75 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 21 (weight: 62.0, wall: 10.74 &mu;s, span: 6.91 &mu;s, sol: 3.99 &mu;s)<br><i>layer=o,load=verify_16,m=128</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[21.0] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 0.00 μs
+Dur: 6.91 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 20 (weight: 62.0, wall: 20.93 &mu;s, span: 16.93 &mu;s, sol: 8.42 &mu;s)<br><i>layer=qkv_gate,load=verify_16,m=128</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='967.1005917159763' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[20.0] nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN
+Start: 0.00 μs
+Dur: 13.62 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1043.5502958579882' y='25' width='236.44970414201185' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[20.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 13.57 μs
+Dur: 3.33 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 15 (weight: 62.0, wall: 19.12 &mu;s, span: 14.78 &mu;s, sol: 7.9 &mu;s)<br><i>layer=qkv_gate,load=verify_1,m=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1007.8697421981004' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[15.0] nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 12.38 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1115.549525101764' y='25' width='164.45047489823608' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[15.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.72 μs
+Dur: 2.02 μs
+Gap before: 0.32 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 25 (weight: 62.0, wall: 23.12 &mu;s, span: 19.12 &mu;s, sol: 9.77 &mu;s)<br><i>layer=qkv_gate,load=verify_32,m=256</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[25.0] nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN
+Start: 0.00 μs
+Dur: 19.12 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 5 (weight: 62.0, wall: 18.74 &mu;s, span: 14.4 &mu;s, sol: 7.93 &mu;s)<br><i>layer=qkv_gate,load=decode_16,m=16</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='999.027102154274' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[5.0] nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.98 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1111.5496872828353' y='25' width='168.4503127171647' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[5.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.37 μs
+Dur: 2.02 μs
+Gap before: 0.35 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 10 (weight: 62.0, wall: 18.8 &mu;s, span: 14.37 &mu;s, sol: 8.0 &mu;s)<br><i>layer=qkv_gate,load=decode_32,m=32</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='995.6734124214934' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[10.0] nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.89 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1103.307745987439' y='25' width='176.69225401256102' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[10.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.22 μs
+Dur: 2.11 μs
+Gap before: 0.32 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 0 (weight: 62.0, wall: 17.57 &mu;s, span: 13.26 &mu;s, sol: 7.87 &mu;s)<br><i>layer=qkv_gate,load=decode_1,m=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1017.8247734138973' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.0] nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.23 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1100.5438066465258' y='25' width='179.45619335347433' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 11.26 μs
+Dur: 1.98 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 22 (weight: 62.0, wall: 28.21 &mu;s, span: 24.48 &mu;s, sol: 14.64 &mu;s)<br><i>layer=pooler,load=verify_16,m=128</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[22.0] nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT
+Start: 0.00 μs
+Dur: 24.48 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 27 (weight: 62.0, wall: 33.41 &mu;s, span: 29.26 &mu;s, sol: 17.37 &mu;s)<br><i>layer=pooler,load=verify_32,m=256</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[27.0] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 0.00 μs
+Dur: 29.26 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 12 (weight: 62.0, wall: 23.57 &mu;s, span: 19.46 &mu;s, sol: 14.14 &mu;s)<br><i>layer=pooler,load=decode_32,m=32</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[12.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 19.46 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 7 (weight: 62.0, wall: 22.88 &mu;s, span: 18.75 &mu;s, sol: 14.06 &mu;s)<br><i>layer=pooler,load=decode_16,m=16</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[7.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 18.75 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 28 (weight: 62.0, wall: 28.21 &mu;s, span: 24.11 &mu;s, sol: 17.37 &mu;s)<br><i>layer=unpooler,load=verify_32,m=256</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[28.0] nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+Start: 0.00 μs
+Dur: 24.11 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 17 (weight: 62.0, wall: 22.7 &mu;s, span: 18.69 &mu;s, sol: 14.02 &mu;s)<br><i>layer=pooler,load=verify_1,m=8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[17.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 18.69 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 2 (weight: 62.0, wall: 22.21 &mu;s, span: 18.53 &mu;s, sol: 13.99 &mu;s)<br><i>layer=pooler,load=decode_1,m=1</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[2.0] _gemv_splitk
+Start: 0.00 μs
+Dur: 18.53 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 23 (weight: 62.0, wall: 22.85 &mu;s, span: 18.79 &mu;s, sol: 14.64 &mu;s)<br><i>layer=unpooler,load=verify_16,m=128</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[23.0] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 0.00 μs
+Dur: 18.79 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 8 (weight: 62.0, wall: 21.78 &mu;s, span: 17.49 &mu;s, sol: 14.06 &mu;s)<br><i>layer=unpooler,load=decode_16,m=16</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[8.0] nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT
+Start: 0.00 μs
+Dur: 17.49 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 13 (weight: 62.0, wall: 21.86 &mu;s, span: 17.78 &mu;s, sol: 14.14 &mu;s)<br><i>layer=unpooler,load=decode_32,m=32</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='1200.0' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[13.0] nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT
+Start: 0.00 μs
+Dur: 17.78 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+</body></html>

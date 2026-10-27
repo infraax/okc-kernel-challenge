@@ -1,0 +1,299 @@
+okc-diag HAVE_SGLANG=True
+okc-diag smallm selfcheck () rel L2 vs Marlin: 6.795e-03
+okc-diag smallm active=True
+TV 1 muse_decode_layer sonnet_v4.py torch=2.14.1+cu130 cuda=13.0 gpu=NVIDIA_H200 cupti=graph replays=20
+TN 0 nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+TN 1 void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+TN 2 _attn_kernel
+TN 3 _reduce_kernel
+TN 4 nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT
+TN 5 void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, true, false, t
+TN 6 void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::arr
+TN 7 _gemv_splitk
+TN 8 void sglang::muse_spark::routing_kernel<sglang::muse_spark::RoutingTrait<8, 8, 0, 1>, true
+TN 9 void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float,
+TN 10 smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+TN 11 void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*, float const*, unsigned int cons
+TN 12 void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const*, float const*, unsigned int con
+TN 13 _epilogue_kernel
+TN 14 nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+TN 15 void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, 
+TN 16 Memcpy DtoD (Device -> Device)
+TN 17 void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, true, false, true, tr
+TN 18 nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT
+TN 19 nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT
+TN 20 void sglang::muse_spark_norm_residual_kernel<8192l, 256, true, true, false, false, false, 
+TN 21 void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const*, float const*, unsigned int con
+TN 22 nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT
+TN 23 nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT
+TN 24 _local_ids_kernel
+TN 25 void moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int, int, unsigned lon
+TN 26 void count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, unsigned long, bool)
+TN 27 void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 562949953487106l, 2814749767172868l
+TN 28 void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+TN 29 _post_expert_norm_weighted_sum_kernel
+TN 30 void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native:
+TN 31 nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN
+TN 32 nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+TN 33 nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT
+TN 34 nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN
+TN 35 nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+TN 36 void sglang::muse_spark_norm_residual_kernel<8192l, 512, true, false, false, false, false,
+TN 37 void sglang::muse_spark_norm_residual_kernel<8192l, 512, true, false, true, false, true, t
+TS 0 w=46 wall=129.63 span=125.28 n=20 label=batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1 rep=20/20
+TK 0.0 0 s=0.00 d=12.59 g=0.00
+TK 0.1 1 s=13.42 d=1.79 g=0.83
+TK 0.2 2 s=15.60 d=4.96 g=0.42
+TK 0.3 3 s=20.94 d=2.43 g=0.38
+TK 0.4 4 s=23.95 d=6.62 g=0.42
+TK 0.5 5 s=30.82 d=4.69 g=0.07
+TK 0.6 6 s=36.03 d=3.44 g=0.64 st=1 o=3.34
+TK 0.7 7 s=36.11 d=19.20 g=0.00 o=18.08
+TK 0.8 7 s=40.82 d=22.02 g=0.00 st=1 o=14.80
+TK 0.9 8 s=62.75 d=2.88 g=0.06 st=1
+TK 0.10 9 s=66.11 d=6.26 g=0.42
+TK 0.11 10 s=72.96 d=1.50 g=0.42
+TK 0.12 11 s=73.92 d=16.93 g=0.00
+TK 0.13 12 s=75.95 d=27.54 g=0.00
+TK 0.14 13 s=104.14 d=5.90 g=0.70
+TK 0.15 14 s=110.58 d=5.18 g=0.58
+TK 0.16 1 s=116.58 d=1.65 g=0.61
+TK 0.17 15 s=118.69 d=0.83 g=0.40
+TK 0.18 16 s=119.94 d=0.85 g=0.42
+TK 0.19 17 s=121.26 d=3.95 g=0.45
+TG 0 gaps=7.15 head=4.13 tail=3.98 busy=117.92
+TS 1 w=16 wall=151.52 span=147.30 n=20 label=batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1 rep=20/20
+TK 1.0 0 s=0.00 d=12.00 g=0.00
+TK 1.1 1 s=12.78 d=1.76 g=0.72
+TK 1.2 2 s=14.94 d=15.76 g=0.38
+TK 1.3 3 s=31.26 d=3.57 g=0.43
+TK 1.4 4 s=35.25 d=6.62 g=0.42
+TK 1.5 5 s=42.00 d=4.70 g=0.13
+TK 1.6 7 s=47.14 d=21.06 g=0.48 o=20.10
+TK 1.7 6 s=47.31 d=3.52 g=0.00 st=1 o=3.52
+TK 1.8 7 s=51.54 d=23.65 g=0.00 st=1 o=16.51
+TK 1.9 8 s=75.33 d=2.85 g=0.10 st=1
+TK 1.10 9 s=78.59 d=6.16 g=0.42
+TK 1.11 10 s=85.31 d=1.41 g=0.42
+TK 1.12 11 s=86.30 d=26.21 g=0.00
+TK 1.13 12 s=88.34 d=37.30 g=0.00
+TK 1.14 13 s=126.05 d=5.94 g=0.42
+TK 1.15 14 s=132.61 d=5.22 g=0.58
+TK 1.16 1 s=138.43 d=1.73 g=0.64
+TK 1.17 15 s=140.59 d=0.86 g=0.42
+TK 1.18 16 s=141.87 d=0.96 g=0.42
+TK 1.19 17 s=143.30 d=4.00 g=0.42
+TG 1 gaps=6.80 head=4.02 tail=3.98 busy=140.59
+TS 2 w=46 wall=178.82 span=174.56 n=17 label=batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic rep=20/20
+TK 2.0 18 s=0.00 d=11.84 g=0.00
+TK 2.1 1 s=12.77 d=1.86 g=0.90
+TK 2.2 2 s=15.04 d=10.03 g=0.38
+TK 2.3 3 s=25.49 d=2.64 g=0.39
+TK 2.4 19 s=28.58 d=6.53 g=0.45
+TK 2.5 20 s=35.39 d=3.78 g=0.13
+TK 2.6 7 s=39.74 d=22.74 g=0.45 o=21.42
+TK 2.7 6 s=39.90 d=4.26 g=0.00 st=1 o=4.26
+TK 2.8 7 s=45.17 d=14.35 g=0.00 st=1 o=14.35
+TK 2.9 8 s=59.52 d=3.10 g=0.00 st=1 o=2.82
+TK 2.10 9 s=63.28 d=5.62 g=0.42
+TK 2.11 10 s=69.31 d=1.57 g=0.42
+TK 2.12 11 s=70.30 d=46.13 g=0.00
+TK 2.13 21 s=109.18 d=34.22 g=0.00
+TK 2.14 13 s=144.08 d=5.70 g=0.42
+TK 2.15 19 s=150.18 d=19.98 g=0.42
+TK 2.16 17 s=170.22 d=4.32 g=0.03
+TG 2 gaps=4.64 head=4.06 tail=3.94 busy=169.65
+TS 3 w=16 wall=340.56 span=336.05 n=17 label=batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic rep=20/20
+TK 3.0 18 s=0.00 d=11.87 g=0.00
+TK 3.1 1 s=12.74 d=1.82 g=0.80
+TK 3.2 2 s=14.99 d=160.27 g=0.38
+TK 3.3 3 s=175.66 d=4.13 g=0.29
+TK 3.4 19 s=180.27 d=6.82 g=0.45
+TK 3.5 20 s=187.34 d=3.73 g=0.16
+TK 3.6 7 s=191.47 d=23.02 g=0.45 o=21.74
+TK 3.7 6 s=191.66 d=4.14 g=0.00 st=1 o=4.14
+TK 3.8 7 s=196.94 d=14.61 g=0.00 st=1 o=14.61
+TK 3.9 8 s=211.20 d=3.07 g=0.00 st=1 o=3.07
+TK 3.10 9 s=214.90 d=5.73 g=0.42
+TK 3.11 10 s=220.96 d=1.44 g=0.42
+TK 3.12 11 s=221.89 d=53.68 g=0.00
+TK 3.13 21 s=266.94 d=38.06 g=0.00
+TK 3.14 13 s=305.60 d=5.66 g=0.42
+TK 3.15 19 s=311.66 d=20.03 g=0.45
+TK 3.16 17 s=331.84 d=4.29 g=0.03
+TG 3 gaps=4.41 head=3.98 tail=3.89 busy=331.68
+TS 4 w=46 wall=220.05 span=216.00 n=20 label=batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic rep=20/20
+TK 4.0 22 s=0.00 d=11.98 g=0.00
+TK 4.1 1 s=12.74 d=1.92 g=0.67
+TK 4.2 2 s=15.07 d=13.42 g=0.38
+TK 4.3 3 s=29.01 d=2.64 g=0.45
+TK 4.4 23 s=32.16 d=6.88 g=0.42
+TK 4.5 20 s=39.28 d=3.84 g=0.13
+TK 4.6 7 s=43.60 d=23.71 g=0.42 o=18.42
+TK 4.7 6 s=43.76 d=2.91 g=0.00 st=1 o=2.91
+TK 4.8 7 s=47.04 d=10.38 g=0.00 st=1 o=10.38
+TK 4.9 8 s=57.81 d=5.06 g=0.00 st=1 o=5.06
+TK 4.10 9 s=68.38 d=5.82 g=0.77
+TK 4.11 24 s=74.75 d=1.18 g=0.42
+TK 4.12 25 s=76.35 d=2.82 g=0.39
+TK 4.13 26 s=79.58 d=1.38 g=0.42
+TK 4.14 27 s=81.38 d=64.59 g=0.42
+TK 4.15 28 s=147.06 d=2.21 g=0.93
+TK 4.16 27 s=149.78 d=37.01 g=0.42
+TK 4.17 29 s=187.31 d=4.00 g=0.53
+TK 4.18 23 s=191.73 d=19.65 g=0.43
+TK 4.19 17 s=211.42 d=4.61 g=0.03
+TG 4 gaps=7.63 head=3.84 tail=3.95 busy=208.32
+TS 5 w=16 wall=535.73 span=531.68 n=20 label=batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic rep=20/20
+TK 5.0 22 s=0.00 d=11.94 g=0.00
+TK 5.1 1 s=12.77 d=1.92 g=0.70
+TK 5.2 2 s=15.12 d=314.88 g=0.38
+TK 5.3 3 s=330.70 d=5.95 g=0.26
+TK 5.4 23 s=337.06 d=6.78 g=0.45
+TK 5.5 20 s=344.10 d=3.81 g=0.13
+TK 5.6 7 s=348.50 d=23.71 g=0.48 o=18.99
+TK 5.7 6 s=348.67 d=2.94 g=0.00 st=1 o=2.94
+TK 5.8 7 s=352.19 d=10.93 g=0.00 st=1 o=10.93
+TK 5.9 8 s=363.55 d=5.02 g=0.00 st=1 o=5.02
+TK 5.10 9 s=373.38 d=5.84 g=0.85
+TK 5.11 24 s=379.54 d=1.10 g=0.42
+TK 5.12 25 s=381.04 d=2.82 g=0.42
+TK 5.13 26 s=384.22 d=1.41 g=0.35
+TK 5.14 27 s=386.06 d=71.87 g=0.42
+TK 5.15 28 s=458.96 d=2.24 g=0.86
+TK 5.16 27 s=461.65 d=40.59 g=0.40
+TK 5.17 29 s=502.67 d=4.02 g=0.54
+TK 5.18 23 s=507.10 d=19.74 g=0.42
+TK 5.19 17 s=527.13 d=4.59 g=0.00
+TG 5 gaps=7.46 head=3.94 tail=3.90 busy=524.05
+TS 6 w=46 wall=204.64 span=200.72 n=20 label=batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8 rep=20/20
+TK 6.0 0 s=0.00 d=12.35 g=0.00
+TK 6.1 1 s=13.17 d=1.79 g=0.74
+TK 6.2 2 s=15.34 d=5.78 g=0.42
+TK 6.3 3 s=21.95 d=2.43 g=0.74
+TK 6.4 4 s=24.93 d=6.50 g=0.48
+TK 6.5 5 s=31.52 d=4.91 g=0.13
+TK 6.6 7 s=36.93 d=20.37 g=0.48 o=19.68
+TK 6.7 6 s=37.12 d=4.24 g=0.00 st=1 o=4.24
+TK 6.8 7 s=41.66 d=22.35 g=0.00 st=1 o=15.62
+TK 6.9 8 s=64.22 d=2.93 g=0.06 st=1
+TK 6.10 9 s=67.57 d=5.98 g=0.42
+TK 6.11 10 s=73.98 d=1.58 g=0.42
+TK 6.12 11 s=75.01 d=64.43 g=0.00
+TK 6.13 21 s=128.62 d=50.98 g=0.00
+TK 6.14 13 s=180.08 d=3.71 g=0.42
+TK 6.15 14 s=184.27 d=5.38 g=0.42
+TK 6.16 1 s=190.42 d=1.76 g=0.64
+TK 6.17 15 s=192.77 d=0.98 g=0.42
+TK 6.18 30 s=194.08 d=2.11 g=0.35
+TK 6.19 17 s=196.38 d=4.18 g=0.19
+TG 6 gaps=6.74 head=3.92 tail=3.94 busy=193.89
+TS 7 w=16 wall=192.94 span=188.69 n=20 label=batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8 rep=20/20
+TK 7.0 0 s=0.00 d=12.45 g=0.00
+TK 7.1 1 s=13.42 d=1.86 g=0.96
+TK 7.2 2 s=15.71 d=16.24 g=0.39
+TK 7.3 3 s=32.42 d=3.62 g=0.42
+TK 7.4 4 s=36.59 d=6.85 g=0.43
+TK 7.5 5 s=43.58 d=4.90 g=0.13
+TK 7.6 6 s=49.22 d=4.19 g=0.67 st=1 o=4.05
+TK 7.7 7 s=49.31 d=21.09 g=0.00 o=20.40
+TK 7.8 7 s=54.13 d=23.17 g=0.00 st=1 o=16.51
+TK 7.9 8 s=77.50 d=2.93 g=0.10 st=1
+TK 7.10 9 s=80.85 d=5.95 g=0.42
+TK 7.11 10 s=87.22 d=1.57 g=0.42
+TK 7.12 11 s=88.22 d=52.40 g=0.00
+TK 7.13 21 s=131.41 d=36.64 g=0.00
+TK 7.14 13 s=168.53 d=3.60 g=0.35
+TK 7.15 14 s=172.56 d=5.28 g=0.43
+TK 7.16 1 s=178.45 d=1.73 g=0.61
+TK 7.17 15 s=180.80 d=0.93 g=0.45
+TK 7.18 30 s=182.11 d=2.11 g=0.42
+TK 7.19 17 s=184.54 d=4.14 g=0.19
+TG 7 gaps=6.72 head=4.06 tail=3.90 busy=181.76
+TS 8 w=46 wall=538.54 span=534.69 n=20 label=batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic rep=20/20
+TK 8.0 31 s=0.00 d=13.76 g=0.00
+TK 8.1 1 s=14.53 d=3.04 g=0.67
+TK 8.2 2 s=18.05 d=10.96 g=0.38
+TK 8.3 3 s=29.70 d=5.42 g=0.67
+TK 8.4 32 s=35.57 d=7.07 g=0.42
+TK 8.5 20 s=42.98 d=4.43 g=0.16
+TK 8.6 33 s=47.86 d=26.53 g=0.42 o=25.57
+TK 8.7 6 s=48.08 d=3.49 g=0.00 st=1 o=3.49
+TK 8.8 7 s=52.40 d=28.66 g=0.00 st=1 o=22.08
+TK 8.9 8 s=81.34 d=2.91 g=0.10 st=1
+TK 8.10 9 s=85.12 d=5.94 g=0.83
+TK 8.11 24 s=91.62 d=1.06 g=0.42
+TK 8.12 25 s=93.14 d=2.88 g=0.48
+TK 8.13 26 s=96.42 d=1.86 g=0.42
+TK 8.14 27 s=98.66 d=261.78 g=0.38
+TK 8.15 28 s=361.30 d=3.84 g=0.93
+TK 8.16 27 s=365.65 d=136.69 g=0.38
+TK 8.17 29 s=502.99 d=5.10 g=0.56
+TK 8.18 32 s=508.49 d=20.54 g=0.42
+TK 8.19 17 s=529.41 d=5.28 g=0.03
+TG 8 gaps=8.18 head=3.82 tail=3.89 busy=526.27
+TS 9 w=16 wall=646.74 span=642.57 n=20 label=batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic rep=20/20
+TK 9.0 31 s=0.00 d=13.82 g=0.00
+TK 9.1 1 s=14.53 d=3.04 g=0.67
+TK 9.2 2 s=17.95 d=180.59 g=0.38
+TK 9.3 3 s=198.90 d=14.96 g=0.26
+TK 9.4 32 s=214.18 d=7.58 g=0.32
+TK 9.5 20 s=221.92 d=4.53 g=0.16
+TK 9.6 33 s=226.88 d=26.21 g=0.45 o=25.23
+TK 9.7 6 s=227.12 d=3.34 g=0.00 st=1 o=3.34
+TK 9.8 7 s=231.22 d=28.61 g=0.00 st=1 o=21.94
+TK 9.9 8 s=260.02 d=3.01 g=0.10 st=1
+TK 9.10 9 s=264.11 d=6.02 g=0.90
+TK 9.11 24 s=270.59 d=1.12 g=0.38
+TK 9.12 25 s=272.24 d=2.85 g=0.42
+TK 9.13 26 s=275.54 d=1.92 g=0.41
+TK 9.14 27 s=277.94 d=214.80 g=0.42
+TK 9.15 28 s=493.77 d=3.86 g=0.93
+TK 9.16 27 s=498.10 d=112.82 g=0.38
+TK 9.17 29 s=611.29 d=4.90 g=0.32
+TK 9.18 32 s=616.61 d=20.53 g=0.45
+TK 9.19 17 s=637.37 d=5.22 g=0.03
+TG 9 gaps=7.46 head=3.84 tail=3.97 busy=634.96
+TS 10 w=46 wall=690.11 span=682.96 n=19 label=batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic rep=20/20
+TK 10.0 34 s=0.00 d=19.74 g=0.00
+TK 10.1 2 s=20.03 d=17.12 g=0.26
+TK 10.2 3 s=38.03 d=7.84 g=0.70
+TK 10.3 35 s=46.32 d=9.12 g=0.43
+TK 10.4 36 s=56.02 d=8.45 g=0.10
+TK 10.5 32 s=64.99 d=33.52 g=0.45 o=32.65
+TK 10.6 6 s=65.22 d=3.33 g=0.00 st=1 o=3.33
+TK 10.7 7 s=69.14 d=38.27 g=0.00 st=1 o=29.31
+TK 10.8 8 s=107.10 d=3.07 g=0.06 st=1
+TK 10.9 9 s=111.10 d=6.22 g=0.86
+TK 10.10 24 s=117.66 d=1.09 g=0.42
+TK 10.11 25 s=119.20 d=3.22 g=0.41
+TK 10.12 26 s=122.89 d=2.53 g=0.42
+TK 10.13 27 s=125.87 d=335.36 g=0.45
+TK 10.14 28 s=462.80 d=5.73 g=1.01
+TK 10.15 27 s=468.96 d=174.53 g=0.39
+TK 10.16 29 s=644.25 d=5.41 g=0.54
+TK 10.17 35 s=650.01 d=25.20 g=0.42
+TK 10.18 37 s=675.36 d=7.54 g=0.00
+TG 10 gaps=7.15 head=6.86 tail=3.94 busy=675.68
+TS 11 w=16 wall=1077.06 span=1070.27 n=19 label=batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic rep=20/20
+TK 11.0 34 s=0.00 d=19.74 g=0.00
+TK 11.1 2 s=20.10 d=337.18 g=0.22
+TK 11.2 3 s=357.42 d=16.11 g=0.26
+TK 11.3 35 s=374.18 d=9.06 g=0.32
+TK 11.4 36 s=383.58 d=8.37 g=0.08
+TK 11.5 32 s=392.45 d=33.47 g=0.45 o=32.38
+TK 11.6 6 s=392.69 d=3.36 g=0.00 st=1 o=3.36
+TK 11.7 7 s=396.89 d=38.40 g=0.00 st=1 o=28.91
+TK 11.8 8 s=435.30 d=3.04 g=0.06 st=1
+TK 11.9 9 s=439.38 d=6.13 g=0.83
+TK 11.10 24 s=445.87 d=1.06 g=0.40
+TK 11.11 25 s=447.39 d=3.17 g=0.42
+TK 11.12 26 s=451.07 d=2.53 g=0.43
+TK 11.13 27 s=454.01 d=375.95 g=0.42
+TK 11.14 28 s=830.72 d=5.76 g=0.86
+TK 11.15 27 s=836.89 d=194.27 g=0.45
+TK 11.16 29 s=1031.65 d=5.14 g=0.54
+TK 11.17 35 s=1037.42 d=24.91 g=0.42
+TK 11.18 37 s=1062.69 d=7.65 g=0.00
+TG 11 gaps=6.51 head=6.59 tail=3.86 busy=1063.61
+TZ done 47

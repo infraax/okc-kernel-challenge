@@ -1,0 +1,57 @@
+okc-diag HAVE_SGLANG=True
+MEAS-SMALLM gpu=NVIDIA H200 torch=2.14.1+cu130 cap=(9, 0) budget=170.0s
+G1 moes m=1 pairs=3 distinct=3 maxm=1 n=60 fail=0 top: 8/2/2:30.3 4/4/2:30.8 4/4/3:30.8 4/4/4:31.0 4/4/6:31.0 4/4/8:31.1 | worst 2/16/6:56.2 2/16/8:66.1
+G2 moes m=1 n=60 fail=0 top: 4/2/6:19.6 4/2/4:19.7 4/2/8:19.7 4/2/3:19.9 8/2/3:20.0 8/2/8:20.0 | worst 8/16/4:32.6 8/16/3:32.7
+B moes m=1 seed=11 pairs=3 distinct=3 maxm=1 | marlin align=6.9 w13=29.5 act=6.0 w2=19.6 epi=10.3 sum=72.3 | def 4/4/3 4/4/3 route=5.6 g1=30.9 g2=21.6 epi=10.4 sum=68.6 err=7.2e-03 | best 8/2/2 4/2/6 route=5.7 g1=30.2 g2=19.7 epi=10.3 sum=65.9 err=7.2e-03
+T moes m=1 seed=11 v2b=57.4 small=51.3 ratio=1.120
+B moes m=1 seed=12 pairs=2 distinct=2 maxm=1 | marlin align=6.8 w13=24.7 act=6.0 w2=18.3 epi=10.3 sum=66.2 | def 4/4/3 4/4/3 route=5.6 g1=23.5 g2=17.5 epi=10.3 sum=56.8 err=8.0e-03 | best 8/2/2 4/2/6 route=5.5 g1=20.7 g2=19.0 epi=10.3 sum=55.5 err=8.0e-03
+T moes m=1 seed=12 v2b=50.7 small=40.9 ratio=1.240
+B moes m=1 seed=13 pairs=3 distinct=3 maxm=1 | marlin align=7.2 w13=29.7 act=6.0 w2=19.8 epi=10.3 sum=73.1 | def 4/4/3 4/4/3 route=5.6 g1=30.7 g2=21.1 epi=10.3 sum=67.7 err=6.7e-03 | best 8/2/2 4/2/6 route=5.6 g1=30.2 g2=19.7 epi=10.4 sum=65.9 err=6.7e-03
+T moes m=1 seed=13 v2b=57.9 small=51.5 ratio=1.124
+C moes m=1 best g1=8/2/2 g2=4/2/6 default g1=4/4/3 g2=4/4/3
+G1 moes m=2 pairs=5 distinct=5 maxm=1 n=84 fail=0 top: 8/2/6:42.8 8/2/2:43.1 8/2/8:43.2 4/4/12:43.4 4/4/3:43.8 4/4/4:43.9 | worst 2/16/12:98.5 2/16/16:118.7
+G2 moes m=2 n=84 fail=0 top: 4/4/12:26.8 4/4/16:26.8 4/4/6:26.9 4/4/4:27.0 4/4/8:27.0 4/4/3:27.5 | worst 2/2/3:50.0 2/2/2:51.5
+B moes m=2 seed=11 pairs=5 distinct=5 maxm=1 | marlin align=7.0 w13=44.6 act=6.2 w2=29.1 epi=8.4 sum=95.3 | def 4/4/6 4/4/6 route=5.7 g1=43.6 g2=27.0 epi=8.4 sum=84.7 err=5.8e-03 | best 8/2/6 4/4/12 route=5.5 g1=44.9 g2=26.9 epi=8.4 sum=85.7 err=5.8e-03
+T moes m=2 seed=11 v2b=79.1 small=70.1 ratio=1.128
+B moes m=2 seed=12 pairs=4 distinct=4 maxm=1 | marlin align=7.0 w13=38.4 act=6.2 w2=26.5 epi=8.4 sum=86.6 | def 4/4/6 4/4/6 route=5.6 g1=37.6 g2=24.6 epi=8.6 sum=76.3 err=5.6e-03 | best 8/2/6 4/4/12 route=5.4 g1=34.3 g2=24.6 epi=8.4 sum=72.7 err=5.6e-03
+T moes m=2 seed=12 v2b=70.6 small=56.5 ratio=1.250
+B moes m=2 seed=13 pairs=4 distinct=4 maxm=1 | marlin align=6.8 w13=38.4 act=6.1 w2=26.2 epi=8.4 sum=85.8 | def 4/4/6 4/4/6 route=5.6 g1=37.3 g2=24.3 epi=8.2 sum=75.4 err=5.6e-03 | best 8/2/6 4/4/12 route=5.6 g1=34.4 g2=24.5 epi=8.4 sum=73.0 err=5.6e-03
+T moes m=2 seed=13 v2b=70.2 small=56.2 ratio=1.249
+C moes m=2 best g1=8/2/6 g2=4/4/12 default g1=4/4/6 g2=4/4/6
+G1 moes m=4 pairs=9 distinct=7 maxm=2 n=96 fail=0 top: 8/2/2:55.3 8/2/6:55.4 8/2/8:55.4 8/2/16:55.6 8/2/12:55.6 8/2/32:55.6 | worst 4/16/32:149.8 2/16/32:210.9
+G2 moes m=4 n=96 fail=0 top: 4/4/6:33.5 8/2/6:33.6 4/4/8:33.8 8/2/4:33.8 4/4/16:33.9 8/2/8:33.9 | worst 2/2/2:73.6 2/16/32:78.0
+B moes m=4 seed=11 pairs=9 distinct=7 maxm=2 | marlin align=7.2 w13=58.0 act=6.2 w2=35.4 epi=8.5 sum=115.3 | def 4/4/6 4/4/6 route=5.7 g1=56.5 g2=33.6 epi=8.7 sum=104.5 err=5.7e-03 | best 8/2/2 4/4/6 route=5.6 g1=55.6 g2=33.5 epi=8.5 sum=103.3 err=5.7e-03
+T moes m=4 seed=11 v2b=100.1 small=88.2 ratio=1.135
+B moes m=4 seed=12 pairs=7 distinct=6 maxm=2 | marlin align=7.0 w13=51.6 act=6.2 w2=30.9 epi=8.6 sum=104.4 | def 4/4/6 4/4/6 route=5.6 g1=50.1 g2=31.0 epi=8.5 sum=95.2 err=5.7e-03 | best 8/2/2 4/4/6 route=5.7 g1=47.9 g2=31.1 epi=8.6 sum=93.3 err=5.7e-03
+T moes m=4 seed=12 v2b=88.9 small=77.3 ratio=1.149
+B moes m=4 seed=13 pairs=7 distinct=5 maxm=2 | marlin align=7.4 w13=44.8 act=6.3 w2=29.4 epi=8.6 sum=96.5 | def 4/4/6 4/4/6 route=5.8 g1=43.8 g2=27.2 epi=8.5 sum=85.3 err=5.8e-03 | best 8/2/2 4/4/6 route=5.7 g1=43.0 g2=27.0 epi=8.3 sum=84.1 err=5.8e-03
+T moes m=4 seed=13 v2b=79.7 small=69.2 ratio=1.152
+C moes m=4 best g1=8/2/2 g2=4/4/6 default g1=4/4/6 g2=4/4/6
+G1 moes m=8 pairs=15 distinct=10 maxm=2 n=96 fail=0 top: 8/2/8:74.0 8/2/12:74.2 8/2/32:74.2 8/2/16:74.3 8/2/6:74.6 8/2/2:75.4 | worst 4/16/32:178.4 2/16/32:232.2
+G2 moes m=8 n=96 fail=0 top: 8/2/4:43.8 4/4/16:44.1 4/4/8:44.4 4/4/6:44.7 4/4/12:44.8 4/4/32:45.1 | worst 2/16/32:92.2 2/2/2:113.4
+B moes m=8 seed=11 pairs=15 distinct=10 maxm=2 | marlin align=8.5 w13=78.2 act=7.0 w2=45.3 epi=8.8 sum=147.9 | def 4/4/6 4/4/6 route=5.8 g1=76.5 g2=45.2 epi=8.8 sum=136.3 err=5.7e-03 | best 8/2/8 8/2/4 route=5.8 g1=73.9 g2=43.0 epi=8.6 sum=131.4 err=5.7e-03
+T moes m=8 seed=11 v2b=132.0 small=120.2 ratio=1.098
+B moes m=8 seed=12 pairs=11 distinct=8 maxm=3 | marlin align=9.2 w13=65.2 act=6.6 w2=39.0 epi=8.5 sum=128.5 | def 4/4/6 4/4/6 route=5.7 g1=62.9 g2=37.2 epi=8.7 sum=114.6 err=5.6e-03 | best 8/2/8 8/2/4 route=5.8 g1=61.1 g2=34.4 epi=8.6 sum=109.8 err=5.6e-03
+T moes m=8 seed=12 v2b=112.5 small=94.8 ratio=1.187
+B moes m=8 seed=13 pairs=12 distinct=6 maxm=3 | marlin align=9.3 w13=52.0 act=6.4 w2=31.0 epi=8.7 sum=107.5 | def 4/4/6 4/4/6 route=5.7 g1=50.8 g2=31.3 epi=8.8 sum=96.6 err=5.8e-03 | best 8/2/8 8/2/4 route=5.7 g1=48.3 g2=30.6 epi=8.8 sum=93.4 err=5.8e-03
+T moes m=8 seed=13 v2b=91.4 small=81.6 ratio=1.120
+C moes m=8 best g1=8/2/8 g2=8/2/4 default g1=4/4/6 g2=4/4/6
+G1 moes m=12 pairs=19 distinct=11 maxm=3 n=96 fail=0 top: 8/2/8:80.7 8/2/6:80.9 8/2/12:81.1 8/2/16:81.1 8/2/32:81.1 8/2/2:81.9 | worst 2/2/2:190.6 2/16/32:240.0
+G2 moes m=12 n=96 fail=0 top: 8/2/8:46.6 8/2/12:46.9 4/4/12:47.1 8/2/16:47.2 4/4/16:47.3 4/4/32:47.3 | worst 8/16/32:98.2 2/2/2:116.5
+B moes m=12 seed=11 pairs=19 distinct=11 maxm=3 | marlin align=10.1 w13=84.9 act=6.5 w2=48.4 epi=10.5 sum=160.5 | def 4/4/12 4/4/12 route=5.8 g1=83.2 g2=47.5 epi=10.2 sum=146.7 err=5.8e-03 | best 8/2/8 8/2/8 route=5.4 g1=80.4 g2=46.8 epi=10.4 sum=142.9 err=5.8e-03
+T moes m=12 seed=11 v2b=145.1 small=128.9 ratio=1.126
+B moes m=12 seed=12 pairs=15 distinct=11 maxm=3 | marlin align=10.1 w13=84.6 act=6.2 w2=48.4 epi=10.3 sum=159.6 | def 4/4/12 4/4/12 route=5.6 g1=82.3 g2=46.9 epi=10.2 sum=145.1 err=5.7e-03 | best 8/2/8 8/2/8 route=5.7 g1=80.4 g2=47.0 epi=10.3 sum=143.4 err=5.7e-03
+T moes m=12 seed=12 v2b=145.0 small=128.5 ratio=1.129
+B moes m=12 seed=13 pairs=19 distinct=8 maxm=4 | marlin align=10.5 w13=65.4 act=6.5 w2=39.4 epi=10.4 sum=132.2 | def 4/4/12 4/4/12 route=5.7 g1=64.1 g2=38.1 epi=10.4 sum=118.4 err=5.7e-03 | best 8/2/8 8/2/8 route=5.6 g1=61.5 g2=34.8 epi=10.3 sum=112.1 err=5.7e-03
+T moes m=12 seed=13 v2b=116.3 small=97.5 ratio=1.192
+C moes m=12 best g1=8/2/8 g2=8/2/8 default g1=4/4/12 g2=4/4/12
+G1 moes m=16 pairs=23 distinct=12 maxm=4 n=96 fail=0 top: 8/2/8:86.8 8/2/12:87.3 8/2/16:87.3 8/2/32:87.5 8/2/6:88.1 8/2/2:89.0 | worst 2/2/2:210.0 2/16/32:247.6
+G2 moes m=16 n=96 fail=0 top: 8/2/16:47.6 8/2/32:47.9 8/2/8:47.9 8/2/12:48.0 8/2/4:48.4 4/4/32:50.7 | worst 2/2/4:107.7 2/2/2:136.3
+B moes m=16 seed=11 pairs=23 distinct=12 maxm=4 | marlin align=10.2 w13=91.9 act=6.4 w2=52.7 epi=10.4 sum=171.5 | def 4/4/12 4/4/12 route=5.7 g1=89.9 g2=50.9 epi=10.6 sum=157.0 err=5.8e-03 | best 8/2/8 8/2/16 route=5.7 g1=86.5 g2=47.8 epi=10.6 sum=150.6 err=5.8e-03
+T moes m=16 seed=11 v2b=156.0 small=135.7 ratio=1.150
+B moes m=16 seed=12 pairs=23 distinct=12 maxm=4 | marlin align=10.6 w13=91.9 act=6.4 w2=52.6 epi=10.4 sum=171.9 | def 4/4/12 4/4/12 route=5.7 g1=89.2 g2=50.5 epi=10.3 sum=155.7 err=5.7e-03 | best 8/2/8 8/2/16 route=5.6 g1=86.2 g2=47.7 epi=10.5 sum=150.0 err=5.7e-03
+T moes m=16 seed=12 v2b=156.1 small=135.1 ratio=1.155
+B moes m=16 seed=13 pairs=24 distinct=9 maxm=6 | marlin align=10.4 w13=72.5 act=6.6 w2=42.8 epi=10.4 sum=142.8 | def 4/4/12 4/4/12 route=5.7 g1=70.7 g2=41.0 epi=10.4 sum=127.8 err=5.7e-03 | best 8/2/8 8/2/16 route=5.7 g1=68.8 g2=42.1 epi=10.4 sum=127.0 err=5.7e-03
+T moes m=16 seed=13 v2b=127.0 small=111.5 ratio=1.139
+C moes m=16 best g1=8/2/8 g2=8/2/16 default g1=4/4/12 g2=4/4/12
+MEAS-SMALLM done 11s

@@ -1,0 +1,144 @@
+okc-diag HAVE_SGLANG=True
+okc-diag smallm selfcheck () rel L2 vs Marlin: 7.151e-03
+okc-diag smallm active=True
+okc-diag largem selfcheck rel L2 vs Marlin: m32=5.69e-03 m128=5.73e-03 m256=5.74e-03
+okc-diag largem active={32: True, 128: True, 256: True}
+okc-diag moe5 bitwise vs v4 per bucket: m1=OK m2=OK m4=OK m8=OK m12=OK m16=OK m32=OK m128=OK m256=OK
+okc-diag moe5 active={1: True, 2: True, 4: True, 8: True, 12: True, 16: True, 32: True, 128: True, 256: True}
+okc-diag v5 ready 114s after prepare start
+[1/3] ccache c++ -MMD -MF main.o.d -DTORCH_EXTENSION_NAME=okc_measws_e8316307fe07 -DTORCH_API_INCLUDE_EXTENSION_H -isystem /opt/sglang/lib/python3.12/site-packages/torch/include -isystem /opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++20 -c /tmp/muse_moe_w4a16-w8hhbtt0/sandbox/cache/torch_extensions/okc_measws_e8316307fe07/main.cpp -o main.o 
+[2/3] ccache /usr/local/cuda/bin/nvcc -MD -MF cuda.cuda.o.d -DTORCH_EXTENSION_NAME=okc_measws_e8316307fe07 -DTORCH_API_INCLUDE_EXTENSION_H -isystem /opt/sglang/lib/python3.12/site-packages/torch/include -isystem /opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_90,code=compute_90 -gencode=arch=compute_90,code=sm_90 --compiler-options '-fPIC' -O3 -Xptxas -v -diag-suppress 550,128 -std=c++20 -c /tmp/muse_moe_w4a16-w8hhbtt0/sandbox/cache/torch_extensions/okc_measws_e8316307fe07/cuda.cu -o cuda.cuda.o 
+ptxas info    : 28 bytes gmem
+ptxas info    : Compiling entry function '_Z19meas_wstream_kernelILi4ELi2EEvPK5uint4PK5uint2PKiPyiii' for 'sm_90'
+ptxas info    : Function properties for _Z19meas_wstream_kernelILi4ELi2EEvPK5uint4PK5uint2PKiPyiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 77 registers, used 0 barriers
+ptxas info    : Compile time = 12.926 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb0ELi2ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb0ELi2ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 128 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 225.842 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb0ELi1ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb0ELi1ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 127 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 159.499 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb0ELi2ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb0ELi2ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 126 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 180.325 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb0ELi1ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb0ELi1ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 126 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 144.231 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb1ELi2ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb1ELi2ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 128 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 316.740 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb1ELi1ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb1ELi1ELi1EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 127 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 238.889 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb1ELi2ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb1ELi2ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 126 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 267.439 ms
+ptxas info    : Compiling entry function '_Z14w4_moe7_kernelILb1ELi1ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe7_kernelILb1ELi1ELi0EEvPKhPKfPKjPKtPKiS9_S9_P6float4PiPtSC_Pyiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 124 registers, used 2 barriers, 496 bytes smem
+ptxas info    : Compile time = 217.140 ms
+ptxas info    : Compiling entry function '_Z15meas_cal_kernelPK5uint4Pyi' for 'sm_90'
+ptxas info    : Function properties for _Z15meas_cal_kernelPK5uint4Pyi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 46 registers, used 0 barriers
+ptxas info    : Compile time = 4.146 ms
+ptxas info    : Compiling entry function '_Z16m7_gather_kernelPKtPKiS2_Ptiii' for 'sm_90'
+ptxas info    : Function properties for _Z16m7_gather_kernelPKtPKiS2_Ptiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers
+ptxas info    : Compile time = 11.220 ms
+ptxas info    : Compiling entry function '_Z21m7_route_large_kernelPKiPiS1_S1_S1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z21m7_route_large_kernelPKiPiS1_S1_S1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 8576 bytes smem
+ptxas info    : Compile time = 22.027 ms
+ptxas info    : Compiling entry function '_Z21m7_route_small_kernelPKiPiS1_S1_S1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z21m7_route_small_kernelPKiPiS1_S1_S1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, used 1 barriers, 768 bytes smem
+ptxas info    : Compile time = 6.872 ms
+ptxas info    : Compiling entry function '_Z23moe5_route_small_kernelPKiPiS1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z23moe5_route_small_kernelPKiPiS1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, used 1 barriers, 640 bytes smem
+ptxas info    : Compile time = 6.467 ms
+ptxas info    : Compiling entry function '_Z19largem_route_kernelPKiPiS1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z19largem_route_kernelPKiPiS1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 8448 bytes smem
+ptxas info    : Compile time = 19.762 ms
+ptxas info    : Compiling entry function '_Z19smallm_route_kernelPKiPiS1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z19smallm_route_kernelPKiPiS1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 29 registers, used 1 barriers, 784 bytes smem
+ptxas info    : Compile time = 6.715 ms
+[3/3] ccache c++ main.o cuda.cuda.o -shared -L/opt/sglang/lib/python3.12/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda/lib64 -lcudart -o okc_measws_e8316307fe07.so
+okc-diag moe7 attributes (sharedMemPerBlockOptin=232448):
+w4_moe7_kernel<T,1,0> regs=124 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<T,2,0> regs=126 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<T,1,1> regs=127 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<T,2,1> regs=128 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,1,0> regs=126 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,2,0> regs=126 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,1,1> regs=127 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,2,1> regs=128 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+okc-diag moe7 preflight m<=1 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=1 g2 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=2 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=2 g2 D2 S6 KS4 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=4 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=4 g2 D2 S6 KS4 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=8 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=8 g2 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=12 g1 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=12 g2 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=16 g1 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=16 g2 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=32 g1 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=32 g2 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=128 g1 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=128 g2 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=256 g1 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=256 g2 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag measws built in 38s (8 instantiations), 152s after prepare start
+okc-diag moe7 selfcheck m=1 raised AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather'
+okc-diag moe7 selfcheck m=2 raised AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather'
+okc-diag moe7 vs v5 per bucket: m1=DIFF m2=DIFF m4=DIFF m8=DIFF m12=DIFF m16=DIFF m32=DIFF m128=DIFF m256=DIFF
+MEAS-WS gpu=NVIDIA H200 torch=2.14.1+cu130 cap=(9, 0) budget=120s (prepare so far 152s) bw_ach=3.32TB/s cal=20.2us(64MB) zero=4.6us inst=8 cps=2 build=38s d1=1x8 d2=2x5 ctas=132
+I moe m=256 seeds=11/12/13 pairs=321/321/326 distinct=24/27/26 chunks=27/30/30 uniq1=453/510/491MB str1=510/566/566MB uniq2=226/255/245MB
+B moe m=256 v=v5 | g1=234.5/231.2/234.3 g2=122.1/121.1/124.3 | ts=2.42/2.28 x=1.00/1.00 bw=OK pair=359.8/351.1/358.9
+B moe m=256 v=wstream | g1=113.4/126.4/123.4 g2=60.1/66.7/63.2 | ts=4.49/4.25 x=1.90/1.97 bw=-
+I moe m=128 seeds=11/12/13 pairs=159/155/164 distinct=23/24/26 chunks=24/25/27 uniq1=434/453/491MB str1=453/472/510MB uniq2=217/226/245MB
+B moe m=128 v=v5 | g1=180.0/185.2/212.7 g2=94.1/96.7/109.1 | ts=2.52/2.41 x=1.00/1.00 bw=OK pair=277.5/285.7/325.0
+B moe m=128 v=wstream | g1=102.9/107.7/116.0 g2=56.1/56.6/61.5 | ts=4.39/4.14 x=1.75/1.71 bw=-
+I moe m=32 seeds=11/12/13 pairs=43/39/42 distinct=14/15/11 chunks=14/15/11 uniq1=264/283/208MB str1=264/283/208MB uniq2=132/142/104MB
+B moe m=32 v=v5 | g1=109.2/111.2/87.4 g2=59.2/60.6/47.8 | ts=2.42/2.23 x=1.00/1.00 bw=OK pair=167.0/169.7/130.9
+B moe m=32 v=wstream | g1=64.9/68.6/51.2 g2=35.8/37.0/29.2 | ts=4.07/3.69 x=1.68/1.64 bw=-
+I moe m=16 seeds=11/12/13 pairs=23/23/24 distinct=12/12/9 chunks=12/12/9 uniq1=226/226/170MB str1=226/226/170MB uniq2=113/113/85MB
+B moe m=16 v=v5 | g1=84.6/83.8/66.6 g2=46.7/46.1/40.2 | ts=2.68/2.43 x=1.00/1.00 bw=OK pair=126.0/125.2/101.1
+B moe m=16 v=wstream | g1=56.7/57.7/44.4 g2=31.7/31.6/25.9 | ts=3.93/3.57 x=1.49/1.47 bw=-
+I moe m=8 seeds=11/12/13 pairs=15/11/12 distinct=10/8/6 chunks=10/8/6 uniq1=189/151/113MB str1=189/151/113MB uniq2=94/75/57MB
+B moe m=8 v=v5 | g1=72.1/59.8/48.5 g2=40.2/33.3/28.6 | ts=2.52/2.27 x=1.00/1.00 bw=OK pair=112.3/87.8/74.9
+B moe m=8 v=wstream | g1=48.2/42.1/31.5 g2=30.6/24.0/21.2 | ts=3.60/3.09 x=1.49/1.35 bw=-
+I moe m=1 seeds=11/12/13 pairs=3/2/3 distinct=3/2/3 chunks=3/2/3 uniq1=57/38/57MB str1=57/38/57MB uniq2=28/19/28MB
+B moe m=1 v=v5 | g1=29.3/20.7/28.4 g2=20.4/17.7/20.7 | ts=1.93/1.37 x=1.00/1.00 bw=OK pair=44.2/35.6/44.2
+B moe m=1 v=wstream | g1=21.9/15.6/21.2 g2=13.8/12.5/13.9 | ts=2.59/2.04 x=1.34/1.48 bw=-
+D no WS result for bs256
+MEAS-WS done 0s skipped: d1s8@m256s11:AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather' d2s5@m256s11:AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather' nocomp@m256s11:AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather' consonly@m256s11:AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather' d1s8@m256s12:AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather' d2s5@m256s12:AttributeError: module 'okc_measws_e8316307fe07' has no attribute 'moe7_gather' nocomp@m256s12:AttributeError: modul

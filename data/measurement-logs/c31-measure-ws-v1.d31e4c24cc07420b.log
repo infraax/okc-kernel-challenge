@@ -1,0 +1,150 @@
+rnel<T,2,0> regs=126 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<T,1,1> regs=128 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<T,2,1> regs=128 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,1,0> regs=126 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,2,0> regs=126 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,1,1> regs=128 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+w4_moe7_kernel<F,2,1> regs=128 maxThreads=416 static=496 maxDynamic=231952 local=0 optin=232448
+okc-diag moe7 preflight m<=1 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=1 g2 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=2 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=2 g2 D2 S6 KS4 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=4 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=4 g2 D2 S6 KS4 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=8 g1 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=8 g2 D2 S6 KS2 dynamic_smem=180736 ok
+okc-diag moe7 preflight m<=12 g1 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=12 g2 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=16 g1 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=16 g2 D2 S6 KS2 dynamic_smem=194560 ok
+okc-diag moe7 preflight m<=32 g1 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=32 g2 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=128 g1 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=128 g2 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=256 g1 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag moe7 preflight m<=256 g2 D2 S5 KS4 dynamic_smem=185344 ok
+okc-diag measws built in 48s (8 instantiations), 186s after prepare start
+okc-diag moe7 vs v5 per bucket: m1=OK m2=OK m4=OK m8=OK m12=OK m16=OK m32=OK m128=OK m256=OK
+MEAS-WS gpu=NVIDIA H200 torch=2.14.1+cu130 cap=(9, 0) budget=86s (prepare so far 186s) bw_ach=3.35TB/s cal=20.0us(64MB) zero=4.7us inst=8 cps=2 build=48s d1=1x8 d2=2x5 ctas=132
+S moe m=256 d1s8 g1 items/cta=18 cons_wait_full=13% prod_wait_empty=70% fix_epi=17% bw/sm=17.2GB/s span=317us tail=11.3us cps=2 | g2 items/cta=9 cons_wait_full=13% prod_wait_empty=56% fix_epi=15% bw/sm=17.2GB/s span=170us tail=10.8us cps=2
+S moe m=256 d2s5 g1 items/cta=18 cons_wait_full=9% prod_wait_empty=78% fix_epi=21% bw/sm=19.8GB/s span=281us tail=14.3us cps=2 | g2 items/cta=9 cons_wait_full=8% prod_wait_empty=67% fix_epi=17% bw/sm=19.3GB/s span=152us tail=9.7us cps=2
+S moe m=128 d1s8 g1 items/cta=16 cons_wait_full=14% prod_wait_empty=68% fix_epi=16% bw/sm=18.0GB/s span=267us tail=8.2us cps=2 | g2 items/cta=8 cons_wait_full=14% prod_wait_empty=53% fix_epi=14% bw/sm=18.3GB/s span=144us tail=9.7us cps=2
+S moe m=128 d2s5 g1 items/cta=16 cons_wait_full=10% prod_wait_empty=75% fix_epi=20% bw/sm=21.3GB/s span=231us tail=11.5us cps=2 | g2 items/cta=8 cons_wait_full=8% prod_wait_empty=64% fix_epi=16% bw/sm=20.0GB/s span=129us tail=6.1us cps=2
+S moe m=32 d1s8 g1 items/cta=9 cons_wait_full=15% prod_wait_empty=66% fix_epi=14% bw/sm=18.4GB/s span=158us tail=10.2us cps=2 | g2 items/cta=5 cons_wait_full=14% prod_wait_empty=47% fix_epi=13% bw/sm=18.3GB/s span=86us tail=2.8us cps=2
+S moe m=32 d2s5 g1 items/cta=9 cons_wait_full=11% prod_wait_empty=73% fix_epi=19% bw/sm=22.0GB/s span=131us tail=7.9us cps=2 | g2 items/cta=5 cons_wait_full=9% prod_wait_empty=62% fix_epi=15% bw/sm=20.9GB/s span=76us tail=2.6us cps=2
+S moe m=16 d1s8 g1 items/cta=4 cons_wait_full=17% prod_wait_empty=69% fix_epi=10% bw/sm=17.6GB/s span=120us tail=4.4us cps=2 | g2 items/cta=2 cons_wait_full=16% prod_wait_empty=48% fix_epi=9% bw/sm=18.6GB/s span=70us tail=3.8us cps=2
+S moe m=16 d2s5 g1 items/cta=4 cons_wait_full=13% prod_wait_empty=71% fix_epi=12% bw/sm=21.5GB/s span=101us tail=4.9us cps=2 | g2 items/cta=2 cons_wait_full=10% prod_wait_empty=62% fix_epi=9% bw/sm=20.4GB/s span=61us tail=1.5us cps=2
+S moe m=8 d1s8 g1 items/cta=3 cons_wait_full=17% prod_wait_empty=67% fix_epi=10% bw/sm=16.0GB/s span=119us tail=26.6us cps=2 | g2 items/cta=2 cons_wait_full=12% prod_wait_empty=35% fix_epi=7% bw/sm=12.2GB/s span=83us tail=2.0us cps=2
+S moe m=8 d2s5 g1 items/cta=3 cons_wait_full=13% prod_wait_empty=71% fix_epi=12% bw/sm=20.0GB/s span=95us tail=20.0us cps=2 | g2 items/cta=2 cons_wait_full=8% prod_wait_empty=49% fix_epi=7% bw/sm=14.7GB/s span=69us tail=2.3us cps=2
+S moe m=1 d1s8 g1 items/cta=1 cons_wait_full=21% prod_wait_empty=63% fix_epi=10% bw/sm=17.0GB/s span=28us tail=0.3us cps=2 | g2 items/cta=0 cons_wait_full=18% prod_wait_empty=43% fix_epi=8% bw/sm=19.9GB/s span=32us tail=21.2us cps=2
+S moe m=1 d2s5 g1 items/cta=1 cons_wait_full=17% prod_wait_empty=62% fix_epi=7% bw/sm=17.7GB/s span=28us tail=0.5us cps=2 | g2 items/cta=0 cons_wait_full=11% prod_wait_empty=59% fix_epi=6% bw/sm=21.0GB/s span=29us tail=18.9us cps=2
+S moe m=256 co-saves (of consonly2 g1=294.4us g2=154.5us, g1%/g2%): nounpack=19%/27% nomma=7%/10% noldm=7%/9% nofix=17%/14% ldsonly=27%/35% smem=25%/33%
+S verdict m=256: smem-bound (lds-only floor 73% / lds+ldmatrix floor 75% of the time, NOLDM saves 7%)
+S moe m=128 co-saves (of consonly2 g1=240.4us g2=128.0us, g1%/g2%): nounpack=19%/27% nomma=6%/9% noldm=6%/9% nofix=17%/14% ldsonly=25%/34% smem=23%/30%
+S verdict m=128: smem-bound (lds-only floor 75% / lds+ldmatrix floor 77% of the time, NOLDM saves 6%)
+S moe m=16 co-saves (of consonly2 g1=111.3us g2=61.4us, g1%/g2%): nounpack=24%/31% nomma=4%/8% noldm=5%/8% nofix=12%/7% ldsonly=30%/31% smem=27%/31%
+S verdict m=16: smem-bound (lds-only floor 70% / lds+ldmatrix floor 73% of the time, NOLDM saves 5%)
+S moe m=1 co-saves (of consonly2 g1=40.7us g2=37.1us, g1%/g2%): nounpack=13%/31% nomma=-1%/6% noldm=5%/8% nofix=5%/6% ldsonly=17%/35% smem=14%/34%
+S verdict m=1: smem-bound (lds-only floor 83% / lds+ldmatrix floor 86% of the time, NOLDM saves 5%)
+I moe m=256 seeds=11/12/13 pairs=321/321/326 distinct=24/27/26 chunks=27/30/30 uniq1=453/510/491MB str1=510/566/566MB uniq2=226/255/245MB gat=11.8us
+B moe m=256 v=v5 | g1=233.8/232.0/235.0 g2=123.3/121.9/123.6 | ts=2.41/2.29 x=1.00/1.00 bw=OK pair=359.8/350.5/360.9
+B moe m=256 v=d1s8 | g1=297.4/316.3/315.3 g2=151.0/160.5/165.7 | ts=1.79/1.71 x=0.75/0.76 bw=OK pair=436.9/467.0/470.6
+B moe m=256 v=d2s5 | g1=267.1/285.6/282.9 g2=136.8/142.7/150.0 | ts=1.98/1.89 x=0.83/0.85 bw=OK pair=393.7/416.2/420.4
+B moe m=256 v=nocomp | g1=224.1/235.9/240.7 g2=113.3/118.8/124.6 | ts=2.35/2.27 x=0.98/1.03 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=256 v=consonly | g1=329.7/352.6/354.1 g2=167.5/179.1/183.6 | ts=1.60/1.54 x=0.66/0.68 bw=e=4.7e+00,e=4.8e+00,e=4.
+B moe m=256 v=consonly2 | g1=277.1/296.9/294.4 g2=145.8/154.5/160.1 | ts=1.91/1.77 x=0.80/0.79 bw=e=3.3e+00,e=3.4e+00,e=3.
+B moe m=256 v=co_nounpack | g1=237.7 g2=113.0 | timing-only
+B moe m=256 v=co_nomma | g1=274.0 g2=139.5 | timing-only
+B moe m=256 v=co_noldm | g1=272.9 g2=141.3 | timing-only
+B moe m=256 v=co_nofix | g1=245.0 g2=133.3 | timing-only
+B moe m=256 v=co_ldsonly | g1=213.7 g2=100.1 | timing-only
+B moe m=256 v=co_smem | g1=220.7 g2=103.3 | timing-only
+B moe m=256 v=wstream | g1=113.2/126.4/123.6 g2=60.6/66.3/63.8 | ts=4.50/4.27 x=1.90/1.94 bw=-
+B moe m=256 v=nocomp2 | g1=207.6/217.1/220.7 g2=103.9/107.8/111.6 | ts=2.57/2.54 x=1.07/1.13 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=256 v=ks2 | g1=277.7/301.5/306.4 g2=150.4/151.4/151.5 | ts=1.85/1.87 x=0.77/0.82 bw=e=2.2e-04,e=2.6e-04,e=2.
+B moe m=256 v=ks8 | g1=338.2/357.0/361.2 g2=172.2/178.3/183.6 | ts=1.57/1.54 x=0.65/0.68 bw=e=1.2e-04,e=1.5e-04,e=2.
+B moe m=256 v=pdloff | g1=296.1/315.7/315.2 g2=150.2/160.7/166.3 | ts=1.79/1.70 x=0.75/0.76 bw=OK pair=443.2/471.3/474.8
+I moe m=128 seeds=11/12/13 pairs=159/155/164 distinct=23/24/26 chunks=24/25/27 uniq1=434/453/491MB str1=453/472/510MB uniq2=217/226/245MB gat=12.1us
+B moe m=128 v=v5 | g1=179.8/184.8/214.2 g2=94.9/97.0/110.5 | ts=2.52/2.39 x=1.00/1.00 bw=OK pair=276.7/284.0/326.7
+B moe m=128 v=d1s8 | g1=248.3/257.4/279.8 g2=128.7/132.7/144.5 | ts=1.82/1.76 x=0.72/0.74 bw=OK pair=367.0/379.6/415.5
+B moe m=128 v=d2s5 | g1=221.2/228.4/250.8 g2=114.3/117.9/128.0 | ts=2.05/1.99 x=0.81/0.83 bw=OK pair=327.2/337.9/370.1
+B moe m=128 v=nocomp | g1=193.0/196.4/213.3 g2=100.8/101.2/113.3 | ts=2.39/2.25 x=0.94/0.96 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=128 v=consonly | g1=279.7/292.8/313.2 g2=143.7/148.3/161.5 | ts=1.62/1.58 x=0.64/0.66 bw=e=4.6e+00,e=4.9e+00,e=4.
+B moe m=128 v=consonly2 | g1=233.2/240.4/260.4 g2=124.1/128.0/138.9 | ts=1.96/1.83 x=0.77/0.77 bw=e=3.3e+00,e=3.4e+00,e=3.
+B moe m=128 v=co_nounpack | g1=194.5 g2=93.5 | timing-only
+B moe m=128 v=co_nomma | g1=226.0 g2=116.8 | timing-only
+B moe m=128 v=co_noldm | g1=225.6 g2=116.6 | timing-only
+B moe m=128 v=co_nofix | g1=199.2 g2=109.8 | timing-only
+B moe m=128 v=co_ldsonly | g1=180.5 g2=84.6 | timing-only
+B moe m=128 v=co_smem | g1=185.5 g2=89.8 | timing-only
+B moe m=128 v=wstream | g1=103.0/107.5/116.4 g2=55.6/57.6/61.2 | ts=4.39/4.10 x=1.75/1.71 bw=-
+B moe m=128 v=nocomp2 | g1=174.3/178.3/195.7 g2=89.5/90.8/98.3 | ts=2.60/2.59 x=1.04/1.07 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=128 v=pdloff | g1=248.6/258.2/280.0 g2=129.1/132.6/145.2 | ts=1.82/1.76 x=0.72/0.74 bw=OK pair=371.7/386.0/420.6
+I moe m=32 seeds=11/12/13 pairs=43/39/42 distinct=14/15/11 chunks=14/15/11 uniq1=264/283/208MB str1=264/283/208MB uniq2=132/142/104MB gat=11.1us
+B moe m=32 v=v5 | g1=108.8/110.8/87.1 g2=59.6/59.8/47.5 | ts=2.43/2.22 x=1.00/1.00 bw=OK pair=168.4/169.5/133.0
+B moe m=32 v=d1s8 | g1=150.6/157.2/124.6 g2=80.2/84.5/66.8 | ts=1.76/1.65 x=0.71/0.71 bw=OK pair=220.3/232.2/182.7
+B moe m=32 v=d2s5 | g1=134.3/139.8/108.6 g2=71.3/75.8/60.4 | ts=1.97/1.85 x=0.80/0.79 bw=OK pair=195.6/206.1/160.8
+B moe m=32 v=nocomp | g1=115.9/121.0/99.0 g2=63.4/66.3/52.4 | ts=2.28/2.09 x=0.92/0.91 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=32 v=consonly | g1=172.7/177.3/140.4 g2=88.4/93.0/74.0 | ts=1.53/1.49 x=0.63/0.64 bw=e=4.6e+00,e=4.9e+00,e=4.
+B moe m=32 v=consonly2 | g1=139.4/145.5/115.0 g2=78.8/82.1/65.8 | ts=1.90/1.68 x=0.76/0.73 bw=e=3.3e+00,e=3.5e+00,e=3.
+B moe m=32 v=wstream | g1=65.1/68.9/52.4 g2=35.8/37.5/29.4 | ts=4.06/3.69 x=1.66/1.62 bw=-
+B moe m=32 v=nocomp2 | g1=107.6/111.8/92.0 g2=58.1/61.4/48.2 | ts=2.45/2.27 x=0.99/0.99 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=32 v=pdloff | g1=152.3/157.9/123.4 g2=80.7/83.8/66.6 | ts=1.74/1.64 x=0.71/0.71 bw=OK pair=227.6/236.9/185.4
+I moe m=16 seeds=11/12/13 pairs=23/23/24 distinct=12/12/9 chunks=12/12/9 uniq1=226/226/170MB str1=226/226/170MB uniq2=113/113/85MB gat=10.8us
+B moe m=16 v=v5 | g1=84.8/84.5/67.1 g2=46.3/47.0/40.6 | ts=2.67/2.41 x=1.00/1.00 bw=OK pair=125.9/125.3/101.5
+B moe m=16 v=d1s8 | g1=121.5/121.5/96.2 g2=63.5/63.1/63.3 | ts=1.86/1.78 x=0.70/0.73 bw=OK pair=176.7/174.8/147.7
+B moe m=16 v=d2s5 | g1=104.5/103.9/82.9 g2=55.7/56.4/55.3 | ts=2.17/2.01 x=0.81/0.83 bw=OK pair=154.1/153.6/129.0
+B moe m=16 v=nocomp | g1=91.4/90.8/74.1 g2=46.4/47.5/45.8 | ts=2.48/2.39 x=0.93/0.99 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=16 v=consonly | g1=138.4/139.0/108.5 g2=71.3/71.4/69.3 | ts=1.63/1.59 x=0.61/0.65 bw=e=5.2e+00,e=5.1e+00,e=4.
+B moe m=16 v=consonly2 | g1=112.7/111.3/88.6 g2=61.8/61.4/61.1 | ts=2.01/1.83 x=0.76/0.75 bw=e=3.5e+00,e=3.5e+00,e=3.
+B moe m=16 v=co_nounpack | g1=84.7 g2=42.4 | timing-only
+B moe m=16 v=co_nomma | g1=106.6 g2=56.6 | timing-only
+B moe m=16 v=co_noldm | g1=105.9 g2=56.3 | timing-only
+B moe m=16 v=co_nofix | g1=97.6 g2=57.1 | timing-only
+B moe m=16 v=co_ldsonly | g1=78.2 g2=42.2 | timing-only
+B moe m=16 v=co_smem | g1=81.5 g2=42.2 | timing-only
+B moe m=16 v=wstream | g1=56.5/55.9/45.0 g2=31.8/31.9/26.0 | ts=4.01/3.55 x=1.50/1.47 bw=-
+B moe m=16 v=nocomp2 | g1=83.2/83.6/67.5 g2=44.3/44.6/39.7 | ts=2.71/2.54 x=1.01/1.05 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=16 v=pdloff | g1=121.0/120.7/94.9 g2=62.7/62.6/62.3 | ts=1.87/1.81 x=0.70/0.74 bw=OK pair=179.6/178.3/152.4
+I moe m=8 seeds=11/12/13 pairs=15/11/12 distinct=10/8/6 chunks=10/8/6 uniq1=189/151/113MB str1=189/151/113MB uniq2=94/75/57MB gat=10.4us
+B moe m=8 v=v5 | g1=72.1/60.1/47.9 g2=40.5/33.5/29.1 | ts=2.51/2.26 x=1.00/1.00 bw=OK pair=112.3/88.1/75.3
+B moe m=8 v=d1s8 | g1=116.1/93.2/68.6 g2=62.9/62.1/37.6 | ts=1.63/1.50 x=0.64/0.64 bw=OK pair=168.0/144.8/98.2
+B moe m=8 v=d2s5 | g1=98.8/80.3/61.6 g2=55.1/54.3/34.4 | ts=1.88/1.64 x=0.75/0.74 bw=OK pair=144.7/126.0/88.1
+B moe m=8 v=nocomp | g1=85.4/70.8/53.8 g2=45.3/45.4/29.3 | ts=2.13/1.93 x=0.85/0.90 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=8 v=consonly | g1=133.4/106.8/77.3 g2=69.0/68.8/42.9 | ts=1.41/1.32 x=0.56/0.59 bw=e=5.3e+00,e=4.8e+00,e=3.
+B moe m=8 v=consonly2 | g1=105.8/86.0/64.5 g2=60.9/60.4/37.2 | ts=1.75/1.52 x=0.70/0.67 bw=e=3.5e+00,e=3.6e+00,e=3.
+B moe m=8 v=wstream | g1=49.8/40.6/31.7 g2=30.6/24.6/21.5 | ts=3.72/3.06 x=1.48/1.35 bw=-
+B moe m=8 v=nocomp2 | g1=76.9/63.6/50.7 g2=41.7/39.1/28.4 | ts=2.37/1.99 x=0.94/0.97 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=8 v=ks4 | g1=113.2/96.3/73.7 g2=65.2/53.4/40.5 | ts=1.57/1.41 x=0.64/0.63 bw=e=9.0e-05,e=2.6e-04,e=1.
+B moe m=8 v=ks8 | g1=120.7/100.5/82.0 g2=66.2/58.9/47.1 | ts=1.50/1.28 x=0.60/0.61 bw=e=1.4e-04,e=2.9e-04,e=2.
+B moe m=8 v=pdloff | g1=115.5/92.9/68.0 g2=62.3/61.4/37.4 | ts=1.63/1.51 x=0.65/0.65 bw=OK pair=173.2/150.0/101.0
+I moe m=1 seeds=11/12/13 pairs=3/2/3 distinct=3/2/3 chunks=3/2/3 uniq1=57/38/57MB str1=57/38/57MB uniq2=28/19/28MB gat=10.0us
+B moe m=1 v=v5 | g1=28.8/20.8/29.1 g2=20.9/17.5/20.9 | ts=1.94/1.35 x=1.00/1.00 bw=OK pair=43.9/35.3/44.8
+B moe m=1 v=d1s8 | g1=41.3/40.9/40.9 g2=36.1/35.6/35.6 | ts=1.37/0.78 x=0.70/0.58 bw=OK pair=68.0/66.8/67.5
+B moe m=1 v=d2s5 | g1=37.9/36.8/38.7 g2=32.6/31.3/32.0 | ts=1.46/0.87 x=0.75/0.64 bw=OK pair=61.2/58.8/61.3
+B moe m=1 v=nocomp | g1=33.9/33.1/34.6 g2=27.4/27.7/28.6 | ts=1.64/0.99 x=0.84/0.73 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=1 v=consonly | g1=47.0/45.8/47.0 g2=40.5/39.8/41.5 | ts=1.20/0.68 x=0.61/0.50 bw=e=3.2e+00,e=4.9e+00,e=6.
+B moe m=1 v=consonly2 | g1=41.1/40.7/40.7 g2=37.0/37.2/37.1 | ts=1.38/0.76 x=0.70/0.56 bw=e=3.2e+00,e=3.2e+00,e=3.
+B moe m=1 v=co_nounpack | g1=35.6 g2=25.5 | timing-only
+B moe m=1 v=co_nomma | g1=41.0 g2=34.8 | timing-only
+B moe m=1 v=co_noldm | g1=38.5 g2=34.0 | timing-only
+B moe m=1 v=co_nofix | g1=38.7 g2=34.9 | timing-only
+B moe m=1 v=co_ldsonly | g1=33.9 g2=24.3 | timing-only
+B moe m=1 v=co_smem | g1=34.8 g2=24.5 | timing-only
+B moe m=1 v=wstream | g1=21.4/15.5/21.2 g2=13.8/12.3/13.8 | ts=2.65/2.05 x=1.35/1.52 bw=-
+B moe m=1 v=nocomp2 | g1=33.2/29.0/33.6 g2=24.3/24.6/24.8 | ts=1.68/1.14 x=0.87/0.84 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=1 v=pdloff | g1=40.9/40.6/41.3 g2=36.2/35.3/36.0 | ts=1.37/0.78 x=0.70/0.58 bw=OK pair=71.8/70.6/72.1
+D (fable-10 D3) best=d2s5 g1=282.9us nocomp=2.35TB/s consonly=1.6TB/s cons_wait_full=9% prod_wait_empty=78% bitwise=OK -> (iv) NOCOMPUTE < 3.2: the bulk-copy producer cannot stream; D2 / D4 / more producer warps first, no verdict on the design
+MEAS-WS done 1s
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 12:57:53 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop

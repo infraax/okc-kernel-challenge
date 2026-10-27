@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<style>
+body { font-family: sans-serif; margin: 20px; background: #fafafa; }
+h1, h2, h3 { color: #333; }
+.shape { margin-bottom: 40px; background: white; padding: 10px; border: 1px solid #ccc; }
+.err { color: red; font-weight: bold; }
+.lane { font-size: 12px; fill: #666; }
+svg { border: 1px solid #eee; background: #fff; }
+</style>
+<title>Timeline: muse_moe_w4a16</title>
+</head><body>
+<h1>Timeline: muse_moe_w4a16</h1>
+<div class='shape'>
+<h3>Shape 0 (weight: 60.0, wall: 52.18 &mu;s, span: 47.42 &mu;s, sol: 11.42 &mu;s)<br><i>bs=1,load=decode_1,sharding=ep8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='35.97213426219126' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[0.0] smallm_route_kernel(int const*, int*, int*, int, int, int)
+Start: 0.00 μs
+Dur: 1.42 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='94.9461684610513' y='25' width='684.4838505383154' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[0.1] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 0.59 μs
+Dur: 27.02 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='146.1177960734642' y='25' width='969.2210259658012' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[0.2] void w4_smallm_kernel&lt;false, 4&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 2.61 μs
+Dur: 38.26 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1115.085497150095' y='25' width='164.914502849905' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[0.3] _epilogue_kernel
+Start: 40.86 μs
+Dur: 6.51 μs
+Gap before: 0.06 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 5 (weight: 60.0, wall: 493.39 &mu;s, span: 488.18 &mu;s, sol: 108.94 &mu;s)<br><i>bs=256,load=verify_32,sharding=ep8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='26.209355215440404' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[5.0] largem_route_kernel(int const*, int*, int*, int*, int, int, int)
+Start: 0.00 μs
+Dur: 10.66 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='82.43407707910751' y='25' width='791.9355830106336' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[5.1] void w4_largem_kernel&lt;true, 4, 2&gt;(uint4 const*, uint2 const*, float const*, unsigned int c
+Start: 0.99 μs
+Dur: 322.10 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='869.0097731882721' y='25' width='397.8609625668448' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[5.2] void w4_largem_kernel&lt;false, 4, 2&gt;(uint4 const*, uint2 const*, float const*, unsigned int
+Start: 320.91 μs
+Dur: 161.82 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1267.1657754010694' y='25' width='12.83422459893048' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[5.3] _post_expert_norm_weighted_sum_kernel
+Start: 482.85 μs
+Dur: 5.22 μs
+Gap before: 0.26 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 4 (weight: 60.0, wall: 354.82 &mu;s, span: 349.95 &mu;s, sol: 101.34 &mu;s)<br><i>bs=128,load=verify_16,sharding=ep8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='21.469604732916054' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[4.0] largem_route_kernel(int const*, int*, int*, int*, int, int, int)
+Start: 0.00 μs
+Dur: 6.26 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='83.49824230472434' y='25' width='788.9908256880733' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[4.1] void w4_largem_kernel&lt;true, 4, 2&gt;(uint4 const*, uint2 const*, float const*, unsigned int c
+Start: 1.02 μs
+Dur: 230.05 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='849.544714052988' y='25' width='413.4099288347766' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[4.2] void w4_largem_kernel&lt;false, 4, 2&gt;(uint4 const*, uint2 const*, float const*, unsigned int
+Start: 224.38 μs
+Dur: 120.54 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1264.4293920946582' y='25' width='15.570607905341676' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[4.3] _post_expert_norm_weighted_sum_kernel
+Start: 345.35 μs
+Dur: 4.54 μs
+Gap before: 0.48 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 2 (weight: 60.0, wall: 228.54 &mu;s, span: 223.86 &mu;s, sol: 70.76 &mu;s)<br><i>bs=32,load=decode_32,sharding=ep8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='16.40457469621158' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[2.0] largem_route_kernel(int const*, int*, int*, int*, int, int, int)
+Start: 0.00 μs
+Dur: 3.06 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='85.30736240171551' y='25' width='787.8484631879915' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[2.1] void w4_largem_kernel&lt;true, 4, 2&gt;(uint4 const*, uint2 const*, float const*, unsigned int c
+Start: 0.99 μs
+Dur: 146.96 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='818.205861329521' y='25' width='436.49035025017866' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[2.2] void w4_largem_kernel&lt;false, 4, 2&gt;(uint4 const*, uint2 const*, float const*, unsigned int
+Start: 137.70 μs
+Dur: 81.42 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1257.5375268048606' y='25' width='22.462473195139385' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[2.3] _post_expert_norm_weighted_sum_kernel
+Start: 219.65 μs
+Dur: 4.19 μs
+Gap before: 0.42 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 3 (weight: 60.0, wall: 91.36 &mu;s, span: 86.58 &mu;s, sol: 37.32 &mu;s)<br><i>bs=8,load=verify_1,sharding=ep8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='18.150329061309318' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[3.0] smallm_route_kernel(int const*, int*, int*, int, int, int)
+Start: 0.00 μs
+Dur: 1.31 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='92.46969172151022' y='25' width='737.5129892622099' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[3.1] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 0.90 μs
+Dur: 53.23 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='692.6775199168687' y='25' width='524.5583650848632' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[3.2] void w4_smallm_kernel&lt;false, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 44.22 μs
+Dur: 37.86 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1226.380325597506' y='25' width='53.61967440249394' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[3.3] _epilogue_kernel
+Start: 82.74 μs
+Dur: 3.87 μs
+Gap before: 0.45 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 1 (weight: 60.0, wall: 88.13 &mu;s, span: 83.23 &mu;s, sol: 52.52 &mu;s)<br><i>bs=16,load=decode_16,sharding=ep8</i></h3>
+<svg width='1300' height='70'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<rect x='80.0' y='25' width='19.315315315315317' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[1.0] smallm_route_kernel(int const*, int*, int*, int, int, int)
+Start: 0.00 μs
+Dur: 1.34 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='94.55855855855856' y='25' width='698.3783783783784' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[1.1] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 1.01 μs
+Dur: 48.45 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='665.5135135135134' y='25' width='518.0540540540541' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[1.2] void w4_smallm_kernel&lt;false, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 40.62 μs
+Dur: 35.94 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1190.7747747747749' y='25' width='89.22522522522523' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[1.3] _epilogue_kernel
+Start: 77.06 μs
+Dur: 6.19 μs
+Gap before: 0.42 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+</body></html>

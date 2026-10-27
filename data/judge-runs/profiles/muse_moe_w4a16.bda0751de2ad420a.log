@@ -1,0 +1,3 @@
+okc-diag HAVE_SGLANG=True
+okc-diag smallm selfcheck () rel L2 vs Marlin: 6.913e-03
+okc-diag smallm active=True

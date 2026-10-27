@@ -1,0 +1,154 @@
+
+# =============================================================================================== C40 F1: the FFN boundary behind the unpooler kernel, no CTA waits for another
+@triton.jit
+def _ffn_tile(tot, a_s, s1, wf, be, rm, rn, rmask, pid_n, fsc_ptr, gs_ptr, fpart_ptr, fctr_ptr,
+              BM: tl.constexpr, BN: tl.constexpr, N: tl.constexpr, NB: tl.constexpr, NCOL: tl.constexpr):
+    """The tile-last CTA: keep f (FP32), publish the four per-token partials of its columns, take the global ticket; the CTA that sees NB - 1 reduces them in tile order into the two scalars per token."""
+    fw = tot * wf[None, :]
+    bf = be[None, :] * fw
+    tl.store(fsc_ptr + rm[:, None] * N + rn[None, :], tot, mask=rmask[:, None])
+    pb = fpart_ptr + pid_n * (4 * BM)
+    tl.store(pb + rm, tl.sum(fw * fw, axis=1))
+    tl.store(pb + BM + rm, s1)
+    tl.store(pb + 2 * BM + rm, tl.sum(a_s * bf, axis=1))
+    tl.store(pb + 3 * BM + rm, tl.sum(bf * bf, axis=1))
+    tl.debug_barrier()
+    ticket = tl.atomic_add(fctr_ptr, 1, sem="acq_rel", scope="gpu")
+    if ticket == NB - 1:
+        ti = tl.arange(0, NB)
+        pidx = ti[:, None] * (4 * BM) + rm[None, :]
+        c = tl.sum(tl.load(fpart_ptr + pidx, cache_modifier=".cg"), axis=0)
+        t1 = tl.sum(tl.load(fpart_ptr + pidx + BM, cache_modifier=".cg"), axis=0)
+        t2 = tl.sum(tl.load(fpart_ptr + pidx + 2 * BM, cache_modifier=".cg"), axis=0)
+        t3 = tl.sum(tl.load(fpart_ptr + pidx + 3 * BM, cache_modifier=".cg"), axis=0)
+        g = tl.rsqrt(c / NCOL + 1e-8)
+        inv = tl.rsqrt((t1 + 2.0 * g * t2 + g * g * t3) / NCOL + 1e-5)
+        tl.store(gs_ptr + rm, g)
+        tl.store(gs_ptr + BM + rm, inv)
+
+
+@triton.jit(do_not_specialize=["M"])
+def _unpool_ffn_kernel(x_ptr, w_ptr, s_ptr, wf_ptr, al_ptr, be_ptr, fsc_ptr, gs_ptr, part_ptr, done_ptr, fpart_ptr, fctr_ptr, M, stride_x, stride_s,
+                       BM: tl.constexpr, BN: tl.constexpr, BK: tl.constexpr, SPLIT: tl.constexpr, K: tl.constexpr, N: tl.constexpr, NCOL: tl.constexpr,
+                       PADF: tl.constexpr, PADP: tl.constexpr, PDL: tl.constexpr = False, PFL: tl.constexpr = 0):
+    """_unpool_kernel's GEMV (grid (N / BN, SPLIT), split-K partials, the last CTA of a tile sums them in slice order) that also prepares the FFN boundary (C40). Nothing here waits for another CTA:
+    the inputs that do not come from the previous grid (the residual stream s, alpha, beta, the gain of the post-FFN norm) are loaded BEFORE gdc_wait and the K loop; the tile's last CTA keeps its FP32
+    f columns in a scratch [BM, N] and publishes four per-token partial sums of its own 16 live + 112 pad columns (C = sum (f w)^2, S1 = sum (alpha s)^2, S2 = sum alpha beta s f w, S3 = sum (beta f w)^2);
+    the LAST tile-last CTA (a global ticket, a counter zeroed inside the call) sums the NB partials in tile order and writes the two per-token scalars g = rsqrt(C / NCOL + 1e-8) and
+    inv = rsqrt((S1 + 2 g S2 + g^2 S3) / NCOL + 1e-5) to gs. _ffn_apply_kernel finishes the columns. Requires M <= BM and N / BN a power of two."""
+    pid_n = tl.program_id(0)
+    pid_k = tl.program_id(1)
+    NB: tl.constexpr = N // BN
+    rm = tl.arange(0, BM)
+    rn = pid_n * BN + tl.arange(0, BN)
+    rmask = rm < M
+    if PFL > 0:
+        _ko = pid_k * (K // SPLIT) + tl.arange(0, PFL)[None, :] * 64
+        _tl_pf(w_ptr + rn[:, None] * K + _ko)
+    # independent of the previous grid (stream1 and the per-channel vectors): in flight while the GEMV runs
+    wf = tl.load(wf_ptr + rn)
+    al = tl.load(al_ptr + rn)
+    be = tl.load(be_ptr + rn)
+    sl = tl.load(s_ptr + rm[:, None] * stride_s + rn[None, :], mask=rmask[:, None], other=0.0)
+    pi = tl.arange(0, PADP)
+    pc = N + pid_n * PADF + pi                       # the pad columns this tile owns: s' = alpha s there (f is zero)
+    pm = (pi < PADF) & (pc < NCOL)
+    alp = tl.load(al_ptr + pc, mask=pm, other=0.0)
+    sp = tl.load(s_ptr + rm[:, None] * stride_s + pc[None, :], mask=rmask[:, None] & pm[None, :], other=0.0)
+    a_s = al[None, :] * sl
+    ap = alp[None, :] * sp
+    s1 = tl.sum(a_s * a_s, axis=1) + tl.sum(ap * ap, axis=1)
+    if PDL:
+        tl.extra.cuda.gdc_wait()
+    k_per: tl.constexpr = K // SPLIT
+    k0 = pid_k * k_per
+    acc = tl.zeros((BM, BN), dtype=tl.float32)
+    for kk in range(0, k_per, BK):
+        rk = k0 + kk + tl.arange(0, BK)
+        x = tl.load(x_ptr + rm[:, None] * stride_x + rk[None, :], mask=rmask[:, None], other=0.0)
+        w = tl.load(w_ptr + rn[:, None] * K + rk[None, :])
+        acc += tl.dot(x, tl.trans(w))
+    if PDL:
+        tl.extra.cuda.gdc_launch_dependents()
+    if SPLIT == 1:
+        _ffn_tile(acc, a_s, s1, wf, be, rm, rn, rmask, pid_n, fsc_ptr, gs_ptr, fpart_ptr, fctr_ptr, BM, BN, N, NB, NCOL)
+    else:
+        tl.store(part_ptr + (pid_k * M + rm)[:, None] * N + rn[None, :], acc, mask=rmask[:, None])
+        tl.debug_barrier()
+        ticket = tl.atomic_add(done_ptr + pid_n, 1, sem="acq_rel", scope="gpu")
+        if ticket == SPLIT - 1:
+            tot = tl.zeros((BM, BN), dtype=tl.float32)
+            for s in range(SPLIT):  # .cg: skip L1 so no stale line of this buffer can be read
+                tot += tl.load(part_ptr + (s * M + rm)[:, None] * N + rn[None, :], mask=rmask[:, None], other=0.0, cache_modifier=".cg")
+            tl.store(done_ptr + pid_n, 0)
+            _ffn_tile(tot, a_s, s1, wf, be, rm, rn, rmask, pid_n, fsc_ptr, gs_ptr, fpart_ptr, fctr_ptr, BM, BN, N, NB, NCOL)
+
+
+@triton.jit
+def _ffn_apply_kernel(s_ptr, al_ptr, be_ptr, wf_ptr, wn_ptr, fsc_ptr, gs_ptr, h_ptr, so_ptr, stride_s,
+                      BC: tl.constexpr, BM: tl.constexpr, N: tl.constexpr, NCOL: tl.constexpr, PDL: tl.constexpr = False):
+    """Grid (NCOL / BC, tokens): s' = alpha s + beta g (f w) and h = s' inv w_next for BC columns of one token. Everything that does not come from the unpooler kernel is loaded before gdc_wait
+    (the kernel is launched with PDL while the unpooler's tails run); after it: the two scalars of the token and f of the live columns."""
+    cb = tl.program_id(0)
+    t = tl.program_id(1)
+    cols = cb * BC + tl.arange(0, BC)
+    live = cols < N
+    sl = tl.load(s_ptr + t * stride_s + cols)
+    al = tl.load(al_ptr + cols)
+    wn = tl.load(wn_ptr + cols)
+    be = tl.load(be_ptr + cols, mask=live, other=0.0)
+    wf = tl.load(wf_ptr + cols, mask=live, other=0.0)
+    if PDL:
+        tl.extra.cuda.gdc_wait()
+    g = tl.load(gs_ptr + t, cache_modifier=".cg")
+    inv = tl.load(gs_ptr + BM + t, cache_modifier=".cg")
+    f = tl.load(fsc_ptr + t * N + cols, mask=live, other=0.0, cache_modifier=".cg")
+    sn = al * sl + be * (f * wf) * g
+    tl.store(so_ptr + t * NCOL + cols, sn)
+    tl.store(h_ptr + t * NCOL + cols, (sn * inv * wn).to(tl.bfloat16))
+
+
+FFN_APPLY_BC = 512        # columns per CTA of _ffn_apply_kernel (grid 16 x tokens)
+
+
+def _f1_state(weights, device):
+    """prepare(): the per-channel vectors of the FFN boundary (FP32, from the weights: 1 + post_ffn_norm, the residual gate's alpha / beta, 1 + next_pre_attn_norm) and the scratch (per-tile partials,
+    the FP32 f columns, the two scalars per token; the global arrival counter is zeroed inside every call, see kernel_fn)."""
+    alpha, beta = _residual_coefficients(weights["ffn_residual_gate"])
+    return {"wf": (1.0 + weights["post_ffn_norm"].float()).contiguous(), "alpha": alpha.float().contiguous(), "beta": beta.float().contiguous(),
+            "wn": (1.0 + weights["next_pre_attn_norm"].float()).contiguous(),
+            "part": torch.zeros((UNPOOL_SLICE // 16, 4, 16), dtype=torch.float32, device=device), "ctr": torch.zeros(1, dtype=torch.int32, device=device),
+            "fsc": torch.zeros((16, UNPOOL_SLICE), dtype=torch.float32, device=device), "gs": torch.zeros(32, dtype=torch.float32, device=device)}
+
+
+def _ffn_fuse_live(tokens, device, state, stream=None):
+    """F1 is live for 1..SLICED_UNPOOL_MAX_TOKENS tokens wherever G3's unpooler kernel is live (shapes / config / dtype only)."""
+    bn = _unpool_cfg(state)[0]
+    nb = UNPOOL_SLICE // bn
+    return bool(S10_FFN_FUSE and _unpool_live(tokens, device) and "f1" in state and "unpool_part" in state and (nb & (nb - 1)) == 0
+                and (stream is None or (stream.dtype == torch.float32 and stream.dim() == 2 and stream.stride(-1) == 1)))
+
+
+def unpool_ffn(y, stream, state, cfg=None):
+    """(next attention input [T, 8192] BF16, new residual stream [T, 8192] FP32) = the unpooler slice GEMV and the whole FFN boundary in TWO launches (the second PDL-overlapped). y [T, 4096], stream [T, 8192] FP32."""
+    bn, bk, split, warps, stages = cfg or _unpool_cfg(state)
+    y = y.contiguous()
+    t = y.shape[0]
+    f1 = state["f1"]
+    assert t <= 16 and split <= state["unpool_part"].shape[0] and t <= state["unpool_part"].shape[1]
+    h = torch.empty((t, HIDDEN), dtype=torch.bfloat16, device=y.device)
+    so = torch.empty((t, HIDDEN), dtype=torch.float32, device=y.device)
+    nb = UNPOOL_SLICE // bn
+    padf = triton.cdiv(HIDDEN - UNPOOL_SLICE, nb)
+    kw, kw2 = {}, {}
+    if _tools_live():
+        kw = dict(PDL=True, launch_pdl=True, PFL=_tl_pfl("_unpool_kernel", (), dict(BN=bn, SPLIT=split, K=D_EXPERT)))
+        kw2 = dict(PDL=True, launch_pdl=True)
+    _unpool_ffn_kernel[(nb, split)](
+        y, state["dense"]["unpooler"], stream, f1["wf"], f1["alpha"], f1["beta"], f1["fsc"], f1["gs"], state["unpool_part"], state["unpool_done"], f1["part"], f1["ctr"],
+        t, y.stride(0), stream.stride(0), BM=16, BN=bn, BK=bk, SPLIT=split, K=D_EXPERT, N=UNPOOL_SLICE, NCOL=HIDDEN, PADF=padf, PADP=triton.next_power_of_2(padf),
+        num_warps=warps, num_stages=stages, **kw)
+    _ffn_apply_kernel[(HIDDEN // FFN_APPLY_BC, t)](
+        stream, f1["alpha"], f1["beta"], f1["wf"], f1["wn"], f1["fsc"], f1["gs"], h, so, stream.stride(0),
+        BC=FFN_APPLY_BC, BM=16, N=UNPOOL_SLICE, NCOL=HIDDEN, num_warps=4, **kw2)
+    return h, so

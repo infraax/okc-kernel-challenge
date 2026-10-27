@@ -1,0 +1,152 @@
+tes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 46 registers, used 0 barriers
+ptxas info    : Compile time = 5.179 ms
+ptxas info    : Compiling entry function '_Z21m7_route_large_kernelPKiPiS1_S1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z21m7_route_large_kernelPKiPiS1_S1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 8448 bytes smem
+ptxas info    : Compile time = 25.715 ms
+ptxas info    : Compiling entry function '_Z21m7_route_small_kernelPKiPiS1_S1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z21m7_route_small_kernelPKiPiS1_S1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, used 1 barriers, 640 bytes smem
+ptxas info    : Compile time = 8.223 ms
+ptxas info    : Compiling entry function '_Z23moe5_route_small_kernelPKiPiS1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z23moe5_route_small_kernelPKiPiS1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, used 1 barriers, 640 bytes smem
+ptxas info    : Compile time = 8.025 ms
+ptxas info    : Compiling entry function '_Z19largem_route_kernelPKiPiS1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z19largem_route_kernelPKiPiS1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 8448 bytes smem
+ptxas info    : Compile time = 24.617 ms
+ptxas info    : Compiling entry function '_Z19smallm_route_kernelPKiPiS1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z19smallm_route_kernelPKiPiS1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 29 registers, used 1 barriers, 784 bytes smem
+ptxas info    : Compile time = 8.376 ms
+[3/3] ccache c++ main.o cuda.cuda.o -shared -L/opt/sglang/lib/python3.12/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda/lib64 -lcudart -o okc_measws_cac9c4b33ded.so
+okc-diag moe7 attributes (sharedMemPerBlockOptin=232448):
+w4_moe7_kernel<T,1,0> regs=126 maxThreads=416 static=480 maxDynamic=231968 local=0 optin=232448
+w4_moe7_kernel<T,2,0> regs=126 maxThreads=416 static=480 maxDynamic=231968 local=0 optin=232448
+w4_moe7_kernel<T,1,1> regs=128 maxThreads=416 static=480 maxDynamic=231968 local=0 optin=232448
+w4_moe7_kernel<T,2,1> regs=128 maxThreads=416 static=480 maxDynamic=231968 local=16 optin=232448
+w4_moe7_kernel<F,1,0> regs=124 maxThreads=416 static=480 maxDynamic=231968 local=0 optin=232448
+w4_moe7_kernel<F,2,0> regs=124 maxThreads=416 static=480 maxDynamic=231968 local=0 optin=232448
+w4_moe7_kernel<F,1,1> regs=128 maxThreads=416 static=480 maxDynamic=231968 local=0 optin=232448
+w4_moe7_kernel<F,2,1> regs=128 maxThreads=416 static=480 maxDynamic=231968 local=16 optin=232448
+okc-diag moe7 preflight m<=1 g1 D2 S6 KS2 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=1 g2 D2 S6 KS2 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=2 g1 D2 S6 KS2 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=2 g2 D2 S6 KS4 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=4 g1 D2 S6 KS2 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=4 g2 D2 S6 KS4 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=8 g1 D2 S6 KS2 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=8 g2 D2 S6 KS2 dynamic_smem=179968 ok
+okc-diag moe7 preflight m<=12 g1 D2 S6 KS2 dynamic_smem=193024 ok
+okc-diag moe7 preflight m<=12 g2 D2 S6 KS2 dynamic_smem=193024 ok
+okc-diag moe7 preflight m<=16 g1 D2 S6 KS2 dynamic_smem=193024 ok
+okc-diag moe7 preflight m<=16 g2 D2 S6 KS2 dynamic_smem=193024 ok
+okc-diag moe7 preflight m<=32 g1 D2 S5 KS4 dynamic_smem=182784 ok
+okc-diag moe7 preflight m<=32 g2 D2 S5 KS4 dynamic_smem=182784 ok
+okc-diag moe7 preflight m<=128 g1 D2 S5 KS4 dynamic_smem=182784 ok
+okc-diag moe7 preflight m<=128 g2 D2 S5 KS4 dynamic_smem=182784 ok
+okc-diag moe7 preflight m<=256 g1 D2 S5 KS4 dynamic_smem=182784 ok
+okc-diag moe7 preflight m<=256 g2 D2 S5 KS4 dynamic_smem=182784 ok
+okc-diag measws built in 46s (8 instantiations), 183s after prepare start
+okc-diag moe7 vs v5 per bucket: m1=OK m2=OK m4=OK m8=OK m12=OK m16=OK m32=OK m128=OK m256=OK
+MEAS-WS gpu=NVIDIA H200 torch=2.14.1+cu130 cap=(9, 0) budget=89s (prepare so far 183s) bw_ach=3.30TB/s cal=20.3us(64MB) zero=4.8us inst=8 build=46s d1=1x8 d2=2x5 ctas=132
+S moe m=256 d1s8 g1 items/cta=18 cons_wait_full=63% prod_wait_empty=5% fix_epi=7% bw/sm=6.3GB/s span=708us tail=25.6us | g2 items/cta=9 cons_wait_full=60% prod_wait_empty=4% fix_epi=6% bw/sm=6.0GB/s span=388us tail=8.4us
+S moe m=256 d2s5 g1 items/cta=18 cons_wait_full=42% prod_wait_empty=4% fix_epi=13% bw/sm=11.1GB/s span=401us tail=15.1us | g2 items/cta=9 cons_wait_full=40% prod_wait_empty=4% fix_epi=12% bw/sm=10.6GB/s span=218us tail=4.4us
+S moe m=128 d1s8 g1 items/cta=16 cons_wait_full=63% prod_wait_empty=5% fix_epi=6% bw/sm=6.5GB/s span=581us tail=22.0us | g2 items/cta=8 cons_wait_full=61% prod_wait_empty=4% fix_epi=5% bw/sm=6.2GB/s span=328us tail=12.8us
+S moe m=128 d2s5 g1 items/cta=16 cons_wait_full=42% prod_wait_empty=4% fix_epi=12% bw/sm=11.4GB/s span=329us tail=11.5us | g2 items/cta=8 cons_wait_full=41% prod_wait_empty=4% fix_epi=11% bw/sm=11.1GB/s span=182us tail=7.2us
+S moe m=32 d1s8 g1 items/cta=9 cons_wait_full=62% prod_wait_empty=5% fix_epi=6% bw/sm=6.6GB/s span=329us tail=17.9us | g2 items/cta=5 cons_wait_full=57% prod_wait_empty=5% fix_epi=5% bw/sm=6.3GB/s span=197us tail=8.2us
+S moe m=32 d2s5 g1 items/cta=9 cons_wait_full=42% prod_wait_empty=5% fix_epi=12% bw/sm=11.6GB/s span=187us tail=10.2us | g2 items/cta=5 cons_wait_full=38% prod_wait_empty=4% fix_epi=11% bw/sm=11.4GB/s span=109us tail=4.6us
+S moe m=16 d1s8 g1 items/cta=4 cons_wait_full=64% prod_wait_empty=5% fix_epi=4% bw/sm=6.7GB/s span=278us tail=13.1us | g2 items/cta=2 cons_wait_full=57% prod_wait_empty=5% fix_epi=3% bw/sm=6.5GB/s span=189us tail=13.3us
+S moe m=16 d2s5 g1 items/cta=4 cons_wait_full=47% prod_wait_empty=5% fix_epi=7% bw/sm=11.9GB/s span=156us tail=5.1us | g2 items/cta=2 cons_wait_full=43% prod_wait_empty=4% fix_epi=5% bw/sm=12.0GB/s span=104us tail=6.4us
+S moe m=8 d1s8 g1 items/cta=3 cons_wait_full=64% prod_wait_empty=5% fix_epi=3% bw/sm=6.7GB/s span=262us tail=59.9us | g2 items/cta=2 cons_wait_full=44% prod_wait_empty=4% fix_epi=2% bw/sm=4.8GB/s span=192us tail=6.7us
+S moe m=8 d2s5 g1 items/cta=3 cons_wait_full=47% prod_wait_empty=5% fix_epi=7% bw/sm=11.9GB/s span=151us tail=36.9us | g2 items/cta=2 cons_wait_full=30% prod_wait_empty=3% fix_epi=4% bw/sm=8.6GB/s span=107us tail=2.6us
+S moe m=1 d1s8 g1 items/cta=1 cons_wait_full=64% prod_wait_empty=5% fix_epi=2% bw/sm=6.4GB/s span=71us tail=1.0us | g2 items/cta=0 cons_wait_full=60% prod_wait_empty=5% fix_epi=2% bw/sm=6.3GB/s span=110us tail=67.8us
+S moe m=1 d2s5 g1 items/cta=1 cons_wait_full=50% prod_wait_empty=5% fix_epi=4% bw/sm=11.4GB/s span=40us tail=1.0us | g2 items/cta=0 cons_wait_full=44% prod_wait_empty=4% fix_epi=4% bw/sm=11.9GB/s span=61us tail=35.6us
+I moe m=256 seeds=11/12/13 pairs=321/321/326 distinct=24/27/26 chunks=27/30/30 uniq1=453/510/491MB str1=510/566/566MB uniq2=226/255/245MB
+B moe m=256 v=v5 | g1=237.0/230.6/235.4 g2=121.7/121.0/123.4 | ts=2.41/2.29 x=1.00/1.00 bw=OK pair=359.1/350.7/359.5
+B moe m=256 v=d1s8 | g1=695.4/754.8/753.5 g2=360.7/395.5/394.2 | ts=0.75/0.72 x=0.31/0.31 bw=OK pair=1036.1/1131.0/1127.6
+B moe m=256 v=d2s5 | g1=397.1/431.1/430.0 g2=212.4/230.1/229.6 | ts=1.31/1.23 x=0.55/0.54 bw=OK pair=597.0/647.3/646.2
+B moe m=256 v=nocomp | g1=596.7/648.7/648.4 g2=312.2/343.4/341.9 | ts=0.87/0.82 x=0.36/0.36 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=256 v=consonly | g1=717.2/778.3/778.9 g2=376.4/414.5/412.7 | ts=0.73/0.68 x=0.30/0.30 bw=e=4.7e+00,e=4.9e+00,e=4.
+B moe m=256 v=wstream | g1=113.9/126.6/124.9 g2=59.7/67.1/63.1 | ts=4.48/4.27 x=1.89/1.96 bw=-
+B moe m=256 v=nocomp2 | g1=318.8/345.9/345.7 g2=172.8/187.4/186.0 | ts=1.64/1.51 x=0.68/0.66 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=256 v=consonly2 | g1=410.7/444.4/444.7 g2=217.7/236.4/235.5 | ts=1.27/1.20 x=0.53/0.52 bw=e=3.4e+00,e=3.4e+00,e=3.
+B moe m=256 v=ks2 | g1=696.5/767.1/761.6 g2=393.6/390.3/398.1 | ts=0.74/0.71 x=0.31/0.31 bw=e=2.3e-04,e=2.8e-04,e=2.
+B moe m=256 v=ks8 | g1=698.1/758.1/758.9 g2=362.9/392.2/393.1 | ts=0.75/0.72 x=0.31/0.31 bw=e=1.5e-04,e=1.5e-04,e=1.
+B moe m=256 v=pdloff | g1=696.1/754.7/753.0 g2=360.6/395.7/394.4 | ts=0.75/0.72 x=0.31/0.31 bw=OK pair=1051.3/1146.3/1142.0
+I moe m=128 seeds=11/12/13 pairs=159/155/164 distinct=23/24/26 chunks=24/25/27 uniq1=434/453/491MB str1=453/472/510MB uniq2=217/226/245MB
+B moe m=128 v=v5 | g1=180.4/184.4/211.0 g2=95.1/96.7/110.0 | ts=2.51/2.38 x=1.00/1.00 bw=OK pair=279.4/284.0/328.1
+B moe m=128 v=d1s8 | g1=568.2/590.0/628.3 g2=301.1/309.3/334.8 | ts=0.80/0.76 x=0.32/0.32 bw=OK pair=851.7/880.2/945.2
+B moe m=128 v=d2s5 | g1=325.6/337.6/360.7 g2=176.4/180.6/195.8 | ts=1.40/1.30 x=0.55/0.54 bw=OK pair=489.0/505.2/543.3
+B moe m=128 v=nocomp | g1=491.3/508.5/541.7 g2=262.8/270.6/292.2 | ts=0.93/0.87 x=0.37/0.36 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=128 v=consonly | g1=589.4/612.0/652.1 g2=316.7/326.1/352.9 | ts=0.77/0.72 x=0.31/0.30 bw=e=4.7e+00,e=5.0e+00,e=4.
+B moe m=128 v=wstream | g1=103.1/108.5/116.4 g2=54.8/56.9/60.3 | ts=4.38/4.14 x=1.75/1.74 bw=-
+B moe m=128 v=nocomp2 | g1=262.9/273.1/291.8 g2=144.9/149.2/160.6 | ts=1.73/1.58 x=0.69/0.66 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=128 v=consonly2 | g1=338.6/351.6/375.2 g2=181.0/185.9/201.8 | ts=1.34/1.26 x=0.53/0.53 bw=e=3.3e+00,e=3.4e+00,e=3.
+B moe m=128 v=pdloff | g1=569.9/591.7/629.6 g2=302.0/310.2/336.8 | ts=0.80/0.76 x=0.32/0.31 bw=OK pair=866.4/896.9/961.5
+I moe m=32 seeds=11/12/13 pairs=43/39/42 distinct=14/15/11 chunks=14/15/11 uniq1=264/283/208MB str1=264/283/208MB uniq2=132/142/104MB
+B moe m=32 v=v5 | g1=109.1/111.4/87.2 g2=59.9/60.5/47.2 | ts=2.42/2.21 x=1.00/1.00 bw=OK pair=168.7/170.2/132.8
+B moe m=32 v=d1s8 | g1=324.9/339.8/273.8 g2=176.8/178.4/150.1 | ts=0.81/0.75 x=0.33/0.34 bw=OK pair=481.7/505.6/402.2
+B moe m=32 v=d2s5 | g1=188.3/196.4/159.2 g2=105.4/106.4/89.3 | ts=1.40/1.25 x=0.57/0.57 bw=OK pair=280.9/294.8/234.8
+B moe m=32 v=nocomp | g1=279.6/290.7/236.3 g2=153.3/153.5/129.7 | ts=0.95/0.86 x=0.38/0.39 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=32 v=consonly | g1=340.0/355.2/284.6 g2=186.8/188.9/157.5 | ts=0.78/0.71 x=0.31/0.32 bw=e=4.5e+00,e=5.2e+00,e=4.
+B moe m=32 v=wstream | g1=65.4/68.8/52.7 g2=36.6/37.3/29.2 | ts=4.04/3.61 x=1.65/1.62 bw=-
+B moe m=32 v=nocomp2 | g1=153.6/159.0/129.2 g2=87.6/88.3/74.7 | ts=1.72/1.51 x=0.70/0.68 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=32 v=consonly2 | g1=196.6/204.8/166.3 g2=107.8/108.4/91.9 | ts=1.34/1.23 x=0.54/0.56 bw=e=3.3e+00,e=3.6e+00,e=3.
+B moe m=32 v=pdloff | g1=326.0/338.8/274.3 g2=177.8/178.8/149.5 | ts=0.81/0.74 x=0.33/0.34 bw=OK pair=496.0/513.8/420.2
+I moe m=16 seeds=11/12/13 pairs=23/23/24 distinct=12/12/9 chunks=12/12/9 uniq1=226/226/170MB str1=226/226/170MB uniq2=113/113/85MB
+B moe m=16 v=v5 | g1=84.5/83.8/66.5 g2=46.4/46.4/40.2 | ts=2.68/2.44 x=1.00/1.00 bw=OK pair=125.7/124.9/101.0
+B moe m=16 v=d1s8 | g1=275.2/273.7/211.4 g2=144.6/142.7/143.9 | ts=0.82/0.78 x=0.31/0.32 bw=OK pair=407.1/409.2/341.0
+B moe m=16 v=d2s5 | g1=157.7/156.6/122.8 g2=86.0/84.7/85.7 | ts=1.44/1.32 x=0.54/0.54 bw=OK pair=236.4/235.9/198.3
+B moe m=16 v=nocomp | g1=231.2/230.3/180.5 g2=125.0/123.6/124.2 | ts=0.98/0.91 x=0.37/0.37 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=16 v=consonly | g1=289.0/285.7/223.7 g2=151.2/151.5/151.8 | ts=0.78/0.75 x=0.29/0.31 bw=e=4.9e+00,e=4.6e+00,e=4.
+B moe m=16 v=wstream | g1=57.5/57.7/45.4 g2=32.0/32.1/26.4 | ts=3.93/3.53 x=1.47/1.45 bw=-
+B moe m=16 v=nocomp2 | g1=125.9/124.7/99.8 g2=71.2/70.6/70.2 | ts=1.80/1.59 x=0.67/0.65 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=16 v=consonly2 | g1=165.1/163.5/127.6 g2=87.4/87.6/88.3 | ts=1.37/1.29 x=0.51/0.53 bw=e=3.6e+00,e=3.4e+00,e=3.
+B moe m=16 v=pdloff | g1=276.8/273.4/211.2 g2=143.8/143.4/144.7 | ts=0.82/0.79 x=0.31/0.32 bw=OK pair=413.4/407.8/352.6
+I moe m=8 seeds=11/12/13 pairs=15/11/12 distinct=10/8/6 chunks=10/8/6 uniq1=189/151/113MB str1=189/151/113MB uniq2=94/75/57MB
+B moe m=8 v=v5 | g1=72.0/59.6/47.8 g2=40.3/33.2/29.0 | ts=2.53/2.28 x=1.00/1.00 bw=OK pair=111.9/87.1/74.8
+B moe m=8 v=d1s8 | g1=262.9/207.8/146.2 g2=143.7/141.7/78.3 | ts=0.73/0.66 x=0.29/0.28 bw=OK pair=388.5/329.0/216.3
+B moe m=8 v=d2s5 | g1=155.3/121.3/87.4 g2=85.4/85.3/49.5 | ts=1.24/1.11 x=0.49/0.47 bw=OK pair=226.9/191.6/129.8
+B moe m=8 v=nocomp | g1=226.7/172.6/121.3 g2=122.1/120.5/68.0 | ts=0.87/0.77 x=0.35/0.33 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=8 v=consonly | g1=277.3/216.8/152.1 g2=150.9/148.8/81.2 | ts=0.70/0.63 x=0.28/0.27 bw=e=4.9e+00,e=5.0e+00,e=3.
+B moe m=8 v=wstream | g1=47.8/40.5/31.7 g2=30.5/24.3/21.1 | ts=3.72/3.09 x=1.51/1.37 bw=-
+B moe m=8 v=nocomp2 | g1=122.8/95.5/69.4 g2=69.5/68.7/41.5 | ts=1.58/1.36 x=0.62/0.58 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=8 v=consonly2 | g1=161.4/126.1/90.4 g2=87.9/86.7/50.6 | ts=1.20/1.07 x=0.47/0.46 bw=e=3.7e+00,e=3.2e+00,e=3.
+B moe m=8 v=ks4 | g1=238.6/206.9/146.7 g2=141.4/110.5/79.2 | ts=0.77/0.68 x=0.30/0.30 bw=e=7.5e-05,e=1.2e-04,e=1.
+B moe m=8 v=ks8 | g1=234.8/195.9/149.8 g2=130.0/108.9/80.3 | ts=0.77/0.71 x=0.31/0.31 bw=e=9.4e-05,e=1.4e-04,e=1.
+B moe m=8 v=pdloff | g1=266.6/208.1/146.2 g2=144.2/141.6/78.6 | ts=0.73/0.65 x=0.29/0.28 bw=OK pair=406.2/342.0/220.0
+I moe m=1 seeds=11/12/13 pairs=3/2/3 distinct=3/2/3 chunks=3/2/3 uniq1=57/38/57MB str1=57/38/57MB uniq2=28/19/28MB
+B moe m=1 v=v5 | g1=28.3/20.5/28.7 g2=21.0/17.9/21.2 | ts=1.97/1.34 x=1.00/1.00 bw=OK pair=43.7/35.3/44.7
+B moe m=1 v=d1s8 | g1=78.2/78.2/77.9 g2=76.9/76.7/77.2 | ts=0.72/0.37 x=0.36/0.27 bw=OK pair=147.6/135.4/146.9
+B moe m=1 v=d2s5 | g1=49.6/49.1/49.8 g2=48.5/47.8/48.2 | ts=1.14/0.58 x=0.57/0.43 bw=OK pair=90.0/82.9/89.8
+B moe m=1 v=nocomp | g1=65.2/64.9/65.2 g2=65.8/65.8/65.9 | ts=0.87/0.43 x=0.43/0.32 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=1 v=consonly | g1=79.9/80.2/80.1 g2=80.3/80.4/80.5 | ts=0.71/0.35 x=0.35/0.26 bw=e=3.7e+00,e=6.2e+00,e=6.
+B moe m=1 v=wstream | g1=21.2/15.4/21.2 g2=14.2/12.6/14.1 | ts=2.67/1.99 x=1.34/1.48 bw=-
+B moe m=1 v=nocomp2 | g1=40.5/40.2/40.5 g2=39.7/40.1/40.1 | ts=1.40/0.71 x=0.70/0.53 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=1 v=consonly2 | g1=50.7/50.8/50.7 g2=49.2/49.1/48.8 | ts=1.12/0.58 x=0.56/0.43 bw=e=2.6e+00,e=3.4e+00,e=3.
+B moe m=1 v=ks4 | g1=78.9/77.9/78.7 g2=44.1/44.4/44.1 | ts=0.72/0.64 x=0.36/0.48 bw=e=3.1e-05,e=1.8e-05,e=4.
+B moe m=1 v=ks8 | g1=80.9/63.1/80.2 g2=45.0/44.5/45.0 | ts=0.70/0.63 x=0.35/0.47 bw=e=3.0e-05,e=1.8e-05,e=4.
+B moe m=1 v=pdloff | g1=78.1/78.3/77.7 g2=77.6/77.3/77.0 | ts=0.72/0.36 x=0.36/0.27 bw=OK pair=150.3/149.6/150.0
+D (fable-10 D3) best=d2s5 g1=430.0us nocomp=0.87TB/s consonly=0.73TB/s cons_wait_full=42% prod_wait_empty=4% bitwise=OK -> (iv) NOCOMPUTE < 3.2: the bulk-copy producer cannot stream; D2 / D4 / more producer warps first, no verdict on the design
+MEAS-WS done 1s
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 10:22:34 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+

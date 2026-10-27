@@ -1,0 +1,127 @@
+art
+ML C22a' v1 gpu=NVIDIA_H200 torch=2.14.1+cu130 t=92s cupti=ok sglang=True triton=3.8.0 reps=12 smem_offline_T1(KB): pooler 147 ps1 74 ps2 49 | router 127 s2 45 (ptxas, ptx_audit method)
+ML columns: ln = main-stream start of the pre-expert norm from the first kernel (the figure ORDER / RPAR / TMA must cut), side_end = end of the side stream's last kernel, main_idle = ln - end of the main stream's last kernel before it, pool / rout = span of the pooler's / router's kernels in that graph; medians over 12 replays and 3 seeds (summary) / per seed (B lines). A lines: ops run alone (first start -> last end). g1 g2 on C lines.
+ML ln/side_end/main_idle T=1 base:31.4/29.5/12.5 order:29.9/29.6/15.3 rpar:24.5/17.2/2.2 ordrpar:26.6/26.3/15.4 psm:25.9/18.3/2.3 psm2:35.0/33.1/12.0 psmr:26.2/20.8/2.2 psmrpar:25.2/13.0/2.4 tma:25.2/20.3/2.2
+ML ln/side_end/main_idle T=8 base:31.2/29.4/12.0 order:31.2/30.9/17.0 rpar:40.0/38.2/17.0 ordrpar:40.7/40.4/17.4 psm:26.9/17.6/2.2 psm2:35.0/33.1/11.7 psmr:27.1/21.0/2.2 psmrpar:38.0/34.3/11.9 tma:25.2/21.3/2.3
+ML ln/side_end/main_idle T=16 base:24.3/21.9/2.4 order:28.2/27.8/16.5 rpar:45.5/43.5/21.7 ordrpar:40.1/39.8/17.2 psm:24.0/16.8/2.3 psm2:36.0/34.2/12.1 psmr:24.1/22.0/2.6 psmrpar:39.8/38.0/17.4 tma:24.2/20.3/2.6
+ML ln/side_end/main_idle T=32 base:24.7/18.4/2.4 order:29.0/28.7/18.3 rpar:49.4/47.5/24.8 ordrpar:46.2/45.9/19.0 psm:27.5/15.5/2.2 psm2:32.2/14.1/2.2 psmr:27.6/17.0/2.3 psmrpar:48.3/46.5/20.4 tma:25.3/17.6/2.2
+ML ln/side_end/main_idle T=128 base:38.7/36.8/11.7 order:40.5/40.1/26.8 mm:44.7/42.8/16.6 ordmm:49.0/48.6/27.6 bm:52.2/50.2/25.8 ordbm:48.7/48.4/26.9 rs2:39.8/37.8/12.8
+ML ln/side_end/main_idle T=256 base:46.3/44.4/14.6 order:46.2/46.0/30.8 mm:52.5/50.6/21.3 ordmm:53.0/52.7/30.7 bm:72.3/70.4/39.0 ordbm:66.8/66.5/31.5 rs2:48.7/46.9/17.7
+RULE ORDER (adopt if side_end <= 48 at T=1): side_end=29.6 ln base=31.4 order=29.9 -> ADOPT
+RULE RPAR (adopt if router alone <= 4.0 us): best-of-3-cfg alone T=1/8/16/32 = 6.9/8.4/6.1/13.0 vs base 11.8/11.9/9.3/8.1
+RULE RBIG (adopt if <= 10 us): alone T=128/256 base 11.6/13.7 mm 17.3/18.3 bmA 18.5/31.8 bmB 15.1/23.5
+RULE POOLSMEM (pooler smem 147/197 KB -> 74/98 KB lets router CTAs co-reside; compare side_end / ln of psm* with base, order, rpar): pooler alone T=1/8/16/32 base 18.5/18.7/18.6/19.8 ps1 19.5/20.0/19.4/21.3 ps2 22.8/23.0/22.8/24.1
+RULE TMAPOOL (low priority: keep only if >= 1.5 us faster ALONE; PTX has cp.async.bulk.tensor): pooler alone T=1/8/16/32 base 18.5/18.7/18.6/19.8 tma4 19.1/19.3/19.5/19.9 tma6 19.3/18.4/18.8/20.3
+RULE OSHOT (adopt if <= 5.5 us): o-proj alone T=1/8/16/32 cublas 6.5/6.3/6.3/6.4 A(bk1024) 9.4/9.3/9.9/12.5 B(bk512) 7.7/7.7/7.9/8.4 C(bn16) 20.4/13.6/14.0/12.5
+RULE C24 T=32 (largem on if <= 0.8 x Marlin on all 3 seeds): ratios 0.87 0.88 0.92 -> MARLIN
+RULE C24 T=128 (largem on if <= 0.8 x Marlin on all 3 seeds): ratios 0.71 0.72 0.68 -> LARGEM
+RULE C24 T=256 (largem on if <= 0.8 x Marlin on all 3 seeds): ratios 0.71 0.72 0.73 -> LARGEM
+C24 route kernel vs wrap-rule model (starts 240 250 0 96): OK
+K layer T=1 | oA 0e+00 oB 0e+00 oC 0e+00 order bit1/ids0 ps1 0e+00/bit1 ps2 0e+00/bit1 tma4 0e+00/bit1 tma6 0e+00/bit1 rparA 1e-06/ids0/w2e-07/d1 rparB 1e-06/ids0/w1e-07/d1 rparC 1e-06/ids0/w2e-07/d1 s2 1e-07/ids0/w9e-08/d0
+K layer T=8 | oA 0e+00 oB 0e+00 oC 0e+00 order bit1/ids0 ps1 0e+00/bit1 ps2 0e+00/bit1 tma4 0e+00/bit1 tma6 0e+00/bit1 rparA 1e-06/ids0/w2e-07/d1 rparB 1e-06/ids0/w2e-07/d1 rparC 1e-06/ids0/w2e-07/d1 s2 1e-07/ids0/w7e-08/d0
+K layer T=16 | oA 0e+00 oB 0e+00 oC 0e+00 order bit1/ids0 ps1 0e+00/bit1 ps2 0e+00/bit1 tma4 0e+00/bit1 tma6 0e+00/bit1 mm 7e-07/ids0/w1e-07/d1 rparA 9e-07/ids0/w1e-07/d1 rparB 6e-07/ids0/w1e-07/d1 rparC 8e-07/ids0/w1e-07/d1 s2 1e-07/ids0/w7e-08/d0
+K layer T=32 | oA 0e+00 oB 0e+00 oC 0e+00 order bit1/ids0 ps1 0e+00/bit1 ps2 0e+00/bit1 tma4 0e+00/bit1 tma6 0e+00/bit1 mm 7e-07/ids0/w1e-07/d1 rparA 9e-07/ids0/w1e-07/d1 rparB 9e-07/ids0/w1e-07/d1 rparC 6e-07/ids0/w1e-07/d1 s2 1e-07/ids0/w6e-08/d0
+K layer T=128 | order bit1/ids0 bmA 2e-06/ids0/w2e-07/d1 bmB 1e-06/ids0/w2e-07/d1 mm 2e-06/ids0/w2e-07/d1 s2 7e-08/ids0/w5e-08/d0
+K layer T=256 | order bit1/ids0 bmA 2e-06/ids0/w2e-07/d1 bmB 1e-06/ids0/w2e-07/d1 mm 1e-06/ids0/w2e-07/d1 s2 7e-08/ids0/w5e-08/d0
+A layer T=1 alone_us | oa.A=9.4 oa.B=7.7 oa.C=20.4 oa.cublas=6.5 pa.base=18.5 pa.ps1=19.5 pa.ps2=22.8 pa.tma4=19.1 pa.tma6=19.3 ra.base=11.8 ra.rparA=6.9 ra.rparB=8.4 ra.rparC=12.9 ra.s2=13.0 routing=2.5 norm=7.7
+A layer T=8 alone_us | oa.A=9.3 oa.B=7.7 oa.C=13.6 oa.cublas=6.3 pa.base=18.7 pa.ps1=20.0 pa.ps2=23.0 pa.tma4=19.3 pa.tma6=18.4 ra.base=11.9 ra.rparA=19.3 ra.rparB=8.4 ra.rparC=13.5 ra.s2=13.0 routing=2.5 norm=7.4
+A layer T=16 alone_us | oa.A=9.9 oa.B=7.9 oa.C=14.0 oa.cublas=6.3 pa.base=18.6 pa.ps1=19.4 pa.ps2=22.8 pa.tma4=19.5 pa.tma6=18.8 ra.base=9.3 ra.mm=16.0 ra.rparA=19.0 ra.rparB=6.1 ra.rparC=10.1 ra.s2=12.2 routing=2.6 norm=7.1
+A layer T=32 alone_us | oa.A=12.5 oa.B=8.4 oa.C=12.5 oa.cublas=6.4 pa.base=19.8 pa.ps1=21.3 pa.ps2=24.1 pa.tma4=19.9 pa.tma6=20.3 ra.base=8.1 ra.mm=16.5 ra.rparA=24.0 ra.rparB=21.8 ra.rparC=13.0 ra.s2=9.8 routing=2.7 norm=7.1
+A layer T=128 alone_us | pa.base=25.5 ra.base=11.6 ra.bmA=18.5 ra.bmB=15.1 ra.mm=17.3 ra.s2=13.7 routing=2.9 norm=7.2
+A layer T=256 alone_us | pa.base=30.3 ra.base=13.7 ra.bmA=31.8 ra.bmB=23.5 ra.mm=18.3 ra.s2=16.0 routing=2.9 norm=7.3
+B layer T=32 seed=11 E=6 | c24_marlin e2e=107.7 g1=58.2 g2=34.4
+B layer T=32 seed=11 E=6 | c24_largem e2e=93.6 g1=58.5 g2=32.3 rel_vs_marlin=5.7e-03
+B layer T=32 seed=12 E=7 | c24_marlin e2e=118.0 g1=65.0 g2=37.8
+B layer T=32 seed=12 E=7 | c24_largem e2e=104.0 g1=66.3 g2=35.4 rel_vs_marlin=5.7e-03
+B layer T=32 seed=13 E=10 | c24_marlin e2e=147.6 g1=85.6 g2=47.0
+B layer T=32 seed=13 E=10 | c24_largem e2e=136.5 g1=87.3 g2=49.6 rel_vs_marlin=5.7e-03
+B layer T=128 seed=11 E=21 | c24_marlin e2e=418.2 g1=263.2 g2=136.8
+B layer T=128 seed=11 E=21 | c24_largem e2e=298.1 g1=196.1 g2=99.7 rel_vs_marlin=5.6e-03
+B layer T=128 seed=12 E=20 | c24_marlin e2e=400.6 g1=251.3 g2=131.0
+B layer T=128 seed=12 E=20 | c24_largem e2e=289.6 g1=190.3 g2=97.1 rel_vs_marlin=5.7e-03
+B layer T=128 seed=13 E=22 | c24_marlin e2e=455.1 g1=287.4 g2=148.7
+B layer T=128 seed=13 E=22 | c24_largem e2e=310.6 g1=204.3 g2=104.4 rel_vs_marlin=5.7e-03
+B layer T=256 seed=11 E=22 | c24_marlin e2e=571.5 g1=362.3 g2=187.9
+B layer T=256 seed=11 E=22 | c24_largem e2e=406.5 g1=267.0 g2=132.8 rel_vs_marlin=5.7e-03
+B layer T=256 seed=12 E=21 | c24_marlin e2e=551.0 g1=347.5 g2=181.3
+B layer T=256 seed=12 E=21 | c24_largem e2e=395.4 g1=260.7 g2=127.7 rel_vs_marlin=5.7e-03
+B layer T=256 seed=13 E=23 | c24_marlin e2e=592.8 g1=376.6 g2=194.7
+B layer T=256 seed=13 E=23 | c24_largem e2e=434.6 g1=283.8 g2=145.2 rel_vs_marlin=5.7e-03
+NOTE 73 B lines left out for the 14 KB log tail (seeds 12 / 13 of the secondary variants first); medians over the seeds are in the ML lines
+B layer T=1 seed=11 E=2 | base side_end=29.5 main_idle=12.5 pool=18.6 rout=26.3 ln=31.4
+B layer T=1 seed=11 E=2 | order side_end=29.6 main_idle=15.3 pool=3.9 rout=10.3 ln=29.9
+B layer T=1 seed=11 E=2 | rpar side_end=19.3 main_idle=2.2 pool=21.4 rout=10.0 ln=24.5
+B layer T=1 seed=11 E=2 | ordrpar side_end=26.3 main_idle=15.4 pool=3.9 rout=6.8 ln=26.6
+B layer T=1 seed=12 E=2 | base side_end=29.6 main_idle=12.3 pool=18.7 rout=25.6 ln=31.4
+B layer T=1 seed=12 E=2 | order side_end=29.6 main_idle=15.2 pool=4.1 rout=10.3 ln=29.9
+B layer T=1 seed=12 E=2 | rpar side_end=17.1 main_idle=2.2 pool=21.4 rout=11.8 ln=24.2
+B layer T=1 seed=12 E=2 | ordrpar side_end=26.3 main_idle=15.3 pool=4.2 rout=6.7 ln=26.6
+B layer T=1 seed=13 E=2 | base side_end=29.5 main_idle=12.6 pool=18.6 rout=26.2 ln=31.5
+B layer T=1 seed=13 E=2 | order side_end=29.6 main_idle=15.5 pool=3.9 rout=10.3 ln=30.0
+B layer T=1 seed=13 E=2 | rpar side_end=17.2 main_idle=2.2 pool=21.6 rout=11.8 ln=24.6
+B layer T=1 seed=13 E=2 | ordrpar side_end=26.4 main_idle=15.7 pool=3.9 rout=6.7 ln=26.7
+B layer T=8 seed=11 E=9 | base side_end=29.4 main_idle=12.0 pool=18.9 rout=25.7 ln=31.2
+B layer T=8 seed=11 E=9 | order side_end=31.0 main_idle=17.1 pool=3.5 rout=10.2 ln=31.3
+B layer T=8 seed=11 E=9 | rpar side_end=38.2 main_idle=16.7 pool=21.3 rout=34.8 ln=40.2
+B layer T=8 seed=11 E=9 | ordrpar side_end=40.4 main_idle=17.4 pool=3.9 rout=19.1 ln=40.7
+B layer T=8 seed=12 E=8 | base side_end=29.3 main_idle=12.0 pool=19.1 rout=25.6 ln=31.1
+B layer T=8 seed=12 E=8 | order side_end=30.9 main_idle=17.0 pool=3.8 rout=10.2 ln=31.2
+B layer T=8 seed=12 E=8 | rpar side_end=37.4 main_idle=17.0 pool=21.9 rout=33.5 ln=39.3
+B layer T=8 seed=12 E=8 | ordrpar side_end=39.9 main_idle=17.4 pool=3.5 rout=19.0 ln=40.2
+B layer T=8 seed=13 E=10 | base side_end=29.5 main_idle=12.4 pool=18.8 rout=25.6 ln=31.4
+B layer T=8 seed=13 E=10 | order side_end=30.7 main_idle=16.9 pool=3.7 rout=10.2 ln=31.0
+B layer T=8 seed=13 E=10 | rpar side_end=38.4 main_idle=17.5 pool=21.8 rout=34.7 ln=40.0
+B layer T=8 seed=13 E=10 | ordrpar side_end=40.4 main_idle=17.8 pool=3.5 rout=19.1 ln=40.7
+B layer T=16 seed=11 E=10 | base side_end=22.0 main_idle=2.4 pool=21.5 rout=18.1 ln=24.3
+B layer T=16 seed=11 E=10 | order side_end=27.8 main_idle=16.5 pool=4.1 rout=7.2 ln=28.2
+B layer T=16 seed=11 E=10 | rpar side_end=43.9 main_idle=21.8 pool=23.0 rout=40.9 ln=45.9
+B layer T=16 seed=11 E=10 | ordrpar side_end=39.8 main_idle=17.2 pool=3.8 rout=18.7 ln=40.1
+B layer T=16 seed=12 E=9 | base side_end=21.6 main_idle=2.5 pool=21.6 rout=17.6 ln=24.2
+B layer T=16 seed=12 E=9 | order side_end=27.9 main_idle=16.6 pool=3.9 rout=7.4 ln=28.2
+B layer T=16 seed=12 E=9 | rpar side_end=40.9 main_idle=21.7 pool=21.1 rout=37.1 ln=42.6
+B layer T=16 seed=12 E=9 | ordrpar side_end=39.6 main_idle=17.0 pool=4.0 rout=18.4 ln=39.9
+B layer T=16 seed=13 E=6 | base side_end=21.9 main_idle=2.4 pool=21.5 rout=18.0 ln=24.3
+B layer T=16 seed=13 E=6 | order side_end=27.8 main_idle=16.4 pool=4.1 rout=7.4 ln=28.1
+B layer T=16 seed=13 E=6 | rpar side_end=43.5 main_idle=21.6 pool=22.7 rout=40.6 ln=45.5
+B layer T=16 seed=13 E=6 | ordrpar side_end=39.9 main_idle=17.2 pool=3.9 rout=18.7 ln=40.2
+B layer T=32 seed=11 E=6 | base side_end=18.4 main_idle=2.4 pool=22.1 rout=12.3 ln=24.7
+B layer T=32 seed=11 E=6 | order side_end=28.3 main_idle=18.3 pool=2.9 rout=7.2 ln=28.7
+B layer T=32 seed=11 E=6 | rpar side_end=47.5 main_idle=24.8 pool=25.4 rout=42.8 ln=49.3
+B layer T=32 seed=11 E=6 | ordrpar side_end=46.3 main_idle=19.5 pool=2.9 rout=23.7 ln=46.6
+B layer T=32 seed=12 E=7 | base side_end=18.1 main_idle=2.2 pool=22.1 rout=12.2 ln=24.6
+B layer T=32 seed=12 E=7 | order side_end=28.7 main_idle=18.4 pool=2.9 rout=7.3 ln=29.0
+B layer T=32 seed=12 E=7 | rpar side_end=47.3 main_idle=17.4 pool=30.1 rout=43.3 ln=49.4
+B layer T=32 seed=12 E=7 | ordrpar side_end=45.8 main_idle=18.9 pool=2.9 rout=23.9 ln=46.2
+B layer T=32 seed=13 E=10 | base side_end=19.3 main_idle=2.5 pool=22.2 rout=12.9 ln=24.9
+B layer T=32 seed=13 E=10 | order side_end=28.7 main_idle=18.3 pool=3.0 rout=7.4 ln=29.0
+B layer T=32 seed=13 E=10 | rpar side_end=48.3 main_idle=25.2 pool=26.3 rout=44.0 ln=50.1
+B layer T=32 seed=13 E=10 | ordrpar side_end=45.9 main_idle=19.0 pool=2.9 rout=23.7 ln=46.2
+B layer T=128 seed=11 E=21 | base side_end=37.7 main_idle=11.7 pool=27.4 rout=34.8 ln=39.5
+B layer T=128 seed=11 E=21 | order side_end=40.1 main_idle=27.1 pool=3.1 rout=10.0 ln=40.5
+B layer T=128 seed=11 E=21 | mm side_end=42.8 main_idle=16.6 pool=27.6 rout=28.5 ln=44.7
+B layer T=128 seed=11 E=21 | ordmm side_end=48.6 main_idle=27.8 pool=2.9 rout=18.0 ln=49.0
+B layer T=128 seed=11 E=21 | bm side_end=54.8 main_idle=30.3 pool=26.6 rout=50.0 ln=56.6
+B layer T=128 seed=11 E=21 | ordbm side_end=48.5 main_idle=27.1 pool=3.2 rout=18.1 ln=48.9
+B layer T=128 seed=12 E=20 | base side_end=36.6 main_idle=11.6 pool=26.8 rout=32.9 ln=38.5
+B layer T=128 seed=12 E=20 | order side_end=39.7 main_idle=26.5 pool=3.1 rout=10.1 ln=39.9
+B layer T=128 seed=12 E=20 | mm side_end=44.0 main_idle=20.5 pool=25.6 rout=19.3 ln=46.0
+B layer T=128 seed=12 E=20 | ordmm side_end=48.8 main_idle=27.2 pool=3.1 rout=18.4 ln=49.1
+B layer T=128 seed=12 E=20 | bm side_end=49.4 main_idle=17.0 pool=31.5 rout=45.7 ln=51.4
+B layer T=128 seed=12 E=20 | ordbm side_end=48.1 main_idle=26.9 pool=3.1 rout=18.2 ln=48.4
+B layer T=128 seed=13 E=22 | base side_end=36.8 main_idle=11.9 pool=26.8 rout=32.3 ln=38.7
+B layer T=128 seed=13 E=22 | order side_end=40.3 main_idle=26.8 pool=3.1 rout=10.2 ln=40.6
+B layer T=128 seed=13 E=22 | mm side_end=41.3 main_idle=12.9 pool=29.4 rout=37.2 ln=43.2
+B layer T=128 seed=13 E=22 | ordmm side_end=48.3 main_idle=27.6 pool=3.0 rout=18.0 ln=48.6
+B layer T=128 seed=13 E=22 | bm side_end=50.2 main_idle=25.8 pool=27.1 rout=45.2 ln=52.2
+B layer T=128 seed=13 E=22 | ordbm side_end=48.4 main_idle=26.8 pool=3.1 rout=18.2 ln=48.7
+B layer T=256 seed=11 E=22 | base side_end=44.4 main_idle=14.3 pool=31.8 rout=40.9 ln=46.3
+B layer T=256 seed=11 E=22 | order side_end=47.4 main_idle=32.2 pool=2.8 rout=12.2 ln=47.7
+B layer T=256 seed=11 E=22 | mm side_end=50.7 main_idle=21.3 pool=32.0 rout=46.2 ln=52.5
+B layer T=256 seed=11 E=22 | ordmm side_end=54.2 main_idle=32.0 pool=3.0 rout=19.0 ln=54.5
+B layer T=256 seed=11 E=22 | bm side_end=70.3 main_idle=39.0 pool=31.8 rout=66.7 ln=72.3
+B layer T=256 seed=11 E=22 | ordbm side_end=67.5 main_idle=31.5 pool=2.9 rout=32.1 ln=67.9
+B layer T=256 seed=12 E=21 | base side_end=43.2 main_idle=14.6 pool=30.3 rout=39.3 ln=45.1
+B layer T=256 seed=12 E=21 | order side_end=45.4 main_idle=30.4 pool=2.8 rout=12.3 ln=45.7
+B layer T=256 seed=12 E=21 | mm side_end=49.3 main_idle=21.7 pool=31.4 rout=45.0 ln=51.2
+B layer T=256 seed=12 E=21 | ordmm side_end=52.7 main_idle=30.4 pool=3.0 rout=19.1 ln=53.0
+B layer T=256 seed=12 E=21 | bm side_end=70.4 main_idle=24.5 pool=52.1 rout=66.9 ln=72.3

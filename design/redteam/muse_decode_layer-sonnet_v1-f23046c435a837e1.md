@@ -1,0 +1,21 @@
+# Red-team verdicts: kernels/muse_decode_layer/sonnet_v1.py (sha256 f23046c435a837e1…)
+Rule: ≥ 2 ACK, 0 VETO → met (2 ACK).
+
+## Sub-agent (Claude Sonnet): VERDICT: ACK f23046c435a837e1
+1-6 PASS; local_check cuda small --graph 13/13. Judgement call: router input BF16 (not FP32) at T<=8 — read as allowed by 'BF16 hi+lo with FP32 accumulation at any batch size, as SGLang does above 8 tokens'; a strict reader could differ → follow-up v1b keeps FP32 input precision (x hi+lo split).
+
+## Argon (Gemini 4 Argon high): VERDICT: ACK f23046c435a837e1
+VERDICT: ACK f23046c435a837e1
+
+1. PASS ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L588-L621), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L703-L746), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L860-L873)): `prepare()` only repacks weights and initializes static modules/streams; `_device_mode` cache ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L423-L433)) is keyed only on `(device.type, device.index)`; `kernel_fn` mutates no persistent state and allocates fresh outputs per call.
+2. PASS ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L156-L172), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L297-L368), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L515-L538), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L562-L585)): NVFP4 experts stay W4A16 Marlin (`float4_e2m1f`, FP32 reduce); dense weights stay BF16; router uses lossless BF16 `hi+lo` split with FP32 accumulation; KV cache stays FP8 E4M3; decode attention uses FP16 MMA operands (finer than FA3's FP8 E4M3 queries and exact for E4M3 K/V) with FP32 online softmax/reduction and BF16 output.
+3. PASS ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L282-L369), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L392-L415), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L684-L697)): Decode Triton attention attends all cached keys in `[max(0, seq - WINDOW + 1), seq)` plus new keys with causal + window masks; split early-exit (`(s == 0) | (start < end)`) triggers only when `start >= seq`, matching `n_active` in `_reduce_kernel`; verify blocks use FA3 with `causal=True` and `(window - 1, 0)`.
+4. PASS ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L444-L508), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L703-L746)): No `.item()`, `.cpu()`, host sync, or tensor printing in `kernel_fn`; all dispatch/grid/split decisions depend only on `config`, tensor shapes, and device capability; side-stream fork/join (`wait_stream` + capture guard at [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L724-L733)) matches `baseline.py`.
+5. PASS ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L23-L64), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L810)): Imports only standard library, PyTorch, Triton, SGLang/`sgl_kernel`, and `nvfp4` (fallback only); no reference/checks import, monkey-patching, env/frame access, subprocess, or network usage.
+6. PASS ([sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L176-L215), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L286-L310), [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L490-L531)): `_bucket(m)` covers all `1 <= m <= 256` with boundary masking (`rm < M`, `rk < K`) and falls back to cuBLAS/`torch.mm` above thresholds (`T > 32` pooler, `T > 256` router); arbitrary `page_size` (with `int64` row indexing), `k_scale`/`v_scale`, and context lengths are handled in both Triton and FA3 paths.
+
+Notes:
+- [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L862): `print(f"okc-diag HAVE_SGLANG={HAVE_SGLANG}")` in `prepare()` is untimed and permitted by `TASK.md`, though optional to strip for cleanliness.
+- [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L141) / [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L506): `SONNET_VERIFY_FULL_MAX_BATCH = 0` disables the Triton verify path; safe and dead by default.
+- [sonnet_v1.py](file://kernels/muse_decode_layer/sonnet_v1.py#L537-L538): `_split_router_weights` keeps both row-major (`router_hi`/`lo`) and transposed (`router_hi_t`/`lo_t`) BF16 copies plus FP32 `router` (~16 MB total), which is negligible on H200.
+

@@ -1,0 +1,180 @@
+MC start t=0s replay_ovh=4.74us
+MC p unpooler.1 2s
+MC p unpooler.8 3s
+MC p router.1 4s
+MC p router.8 5s
+MC p router.16 5s
+MC p router.32 6s
+MC p router.128 9s
+MC p router.256 12s
+MC p qkv_gate.1 13s
+MC p o.1 13s
+MC p pooler.1 13s
+MC p qkv_gate.8 13s
+MC p o.8 14s
+MC p pooler.8 14s
+MC p qkv_gate.16 14s
+MC p o.16 14s
+MC p pooler.16 14s
+MC p unpooler.16 14s
+MC p qkv_gate.32 14s
+MC p o.32 15s
+MC p pooler.32 15s
+MC p unpooler.32 15s
+MC p qkv_gate.128 15s
+MC p o.128 15s
+MC p pooler.128 15s
+MC p unpooler.128 15s
+MC p qkv_gate.256 15s
+MC p o.256 15s
+MC p pooler.256 15s
+MC p unpooler.256 15s
+S bf16 cheap v1: NVIDIA_H200 triton=3.8.0 torch=2.14.1+cu130 sgl=real replay_ovh=4.74us seeds=3x5 flush=128MB t=15s
+S us = graph replay minus replay_ovh (median of seeds of medians of 5); x = board/variant (>1: faster than the board kernel); b = share of the correctness bound used; BAD = outside the bound
+S est problem speedup vs the in-run baseline: board 1.154 (decode1=1.100 decode16=1.144 decode32=1.161 verify1=1.391 verify16=1.088 verify32=1.066); board + best new variant per shape 1.178 (decode1=1.154 decode16=1.158 decode32=1.161 verify1=1.435 verify16=1.107 verify32=1.085)
+S best new variant per shape (board us -> variant us, x):
+S  unpooler m=1: board 7.17 -> fix.16.32.128.8.4.4 5.25 (x1.37)
+S  unpooler m=8: board 6.82 -> fix.16.32.128.8.4.4 5.44 (x1.25)
+S  router m=1: board 6.66 -> fix.m.32.128.32.4.4 6.14 (x1.09)
+S  router m=8: board 6.66 -> fix.m.32.128.32.4.4 6.40 (x1.05)
+S  router m=16: board 7.39 -> fix.m.32.128.32.4.4 6.59 (x1.12)
+S  router m=32: board 7.46 -> fix.m.32.128.32.4.4 7.90 (x0.94)
+S  router m=128: board 10.24 -> fix.64.32.128.8.4.3 8.83 (x1.15)
+S  router m=256: board 12.58 -> fix.64.32.128.8.4.3 10.91 (x1.15)
+S  qkv_gate board/baseline us  m1:14.2/14.1 m8:14.2/13.9 m16:14.0/13.9 m32:14.1/14.0 m128:16.9/16.6 m256:18.8/18.6
+S  o board/baseline us  m1:6.0/5.9 m8:6.3/6.1 m16:6.4/6.0 m32:6.7/6.2 m128:6.6/6.6 m256:8.5/8.5
+S  pooler board/baseline us  m1:18.6/20.2 m8:19.1/20.7 m16:19.6/20.5 m32:19.6/21.6 m128:25.3/25.4 m256:29.5/29.3
+S  unpooler board/baseline us  m16:17.8/17.7 m32:17.8/17.7 m128:19.5/19.2 m256:23.7/24.0
+S K: 0 new variants outside the bound (BAD in the B lines); every row below is a median over seeds 11,12,13
+B bf16 qkv_gate m=1 | board us=14.21 x=1.00
+B bf16 qkv_gate m=1 | mm us=13.92 x=1.02
+B bf16 qkv_gate m=1 | sgl us=14.08 x=1.01
+B bf16 qkv_gate m=8 | board us=14.21 x=1.00
+B bf16 qkv_gate m=8 | mm us=14.18 x=1.00
+B bf16 qkv_gate m=8 | sgl us=13.89 x=1.03
+B bf16 qkv_gate m=16 | board us=13.98 x=1.00
+B bf16 qkv_gate m=16 | mm us=13.70 x=1.02
+B bf16 qkv_gate m=16 | sgl us=13.89 x=1.00
+B bf16 qkv_gate m=32 | board us=14.08 x=1.00
+B bf16 qkv_gate m=32 | mm us=13.86 x=1.01
+B bf16 qkv_gate m=32 | sgl us=13.98 x=1.00
+B bf16 qkv_gate m=128 | board us=16.93 x=1.00
+B bf16 qkv_gate m=128 | mm us=16.80 x=1.01
+B bf16 qkv_gate m=128 | sgl us=16.58 x=1.02
+B bf16 qkv_gate m=256 | board us=18.75 x=1.00
+B bf16 qkv_gate m=256 | mm us=18.85 x=0.99
+B bf16 qkv_gate m=256 | sgl us=18.62 x=1.01
+B bf16 o m=1 | board us=5.98 x=1.00
+B bf16 o m=1 | mm us=5.73 x=1.04
+B bf16 o m=1 | sgl us=5.86 x=0.99
+B bf16 o m=8 | board us=6.30 x=1.00
+B bf16 o m=8 | mm us=5.98 x=1.05
+B bf16 o m=8 | sgl us=6.08 x=1.04
+B bf16 o m=16 | board us=6.37 x=1.00
+B bf16 o m=16 | mm us=5.98 x=1.05
+B bf16 o m=16 | sgl us=6.02 x=1.03
+B bf16 o m=32 | board us=6.66 x=1.00
+B bf16 o m=32 | mm us=6.24 x=1.07
+B bf16 o m=32 | sgl us=6.21 x=1.07
+B bf16 o m=128 | board us=6.59 x=1.00
+B bf16 o m=128 | mm us=6.85 x=0.96
+B bf16 o m=128 | sgl us=6.62 x=1.00
+B bf16 o m=256 | board us=8.54 x=1.00
+B bf16 o m=256 | mm us=8.51 x=1.00
+B bf16 o m=256 | sgl us=8.48 x=1.01
+B bf16 pooler m=1 | board us=18.59 x=1.00
+B bf16 pooler m=1 | mm us=20.16 x=0.92
+B bf16 pooler m=1 | sgl us=20.22 x=0.92
+B bf16 pooler m=8 | board us=19.14 x=1.00
+B bf16 pooler m=8 | mm us=20.38 x=0.94
+B bf16 pooler m=8 | sgl us=20.67 x=0.93
+B bf16 pooler m=16 | board us=19.55 x=1.00
+B bf16 pooler m=16 | mm us=20.54 x=0.95
+B bf16 pooler m=16 | sgl us=20.51 x=0.95
+B bf16 pooler m=32 | board us=19.65 x=1.00
+B bf16 pooler m=32 | mm us=21.22 x=0.93
+B bf16 pooler m=32 | sgl us=21.60 x=0.90
+B bf16 pooler m=128 | board us=25.31 x=1.00
+B bf16 pooler m=128 | mm us=25.47 x=1.00
+B bf16 pooler m=128 | sgl us=25.44 x=1.00
+B bf16 pooler m=256 | board us=29.50 x=1.00
+B bf16 pooler m=256 | mm us=29.98 x=0.98
+B bf16 pooler m=256 | sgl us=29.34 x=0.99
+B bf16 unpooler m=1 | board us=7.17 x=1.00
+B bf16 unpooler m=1 | fix.16.32.128.8.4.4 us=5.25 x=1.37
+B bf16 unpooler m=1 | fix.16.32.128.4.4.4.g4 us=5.38 x=1.33
+B bf16 unpooler m=1 | fix.16.16.256.4.4.4.g4 us=6.08 x=1.17
+B bf16 unpooler m=1 | dir.16.256.4.4 us=8.80 x=0.81
+B bf16 unpooler m=1 | dir.16.512.4.3 us=8.80 x=0.81
+B bf16 unpooler m=1 | dir.32.512.4.3 us=9.02 x=0.79
+B bf16 unpooler m=1 | dir.32.256.4.4 us=9.92 x=0.73
+B bf16 unpooler m=1 | mm us=6.75 x=1.06
+B bf16 unpooler m=1 | sgl us=6.75 x=1.06
+B bf16 unpooler m=8 | board us=6.82 x=1.00
+B bf16 unpooler m=8 | fix.16.32.128.8.4.4 us=5.44 x=1.25
+B bf16 unpooler m=8 | fix.16.32.128.4.4.4.g4 us=5.54 x=1.23
+B bf16 unpooler m=8 | fix.16.16.256.4.4.4.g4 us=6.30 x=1.10
+B bf16 unpooler m=8 | dir.16.256.4.4 us=8.38 x=0.83
+B bf16 unpooler m=8 | dir.32.512.4.3 us=9.34 x=0.73
+B bf16 unpooler m=8 | dir.16.512.4.3 us=9.38 x=0.73
+B bf16 unpooler m=8 | dir.32.256.4.4 us=10.18 x=0.67
+B bf16 unpooler m=8 | mm us=6.75 x=1.00
+B bf16 unpooler m=8 | sgl us=6.75 x=1.00
+B bf16 unpooler m=16 | board us=17.79 x=1.00
+B bf16 unpooler m=16 | mm us=17.70 x=1.00
+B bf16 unpooler m=16 | sgl us=17.66 x=1.00
+B bf16 unpooler m=32 | board us=17.79 x=1.00
+B bf16 unpooler m=32 | mm us=17.82 x=1.00
+B bf16 unpooler m=32 | sgl us=17.66 x=1.01
+B bf16 unpooler m=128 | board us=19.46 x=1.00
+B bf16 unpooler m=128 | mm us=19.65 x=0.99
+B bf16 unpooler m=128 | sgl us=19.20 x=1.01
+B bf16 unpooler m=256 | board us=23.71 x=1.00
+B bf16 unpooler m=256 | mm us=23.84 x=0.99
+B bf16 unpooler m=256 | sgl us=24.00 x=0.99
+B bf16 router m=1 | board us=6.66 x=1.00
+B bf16 router m=1 | fix.m.32.128.32.4.4 us=6.14 x=1.09
+B bf16 router m=1 | fix.m.64.128.64.4.4 us=7.26 x=0.92
+B bf16 router m=1 | fix.m.16.128.64.4.3 us=9.54 x=0.70
+B bf16 router m=1 | fix.m.64.128.64.4.4.g1 us=16.90 x=0.39
+B bf16 router m=1 | mm2 us=16.06 x=0.41
+B bf16 router m=1 | sgl us=10.98 x=0.61
+B bf16 router m=8 | board us=6.66 x=1.00
+B bf16 router m=8 | fix.m.32.128.32.4.4 us=6.40 x=1.05
+B bf16 router m=8 | fix.m.64.128.64.4.4 us=7.74 x=0.86
+B bf16 router m=8 | fix.m.16.128.64.4.3 us=10.18 x=0.65
+B bf16 router m=8 | fix.m.64.128.64.4.4.g1 us=18.02 x=0.37
+B bf16 router m=8 | mm2 us=15.94 x=0.41
+B bf16 router m=8 | sgl us=26.50 x=0.25
+B bf16 router m=16 | board us=7.39 x=1.00
+B bf16 router m=16 | fix.m.32.128.32.4.4 us=6.59 x=1.12
+B bf16 router m=16 | fix.m.64.128.64.4.4 us=8.48 x=0.87
+B bf16 router m=16 | fix.m.16.128.64.4.3 us=10.27 x=0.72
+B bf16 router m=16 | fix.m.64.128.64.4.4.g1 us=20.03 x=0.37
+B bf16 router m=16 | lin us=26.46 x=0.28
+B bf16 router m=16 | sgl us=16.38 x=0.46
+B bf16 router m=32 | board us=7.46 x=1.00
+B bf16 router m=32 | fix.m.32.128.32.4.4 us=7.90 x=0.94
+B bf16 router m=32 | fix.m.64.128.64.4.4 us=10.02 x=0.74
+B bf16 router m=32 | fix.m.16.128.64.4.3 us=10.78 x=0.69
+B bf16 router m=32 | fix.m.64.128.64.4.4.g1 us=21.15 x=0.35
+B bf16 router m=32 | lin us=20.22 x=0.37
+B bf16 router m=32 | sgl us=16.77 x=0.45
+B bf16 router m=128 | board us=10.24 x=1.00
+B bf16 router m=128 | fix.64.32.128.8.4.3 us=8.83 x=1.15
+B bf16 router m=128 | fix.64.32.128.16.4.3 us=8.99 x=1.13
+B bf16 router m=128 | fix.m.16.64.16.4.4 us=12.67 x=0.81
+B bf16 router m=128 | fix.64.64.64.16.4.4 us=12.67 x=0.81
+B bf16 router m=128 | fix.m.32.64.32.4.4 us=34.50 x=0.30
+B bf16 router m=128 | fix.m.64.64.64.8.3 us=66.59 x=0.15
+B bf16 router m=128 | lin us=29.31 x=0.35
+B bf16 router m=128 | sgl us=17.57 x=0.58
+B bf16 router m=256 | board us=12.58 x=1.00
+B bf16 router m=256 | fix.64.32.128.8.4.3 us=10.91 x=1.15
+B bf16 router m=256 | fix.64.32.128.16.4.3 us=14.59 x=0.86
+B bf16 router m=256 | fix.64.64.64.16.4.4 us=16.86 x=0.75
+B bf16 router m=256 | fix.m.16.64.16.4.4 us=22.50 x=0.56
+B bf16 router m=256 | fix.m.32.64.32.4.4 us=25.09 x=0.50
+B bf16 router m=256 | fix.m.64.64.64.8.3 us=76.96 x=0.16
+B bf16 router m=256 | lin us=45.98 x=0.27
+B bf16 router m=256 | sgl us=18.75 x=0.67

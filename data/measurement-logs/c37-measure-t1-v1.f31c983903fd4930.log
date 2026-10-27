@@ -1,0 +1,99 @@
+okc-diag HAVE_SGLANG=True
+okc-diag smallm selfcheck () rel L2 vs Marlin: 6.694e-03
+okc-diag smallm active=True
+okc-diag largem selfcheck rel L2 vs Marlin: m128=5.71e-03 m256=5.63e-03
+okc-diag largem active={128: True, 256: True}
+okc-diag G2 pre-norm max steps vs module: 0
+okc-diag G3 unpooler rel L2 vs cuBLAS: 2.649e-05 ok=True
+okc-diag G4 epilogue grid bitwise=True
+okc-diag glue switches: G2=True G3=True G4=True
+[1/3] ccache c++ -MMD -MF main.o.d -DTORCH_EXTENSION_NAME=okc_t1_6c86ba6a7893 -DTORCH_API_INCLUDE_EXTENSION_H -isystem /opt/sglang/lib/python3.12/site-packages/torch/include -isystem /opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++20 -c /tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/main.cpp -o main.o 
+[2/3] ccache /usr/local/cuda/bin/nvcc -MD -MF cuda.cuda.o.d -DTORCH_EXTENSION_NAME=okc_t1_6c86ba6a7893 -DTORCH_API_INCLUDE_EXTENSION_H -isystem /opt/sglang/lib/python3.12/site-packages/torch/include -isystem /opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_90,code=compute_90 -gencode=arch=compute_90,code=sm_90 --compiler-options '-fPIC' -O3 -Xptxas -v -w -std=c++20 -c /tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu -o cuda.cuda.o 
+#$ _NVVM_BRANCH_=nvvm
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/usr/local/cuda/bin
+#$ _THERE_=/usr/local/cuda/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_DIR_=targets/x86_64-linux
+#$ TOP=/usr/local/cuda/bin/..
+#$ CICC_PATH=/usr/local/cuda/bin/../nvvm/bin
+#$ NVVMIR_LIBRARY_DIR=/usr/local/cuda/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/usr/local/cuda/bin/../lib:/opt/sglang/lib/python3.12/site-packages/cv2/../../lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+#$ PATH=/usr/local/cuda/bin/../nvvm/bin:/usr/local/cuda/bin:/root/.cargo/bin:/opt/sglang/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/nvidia/bin
+#$ INCLUDES="-I/usr/local/cuda/bin/../targets/x86_64-linux/include"  
+#$ SYSTEM_INCLUDES="-isystem" "/usr/local/cuda/bin/../targets/x86_64-linux/include/cccl"  
+#$ LIBRARIES=  "-L/usr/local/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/usr/local/cuda/bin/../targets/x86_64-linux/lib"
+#$ CUDAFE_FLAGS=
+#$ PTXAS_FLAGS=
+#$ gcc -std=c++20 -D__CUDA_ARCH__=900 -D__CUDA_ARCH_LIST__=900 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__ -D__CUDACC_RELAXED_CONSTEXPR__  -fPIC -O3 "-I/usr/local/cuda/bin/../targets/x86_64-linux/include"   -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include" -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include" -isystem "/usr/local/cuda/include" -isystem "/usr/include/python3.12" "-isystem" "/usr/local/cuda/bin/../targets/x86_64-linux/include/cccl"    -D "TORCH_EXTENSION_NAME=okc_t1_6c86ba6a7893" -D "TORCH_API_INCLUDE_EXTENSION_H" -D "__CUDA_NO_HALF_OPERATORS__" -D "__CUDA_NO_HALF_CONVERSIONS__" -D "__CUDA_NO_BFLOAT16_CONVERSIONS__" -D "__CUDA_NO_HALF2_OPERATORS__" -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=0 -D__CUDACC_VER_BUILD__=88 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=0 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "/tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu" -o "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-7_cuda.cpp1.ii" 
+#$ gcc -std=c++20 -D__CUDA_ARCH_LIST__=900 -E -x c++ -D__CUDACC__ -D__NVCC__ -D__CUDACC_RELAXED_CONSTEXPR__  -fPIC -O3 "-I/usr/local/cuda/bin/../targets/x86_64-linux/include"   -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include" -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include" -isystem "/usr/local/cuda/include" -isystem "/usr/include/python3.12" "-isystem" "/usr/local/cuda/bin/../targets/x86_64-linux/include/cccl"    -D "TORCH_EXTENSION_NAME=okc_t1_6c86ba6a7893" -D "TORCH_API_INCLUDE_EXTENSION_H" -D "__CUDA_NO_HALF_OPERATORS__" -D "__CUDA_NO_HALF_CONVERSIONS__" -D "__CUDA_NO_BFLOAT16_CONVERSIONS__" -D "__CUDA_NO_HALF2_OPERATORS__" -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=0 -D__CUDACC_VER_BUILD__=88 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=0 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "/tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu" -o "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-5_cuda.cpp4.ii" 
+#$ -- Filter Dependencies -- > cuda.cuda.o.d
+#$ cudafe++ --c++20 --static-host-stub --device-hidden-visibility --gnu_version=130300 --display_error_number --orig_src_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu" --orig_src_path_name "/tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu" --allow_managed --relaxed_constexpr  --m64 --parse_templates --gen_c_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.cudafe1.cpp" --stub_file_name "tmpxft_000000e5_00000000-6_cuda.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-4_cuda.module_id" "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-5_cuda.cpp4.ii" 
+#$ "$CICC_PATH/cicc" --c++20 --static-host-stub --device-hidden-visibility --gnu_version=130300 --display_error_number --orig_src_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu" --orig_src_path_name "/tmp/muse_decode_layer-4xbypin3/sandbox/cache/torch_extensions/okc_t1_6c86ba6a7893/cuda.cu" --allow_managed --relaxed_constexpr   -arch compute_90 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "tmpxft_000000e5_00000000-3_cuda.fatbin.c" -tused --module_id_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-4_cuda.module_id" --gen_c_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.cudafe1.c" --stub_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.cudafe1.stub.c" --gen_device_file_name "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.cudafe1.gpu"  "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-7_cuda.cpp1.ii" -o "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.ptx"
+#$ ptxas -arch=sm_90 -m64 -w  "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.ptx"  -o "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-8_cuda.sm_90.cubin" 
+#$ fatbinary -64 --cmdline="-w  " --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=90,file=/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-8_cuda.sm_90.cubin" "--image3=kind=ptx,sm=90,file=/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.ptx" --embedded-fatbin="/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-3_cuda.fatbin.c" 
+#$ rm /tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-3_cuda.fatbin
+#$ gcc -std=c++20 -D__CUDA_ARCH__=900 -D__CUDA_ARCH_LIST__=900 -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -fPIC -O3 -Wno-psabi "-I/usr/local/cuda/bin/../targets/x86_64-linux/include"   -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include" -isystem "/opt/sglang/lib/python3.12/site-packages/torch/include/torch/csrc/api/include" -isystem "/usr/local/cuda/include" -isystem "/usr/include/python3.12" "-isystem" "/usr/local/cuda/bin/../targets/x86_64-linux/include/cccl"   -m64 "/tmp/muse_decode_layer-4xbypin3/sandbox/tmp/tmpxft_000000e5_00000000-6_cuda.cudafe1.cpp" -o "cuda.cuda.o" 
+[3/3] ccache c++ main.o cuda.cuda.o -shared -L/opt/sglang/lib/python3.12/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda/lib64 -lcudart -o okc_t1_6c86ba6a7893.so
+MEAS-T1 gpu=NVIDIA H200 torch=2.14.1+cu130 cap=(9, 0) ovh=5.2us ctx=80000 reps=9 seeds=11/12/13 E(dec1s)=2/3/2 E(dec1f)=3/2/2 E(dec16s)=6/9/9 ext2_build=35s
+S t1 base       | dec1s=105.2us x1.000 dec1f=113.2us x1.000 dec16s=195.1us x1.000 | bw=DIFF
+S t1 nz8        | dec1s=106.5us x0.987 dec1f=114.2us x0.991 dec16s=195.0us x0.998 | bw=DIFF
+S t1 trig_early | dec1s=105.6us x0.997 dec1f=113.3us x0.999 dec16s=195.7us x0.997 | bw=DIFF
+S t1 trig_late  | dec1s=105.9us x0.996 dec1f=113.0us x1.001 dec16s=196.0us x0.993 | bw=DIFF
+S t1 rows2      | dec1s=111.3us x0.949 dec1f=119.2us x0.953 dec16s=195.4us x0.998 | bw=DIFF
+S t1 route_side | dec1s=104.3us x1.009 dec1f=112.1us x1.010 dec16s=194.0us x1.003 | bw=DIFF
+S t1 combo      | dec1s=104.3us x1.008 dec1f=111.5us x1.014 dec16s=194.2us x1.004 | bw=DIFF
+S t1 base2      | dec1s=105.8us x0.994 dec1f=113.3us x0.999 dec16s=195.3us x0.999 | bw=DIFF
+B t1 dec1s v=base | us=105.1/115.4/105.2 bw=ooo
+B t1 dec1f v=base | us=123.6/113.1/113.2 bw=ooo
+B t1 dec16s v=base | us=176.1/195.9/195.1 bw=DoD
+B t1 dec1s v=nz8 | us=106.5/118.7/106.0 bw=ooo
+B t1 dec1f v=nz8 | us=126.5/113.9/114.2 bw=ooo
+B t1 dec16s v=nz8 | us=176.5/196.3/195.0 bw=DoD
+B t1 dec1s v=trig_early | us=105.6/115.5/105.5 bw=ooo
+B t1 dec1f v=trig_early | us=123.4/113.2/113.3 bw=ooo
+B t1 dec16s v=trig_early | us=175.8/196.6/195.7 bw=DDD
+B t1 dec1s v=trig_late | us=105.1/115.9/105.9 bw=ooo
+B t1 dec1f v=trig_late | us=124.0/113.0/112.5 bw=ooo
+B t1 dec16s v=trig_late | us=177.5/197.2/196.0 bw=ooD
+B t1 dec1s v=rows2 | us=111.3/121.0/111.1 bw=ooo
+B t1 dec1f v=rows2 | us=128.4/119.2/118.9 bw=ooo
+B t1 dec16s v=rows2 | us=176.5/197.4/195.4 bw=DoD
+B t1 dec1s v=route_side | us=103.6/114.3/104.3 bw=ooo
+B t1 dec1f v=route_side | us=122.4/112.1/111.5 bw=ooo
+B t1 dec16s v=route_side | us=175.6/195.4/194.0 bw=DDD
+B t1 dec1s v=combo | us=104.0/114.4/104.3 bw=ooo
+B t1 dec1f v=combo | us=121.6/111.5/111.5 bw=ooo
+B t1 dec16s v=combo | us=174.8/195.3/194.2 bw=DoD
+B t1 dec1s v=base2 | us=105.8/116.2/104.8 bw=ooo
+B t1 dec1f v=base2 | us=123.4/113.2/113.3 bw=ooo
+B t1 dec16s v=base2 | us=175.7/196.9/195.3 bw=ooD
+D t1 winners (>= 2us weighted at T=1, T=16 regression <= 1%): none | gains us dec1s/dec1f/dec16s: nz8 -1.4/-1.1/-0.4; trig_early -0.4/-0.1/-0.6; trig_late -0.5/+0.2/-1.3; rows2 -6.0/-5.8/-0.4; route_side +1.1/+1.2/+0.6; combo +1.0/+1.6/+0.9 | noise(base2-base dec1s)=+0.70us | combo of route_side
+MEAS-T1 done 39s
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 17:38:15 77:77 SyncActivityProfilerHandler.cpp:46] profiler_stop
+

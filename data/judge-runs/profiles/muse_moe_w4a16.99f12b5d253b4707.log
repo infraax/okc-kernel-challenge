@@ -1,0 +1,7 @@
+okc-diag HAVE_SGLANG=True
+okc-diag smallm selfcheck () rel L2 vs Marlin: 6.858e-03
+okc-diag smallm active=True
+okc-diag largem selfcheck rel L2 vs Marlin: m32=5.73e-03 m128=5.72e-03 m256=5.72e-03
+okc-diag largem active={32: True, 128: True, 256: True}
+okc-diag moe5 bitwise vs v4 per bucket: m1=OK m2=OK m4=OK m8=OK m12=OK m16=OK m32=OK m128=OK m256=OK
+okc-diag moe5 active={1: True, 2: True, 4: True, 8: True, 12: True, 16: True, 32: True, 128: True, 256: True}

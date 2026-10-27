@@ -1,0 +1,143 @@
+  0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 167 registers, used 1 barriers, 16 bytes smem
+ptxas info    : Compile time = 319.845 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb0ELi4ELi2ELi0ELi2EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb0ELi4ELi2ELi0ELi2EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 164 registers, used 1 barriers, 16 bytes smem
+ptxas info    : Compile time = 133.276 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb1ELi4ELi2ELi0ELi2EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb1ELi4ELi2ELi0ELi2EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 152 registers, used 1 barriers, 16 bytes smem
+ptxas info    : Compile time = 178.932 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb0ELi4ELi2ELi3ELi1EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb0ELi4ELi2ELi3ELi1EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    16 bytes stack frame, 20 bytes spill stores, 12 bytes spill loads
+ptxas info    : Used 168 registers, used 1 barriers, 16 bytes cumulative stack size, 16 bytes smem
+ptxas info    : Compile time = 300.764 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb1ELi4ELi2ELi3ELi1EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb1ELi4ELi2ELi3ELi1EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    16 bytes stack frame, 20 bytes spill stores, 12 bytes spill loads
+ptxas info    : Used 168 registers, used 1 barriers, 16 bytes cumulative stack size, 16 bytes smem
+ptxas info    : Compile time = 343.397 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb0ELi4ELi2ELi3ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb0ELi4ELi2ELi3ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    8 bytes stack frame, 4 bytes spill stores, 4 bytes spill loads
+ptxas info    : Used 168 registers, used 1 barriers, 8 bytes cumulative stack size, 16 bytes smem
+ptxas info    : Compile time = 294.414 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb1ELi4ELi2ELi3ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb1ELi4ELi2ELi3ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    8 bytes stack frame, 4 bytes spill stores, 4 bytes spill loads
+ptxas info    : Used 168 registers, used 1 barriers, 8 bytes cumulative stack size, 16 bytes smem
+ptxas info    : Compile time = 373.953 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb0ELi4ELi2ELi0ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb0ELi4ELi2ELi0ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 158 registers, used 1 barriers, 16 bytes smem
+ptxas info    : Compile time = 263.464 ms
+ptxas info    : Compiling entry function '_Z14w4_moe5_kernelILb1ELi4ELi2ELi0ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii' for 'sm_90'
+ptxas info    : Function properties for _Z14w4_moe5_kernelILb1ELi4ELi2ELi0ELi0EEvPK5uint4PK5uint2PKfPKjPKtPKiSD_P6float4PiPtPyiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 162 registers, used 1 barriers, 16 bytes smem
+ptxas info    : Compile time = 333.537 ms
+ptxas info    : Compiling entry function '_Z15meas_cal_kernelPK5uint4Pyi' for 'sm_90'
+ptxas info    : Function properties for _Z15meas_cal_kernelPK5uint4Pyi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 46 registers, used 0 barriers
+ptxas info    : Compile time = 4.625 ms
+ptxas info    : Compiling entry function '_Z23moe5_route_small_kernelPKiPiS1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z23moe5_route_small_kernelPKiPiS1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, used 1 barriers, 640 bytes smem
+ptxas info    : Compile time = 6.757 ms
+ptxas info    : Compiling entry function '_Z19largem_route_kernelPKiPiS1_S1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z19largem_route_kernelPKiPiS1_S1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 8448 bytes smem
+ptxas info    : Compile time = 20.116 ms
+ptxas info    : Compiling entry function '_Z19smallm_route_kernelPKiPiS1_iii' for 'sm_90'
+ptxas info    : Function properties for _Z19smallm_route_kernelPKiPiS1_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 29 registers, used 1 barriers, 784 bytes smem
+ptxas info    : Compile time = 6.943 ms
+[3/3] ccache c++ main.o cuda.cuda.o -shared -L/opt/sglang/lib/python3.12/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda/lib64 -lcudart -o okc_meas5_371fc67effae.so
+okc-diag meas5 built 121s after prepare start
+okc-diag moe5 bitwise vs v4 per bucket: m1=OK m2=OK m4=OK m8=OK m12=OK m16=OK m32=OK m128=OK m256=OK
+MEAS-ALTA gpu=NVIDIA H200 torch=2.14.1+cu130 cap=(9, 0) budget=151s (prepare so far 121s) bw_ach=3.29TB/s cal=20.4us(64MB) inst=12
+I moe m=256 seeds=11/12/13 pairs=321/321/326 distinct=24/27/26 chunks=27/30/30 n_act=24/27/26 uniq1=453/510/491MB uniq2=226/255/245MB
+B moe m=256 v=v4 | g1=244.1/261.0/261.7 g2=128.3/133.2/132.5 | tb=1.88/1.85 ach=57/56% x=1.00/1.00 bw=OK pair=373.1/394.2/394.9
+B moe m=256 v=base | g1=233.8/250.7/249.8 g2=123.7/129.0/129.0 | tb=1.96/1.90 ach=60/58% x=1.04/1.03 bw=OK pair=358.7/377.9/379.8
+B moe m=256 v=nocomp | g1=198.5/212.8/212.5 g2=102.0/107.6/106.5 | tb=2.31/2.30 ach=70/70% x=1.23/1.24 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=256 v=lb3 | g1=237.0/255.2/254.4 g2=126.4/131.3/131.0 | tb=1.93/1.87 ach=59/57% x=1.03/1.01 bw=OK
+B moe m=256 v=alt | g1=233.9/231.0/234.3 g2=123.1/120.6/123.5 | tb=2.09/1.99 ach=64/60% x=1.12/1.07 bw=OK pair=357.6/352.0/359.8
+B moe m=256 v=wstream | g1=114.2/126.8/122.7 g2=60.1/66.8/63.4 | tb=4.00/3.82 ach=121/116% x=2.13/2.09 bw=-
+B moe m=256 v=nostage | g1=214.2/229.2/229.8 g2=109.4/115.7/115.0 | tb=2.14/2.13 ach=65/65% x=1.14/1.15 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=256 v=kc | g1=289.3/307.1/310.5 g2=145.6/156.3/155.4 | tb=1.58/1.58 ach=48/48% x=0.84/0.85 bw=e=1.7e-04,e=1.4e-04,e=2.
+B moe m=256 v=nb2 | g1=222.4/230.6/231.9 g2=122.3/120.2/122.8 | tb=2.12/2.00 ach=64/61% x=1.13/1.08 bw=OK
+B moe m=256 v=nb4 | g1=229.4/228.2/231.0 g2=133.4/123.0/136.2 | tb=2.12/1.80 ach=65/55% x=1.13/0.97 bw=OK
+B moe m=256 v=altkc | g1=258.3/262.0/266.1 g2=137.7/141.3/142.8 | tb=1.84/1.72 ach=56/52% x=0.98/0.93 bw=e=1.7e-04,e=1.4e-04,e=2.
+B moe m=256 v=zflat | g1=247.7/263.7/264.7 g2=124.3/129.2/129.4 | tb=1.85/1.90 ach=56/58% x=0.99/1.03 bw=OK
+B moe m=256 v=pdloff | g1=234.9/250.7/250.6 g2=124.3/128.6/128.8 | tb=1.96/1.90 ach=59/58% x=1.04/1.03 bw=OK pair=361.1/379.0/380.1
+S moe m=256 g1 cta=39.4us item=12.0us span=243 stage=19% stream=67% wait=10% fix=5% epi=4% bw/cta=9.6GB/s occ=3/3.0 | g2 cta=24.8us item=12.3us span=182 stage=13% stream=41% wait=6% fix=3% epi=1% bw/cta=9.3GB/s occ=3/3.0 | pdl g2t0=-52.0 g2t1=1.0 g2end=130.3
+I moe m=128 seeds=11/12/13 pairs=159/155/164 distinct=23/24/26 chunks=24/25/27 n_act=23/24/26 uniq1=434/453/491MB uniq2=217/226/245MB
+B moe m=128 v=v4 | g1=191.8/199.6/216.8 g2=97.7/101.0/109.4 | tb=2.26/2.24 ach=69/68% x=1.00/1.00 bw=OK pair=292.5/302.1/327.6
+B moe m=128 v=base | g1=183.7/190.3/206.1 g2=95.2/97.5/106.0 | tb=2.38/2.32 ach=72/70% x=1.05/1.03 bw=OK pair=281.2/290.5/315.3
+B moe m=128 v=nocomp | g1=158.1/165.5/177.7 g2=80.9/84.0/89.8 | tb=2.75/2.70 ach=83/82% x=1.21/1.21 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=128 v=lb3 | g1=187.2/193.3/210.0 g2=96.3/99.6/107.6 | tb=2.34/2.27 ach=71/69% x=1.03/1.01 bw=OK
+B moe m=128 v=alt | g1=179.1/183.4/213.0 g2=94.7/96.6/109.4 | tb=2.42/2.29 ach=74/70% x=1.07/1.03 bw=OK pair=279.3/284.4/326.1
+B moe m=128 v=wstream | g1=104.2/108.2/115.8 g2=55.7/57.7/61.9 | tb=4.19/3.92 ach=127/119% x=1.85/1.75 bw=-
+B moe m=128 v=nostage | g1=172.2/179.2/196.1 g2=87.8/92.4/97.8 | tb=2.52/2.47 ach=77/75% x=1.11/1.11 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=128 v=kc | g1=224.2/231.9/252.3 g2=115.2/120.1/129.4 | tb=1.95/1.89 ach=59/57% x=0.86/0.85 bw=e=1.4e-04,e=1.2e-04,e=1.
+B moe m=128 v=nb2 | g1=174.5/180.6/197.5 g2=93.6/95.4/105.9 | tb=2.49/2.32 ach=76/70% x=1.10/1.04 bw=OK
+B moe m=128 v=nb4 | g1=179.0/183.7/210.0 g2=100.4/103.4/122.0 | tb=2.42/2.16 ach=74/66% x=1.07/0.97 bw=OK
+B moe m=128 v=altkc | g1=203.3/209.7/230.3 g2=107.9/112.6/122.6 | tb=2.14/2.01 ach=65/61% x=0.94/0.90 bw=e=1.4e-04,e=1.2e-04,e=1.
+B moe m=128 v=zflat | g1=189.0/195.1/209.9 g2=94.9/98.4/105.4 | tb=2.32/2.30 ach=71/70% x=1.02/1.03 bw=OK
+B moe m=128 v=pdloff | g1=183.7/189.9/206.2 g2=95.3/98.2/106.2 | tb=2.38/2.31 ach=72/70% x=1.05/1.03 bw=OK pair=282.0/291.8/316.4
+S moe m=128 g1 cta=36.9us item=11.3us span=185 stage=13% stream=74% wait=11% fix=4% epi=3% bw/cta=10.3GB/s occ=3/3.0 | g2 cta=20.5us item=10.8us span=134 stage=9% stream=51% wait=7% fix=3% epi=1% bw/cta=10.3GB/s occ=3/3.0 | pdl g2t0=-34.6 g2t1=0.8 g2end=99.1
+I moe m=32 seeds=11/12/13 pairs=43/39/42 distinct=14/15/11 chunks=14/15/11 n_act=14/15/11 uniq1=264/283/208MB uniq2=132/142/104MB
+B moe m=32 v=v4 | g1=107.8/113.0/88.3 g2=57.2/60.8/47.9 | tb=2.45/2.31 ach=74/70% x=1.00/1.00 bw=OK pair=162.3/170.1/131.5
+B moe m=32 v=base | g1=103.0/107.1/84.8 g2=56.1/59.1/47.4 | tb=2.57/2.35 ach=78/71% x=1.05/1.02 bw=OK pair=154.2/163.0/127.1
+B moe m=32 v=nocomp | g1=89.8/94.2/73.0 g2=50.3/52.6/41.8 | tb=2.94/2.63 ach=89/80% x=1.20/1.15 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=32 v=lb3 | g1=104.9/109.5/85.2 g2=57.2/59.7/46.9 | tb=2.52/2.31 ach=77/70% x=1.03/1.02 bw=OK
+B moe m=32 v=alt | g1=108.5/110.7/86.6 g2=59.7/60.0/47.7 | tb=2.43/2.21 ach=74/67% x=1.02/1.00 bw=OK pair=167.9/169.6/131.7
+B moe m=32 v=wstream | g1=64.8/69.5/51.5 g2=35.7/37.6/29.5 | tb=4.07/3.70 ach=124/112% x=1.66/1.62 bw=-
+B moe m=32 v=nostage | g1=98.1/103.6/82.3 g2=55.2/56.6/45.3 | tb=2.69/2.39 ach=82/73% x=1.09/1.06 bw=e=1.0e+00,e=1.0e+00,e=1.
+B moe m=32 v=kc | g1=124.8/131.1/101.7 g2=66.7/69.2/55.8 | tb=2.12/1.98 ach=64/60% x=0.86/0.86 bw=e=1.0e-04,e=1.8e-04,e=2.
+B moe m=32 v=nb2 | g1=100.5/104.9/82.8 g2=59.6/60.2/46.9 | tb=2.63/2.22 ach=80/67% x=1.07/1.01 bw=OK
+B moe m=32 v=nb4 | g1=107.7/109.0/86.3 g2=72.9/72.4/48.3 | tb=2.45/1.95 ach=75/59% x=1.02/0.84 bw=OK
+B moe m=32 v=altkc | g1=117.5/123.5/96.7 g2=64.8/67.6/53.8 | tb=2.25/2.04 ach=68/62% x=0.91/0.89 bw=e=1.0e-04,e=1.8e-04,e=2.
+B moe m=32 v=zflat | g1=102.2/106.7/84.4 g2=57.0/59.2/47.0 | tb=2.59/2.32 ach=79/70% x=1.06/1.02 bw=OK
+B moe m=32 v=pdloff | g1=102.6/107.3/84.2 g2=56.0/58.8/47.4 | tb=2.58/2.36 ach=78/72% x=1.05/1.02 bw=OK pair=156.6/164.4/128.5
+S moe m=32 g1 cta=36.9us item=11.0us span=108 stage=7% stream=83% wait=11% fix=4% epi=4% bw/cta=9.9GB/s occ=3/3.0 | g2 cta=21.0us item=10.5us span=90 stage=5% stream=46% wait=6% fix=2% epi=1% bw/cta=9.6GB/s occ=3/3.0 | pdl g2t0=-31.5 g2t1=1.0 g2end=58.1
+I moe m=16 seeds=11/12/13 pairs=23/23/24 distinct=12/12/9 chunks=12/12/9 n_act=12/12/9 uniq1=226/226/170MB uniq2=113/113/85MB
+B moe m=16 v=v4 | g1=86.4/86.6/69.1 g2=49.2/47.7/42.1 | tb=2.62/2.30 ach=79/70% x=1.00/1.00 bw=OK pair=128.2/128.5/105.3
+B moe m=16 v=base | g1=84.8/85.2/66.8 g2=47.4/46.6/40.6 | tb=2.66/2.39 ach=81/73% x=1.02/1.04 bw=OK pair=125.6/125.9/101.5
+B moe m=16 v=alt | g1=84.6/85.0/66.4 g2=47.1/46.9/40.9 | tb=2.66/2.40 ach=81/73% x=1.02/1.03 bw=OK pair=125.6/125.8/101.5
+B moe m=16 v=wstream | g1=56.1/57.7/45.0 g2=33.3/32.0/27.6 | tb=3.93/3.40 ach=119/103% x=1.54/1.49 bw=-
+B moe m=16 v=zflat | g1=85.9/85.1/67.3 g2=46.9/47.0/40.5 | tb=2.64/2.41 ach=80/73% x=1.02/1.04 bw=OK
+B moe m=16 v=kc | g1=100.6/100.3/79.1 g2=56.2/55.9/45.0 | tb=2.25/2.02 ach=68/61% x=0.86/0.88 bw=e=3.7e-04,e=2.3e-04,e=1.
+B moe m=16 v=nb2 | g1=82.1/82.4/69.0 g2=53.7/53.1/46.0 | tb=2.75/2.11 ach=83/64% x=1.05/0.92 bw=OK
+B moe m=16 v=zfnb2 | g1=81.5/81.5/69.6 g2=53.5/53.2/46.0 | tb=2.78/2.12 ach=84/64% x=1.06/0.92 bw=OK
+B moe m=16 v=pdloff | g1=84.7/84.7/67.2 g2=46.6/46.8/40.3 | tb=2.67/2.42 ach=81/73% x=1.02/1.05 bw=OK pair=127.5/126.8/102.8
+I moe m=8 seeds=11/12/13 pairs=15/11/12 distinct=10/8/6 chunks=10/8/6 n_act=10/8/6 uniq1=189/151/113MB uniq2=94/75/57MB
+B moe m=8 v=v4 | g1=74.0/61.9/48.4 g2=43.3/34.7/31.1 | tb=2.44/2.17 ach=74/66% x=1.00/1.00 bw=OK pair=115.2/90.0/76.9
+B moe m=8 v=base | g1=72.3/59.8/47.5 g2=41.5/33.5/29.0 | tb=2.52/2.25 ach=77/68% x=1.02/1.04 bw=OK pair=112.8/87.7/75.5
+B moe m=8 v=alt | g1=72.4/60.5/47.6 g2=41.7/33.9/28.9 | tb=2.50/2.23 ach=76/68% x=1.02/1.04 bw=OK pair=112.8/87.5/75.9
+B moe m=8 v=wstream | g1=47.9/40.0/32.5 g2=28.8/23.9/20.2 | tb=3.77/3.16 ach=115/96% x=1.54/1.50 bw=-
+B moe m=8 v=zflat | g1=72.8/60.2/47.2 g2=40.9/34.1/32.8 | tb=2.51/2.21 ach=76/67% x=1.03/1.02 bw=OK
+B moe m=8 v=kc | g1=86.3/71.3/55.5 g2=49.3/40.1/32.1 | tb=2.12/1.88 ach=64/57% x=0.87/0.88 bw=e=4.6e-04,e=4.0e-04,e=8.
+B moe m=8 v=nb2 | g1=75.3/57.4/55.0 g2=58.2/41.5/40.6 | tb=2.51/1.62 ach=76/49% x=0.98/0.76 bw=OK
+B moe m=8 v=zfnb2 | g1=71.1/57.4/55.2 g2=45.6/31.5/31.1 | tb=2.63/2.07 ach=80/63% x=1.04/1.00 bw=OK
+B moe m=8 v=pdloff | g1=72.2/60.1/47.3 g2=41.7/33.8/28.9 | tb=2.51/2.23 ach=76/68% x=1.02/1.04 bw=OK pair=108.6/89.2/72.4
+I moe m=1 seeds=11/12/13 pairs=3/2/3 distinct=3/2/3 chunks=3/2/3 n_act=3/2/3 uniq1=57/38/57MB uniq2=28/19/28MB
+B moe m=1 v=v4 | g1=30.7/21.1/31.2 g2=19.7/19.2/20.1 | tb=1.82/1.41 ach=55/43% x=1.00/1.00 bw=OK pair=44.1/33.8/44.2
+B moe m=1 v=base | g1=29.0/21.0/30.0 g2=19.8/19.6/19.9 | tb=1.89/1.42 ach=57/43% x=1.04/1.00 bw=OK pair=43.3/34.9/43.9
+B moe m=1 v=alt | g1=29.8/21.0/28.8 g2=19.8/19.4/19.9 | tb=1.90/1.42 ach=58/43% x=1.03/1.00 bw=OK pair=43.1/34.6/43.1
+B moe m=1 v=wstream | g1=20.8/15.1/20.3 g2=13.4/11.6/13.5 | tb=2.72/2.10 ach=83/64% x=1.47/1.49 bw=-
+B moe m=1 v=zflat | g1=33.2/20.7/32.8 g2=19.8/19.5/19.7 | tb=1.73/1.43 ach=52/43% x=0.95/1.00 bw=OK
+B moe m=1 v=kc | g1=32.6/24.6/32.0 g2=22.8/15.6/22.5 | tb=1.74/1.24 ach=53/38% x=0.94/0.89 bw=e=3.5e-04,e=7.8e-05,e=3.
+B moe m=1 v=nb2 | g1=41.2/24.7/40.8 g2=23.6/22.5/23.6 | tb=1.39/1.20 ach=42/37% x=0.76/0.85 bw=OK
+B moe m=1 v=zfnb2 | g1=31.4/30.3/30.8 g2=23.4/22.9/23.5 | tb=1.80/1.20 ach=55/37% x=0.98/0.84 bw=OK
+B moe m=1 v=pdloff | g1=29.0/20.5/29.7 g2=19.7/19.1/19.9 | tb=1.91/1.42 ach=58/43% x=1.05/1.00 bw=OK pair=44.5/35.7/44.9
+MEAS-ALTA done 1s

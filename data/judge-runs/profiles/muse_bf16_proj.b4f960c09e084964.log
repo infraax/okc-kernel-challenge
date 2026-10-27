@@ -1,0 +1,160 @@
+r=1.66e-03
+MEAS qkv_gate m=128 cfg=BM64_BN64_BK256_S8_w4_s3 us=61.63 err=1.66e-03
+MEAS qkv_gate m=128 cfg=BM64_BN64_BK64_S1_w4_s3 us=67.84 err=1.66e-03
+MEAS qkv_gate m=128 cfg=BM64_BN128_BK64_S1_w8_s3 us=73.82 err=1.66e-03
+MEAS qkv_gate m=128 cfg=BM128_BN128_BK64_S1_w8_s3 us=80.74 err=1.66e-03
+MEAS BEST qkv_gate m=128 us=25.09 cfg=baseline
+MEAS o m=128 n=8192 k=1024 baseline us=12.99 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN32_BK128_S1_w4_s3 us=18.62 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN32_BK128_S4_w4_s3 us=41.63 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN32_BK128_S8_w4_s3 us=60.64 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN32_BK256_S1_w4_s3 us=21.28 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN32_BK256_S4_w4_s3 us=80.19 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN32_BK256_S8_w4_s3 us=141.63 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK128_S1_w4_s3 us=14.21 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK128_S4_w4_s3 us=44.58 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK128_S8_w4_s3 us=69.66 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK256_S1_w4_s3 us=17.18 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK256_S4_w4_s3 us=69.31 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK256_S8_w4_s3 us=121.66 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN64_BK64_S1_w4_s3 us=16.51 err=1.66e-03
+MEAS o m=128 cfg=BM64_BN128_BK64_S1_w8_s3 us=17.31 err=1.66e-03
+MEAS o m=128 cfg=BM128_BN128_BK64_S1_w8_s3 us=17.86 err=1.66e-03
+MEAS BEST o m=128 us=12.99 cfg=baseline
+MEAS pooler m=128 n=4096 k=8192 baseline us=31.55 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN32_BK128_S1_w4_s3 us=47.62 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN32_BK128_S4_w4_s3 us=64.45 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN32_BK128_S8_w4_s3 us=72.80 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN32_BK256_S1_w4_s3 us=56.93 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN32_BK256_S4_w4_s3 us=89.12 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN32_BK256_S8_w4_s3 us=114.21 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK128_S1_w4_s3 us=46.85 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK128_S4_w4_s3 us=62.37 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK128_S8_w4_s3 us=72.03 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK256_S1_w4_s3 us=38.21 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK256_S4_w4_s3 us=73.34 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK256_S8_w4_s3 us=93.57 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN64_BK64_S1_w4_s3 us=70.14 err=1.66e-03
+MEAS pooler m=128 cfg=BM64_BN128_BK64_S1_w8_s3 us=76.22 err=1.66e-03
+MEAS pooler m=128 cfg=BM128_BN128_BK64_S1_w8_s3 us=84.58 err=1.66e-03
+MEAS BEST pooler m=128 us=31.55 cfg=baseline
+MEAS unpooler m=128 n=8192 k=4096 baseline us=30.05 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN32_BK128_S1_w4_s3 us=51.07 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN32_BK128_S4_w4_s3 us=74.05 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN32_BK128_S8_w4_s3 us=88.90 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN32_BK256_S1_w4_s3 us=60.93 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN32_BK256_S4_w4_s3 us=116.38 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN32_BK256_S8_w4_s3 us=169.57 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK128_S1_w4_s3 us=36.42 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK128_S4_w4_s3 us=76.67 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK128_S8_w4_s3 us=96.13 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK256_S1_w4_s3 us=48.90 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK256_S4_w4_s3 us=97.70 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK256_S8_w4_s3 us=142.56 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN64_BK64_S1_w4_s3 us=47.01 err=1.66e-03
+MEAS unpooler m=128 cfg=BM64_BN128_BK64_S1_w8_s3 us=47.90 err=1.66e-03
+MEAS unpooler m=128 cfg=BM128_BN128_BK64_S1_w8_s3 us=51.58 err=1.66e-03
+MEAS BEST unpooler m=128 us=30.05 cfg=baseline
+MEAS router m=128 n=256 k=8192 baseline us=22.46 err=2.82e-06
+MEAS router m=128 cfg=BM64_BN32_BK128_S1_w4_s3 us=40.77 err=1.90e-05
+MEAS router m=128 cfg=BM64_BN32_BK128_S4_w4_s3 us=19.94 err=5.23e-06
+MEAS router m=128 cfg=BM64_BN32_BK128_S8_w4_s3 us=16.35 err=3.37e-06
+MEAS router m=128 cfg=BM64_BN32_BK256_S1_w4_s3 us=34.85 err=1.92e-05
+MEAS router m=128 cfg=BM64_BN32_BK256_S4_w4_s3 us=18.34 err=5.32e-06
+MEAS router m=128 cfg=BM64_BN32_BK256_S8_w4_s3 us=15.65 err=3.45e-06
+MEAS router m=128 cfg=BM64_BN64_BK128_S1_w4_s3 us=45.79 err=1.90e-05
+MEAS router m=128 cfg=BM64_BN64_BK128_S4_w4_s3 us=23.39 err=5.23e-06
+MEAS router m=128 cfg=BM64_BN64_BK128_S8_w4_s3 us=19.01 err=3.37e-06
+MEAS router m=128 cfg=(64, 64, 256, 1, 4, 3) FAIL OutOfResources: out of resource: shared memory, Required: 294912, Hardware limit: 232448. Reduci
+MEAS router m=128 cfg=(64, 64, 256, 4, 4, 3) FAIL OutOfResources: out of resource: shared memory, Required: 294912, Hardware limit: 232448. Reduci
+MEAS router m=128 cfg=(64, 64, 256, 8, 4, 3) FAIL OutOfResources: out of resource: shared memory, Required: 294912, Hardware limit: 232448. Reduci
+MEAS router m=128 cfg=BM64_BN64_BK64_S1_w4_s3 us=69.44 err=1.90e-05
+MEAS router m=128 cfg=BM64_BN128_BK64_S1_w8_s3 us=264.48 err=1.90e-05
+MEAS router m=128 cfg=BM128_BN128_BK64_S1_w8_s3 us=107.30 err=1.90e-05
+MEAS BEST router m=128 us=15.65 cfg=(64, 32, 256, 8, 4, 3)
+MEAS qkv_gate m=256 n=2304 k=8192 baseline us=28.90 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN32_BK128_S1_w4_s3 us=43.65 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN32_BK128_S4_w4_s3 us=61.47 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN32_BK128_S8_w4_s3 us=73.86 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN32_BK256_S1_w4_s3 us=68.32 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN32_BK256_S4_w4_s3 us=92.26 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN32_BK256_S8_w4_s3 us=122.43 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK128_S1_w4_s3 us=45.31 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK128_S4_w4_s3 us=67.97 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK128_S8_w4_s3 us=77.89 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK256_S1_w4_s3 us=57.73 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK256_S4_w4_s3 us=79.65 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK256_S8_w4_s3 us=101.34 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN64_BK64_S1_w4_s3 us=66.37 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM64_BN128_BK64_S1_w8_s3 us=72.70 err=1.66e-03
+MEAS qkv_gate m=256 cfg=BM128_BN128_BK64_S1_w8_s3 us=81.63 err=1.66e-03
+MEAS BEST qkv_gate m=256 us=28.90 cfg=baseline
+MEAS o m=256 n=8192 k=1024 baseline us=14.11 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN32_BK128_S1_w4_s3 us=25.60 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN32_BK128_S4_w4_s3 us=69.63 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN32_BK128_S8_w4_s3 us=107.42 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN32_BK256_S1_w4_s3 us=33.15 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN32_BK256_S4_w4_s3 us=147.97 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN32_BK256_S8_w4_s3 us=269.47 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK128_S1_w4_s3 us=20.48 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK128_S4_w4_s3 us=76.86 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK128_S8_w4_s3 us=127.81 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK256_S1_w4_s3 us=25.22 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK256_S4_w4_s3 us=126.40 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK256_S8_w4_s3 us=230.88 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN64_BK64_S1_w4_s3 us=18.30 err=1.66e-03
+MEAS o m=256 cfg=BM64_BN128_BK64_S1_w8_s3 us=18.88 err=1.66e-03
+MEAS o m=256 cfg=BM128_BN128_BK64_S1_w8_s3 us=18.72 err=1.66e-03
+MEAS BEST o m=256 us=14.11 cfg=baseline
+MEAS pooler m=256 n=4096 k=8192 baseline us=38.05 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN32_BK128_S1_w4_s3 us=87.87 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN32_BK128_S4_w4_s3 us=115.04 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN32_BK128_S8_w4_s3 us=125.47 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN32_BK256_S1_w4_s3 us=101.79 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN32_BK256_S4_w4_s3 us=160.35 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN32_BK256_S8_w4_s3 us=210.56 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK128_S1_w4_s3 us=54.43 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK128_S4_w4_s3 us=107.36 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK128_S8_w4_s3 us=125.50 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK256_S1_w4_s3 us=64.61 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK256_S4_w4_s3 us=130.75 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK256_S8_w4_s3 us=166.59 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN64_BK64_S1_w4_s3 us=72.29 err=1.66e-03
+MEAS pooler m=256 cfg=BM64_BN128_BK64_S1_w8_s3 us=75.01 err=1.66e-03
+MEAS pooler m=256 cfg=BM128_BN128_BK64_S1_w8_s3 us=83.39 err=1.66e-03
+MEAS BEST pooler m=256 us=38.05 cfg=baseline
+MEAS unpooler m=256 n=8192 k=4096 baseline us=33.73 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN32_BK128_S1_w4_s3 us=81.60 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN32_BK128_S4_w4_s3 us=129.12 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN32_BK128_S8_w4_s3 us=160.42 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN32_BK256_S1_w4_s3 us=107.26 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN32_BK256_S4_w4_s3 us=216.42 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN32_BK256_S8_w4_s3 us=325.95 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK128_S1_w4_s3 us=60.16 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK128_S4_w4_s3 us=134.53 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK128_S8_w4_s3 us=172.42 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK256_S1_w4_s3 us=83.46 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK256_S4_w4_s3 us=178.11 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK256_S8_w4_s3 us=270.40 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN64_BK64_S1_w4_s3 us=51.52 err=1.66e-03
+MEAS unpooler m=256 cfg=BM64_BN128_BK64_S1_w8_s3 us=51.90 err=1.66e-03
+MEAS unpooler m=256 cfg=BM128_BN128_BK64_S1_w8_s3 us=52.22 err=1.66e-03
+MEAS BEST unpooler m=256 us=33.73 cfg=baseline
+MEAS router m=256 n=256 k=8192 baseline us=23.97 err=3.22e-06
+MEAS router m=256 cfg=BM64_BN32_BK128_S1_w4_s3 us=40.16 err=1.89e-05
+MEAS router m=256 cfg=BM64_BN32_BK128_S4_w4_s3 us=20.64 err=5.21e-06
+MEAS router m=256 cfg=BM64_BN32_BK128_S8_w4_s3 us=17.89 err=3.37e-06
+MEAS router m=256 cfg=BM64_BN32_BK256_S1_w4_s3 us=34.46 err=1.90e-05
+MEAS router m=256 cfg=BM64_BN32_BK256_S4_w4_s3 us=18.82 err=5.31e-06
+MEAS router m=256 cfg=BM64_BN32_BK256_S8_w4_s3 us=23.14 err=3.44e-06
+MEAS router m=256 cfg=BM64_BN64_BK128_S1_w4_s3 us=45.89 err=1.89e-05
+MEAS router m=256 cfg=BM64_BN64_BK128_S4_w4_s3 us=23.58 err=5.21e-06
+MEAS router m=256 cfg=BM64_BN64_BK128_S8_w4_s3 us=19.62 err=3.37e-06
+MEAS router m=256 cfg=(64, 64, 256, 1, 4, 3) FAIL OutOfResources: out of resource: shared memory, Required: 294912, Hardware limit: 232448. Reduci
+MEAS router m=256 cfg=(64, 64, 256, 4, 4, 3) FAIL OutOfResources: out of resource: shared memory, Required: 294912, Hardware limit: 232448. Reduci
+MEAS router m=256 cfg=(64, 64, 256, 8, 4, 3) FAIL OutOfResources: out of resource: shared memory, Required: 294912, Hardware limit: 232448. Reduci
+MEAS router m=256 cfg=BM64_BN64_BK64_S1_w4_s3 us=70.05 err=1.89e-05
+MEAS router m=256 cfg=BM64_BN128_BK64_S1_w8_s3 us=267.58 err=1.89e-05
+MEAS router m=256 cfg=BM128_BN128_BK64_S1_w8_s3 us=107.01 err=1.89e-05
+MEAS BEST router m=256 us=17.89 cfg=(64, 32, 128, 8, 4, 3)
+MEAS done in 26.9s

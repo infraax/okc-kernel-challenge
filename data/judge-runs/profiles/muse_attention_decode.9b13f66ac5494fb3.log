@@ -1,0 +1,54 @@
+TV 1 muse_attention_decode sonnet_v3.py torch=2.14.1+cu130 cuda=13.0 gpu=NVIDIA_H200 cupti=graph replays=20
+TN 0 _attn_kernel
+TN 1 _reduce_kernel
+TN 2 _full_cat_kernel
+TN 3 _full_kernel
+TS 0 w=46 wall=12.11 span=7.70 n=2 label=batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_1,page=1 rep=20/20
+TK 0.0 0 s=0.00 d=4.80 g=0.00
+TK 0.1 1 s=5.09 d=2.59 g=0.29
+TG 0 gaps=0.29 head=4.14 tail=4.07 busy=7.41
+TS 1 w=16 wall=19.23 span=15.17 n=2 label=batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_1,page=1 rep=20/20
+TK 1.0 2 s=0.00 d=11.70 g=0.00
+TK 1.1 1 s=11.97 d=3.20 g=0.29
+TG 1 gaps=0.29 head=3.98 tail=3.84 busy=14.88
+TS 2 w=46 wall=17.20 span=13.12 n=2 label=batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_16,page=1,spread=agentic rep=20/20
+TK 2.0 0 s=0.00 d=9.82 g=0.00
+TK 2.1 1 s=10.11 d=3.04 g=0.29
+TG 2 gaps=0.29 head=4.02 tail=3.82 busy=12.83
+TS 3 w=16 wall=108.38 span=104.18 n=2 label=batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_16,page=1,spread=agentic rep=20/20
+TK 3.0 2 s=0.00 d=100.08 g=0.00
+TK 3.1 1 s=100.66 d=3.58 g=0.58
+TG 3 gaps=0.58 head=4.24 tail=3.92 busy=103.60
+TS 4 w=46 wall=21.47 span=17.04 n=2 label=batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=decode_32,page=1,spread=agentic rep=20/20
+TK 4.0 0 s=0.00 d=13.44 g=0.00
+TK 4.1 1 s=14.08 d=2.98 g=0.61
+TG 4 gaps=0.61 head=4.40 tail=3.95 busy=16.40
+TS 5 w=16 wall=195.42 span=191.38 n=2 label=batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=decode_32,page=1,spread=agentic rep=20/20
+TK 5.0 2 s=0.00 d=187.04 g=0.00
+TK 5.1 1 s=187.73 d=3.58 g=0.58
+TG 5 gaps=0.58 head=4.08 tail=3.87 busy=190.69
+TS 6 w=46 wall=13.71 span=9.23 n=2 label=batch=1,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_1,page=1,q_len=8 rep=20/20
+TK 6.0 0 s=0.00 d=5.76 g=0.00
+TK 6.1 1 s=6.34 d=2.78 g=0.58
+TG 6 gaps=0.58 head=4.22 tail=4.13 busy=8.61
+TS 7 w=16 wall=24.82 span=20.90 n=2 label=batch=1,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_1,page=1,q_len=8 rep=20/20
+TK 7.0 3 s=0.00 d=16.77 g=0.00
+TK 7.1 1 s=17.06 d=3.81 g=0.29
+TG 7 gaps=0.29 head=3.92 tail=3.78 busy=20.61
+TS 8 w=46 wall=21.87 span=17.47 n=2 label=batch=16,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic rep=20/20
+TK 8.0 0 s=0.00 d=11.12 g=0.00
+TK 8.1 1 s=11.70 d=5.73 g=0.58
+TG 8 gaps=0.58 head=4.18 tail=3.98 busy=16.90
+TS 9 w=16 wall=192.50 span=188.24 n=2 label=batch=16,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_16,page=1,q_len=8,spread=agentic rep=20/20
+TK 9.0 3 s=0.00 d=181.28 g=0.00
+TK 9.1 1 s=181.86 d=6.40 g=0.58
+TG 9 gaps=0.58 head=4.03 tail=3.87 busy=187.66
+TS 10 w=46 wall=30.29 span=26.08 n=2 label=batch=32,ctx=80000,dist=soft,heads=tp8,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic rep=20/20
+TK 10.0 0 s=0.00 d=17.26 g=0.00
+TK 10.1 1 s=17.84 d=8.13 g=0.58
+TG 10 gaps=0.58 head=4.13 tail=3.90 busy=25.50
+TS 11 w=16 wall=369.87 span=365.14 n=2 label=batch=32,ctx=80000,dist=coherent,heads=tp8,layer=full,load=verify_32,page=1,q_len=8,spread=agentic rep=20/20
+TK 11.0 3 s=0.00 d=355.23 g=0.00
+TK 11.1 1 s=355.84 d=9.15 g=0.61
+TG 11 gaps=0.61 head=4.29 tail=4.00 busy=364.53
+TZ done 16

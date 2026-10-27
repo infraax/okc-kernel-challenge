@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<style>
+body { font-family: sans-serif; margin: 20px; background: #fafafa; }
+h1, h2, h3 { color: #333; }
+.shape { margin-bottom: 40px; background: white; padding: 10px; border: 1px solid #ccc; }
+.err { color: red; font-weight: bold; }
+.lane { font-size: 12px; fill: #666; }
+svg { border: 1px solid #eee; background: #fff; }
+</style>
+<title>Timeline: muse_decode_layer</title>
+</head><body>
+<h1>Timeline: muse_decode_layer</h1>
+<div class='shape'>
+<h3>Shape 10 (weight: 46.0, wall: 690.11 &mu;s, span: 682.96 &mu;s, sol: 143.81 &mu;s)<br><i>batch=32,ctx=80000,dist=soft,layer=sliding,load=verify_32,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='34.68736271782105' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[10.0] nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN
+Start: 0.00 μs
+Dur: 19.74 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='115.19695416605651' y='25' width='30.08346756479719' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[10.1] _attn_kernel
+Start: 20.03 μs
+Dur: 17.12 μs
+Gap before: 0.26 μs</title>
+</rect>
+<rect x='146.82676819446476' y='25' width='13.776541221262264' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[10.2] _reduce_kernel
+Start: 38.03 μs
+Dur: 7.84 μs
+Gap before: 0.70 μs</title>
+</rect>
+<rect x='161.39405476643725' y='25' width='16.025772441060184' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[10.3] nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+Start: 46.32 μs
+Dur: 9.12 μs
+Gap before: 0.43 μs</title>
+</rect>
+<rect x='178.43901010396837' y='25' width='14.848440474447209' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[10.4] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 512, true, false, false, false, false,
+Start: 56.02 μs
+Dur: 8.45 μs
+Gap before: 0.10 μs</title>
+</rect>
+<rect x='194.2012007614585' y='25' width='58.90174256845805' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[10.5] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 64.99 μs
+Dur: 33.52 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='194.60535949626592' y='55' width='5.851515595255528' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[10.6] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 65.22 μs
+Dur: 3.33 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='201.49363010689706' y='55' width='67.2484990481769' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[10.7] _gemv_splitk
+Start: 69.14 μs
+Dur: 38.27 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='268.1973934690291' y='55' width='5.394640503734075' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[10.8] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 107.10 μs
+Dur: 3.07 μs
+Gap before: 0.06 μs</title>
+</rect>
+<rect x='275.22624103089765' y='25' width='10.92985795870552' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[10.9] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 111.10 μs
+Dur: 6.22 μs
+Gap before: 0.86 μs</title>
+</rect>
+<rect x='286.753551032362' y='25' width='1.9153609606091668' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[10.10] _local_ids_kernel
+Start: 117.66 μs
+Dur: 1.09 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='289.45965734368133' y='25' width='5.658222287304144' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[10.11] void moe_align_block_size_kernel&lt;int&gt;(int const*, int*, int*, int*, int, int, unsigned lon
+Start: 119.20 μs
+Dur: 3.22 μs
+Gap before: 0.41 μs</title>
+</rect>
+<rect x='295.94376921950504' y='25' width='4.445746082881827' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[10.12] void count_and_sort_expert_tokens_kernel&lt;int&gt;(int const*, int*, int*, unsigned long, bool)
+Start: 122.89 μs
+Dur: 2.53 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='301.1802606530971' y='25' width='589.2985795870552' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[10.13] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 125.87 μs
+Dur: 335.36 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='891.4628788988139' y='25' width='1.7747840093717968' height='20' fill='url(#hatched)' stroke='#999' stroke-width='0.5'/>
+<text x='893.4628788988139' y='23' font-size='10' fill='#999'>1.0</text>
+<rect x='893.2376629081857' y='25' width='10.06882413237663' height='20' fill='#d9b3ff' stroke='#333' stroke-width='1'>
+<title>[10.14] void sglang::act_and_mul_kernel&lt;__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+Start: 462.80 μs
+Dur: 5.73 μs
+Gap before: 1.01 μs</title>
+</rect>
+<rect x='904.0620881534632' y='25' width='306.6861912432274' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[10.15] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 468.96 μs
+Dur: 174.53 μs
+Gap before: 0.39 μs</title>
+</rect>
+<rect x='1212.0837604334456' y='25' width='9.50651632742715' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[10.16] _post_expert_norm_weighted_sum_kernel
+Start: 644.25 μs
+Dur: 5.41 μs
+Gap before: 0.54 μs</title>
+</rect>
+<rect x='1222.2053009225363' y='25' width='44.28173963977156' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[10.17] nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+Start: 650.01 μs
+Dur: 25.20 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1266.750622345878' y='25' width='13.249377654122126' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[10.18] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 512, true, false, true, false, true, t
+Start: 675.36 μs
+Dur: 7.54 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 8 (weight: 46.0, wall: 538.54 &mu;s, span: 534.69 &mu;s, sol: 126.61 &mu;s)<br><i>batch=16,ctx=80000,dist=soft,layer=sliding,load=verify_16,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='30.881445323458454' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[8.0] nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN
+Start: 0.00 μs
+Dur: 13.76 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='112.60954945856477' y='25' width='6.822644897043147' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[8.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 14.53 μs
+Dur: 3.04 μs
+Gap before: 0.67 μs</title>
+</rect>
+<rect x='120.50945407619369' y='25' width='24.59743028670819' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[8.2] _attn_kernel
+Start: 18.05 μs
+Dur: 10.96 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='146.6554452112439' y='25' width='12.164057678280873' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[8.3] _reduce_kernel
+Start: 29.70 μs
+Dur: 5.42 μs
+Gap before: 0.67 μs</title>
+</rect>
+<rect x='159.82943387757393' y='25' width='15.867137967794426' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[8.4] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 35.57 μs
+Dur: 7.07 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='176.4596308141166' y='25' width='9.942209504572743' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[8.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, false, false,
+Start: 42.98 μs
+Dur: 4.43 μs
+Gap before: 0.16 μs</title>
+</rect>
+<rect x='187.4117713067385' y='25' width='59.54104247320878' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[8.6] nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT
+Start: 47.86 μs
+Dur: 26.53 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='187.9055153453403' y='55' width='7.8325758850922975' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[8.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 48.08 μs
+Dur: 3.49 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='197.60085283061215' y='55' width='64.32138248330808' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[8.8] _gemv_splitk
+Start: 52.40 μs
+Dur: 28.66 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='262.55063681759526' y='55' width='6.530887056051171' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[8.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 81.34 μs
+Dur: 2.91 μs
+Gap before: 0.10 μs</title>
+</rect>
+<rect x='271.03405711720814' y='25' width='13.33108904224878' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[8.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 85.12 μs
+Dur: 5.94 μs
+Gap before: 0.83 μs</title>
+</rect>
+<rect x='285.621949166807' y='25' width='2.378948549626887' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[8.11] _local_ids_kernel
+Start: 91.62 μs
+Dur: 1.06 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='289.03327161532854' y='25' width='6.46355832351456' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[8.12] void moe_align_block_size_kernel&lt;int&gt;(int const*, int*, int*, int*, int, int, unsigned lon
+Start: 93.14 μs
+Dur: 2.88 μs
+Gap before: 0.48 μs</title>
+</rect>
+<rect x='296.39454637266454' y='25' width='4.174381417269821' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[8.13] void count_and_sort_expert_tokens_kernel&lt;int&gt;(int const*, int*, int*, unsigned long, bool)
+Start: 96.42 μs
+Dur: 1.86 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='301.42175840206477' y='25' width='587.5105201144588' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[8.14] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 98.66 μs
+Dur: 261.78 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='890.8623688492398' y='25' width='8.61807776468608' height='20' fill='#d9b3ff' stroke='#333' stroke-width='1'>
+<title>[8.15] void sglang::act_and_mul_kernel&lt;__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+Start: 361.30 μs
+Dur: 3.84 μs
+Gap before: 0.93 μs</title>
+</rect>
+<rect x='900.6250350670482' y='25' width='306.7721483476407' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[8.16] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 365.65 μs
+Dur: 136.69 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='1208.8559726196488' y='25' width='11.4458845312237' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[8.17] _post_expert_norm_weighted_sum_kernel
+Start: 502.99 μs
+Dur: 5.10 μs
+Gap before: 0.56 μs</title>
+</rect>
+<rect x='1221.199573584694' y='25' width='46.097738876732315' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[8.18] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 508.49 μs
+Dur: 20.54 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1268.1501430735566' y='25' width='11.849856926443362' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[8.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 529.41 μs
+Dur: 5.28 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 6 (weight: 46.0, wall: 204.64 &mu;s, span: 200.72 &mu;s, sol: 62.29 &mu;s)<br><i>batch=1,ctx=80000,dist=soft,layer=sliding,load=verify_1,page=1,q_len=8</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='73.89309932189867' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[6.0] nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 12.35 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='158.7993617869964' y='25' width='10.710011966493816' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[6.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 13.17 μs
+Dur: 1.79 μs
+Gap before: 0.74 μs</title>
+</rect>
+<rect x='171.7830075787794' y='25' width='34.58316713203031' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[6.2] _attn_kernel
+Start: 15.34 μs
+Dur: 5.78 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='211.332269644994' y='25' width='14.539289988033506' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[6.3] _reduce_kernel
+Start: 21.95 μs
+Dur: 2.43 μs
+Gap before: 0.74 μs</title>
+</rect>
+<rect x='229.1623454327882' y='25' width='38.89110490626246' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[6.4] nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT
+Start: 24.93 μs
+Dur: 6.50 μs
+Gap before: 0.48 μs</title>
+</rect>
+<rect x='268.5919425608297' y='25' width='29.3777423214998' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[6.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, true, false, t
+Start: 31.52 μs
+Dur: 4.91 μs
+Gap before: 0.13 μs</title>
+</rect>
+<rect x='300.96130833665734' y='25' width='121.87873952931791' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[6.6] _gemv_splitk
+Start: 36.93 μs
+Dur: 20.37 μs
+Gap before: 0.48 μs</title>
+</rect>
+<rect x='302.0981252493019' y='55' width='25.36896689270044' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[6.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 37.12 μs
+Dur: 4.24 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='329.2620662145991' y='55' width='133.72556840845633' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[6.8] _gemv_splitk
+Start: 41.66 μs
+Dur: 22.35 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='464.24411647387313' y='55' width='17.53091344236139' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[6.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 64.22 μs
+Dur: 2.93 μs
+Gap before: 0.06 μs</title>
+</rect>
+<rect x='484.2879936178699' y='25' width='35.77981651376147' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[6.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 67.57 μs
+Dur: 5.98 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='522.6406063023534' y='25' width='9.453530115676106' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[6.11] smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+Start: 73.98 μs
+Dur: 1.58 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='528.8033506182688' y='25' width='385.5005983246909' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[6.12] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 75.01 μs
+Dur: 64.43 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='849.5652173913043' y='25' width='305.02592740327077' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[6.13] void w4_smallm_kernel&lt;false, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 128.62 μs
+Dur: 50.98 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1157.46310331073' y='25' width='22.19784603111288' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[6.14] _epilogue_kernel
+Start: 180.08 μs
+Dur: 3.71 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1182.5329078579975' y='25' width='32.18986836856801' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[6.15] nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+Start: 184.27 μs
+Dur: 5.38 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1219.3298763462303' y='25' width='10.530514559234144' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[6.16] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 190.42 μs
+Dur: 1.76 μs
+Gap before: 0.64 μs</title>
+</rect>
+<rect x='1233.3905065815716' y='25' width='5.863581970482648' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[6.17] void at::native::vectorized_elementwise_kernel&lt;8, at::native::FillFunctor&lt;c10::BFloat16&gt;,
+Start: 192.77 μs
+Dur: 0.98 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1241.2285600319105' y='25' width='12.62465097726366' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[6.18] void at::native::elementwise_kernel&lt;128, 4, at::native::gpu_kernel_impl_nocast&lt;at::native:
+Start: 194.08 μs
+Dur: 2.11 μs
+Gap before: 0.35 μs</title>
+</rect>
+<rect x='1254.9900279218189' y='25' width='25.00997207818109' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[6.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 196.38 μs
+Dur: 4.18 μs
+Gap before: 0.19 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 0 (weight: 46.0, wall: 129.63 &mu;s, span: 125.28 &mu;s, sol: 40.02 &mu;s)<br><i>batch=1,ctx=80000,dist=soft,layer=sliding,load=decode_1,page=1</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='120.66128903442217' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.0] nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 12.59 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='208.61592524558742' y='25' width='17.15517929877805' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 13.42 μs
+Dur: 1.79 μs
+Gap before: 0.83 μs</title>
+</rect>
+<rect x='229.50882517370817' y='25' width='47.53613928599952' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[0.2] _attn_kernel
+Start: 15.60 μs
+Dur: 4.96 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='280.68684609855444' y='25' width='23.28887469051993' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[0.3] _reduce_kernel
+Start: 20.94 μs
+Dur: 2.43 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='309.5343822378404' y='25' width='63.445411708330006' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.4] nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT
+Start: 23.95 μs
+Dur: 6.62 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='375.3757687085696' y='25' width='44.94848654260842' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[0.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, true, false, t
+Start: 30.82 μs
+Dur: 4.69 μs
+Gap before: 0.07 μs</title>
+</rect>
+<rect x='425.3078827569683' y='55' width='32.96861273061257' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[0.6] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 36.03 μs
+Dur: 3.44 μs
+Gap before: 0.64 μs</title>
+</rect>
+<rect x='426.074594680936' y='25' width='184.0108617522562' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[0.7] _gemv_splitk
+Start: 36.11 μs
+Dur: 19.20 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='471.2147592045364' y='55' width='211.03745707211883' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[0.8] _gemv_splitk
+Start: 40.82 μs
+Dur: 22.02 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='681.3896653621915' y='55' width='27.60162926283843' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[0.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 62.75 μs
+Dur: 2.88 μs
+Gap before: 0.06 μs</title>
+</rect>
+<rect x='713.5915661688364' y='25' width='59.9952080504752' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[0.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 66.11 μs
+Dur: 6.26 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='779.2412746585735' y='25' width='14.375848574395016' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[0.11] smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+Start: 72.96 μs
+Dur: 1.50 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='788.4418177461864' y='25' width='162.25541090967175' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[0.12] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 73.92 μs
+Dur: 16.93 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='807.8971328168677' y='25' width='263.9405798258925' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[0.13] void w4_smallm_kernel&lt;false, 4&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 75.95 μs
+Dur: 27.54 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1078.0672470249979' y='25' width='56.5450043926204' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[0.14] _epilogue_kernel
+Start: 104.14 μs
+Dur: 5.90 μs
+Gap before: 0.70 μs</title>
+</rect>
+<rect x='1139.7875569044006' y='25' width='49.644597076910784' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.15] nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+Start: 110.58 μs
+Dur: 5.18 μs
+Gap before: 0.58 μs</title>
+</rect>
+<rect x='1197.2909512019808' y='25' width='15.813433431834516' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[0.16] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 116.58 μs
+Dur: 1.65 μs
+Gap before: 0.61 μs</title>
+</rect>
+<rect x='1217.5129781966295' y='25' width='7.954636211165242' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[0.17] void at::native::vectorized_elementwise_kernel&lt;8, at::native::FillFunctor&lt;c10::BFloat16&gt;,
+Start: 118.69 μs
+Dur: 0.83 μs
+Gap before: 0.40 μs</title>
+</rect>
+<rect x='1229.4928520086255' y='25' width='8.146314192157176' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[0.18] Memcpy DtoD (Device -&gt; Device)
+Start: 119.94 μs
+Dur: 0.85 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1242.143598754093' y='25' width='37.85640124590688' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[0.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 121.26 μs
+Dur: 3.95 μs
+Gap before: 0.45 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 4 (weight: 46.0, wall: 220.05 &mu;s, span: 216.0 &mu;s, sol: 84.51 &mu;s)<br><i>batch=32,ctx=80000,dist=soft,layer=sliding,load=decode_32,page=1,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='66.54631301208165' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[4.0] nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.98 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='150.76794889598665' y='25' width='10.665185390917927' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[4.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.74 μs
+Dur: 1.92 μs
+Gap before: 0.67 μs</title>
+</rect>
+<rect x='163.7105957505902' y='25' width='74.5452020552701' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[4.2] _attn_kernel
+Start: 15.07 μs
+Dur: 13.42 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='241.14428551590058' y='25' width='14.66462991251215' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[4.3] _reduce_kernel
+Start: 29.01 μs
+Dur: 2.64 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='258.6418552978753' y='25' width='38.21691431745591' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[4.4] nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT
+Start: 32.16 μs
+Dur: 6.88 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='298.19191778919594' y='25' width='21.330370781835853' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[4.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, false, false,
+Start: 39.28 μs
+Dur: 3.84 μs
+Gap before: 0.13 μs</title>
+</rect>
+<rect x='322.1885849187613' y='25' width='131.70393000972086' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[4.6] _gemv_splitk
+Start: 43.60 μs
+Dur: 23.71 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='323.07735036800443' y='55' width='16.164421608109986' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[4.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 43.76 μs
+Dur: 2.91 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='341.2970420774892' y='55' width='57.658658519650054' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[4.8] _gemv_splitk
+Start: 47.04 μs
+Dur: 10.38 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='401.1220663796695' y='55' width='28.107207332314953' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[4.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 57.81 μs
+Dur: 5.06 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='459.8361338702958' y='25' width='32.32884321621997' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[4.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 68.38 μs
+Dur: 5.82 μs
+Gap before: 0.77 μs</title>
+</rect>
+<rect x='495.22010831828914' y='25' width='6.554645188168309' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[4.11] _local_ids_kernel
+Start: 74.75 μs
+Dur: 1.18 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='504.1077628107207' y='25' width='15.664491042910706' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[4.12] void moe_align_block_size_kernel&lt;int&gt;(int const*, int*, int*, int*, int, int, unsigned lon
+Start: 76.35 μs
+Dur: 2.82 μs
+Gap before: 0.39 μs</title>
+</rect>
+<rect x='522.049715317317' y='25' width='7.66560199972226' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[4.13] void count_and_sort_expert_tokens_kernel&lt;int&gt;(int const*, int*, int*, unsigned long, bool)
+Start: 79.58 μs
+Dur: 1.38 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='532.0483266213025' y='25' width='358.78350229134844' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[4.14] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 81.38 μs
+Dur: 64.59 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='896.88654353562' y='25' width='12.276072767671156' height='20' fill='#d9b3ff' stroke='#333' stroke-width='1'>
+<title>[4.15] void sglang::act_and_mul_kernel&lt;__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+Start: 147.06 μs
+Dur: 2.21 μs
+Gap before: 0.93 μs</title>
+</rect>
+<rect x='911.9955561727538' y='25' width='205.5825579780586' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[4.16] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 149.78 μs
+Dur: 37.01 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1120.4666018608527' y='25' width='22.219136231079016' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[4.17] _post_expert_norm_weighted_sum_kernel
+Start: 187.31 μs
+Dur: 4.00 μs
+Gap before: 0.53 μs</title>
+</rect>
+<rect x='1145.0187473961948' y='25' width='109.15150673517566' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[4.18] nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT
+Start: 191.73 μs
+Dur: 19.65 μs
+Gap before: 0.43 μs</title>
+</rect>
+<rect x='1254.3924454936814' y='25' width='25.607554506318568' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[4.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 211.42 μs
+Dur: 4.61 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 2 (weight: 46.0, wall: 178.82 &mu;s, span: 174.56 &mu;s, sol: 76.72 &mu;s)<br><i>batch=16,ctx=80000,dist=soft,layer=sliding,load=decode_16,page=1,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='81.40254382949468' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[2.0] nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.84 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='167.79649364042626' y='25' width='12.787899621863184' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[2.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.77 μs
+Dur: 1.86 μs
+Gap before: 0.90 μs</title>
+</rect>
+<rect x='183.40323135097972' y='25' width='68.95840495015469' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[2.2] _attn_kernel
+Start: 15.04 μs
+Dur: 10.03 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='255.24922653832934' y='25' width='18.150567205225165' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[2.3] _reduce_kernel
+Start: 25.49 μs
+Dur: 2.64 μs
+Gap before: 0.39 μs</title>
+</rect>
+<rect x='276.4936404262633' y='25' width='44.89515297353043' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[2.4] nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT
+Start: 28.58 μs
+Dur: 6.53 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='323.3138535579237' y='25' width='25.98831213475421' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[2.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, false, false,
+Start: 35.39 μs
+Dur: 3.78 μs
+Gap before: 0.13 μs</title>
+</rect>
+<rect x='353.2210381574425' y='25' width='156.34238569955312' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[2.6] _gemv_splitk
+Start: 39.74 μs
+Dur: 22.74 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='354.32107253351666' y='55' width='29.28841526297697' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[2.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 39.90 μs
+Dur: 4.26 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='390.5534547954624' y='55' width='98.65933310415951' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[2.8] _gemv_splitk
+Start: 45.17 μs
+Dur: 14.35 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='489.2127878996219' y='55' width='21.31316603643864' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[2.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 59.52 μs
+Dur: 3.10 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='515.0635957373668' y='25' width='38.63870745960811' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[2.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 63.28 μs
+Dur: 5.62 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='556.5211412856652' y='25' width='10.794087315228602' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[2.11] smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+Start: 69.31 μs
+Dur: 1.57 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='563.3276039876246' y='25' width='317.15366105190793' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[2.12] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 70.30 μs
+Dur: 46.13 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='830.635957373668' y='25' width='235.26985218288073' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[2.13] void w4_smallm_kernel&lt;false, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 109.18 μs
+Dur: 34.22 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1070.5809556548643' y='25' width='39.188724647645245' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[2.14] _epilogue_kernel
+Start: 144.08 μs
+Dur: 5.70 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1112.5197662426951' y='25' width='137.3667927122723' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[2.15] nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT
+Start: 150.18 μs
+Dur: 19.98 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1250.2990718459953' y='25' width='29.700928154004817' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[2.16] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 170.22 μs
+Dur: 4.32 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 11 (weight: 16.0, wall: 1077.06 &mu;s, span: 1070.27 &mu;s, sol: 267.18 &mu;s)<br><i>batch=32,ctx=80000,dist=soft,layer=full,load=verify_32,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='22.131285385952122' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[11.0] nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN
+Start: 0.00 μs
+Dur: 19.74 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='102.53489545378105' y='25' width='378.02567408487016' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[11.1] _attn_kernel
+Start: 20.10 μs
+Dur: 337.18 μs
+Gap before: 0.22 μs</title>
+</rect>
+<rect x='480.71752900947354' y='25' width='18.061550535343905' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[11.2] _reduce_kernel
+Start: 357.42 μs
+Dur: 16.11 μs
+Gap before: 0.26 μs</title>
+</rect>
+<rect x='499.5078199450641' y='25' width='10.157520040361005' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[11.3] nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+Start: 374.18 μs
+Dur: 9.06 μs
+Gap before: 0.32 μs</title>
+</rect>
+<rect x='510.04652727170793' y='25' width='9.383934077022252' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[11.4] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 512, true, false, false, false, false,
+Start: 383.58 μs
+Dur: 8.37 μs
+Gap before: 0.08 μs</title>
+</rect>
+<rect x='519.9910308873815' y='25' width='37.524524917315986' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[11.5] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 392.45 μs
+Dur: 33.47 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='520.2601042659342' y='55' width='3.7670272997365313' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[11.6] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 392.69 μs
+Dur: 3.36 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='524.9688883906047' y='55' width='43.0517405684175' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[11.7] _gemv_splitk
+Start: 396.89 μs
+Dur: 38.40 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='568.0318403497953' y='55' width='3.408262794999719' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[11.8] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 435.30 μs
+Dur: 3.04 μs
+Gap before: 0.06 μs</title>
+</rect>
+<rect x='572.6060877851896' y='25' width='6.8725825438645645' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[11.9] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 439.38 μs
+Dur: 6.13 μs
+Gap before: 0.83 μs</title>
+</rect>
+<rect x='579.8822803968831' y='25' width='1.1884074219406915' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[11.10] _local_ids_kernel
+Start: 445.87 μs
+Dur: 1.06 μs
+Gap before: 0.40 μs</title>
+</rect>
+<rect x='581.5864117943829' y='25' width='3.554010875049049' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[11.11] void moe_align_block_size_kernel&lt;int&gt;(int const*, int*, int*, int*, int, int, unsigned lon
+Start: 447.39 μs
+Dur: 3.17 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='585.7122035988564' y='25' width='2.836481865575424' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[11.12] void count_and_sort_expert_tokens_kernel&lt;int&gt;(int const*, int*, int*, unsigned long, bool)
+Start: 451.07 μs
+Dur: 2.53 μs
+Gap before: 0.43 μs</title>
+</rect>
+<rect x='589.0083524861258' y='25' width='421.49223611188955' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[11.13] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 454.01 μs
+Dur: 375.95 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1011.3526542967653' y='25' width='6.457761085262625' height='20' fill='#d9b3ff' stroke='#333' stroke-width='1'>
+<title>[11.14] void sglang::act_and_mul_kernel&lt;__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+Start: 830.72 μs
+Dur: 5.76 μs
+Gap before: 0.86 μs</title>
+</rect>
+<rect x='1018.270082403722' y='25' width='217.8036885475643' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[11.15] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 836.89 μs
+Dur: 194.27 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='1236.6231290991645' y='25' width='5.7626548573350505' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[11.16] _post_expert_norm_weighted_sum_kernel
+Start: 1031.65 μs
+Dur: 5.14 μs
+Gap before: 0.54 μs</title>
+</rect>
+<rect x='1243.0921015752003' y='25' width='27.92757441560625' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[11.17] nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT
+Start: 1037.42 μs
+Dur: 24.91 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1271.4232860586353' y='25' width='8.576713941364424' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[11.18] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 512, true, false, true, false, true, t
+Start: 1062.69 μs
+Dur: 7.65 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 1 (weight: 16.0, wall: 151.52 &mu;s, span: 147.3 &mu;s, sol: 44.18 &mu;s)<br><i>batch=1,ctx=80000,dist=soft,layer=full,load=decode_1,page=1</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='97.75967413441956' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[1.0] nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 12.00 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='184.11405295315683' y='25' width='14.338085539714868' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[1.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.78 μs
+Dur: 1.76 μs
+Gap before: 0.72 μs</title>
+</rect>
+<rect x='201.71079429735232' y='25' width='128.39103869653766' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[1.2] _attn_kernel
+Start: 14.94 μs
+Dur: 15.76 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='334.66395112016295' y='25' width='29.083503054989816' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[1.3] _reduce_kernel
+Start: 31.26 μs
+Dur: 3.57 μs
+Gap before: 0.43 μs</title>
+</rect>
+<rect x='367.1690427698574' y='25' width='53.930753564154784' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[1.4] nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT
+Start: 35.25 μs
+Dur: 6.62 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='422.1588594704684' y='25' width='38.289205702647656' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[1.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, true, false, t
+Start: 42.00 μs
+Dur: 4.70 μs
+Gap before: 0.13 μs</title>
+</rect>
+<rect x='464.0325865580448' y='25' width='171.5682281059063' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[1.6] _gemv_splitk
+Start: 47.14 μs
+Dur: 21.06 μs
+Gap before: 0.48 μs</title>
+</rect>
+<rect x='465.4175152749491' y='55' width='28.676171079429736' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[1.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 47.31 μs
+Dur: 3.52 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='499.87780040733196' y='55' width='192.66802443991853' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[1.8] _gemv_splitk
+Start: 51.54 μs
+Dur: 23.65 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='693.6863543788187' y='55' width='23.217922606924642' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[1.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 75.33 μs
+Dur: 2.85 μs
+Gap before: 0.10 μs</title>
+</rect>
+<rect x='720.2443991853361' y='25' width='50.18329938900204' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[1.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 78.59 μs
+Dur: 6.16 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='774.989816700611' y='25' width='11.486761710794296' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[1.11] smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+Start: 85.31 μs
+Dur: 1.41 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='783.0549898167005' y='25' width='213.52342158859472' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[1.12] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 86.30 μs
+Dur: 26.21 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='799.6741344195519' y='25' width='303.86965376782075' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[1.13] void w4_smallm_kernel&lt;false, 4&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 88.34 μs
+Dur: 37.30 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1106.8839103869652' y='25' width='48.39103869653768' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[1.14] _epilogue_kernel
+Start: 126.05 μs
+Dur: 5.94 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1160.3258655804482' y='25' width='42.5254582484725' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[1.15] nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+Start: 132.61 μs
+Dur: 5.22 μs
+Gap before: 0.58 μs</title>
+</rect>
+<rect x='1207.7393075356415' y='25' width='14.093686354378818' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[1.16] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 138.43 μs
+Dur: 1.73 μs
+Gap before: 0.64 μs</title>
+</rect>
+<rect x='1225.336048879837' y='25' width='7.0061099796334005' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[1.17] void at::native::vectorized_elementwise_kernel&lt;8, at::native::FillFunctor&lt;c10::BFloat16&gt;,
+Start: 140.59 μs
+Dur: 0.86 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1235.7637474541752' y='25' width='7.820773930753564' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[1.18] Memcpy DtoD (Device -&gt; Device)
+Start: 141.87 μs
+Dur: 0.96 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1247.4134419551935' y='25' width='32.586558044806516' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[1.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 143.30 μs
+Dur: 4.00 μs
+Gap before: 0.42 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 9 (weight: 16.0, wall: 646.74 &mu;s, span: 642.57 &mu;s, sol: 188.68 &mu;s)<br><i>batch=16,ctx=80000,dist=soft,layer=full,load=verify_16,page=1,q_len=8,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='25.808058015219657' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[9.0] nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN
+Start: 0.00 μs
+Dur: 13.82 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='107.13394232714484' y='25' width='5.677025786271184' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[9.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 14.53 μs
+Dur: 3.04 μs
+Gap before: 0.67 μs</title>
+</rect>
+<rect x='113.52059633669992' y='25' width='337.24147590220826' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[9.2] _attn_kernel
+Start: 17.95 μs
+Dur: 180.59 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='451.434351608335' y='25' width='27.936942685071354' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[9.3] _reduce_kernel
+Start: 198.90 μs
+Dur: 14.96 μs
+Gap before: 0.26 μs</title>
+</rect>
+<rect x='479.96887595511913' y='25' width='14.155215611820912' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[9.4] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 214.18 μs
+Dur: 7.58 μs
+Gap before: 0.32 μs</title>
+</rect>
+<rect x='494.4228823977964' y='25' width='8.459515398621205' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[9.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, false, false,
+Start: 221.92 μs
+Dur: 4.53 μs
+Gap before: 0.16 μs</title>
+</rect>
+<rect x='503.6853981543441' y='25' width='48.945672979660436' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[9.6] nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT
+Start: 226.88 μs
+Dur: 26.21 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='504.1335844006287' y='55' width='6.237258594126892' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[9.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 227.12 μs
+Dur: 3.34 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='511.7900994413234' y='55' width='53.427535442506105' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[9.8] _gemv_splitk
+Start: 231.22 μs
+Dur: 28.61 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='565.5724489954714' y='55' width='5.621002505485612' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[9.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 260.02 μs
+Dur: 3.01 μs
+Gap before: 0.10 μs</title>
+</rect>
+<rect x='573.2102896092376' y='25' width='11.242005010971225' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[9.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 264.11 μs
+Dur: 6.02 μs
+Gap before: 0.90 μs</title>
+</rect>
+<rect x='585.3113182589209' y='25' width='2.091535815994647' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[9.11] _local_ids_kernel
+Start: 270.59 μs
+Dur: 1.12 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='588.3925987021273' y='25' width='5.322211674629235' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[9.12] void moe_align_block_size_kernel&lt;int&gt;(int const*, int*, int*, int*, int, int, unsigned lon
+Start: 272.24 μs
+Dur: 2.85 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='594.5551595885402' y='25' width='3.585489970276537' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[9.13] void count_and_sort_expert_tokens_kernel&lt;int&gt;(int const*, int*, int*, unsigned long, bool)
+Start: 275.54 μs
+Dur: 1.92 μs
+Gap before: 0.41 μs</title>
+</rect>
+<rect x='599.0370220513857' y='25' width='401.12669042468764' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[9.14] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 277.94 μs
+Dur: 214.80 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1002.0871784497112' y='25' width='7.2083287944101215' height='20' fill='#d9b3ff' stroke='#333' stroke-width='1'>
+<title>[9.15] void sglang::act_and_mul_kernel&lt;__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+Start: 493.77 μs
+Dur: 3.86 μs
+Gap before: 0.93 μs</title>
+</rect>
+<rect x='1010.1732053097621' y='25' width='210.68488460760358' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[9.16] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 498.10 μs
+Dur: 112.82 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='1221.549043713721' y='25' width='9.15046919497658' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[9.17] _post_expert_norm_weighted_sum_kernel
+Start: 611.29 μs
+Dur: 4.90 μs
+Gap before: 0.32 μs</title>
+</rect>
+<rect x='1231.4838388396956' y='25' width='38.338598484259016' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[9.18] nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT
+Start: 616.61 μs
+Dur: 20.53 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='1270.2519491433106' y='25' width='9.748050856689336' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[9.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 637.37 μs
+Dur: 5.22 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 7 (weight: 16.0, wall: 192.94 &mu;s, span: 188.69 &mu;s, sol: 66.44 &mu;s)<br><i>batch=1,ctx=80000,dist=soft,layer=full,load=verify_1,page=1,q_len=8</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='79.18168327326691' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[7.0] nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 12.45 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='165.35085859656562' y='25' width='11.829552681789274' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[7.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 13.42 μs
+Dur: 1.86 μs
+Gap before: 0.96 μs</title>
+</rect>
+<rect x='179.91520033919863' y='25' width='103.28598685605257' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[7.2] _attn_kernel
+Start: 15.71 μs
+Dur: 16.24 μs
+Gap before: 0.39 μs</title>
+</rect>
+<rect x='286.1903752384991' y='25' width='23.02310790756837' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[7.3] _reduce_kernel
+Start: 32.42 μs
+Dur: 3.62 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='312.7114691541234' y='25' width='43.56582573669705' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[7.4] nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT
+Start: 36.59 μs
+Dur: 6.85 μs
+Gap before: 0.43 μs</title>
+</rect>
+<rect x='357.1676913292347' y='25' width='31.163875344498624' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[7.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, true, false, t
+Start: 43.58 μs
+Dur: 4.90 μs
+Gap before: 0.13 μs</title>
+</rect>
+<rect x='393.0379478482086' y='55' width='26.648293406826376' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[7.6] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 49.22 μs
+Dur: 4.19 μs
+Gap before: 0.67 μs</title>
+</rect>
+<rect x='393.6103455586178' y='25' width='134.13186347254612' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[7.7] _gemv_splitk
+Start: 49.31 μs
+Dur: 21.09 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='424.2654229383083' y='55' width='147.36061055755778' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[7.8] _gemv_splitk
+Start: 54.13 μs
+Dur: 23.17 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='572.8980284078864' y='55' width='18.634725461098157' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[7.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 77.50 μs
+Dur: 2.93 μs
+Gap before: 0.10 μs</title>
+</rect>
+<rect x='594.2039431842272' y='25' width='37.84184863260547' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[7.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 80.85 μs
+Dur: 5.95 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='634.7169811320755' y='25' width='9.985160059359764' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[7.11] smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+Start: 87.22 μs
+Dur: 1.57 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='641.0769556921772' y='25' width='333.2626669493322' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[7.12] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 88.22 μs
+Dur: 52.40 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='915.7642569429722' y='25' width='233.02946788212847' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[7.13] void w4_smallm_kernel&lt;false, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 131.41 μs
+Dur: 36.64 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1151.8465126139497' y='25' width='22.895908416366336' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[7.14] _epilogue_kernel
+Start: 168.53 μs
+Dur: 3.60 μs
+Gap before: 0.35 μs</title>
+</rect>
+<rect x='1177.4772100911598' y='25' width='33.580665677337294' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[7.15] nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT
+Start: 172.56 μs
+Dur: 5.28 μs
+Gap before: 0.43 μs</title>
+</rect>
+<rect x='1214.937460250159' y='25' width='11.002755988976045' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[7.16] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 178.45 μs
+Dur: 1.73 μs
+Gap before: 0.61 μs</title>
+</rect>
+<rect x='1229.8834004663984' y='25' width='5.914776340894637' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[7.17] void at::native::vectorized_elementwise_kernel&lt;8, at::native::FillFunctor&lt;c10::BFloat16&gt;,
+Start: 180.80 μs
+Dur: 0.93 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='1238.2149671401316' y='25' width='13.419546321814712' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[7.18] void at::native::elementwise_kernel&lt;128, 4, at::native::gpu_kernel_impl_nocast&lt;at::native:
+Start: 182.11 μs
+Dur: 2.11 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1253.6697053211788' y='25' width='26.330294678821282' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[7.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 184.54 μs
+Dur: 4.14 μs
+Gap before: 0.19 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 5 (weight: 16.0, wall: 535.73 &mu;s, span: 531.68 &mu;s, sol: 208.1 &mu;s)<br><i>batch=32,ctx=80000,dist=soft,layer=full,load=decode_32,page=1,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='26.94651320243737' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[5.0] nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.94 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='108.81967953058' y='25' width='4.333107650643195' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[5.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.77 μs
+Dur: 1.92 μs
+Gap before: 0.70 μs</title>
+</rect>
+<rect x='114.12322274881515' y='25' width='710.629654705484' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[5.2] _attn_kernel
+Start: 15.12 μs
+Dur: 314.88 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='826.3326562852628' y='25' width='13.428120063191152' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[5.3] _reduce_kernel
+Start: 330.70 μs
+Dur: 5.95 μs
+Gap before: 0.26 μs</title>
+</rect>
+<rect x='840.6860753780185' y='25' width='15.301286391333784' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[5.4] nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT
+Start: 337.06 μs
+Dur: 6.78 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='856.5741367637102' y='25' width='8.59851049424509' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[5.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, false, false,
+Start: 344.10 μs
+Dur: 3.81 μs
+Gap before: 0.13 μs</title>
+</rect>
+<rect x='866.5041751297674' y='25' width='53.50936583164071' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[5.6] _gemv_splitk
+Start: 348.50 μs
+Dur: 23.71 μs
+Gap before: 0.48 μs</title>
+</rect>
+<rect x='866.8878357030015' y='55' width='6.635071090047393' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[5.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 348.67 μs
+Dur: 2.94 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='874.8318663958473' y='55' width='24.66711803204694' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[5.8] _gemv_splitk
+Start: 352.19 μs
+Dur: 10.93 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='900.4694199954863' y='55' width='11.329271044910854' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[5.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 363.55 μs
+Dur: 5.02 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='922.6540284360188' y='25' width='13.17986910403972' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[5.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 373.38 μs
+Dur: 5.84 μs
+Gap before: 0.85 μs</title>
+</rect>
+<rect x='936.5560821484992' y='25' width='2.4825095915143307' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[5.11] _local_ids_kernel
+Start: 379.54 μs
+Dur: 1.10 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='939.9413225005642' y='25' width='6.364251861882193' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[5.12] void moe_align_block_size_kernel&lt;int&gt;(int const*, int*, int*, int*, int, int, unsigned lon
+Start: 381.04 μs
+Dur: 2.82 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='947.118032046942' y='25' width='3.1821259309410963' height='20' fill='#dddddd' stroke='#333' stroke-width='1'>
+<title>[5.13] void count_and_sort_expert_tokens_kernel&lt;int&gt;(int const*, int*, int*, unsigned long, bool)
+Start: 384.22 μs
+Dur: 1.41 μs
+Gap before: 0.35 μs</title>
+</rect>
+<rect x='951.270593545475' y='25' width='162.19814940194087' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[5.14] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 386.06 μs
+Dur: 71.87 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1115.7932746558338' y='25' width='5.055292259083728' height='20' fill='#d9b3ff' stroke='#333' stroke-width='1'>
+<title>[5.15] void sglang::act_and_mul_kernel&lt;__nv_bfloat16, (sglang::ActivationKind)0, true, true, fals
+Start: 458.96 μs
+Dur: 2.24 μs
+Gap before: 0.86 μs</title>
+</rect>
+<rect x='1121.8641390205369' y='25' width='91.60460392687881' height='20' fill='#ffb3ba' stroke='#333' stroke-width='1'>
+<title>[5.16] void sglang::device::marlin_moe::Marlin&lt;__nv_bfloat16, 562949953487106l, 2814749767172868l
+Start: 461.65 μs
+Dur: 40.59 μs
+Gap before: 0.40 μs</title>
+</rect>
+<rect x='1214.4391785150078' y='25' width='9.07244414353419' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[5.17] _post_expert_norm_weighted_sum_kernel
+Start: 502.67 μs
+Dur: 4.02 μs
+Gap before: 0.54 μs</title>
+</rect>
+<rect x='1224.4369216881064' y='25' width='44.549763033175346' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[5.18] nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT
+Start: 507.10 μs
+Dur: 19.74 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1269.641164522681' y='25' width='10.358835477318888' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[5.19] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 527.13 μs
+Dur: 4.59 μs
+Gap before: 0.00 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+<div class='shape'>
+<h3>Shape 3 (weight: 16.0, wall: 340.56 &mu;s, span: 336.05 &mu;s, sol: 137.46 &mu;s)<br><i>batch=16,ctx=80000,dist=soft,layer=full,load=decode_16,page=1,spread=agentic</i></h3>
+<svg width='1300' height='100'>
+<text x='5' y='40' class='lane'>Stream 0</text>
+<line x1='80' y1='50' x2='1280' y2='50' stroke='#eee'/>
+<text x='5' y='70' class='lane'>Stream 1</text>
+<line x1='80' y1='80' x2='1280' y2='80' stroke='#eee'/>
+<rect x='80.0' y='25' width='42.376461488114714' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[3.0] nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT
+Start: 0.00 μs
+Dur: 11.87 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='125.48240264183501' y='25' width='6.497486091690715' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[3.1] void cublasLt::splitKreduce_kernel&lt;32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+Start: 12.74 μs
+Dur: 1.82 μs
+Gap before: 0.80 μs</title>
+</rect>
+<rect x='133.51500907387023' y='25' width='572.1714812721269' height='20' fill='#bae1ff' stroke='#333' stroke-width='1'>
+<title>[3.2] _attn_kernel
+Start: 14.99 μs
+Dur: 160.27 μs
+Gap before: 0.38 μs</title>
+</rect>
+<rect x='707.1145092672479' y='25' width='14.744295361913546' height='20' fill='#e1baff' stroke='#333' stroke-width='1'>
+<title>[3.3] _reduce_kernel
+Start: 175.66 μs
+Dur: 4.13 μs
+Gap before: 0.29 μs</title>
+</rect>
+<rect x='723.5724273346623' y='25' width='24.34772260732455' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[3.4] nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT
+Start: 180.27 μs
+Dur: 6.82 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='748.8126617677684' y='25' width='13.31627644066284' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[3.5] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, false, false, false,
+Start: 187.34 μs
+Dur: 3.73 μs
+Gap before: 0.16 μs</title>
+</rect>
+<rect x='763.556957129682' y='25' width='82.18248891797816' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[3.6] _gemv_splitk
+Start: 191.47 μs
+Dur: 23.02 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='764.2352661172761' y='55' width='14.779995834944812' height='20' fill='#e6e6e6' stroke='#333' stroke-width='1'>
+<title>[3.7] void at::native::vectorized_elementwise_kernel&lt;4, at::native::FillFunctor&lt;float&gt;, std::arr
+Start: 191.66 μs
+Dur: 4.14 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='783.0851158777854' y='55' width='52.15839109868206' height='20' fill='#baffc9' stroke='#333' stroke-width='1'>
+<title>[3.8] _gemv_splitk
+Start: 196.94 μs
+Dur: 14.61 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='833.993990420373' y='55' width='10.960045220599172' height='20' fill='#b3ffd9' stroke='#333' stroke-width='1'>
+<title>[3.9] void sglang::muse_spark::routing_kernel&lt;sglang::muse_spark::RoutingTrait&lt;8, 8, 0, 1&gt;, true
+Start: 211.20 μs
+Dur: 3.07 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='847.2031654419421' y='25' width='20.456371046916374' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[3.10] void at::native::(anonymous namespace)::vectorized_layer_norm_kernel&lt;c10::BFloat16, float,
+Start: 214.90 μs
+Dur: 5.73 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='868.8376520988903' y='25' width='5.140868116502544' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[3.11] smallm_route_kernel(int const*, int*, int*, int, int const*, int)
+Start: 220.96 μs
+Dur: 1.44 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='872.1577960907982' y='25' width='191.6401392318448' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[3.12] void w4_smallm_kernel&lt;true, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int cons
+Start: 221.89 μs
+Dur: 53.68 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1032.988427096659' y='25' width='135.87600035700476' height='20' fill='#ffdfba' stroke='#333' stroke-width='1'>
+<title>[3.13] void w4_smallm_kernel&lt;false, 8&gt;(uint4 const*, uint2 const*, float const*, unsigned int con
+Start: 266.94 μs
+Dur: 38.06 μs
+Gap before: 0.00 μs</title>
+</rect>
+<rect x='1171.00645583554' y='25' width='20.206467735697498' height='20' fill='#ffd9b3' stroke='#333' stroke-width='1'>
+<title>[3.14] _epilogue_kernel
+Start: 305.60 μs
+Dur: 5.66 μs
+Gap before: 0.42 μs</title>
+</rect>
+<rect x='1192.6409424924882' y='25' width='71.50804748162913' height='20' fill='#ffffba' stroke='#333' stroke-width='1'>
+<title>[3.15] nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT
+Start: 311.66 μs
+Dur: 20.03 μs
+Gap before: 0.45 μs</title>
+</rect>
+<rect x='1264.684497069586' y='25' width='15.315502930413828' height='20' fill='#ffb3f7' stroke='#333' stroke-width='1'>
+<title>[3.16] void sglang::muse_spark_norm_residual_kernel&lt;8192l, 256, true, true, true, false, true, tr
+Start: 331.84 μs
+Dur: 4.29 μs
+Gap before: 0.03 μs</title>
+</rect>
+<defs><pattern id='hatched' width='4' height='4' patternUnits='userSpaceOnUse'>
+<path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' stroke='#ccc' stroke-width='1'/></pattern></defs>
+</svg>
+</div>
+</body></html>

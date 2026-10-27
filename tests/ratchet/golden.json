@@ -1,0 +1,124 @@
+{
+  "muse_bf16_proj": {
+    "0": {
+      "kernels": 2,
+      "span_us": 13.26
+    },
+    "1": {
+      "kernels": 1,
+      "span_us": 6.35
+    },
+    "2": {
+      "kernels": 1,
+      "span_us": 18.53
+    },
+    "3": {
+      "kernels": 2,
+      "span_us": 6.78
+    },
+    "4": {
+      "kernels": 2,
+      "span_us": 6.91
+    },
+    "5": {
+      "kernels": 2,
+      "span_us": 14.4
+    },
+    "6": {
+      "kernels": 1,
+      "span_us": 6.4
+    },
+    "7": {
+      "kernels": 1,
+      "span_us": 18.75
+    },
+    "8": {
+      "kernels": 1,
+      "span_us": 17.49
+    },
+    "9": {
+      "kernels": 2,
+      "span_us": 7.52
+    },
+    "10": {
+      "kernels": 2,
+      "span_us": 14.37
+    },
+    "11": {
+      "kernels": 1,
+      "span_us": 6.8
+    },
+    "12": {
+      "kernels": 1,
+      "span_us": 19.46
+    },
+    "13": {
+      "kernels": 1,
+      "span_us": 17.78
+    },
+    "14": {
+      "kernels": 2,
+      "span_us": 7.46
+    },
+    "15": {
+      "kernels": 2,
+      "span_us": 14.78
+    },
+    "16": {
+      "kernels": 1,
+      "span_us": 6.42
+    },
+    "17": {
+      "kernels": 1,
+      "span_us": 18.69
+    },
+    "18": {
+      "kernels": 2,
+      "span_us": 7.15
+    },
+    "19": {
+      "kernels": 2,
+      "span_us": 6.38
+    },
+    "20": {
+      "kernels": 2,
+      "span_us": 16.93
+    },
+    "21": {
+      "kernels": 1,
+      "span_us": 6.91
+    },
+    "22": {
+      "kernels": 1,
+      "span_us": 24.48
+    },
+    "23": {
+      "kernels": 1,
+      "span_us": 18.79
+    },
+    "24": {
+      "kernels": 2,
+      "span_us": 10.06
+    },
+    "25": {
+      "kernels": 1,
+      "span_us": 19.12
+    },
+    "26": {
+      "kernels": 1,
+      "span_us": 8.75
+    },
+    "27": {
+      "kernels": 1,
+      "span_us": 29.26
+    },
+    "28": {
+      "kernels": 1,
+      "span_us": 24.11
+    },
+    "29": {
+      "kernels": 2,
+      "span_us": 12.35
+    }
+  }
+}

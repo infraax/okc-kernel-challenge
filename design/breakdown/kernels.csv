@@ -1,0 +1,356 @@
+problem,job,shape,label,weight,k,kernel,family,gpu_us,calls,share_of_wall,ours_us,sol_us
+muse_attention_decode,4b047c1bf5354162,0,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 1 page=1,46.0,0,_attn_kernel,attention,4.7,1,0.5889,7.98,2.5
+muse_attention_decode,4b047c1bf5354162,0,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 1 page=1,46.0,1,_reduce_kernel,attention_reduce,2.3,1,0.2882,7.98,2.5
+muse_attention_decode,4b047c1bf5354162,0,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 1 page=1,46.0,-,(hidden tail),(hidden tail),0.0,,0.0,7.98,2.5
+muse_attention_decode,4b047c1bf5354162,0,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 1 page=1,46.0,-,(idle / gaps),(idle / gaps),0.98,,0.1229,7.98,2.5
+muse_attention_decode,4b047c1bf5354162,1,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 1 page=1,16.0,0,_full_cat_kernel,attention,10.4,1,0.6785,15.33,4.27
+muse_attention_decode,4b047c1bf5354162,1,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 1 page=1,16.0,1,_reduce_kernel,attention_reduce,2.6,1,0.1696,15.33,4.27
+muse_attention_decode,4b047c1bf5354162,1,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 1 page=1,16.0,-,(hidden tail),(hidden tail),0.0,,0.0,15.33,4.27
+muse_attention_decode,4b047c1bf5354162,1,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 1 page=1,16.0,-,(idle / gaps),(idle / gaps),2.33,,0.1519,15.33,4.27
+muse_attention_decode,4b047c1bf5354162,2,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 16 page=1 spread=agentic,46.0,0,_attn_kernel,attention,9.9,1,0.7252,13.65,2.5
+muse_attention_decode,4b047c1bf5354162,2,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 16 page=1 spread=agentic,46.0,1,_reduce_kernel,attention_reduce,2.4,1,0.1758,13.65,2.5
+muse_attention_decode,4b047c1bf5354162,2,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 16 page=1 spread=agentic,46.0,-,(hidden tail),(hidden tail),0.0,,0.0,13.65,2.5
+muse_attention_decode,4b047c1bf5354162,2,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 16 page=1 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),1.35,,0.099,13.65,2.5
+muse_attention_decode,4b047c1bf5354162,3,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 16 page=1 spread=agentic,16.0,0,_full_cat_kernel,attention,103.8,1,0.971,106.9,63.18
+muse_attention_decode,4b047c1bf5354162,3,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 16 page=1 spread=agentic,16.0,1,_reduce_kernel,attention_reduce,3.3,1,0.0309,106.9,63.18
+muse_attention_decode,4b047c1bf5354162,3,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 16 page=1 spread=agentic,16.0,-,(hidden tail),(hidden tail),0.0,,0.0,106.9,63.18
+muse_attention_decode,4b047c1bf5354162,3,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 16 page=1 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),-0.2,,-0.0019,106.9,63.18
+muse_attention_decode,4b047c1bf5354162,4,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 32 page=1 spread=agentic,46.0,0,_attn_kernel,attention,11.7,1,0.712,16.43,3.29
+muse_attention_decode,4b047c1bf5354162,4,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 32 page=1 spread=agentic,46.0,1,_reduce_kernel,attention_reduce,2.5,1,0.1521,16.43,3.29
+muse_attention_decode,4b047c1bf5354162,4,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 32 page=1 spread=agentic,46.0,-,(hidden tail),(hidden tail),0.1,,0.0061,16.43,3.29
+muse_attention_decode,4b047c1bf5354162,4,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=decode 32 page=1 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),2.13,,0.1297,16.43,3.29
+muse_attention_decode,4b047c1bf5354162,5,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 32 page=1 spread=agentic,16.0,0,_full_cat_kernel,attention,193.3,1,0.9914,194.98,126.35
+muse_attention_decode,4b047c1bf5354162,5,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 32 page=1 spread=agentic,16.0,1,_reduce_kernel,attention_reduce,3.4,1,0.0174,194.98,126.35
+muse_attention_decode,4b047c1bf5354162,5,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 32 page=1 spread=agentic,16.0,-,(hidden tail),(hidden tail),-0.0,,-0.0,194.98,126.35
+muse_attention_decode,4b047c1bf5354162,5,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=decode 32 page=1 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),-1.72,,-0.0088,194.98,126.35
+muse_attention_decode,4b047c1bf5354162,6,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 1 page=1 q_len=8,46.0,0,_attn_kernel,attention,5.0,1,0.5271,9.49,2.5
+muse_attention_decode,4b047c1bf5354162,6,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 1 page=1 q_len=8,46.0,1,_reduce_kernel,attention_reduce,2.5,1,0.2635,9.49,2.5
+muse_attention_decode,4b047c1bf5354162,6,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 1 page=1 q_len=8,46.0,-,(hidden tail),(hidden tail),0.0,,0.0,9.49,2.5
+muse_attention_decode,4b047c1bf5354162,6,batch=1 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 1 page=1 q_len=8,46.0,-,(idle / gaps),(idle / gaps),1.99,,0.2094,9.49,2.5
+muse_attention_decode,4b047c1bf5354162,7,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 1 page=1 q_len=8,16.0,0,_full_kernel,attention,16.1,1,0.7491,21.49,4.28
+muse_attention_decode,4b047c1bf5354162,7,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 1 page=1 q_len=8,16.0,1,_reduce_kernel,attention_reduce,3.6,1,0.1675,21.49,4.28
+muse_attention_decode,4b047c1bf5354162,7,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 1 page=1 q_len=8,16.0,-,(hidden tail),(hidden tail),-0.1,,-0.0047,21.49,4.28
+muse_attention_decode,4b047c1bf5354162,7,batch=1 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 1 page=1 q_len=8,16.0,-,(idle / gaps),(idle / gaps),1.89,,0.088,21.49,4.28
+muse_attention_decode,4b047c1bf5354162,8,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,0,_attn_kernel,attention,11.0,1,0.6357,17.3,2.5
+muse_attention_decode,4b047c1bf5354162,8,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,1,_reduce_kernel,attention_reduce,5.5,1,0.3178,17.3,2.5
+muse_attention_decode,4b047c1bf5354162,8,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,-,(hidden tail),(hidden tail),-0.1,,-0.0058,17.3,2.5
+muse_attention_decode,4b047c1bf5354162,8,batch=16 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),0.9,,0.0523,17.3,2.5
+muse_attention_decode,4b047c1bf5354162,9,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,0,_full_kernel,attention,184.4,1,0.9598,192.12,63.39
+muse_attention_decode,4b047c1bf5354162,9,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,1,_reduce_kernel,attention_reduce,6.0,1,0.0312,192.12,63.39
+muse_attention_decode,4b047c1bf5354162,9,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,-,(hidden tail),(hidden tail),0.0,,0.0,192.12,63.39
+muse_attention_decode,4b047c1bf5354162,9,batch=16 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),1.72,,0.009,192.12,63.39
+muse_attention_decode,4b047c1bf5354162,10,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,0,_attn_kernel,attention,15.4,1,0.6069,25.37,3.72
+muse_attention_decode,4b047c1bf5354162,10,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,1,_reduce_kernel,attention_reduce,7.8,1,0.3074,25.37,3.72
+muse_attention_decode,4b047c1bf5354162,10,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,-,(hidden tail),(hidden tail),0.1,,0.0039,25.37,3.72
+muse_attention_decode,4b047c1bf5354162,10,batch=32 ctx=80000 dist=soft heads=tp8 layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),2.07,,0.0817,25.37,3.72
+muse_attention_decode,4b047c1bf5354162,11,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,0,_full_kernel,attention,358.3,1,0.9728,368.33,126.78
+muse_attention_decode,4b047c1bf5354162,11,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,1,_reduce_kernel,attention_reduce,9.0,1,0.0244,368.33,126.78
+muse_attention_decode,4b047c1bf5354162,11,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,-,(hidden tail),(hidden tail),0.1,,0.0003,368.33,126.78
+muse_attention_decode,4b047c1bf5354162,11,batch=32 ctx=80000 dist=coherent heads=tp8 layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),0.93,,0.0025,368.33,126.78
+muse_bf16_proj,c3b7c70b5edd43c5,0,layer=qkv_gate load=decode 1 m=1,62.0,0,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),9.5,1,0.6791,13.99,7.87
+muse_bf16_proj,c3b7c70b5edd43c5,0,layer=qkv_gate load=decode 1 m=1,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),1.7,1,0.1215,13.99,7.87
+muse_bf16_proj,c3b7c70b5edd43c5,0,layer=qkv_gate load=decode 1 m=1,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,13.99,7.87
+muse_bf16_proj,c3b7c70b5edd43c5,0,layer=qkv_gate load=decode 1 m=1,62.0,-,(idle / gaps),(idle / gaps),2.79,,0.1994,13.99,7.87
+muse_bf16_proj,c3b7c70b5edd43c5,1,layer=o load=decode 1 m=1,62.0,0,_gemv_splitk,dense_gemm,4.6,1,0.7029,6.54,3.5
+muse_bf16_proj,c3b7c70b5edd43c5,1,layer=o load=decode 1 m=1,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,6.54,3.5
+muse_bf16_proj,c3b7c70b5edd43c5,1,layer=o load=decode 1 m=1,62.0,-,(idle / gaps),(idle / gaps),1.94,,0.2971,6.54,3.5
+muse_bf16_proj,c3b7c70b5edd43c5,2,layer=pooler load=decode 1 m=1,62.0,0,_gemv_splitk,dense_gemm,19.4,1,1.0118,19.17,13.99
+muse_bf16_proj,c3b7c70b5edd43c5,2,layer=pooler load=decode 1 m=1,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,19.17,13.99
+muse_bf16_proj,c3b7c70b5edd43c5,2,layer=pooler load=decode 1 m=1,62.0,-,(idle / gaps),(idle / gaps),-0.23,,-0.0118,19.17,13.99
+muse_bf16_proj,c3b7c70b5edd43c5,3,layer=unpooler load=decode 1 m=1,62.0,0,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),4.1,1,0.6072,6.75,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,3,layer=unpooler load=decode 1 m=1,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),1.4,1,0.2073,6.75,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,3,layer=unpooler load=decode 1 m=1,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,6.75,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,3,layer=unpooler load=decode 1 m=1,62.0,-,(idle / gaps),(idle / gaps),1.25,,0.1854,6.75,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,4,layer=router load=decode 1 m=1,62.0,0,_gemv_splitk,dense_gemm,4.2,1,0.6515,6.45,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,4,layer=router load=decode 1 m=1,62.0,1,"void at::native::vectorized_elementwise_kernel<4, at::nat...",elementwise,0.7,1,0.1086,6.45,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,4,layer=router load=decode 1 m=1,62.0,-,(hidden tail),(hidden tail),0.1,,0.0155,6.45,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,4,layer=router load=decode 1 m=1,62.0,-,(idle / gaps),(idle / gaps),1.45,,0.2244,6.45,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,5,layer=qkv_gate load=decode 16 m=16,62.0,0,nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),7.9,1,0.5658,13.96,7.93
+muse_bf16_proj,c3b7c70b5edd43c5,5,layer=qkv_gate load=decode 16 m=16,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),1.7,1,0.1218,13.96,7.93
+muse_bf16_proj,c3b7c70b5edd43c5,5,layer=qkv_gate load=decode 16 m=16,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,13.96,7.93
+muse_bf16_proj,c3b7c70b5edd43c5,5,layer=qkv_gate load=decode 16 m=16,62.0,-,(idle / gaps),(idle / gaps),4.36,,0.3124,13.96,7.93
+muse_bf16_proj,c3b7c70b5edd43c5,6,layer=o load=decode 16 m=16,62.0,0,_gemv_splitk,dense_gemm,5.5,1,0.8234,6.68,3.56
+muse_bf16_proj,c3b7c70b5edd43c5,6,layer=o load=decode 16 m=16,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,6.68,3.56
+muse_bf16_proj,c3b7c70b5edd43c5,6,layer=o load=decode 16 m=16,62.0,-,(idle / gaps),(idle / gaps),1.18,,0.1766,6.68,3.56
+muse_bf16_proj,c3b7c70b5edd43c5,7,layer=pooler load=decode 16 m=16,62.0,0,_gemv_splitk,dense_gemm,19.3,1,0.997,19.36,14.06
+muse_bf16_proj,c3b7c70b5edd43c5,7,layer=pooler load=decode 16 m=16,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,19.36,14.06
+muse_bf16_proj,c3b7c70b5edd43c5,7,layer=pooler load=decode 16 m=16,62.0,-,(idle / gaps),(idle / gaps),0.06,,0.003,19.36,14.06
+muse_bf16_proj,c3b7c70b5edd43c5,8,layer=unpooler load=decode 16 m=16,62.0,0,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),18.2,1,0.9836,18.5,14.06
+muse_bf16_proj,c3b7c70b5edd43c5,8,layer=unpooler load=decode 16 m=16,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,18.5,14.06
+muse_bf16_proj,c3b7c70b5edd43c5,8,layer=unpooler load=decode 16 m=16,62.0,-,(idle / gaps),(idle / gaps),0.3,,0.0164,18.5,14.06
+muse_bf16_proj,c3b7c70b5edd43c5,9,layer=router load=decode 16 m=16,62.0,0,_gemv_splitk,dense_gemm,4.9,1,0.6639,7.38,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,9,layer=router load=decode 16 m=16,62.0,1,"void at::native::vectorized_elementwise_kernel<4, at::nat...",elementwise,0.7,1,0.0948,7.38,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,9,layer=router load=decode 16 m=16,62.0,-,(hidden tail),(hidden tail),-0.0,,-0.0,7.38,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,9,layer=router load=decode 16 m=16,62.0,-,(idle / gaps),(idle / gaps),1.78,,0.2413,7.38,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,10,layer=qkv_gate load=decode 32 m=32,62.0,0,nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),8.5,1,0.608,13.98,8.0
+muse_bf16_proj,c3b7c70b5edd43c5,10,layer=qkv_gate load=decode 32 m=32,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),1.8,1,0.1288,13.98,8.0
+muse_bf16_proj,c3b7c70b5edd43c5,10,layer=qkv_gate load=decode 32 m=32,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,13.98,8.0
+muse_bf16_proj,c3b7c70b5edd43c5,10,layer=qkv_gate load=decode 32 m=32,62.0,-,(idle / gaps),(idle / gaps),3.68,,0.2632,13.98,8.0
+muse_bf16_proj,c3b7c70b5edd43c5,11,layer=o load=decode 32 m=32,62.0,0,_gemv_splitk,dense_gemm,6.0,1,0.8863,6.77,3.62
+muse_bf16_proj,c3b7c70b5edd43c5,11,layer=o load=decode 32 m=32,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,6.77,3.62
+muse_bf16_proj,c3b7c70b5edd43c5,11,layer=o load=decode 32 m=32,62.0,-,(idle / gaps),(idle / gaps),0.77,,0.1137,6.77,3.62
+muse_bf16_proj,c3b7c70b5edd43c5,12,layer=pooler load=decode 32 m=32,62.0,0,_gemv_splitk,dense_gemm,19.6,1,0.9731,20.14,14.14
+muse_bf16_proj,c3b7c70b5edd43c5,12,layer=pooler load=decode 32 m=32,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,20.14,14.14
+muse_bf16_proj,c3b7c70b5edd43c5,12,layer=pooler load=decode 32 m=32,62.0,-,(idle / gaps),(idle / gaps),0.54,,0.0269,20.14,14.14
+muse_bf16_proj,c3b7c70b5edd43c5,13,layer=unpooler load=decode 32 m=32,62.0,0,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),18.5,1,0.9806,18.87,14.14
+muse_bf16_proj,c3b7c70b5edd43c5,13,layer=unpooler load=decode 32 m=32,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,18.87,14.14
+muse_bf16_proj,c3b7c70b5edd43c5,13,layer=unpooler load=decode 32 m=32,62.0,-,(idle / gaps),(idle / gaps),0.37,,0.0194,18.87,14.14
+muse_bf16_proj,c3b7c70b5edd43c5,14,layer=router load=decode 32 m=32,62.0,0,_gemv_splitk,dense_gemm,5.6,1,0.7948,7.05,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,14,layer=router load=decode 32 m=32,62.0,1,"void at::native::vectorized_elementwise_kernel<4, at::nat...",elementwise,0.7,1,0.0993,7.05,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,14,layer=router load=decode 32 m=32,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,7.05,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,14,layer=router load=decode 32 m=32,62.0,-,(idle / gaps),(idle / gaps),0.75,,0.1059,7.05,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,15,layer=qkv_gate load=verify 1 m=8,62.0,0,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),9.0,1,0.6383,14.1,7.9
+muse_bf16_proj,c3b7c70b5edd43c5,15,layer=qkv_gate load=verify 1 m=8,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),1.6,1,0.1135,14.1,7.9
+muse_bf16_proj,c3b7c70b5edd43c5,15,layer=qkv_gate load=verify 1 m=8,62.0,-,(hidden tail),(hidden tail),0.1,,0.0071,14.1,7.9
+muse_bf16_proj,c3b7c70b5edd43c5,15,layer=qkv_gate load=verify 1 m=8,62.0,-,(idle / gaps),(idle / gaps),3.4,,0.2411,14.1,7.9
+muse_bf16_proj,c3b7c70b5edd43c5,16,layer=o load=verify 1 m=8,62.0,0,_gemv_splitk,dense_gemm,5.2,1,0.7666,6.78,3.53
+muse_bf16_proj,c3b7c70b5edd43c5,16,layer=o load=verify 1 m=8,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,6.78,3.53
+muse_bf16_proj,c3b7c70b5edd43c5,16,layer=o load=verify 1 m=8,62.0,-,(idle / gaps),(idle / gaps),1.58,,0.2334,6.78,3.53
+muse_bf16_proj,c3b7c70b5edd43c5,17,layer=pooler load=verify 1 m=8,62.0,0,_gemv_splitk,dense_gemm,18.8,1,0.9723,19.34,14.02
+muse_bf16_proj,c3b7c70b5edd43c5,17,layer=pooler load=verify 1 m=8,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,19.34,14.02
+muse_bf16_proj,c3b7c70b5edd43c5,17,layer=pooler load=verify 1 m=8,62.0,-,(idle / gaps),(idle / gaps),0.54,,0.0277,19.34,14.02
+muse_bf16_proj,c3b7c70b5edd43c5,18,layer=unpooler load=verify 1 m=8,62.0,0,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),4.1,1,0.5732,7.15,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,18,layer=unpooler load=verify 1 m=8,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),1.5,1,0.2097,7.15,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,18,layer=unpooler load=verify 1 m=8,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,7.15,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,18,layer=unpooler load=verify 1 m=8,62.0,-,(idle / gaps),(idle / gaps),1.55,,0.2171,7.15,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,19,layer=router load=verify 1 m=8,62.0,0,_gemv_splitk,dense_gemm,4.4,1,0.6546,6.72,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,19,layer=router load=verify 1 m=8,62.0,1,"void at::native::vectorized_elementwise_kernel<4, at::nat...",elementwise,0.7,1,0.1041,6.72,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,19,layer=router load=verify 1 m=8,62.0,-,(hidden tail),(hidden tail),-0.0,,-0.0,6.72,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,19,layer=router load=verify 1 m=8,62.0,-,(idle / gaps),(idle / gaps),1.62,,0.2413,6.72,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,20,layer=qkv_gate load=verify 16 m=128,62.0,0,nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN,dense_gemm(cublas),13.3,1,0.7835,16.97,8.42
+muse_bf16_proj,c3b7c70b5edd43c5,20,layer=qkv_gate load=verify 16 m=128,62.0,1,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),3.1,1,0.1826,16.97,8.42
+muse_bf16_proj,c3b7c70b5edd43c5,20,layer=qkv_gate load=verify 16 m=128,62.0,-,(hidden tail),(hidden tail),-0.0,,-0.0,16.97,8.42
+muse_bf16_proj,c3b7c70b5edd43c5,20,layer=qkv_gate load=verify 16 m=128,62.0,-,(idle / gaps),(idle / gaps),0.57,,0.0339,16.97,8.42
+muse_bf16_proj,c3b7c70b5edd43c5,21,layer=o load=verify 16 m=128,62.0,0,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),5.3,1,0.7292,7.27,3.99
+muse_bf16_proj,c3b7c70b5edd43c5,21,layer=o load=verify 16 m=128,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,7.27,3.99
+muse_bf16_proj,c3b7c70b5edd43c5,21,layer=o load=verify 16 m=128,62.0,-,(idle / gaps),(idle / gaps),1.97,,0.2708,7.27,3.99
+muse_bf16_proj,c3b7c70b5edd43c5,22,layer=pooler load=verify 16 m=128,62.0,0,nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT,dense_gemm(cublas),24.9,1,1.0157,24.51,14.64
+muse_bf16_proj,c3b7c70b5edd43c5,22,layer=pooler load=verify 16 m=128,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,24.51,14.64
+muse_bf16_proj,c3b7c70b5edd43c5,22,layer=pooler load=verify 16 m=128,62.0,-,(idle / gaps),(idle / gaps),-0.39,,-0.0157,24.51,14.64
+muse_bf16_proj,c3b7c70b5edd43c5,23,layer=unpooler load=verify 16 m=128,62.0,0,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),20.5,1,1.0454,19.61,14.64
+muse_bf16_proj,c3b7c70b5edd43c5,23,layer=unpooler load=verify 16 m=128,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,19.61,14.64
+muse_bf16_proj,c3b7c70b5edd43c5,23,layer=unpooler load=verify 16 m=128,62.0,-,(idle / gaps),(idle / gaps),-0.89,,-0.0454,19.61,14.64
+muse_bf16_proj,c3b7c70b5edd43c5,24,layer=router load=verify 16 m=128,62.0,0,_gemv_splitk,dense_gemm,8.3,1,0.8419,9.86,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,24,layer=router load=verify 16 m=128,62.0,1,"void at::native::vectorized_elementwise_kernel<4, at::nat...",elementwise,0.8,1,0.0811,9.86,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,24,layer=router load=verify 16 m=128,62.0,-,(hidden tail),(hidden tail),-0.0,,-0.0,9.86,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,24,layer=router load=verify 16 m=128,62.0,-,(idle / gaps),(idle / gaps),0.76,,0.077,9.86,2.5
+muse_bf16_proj,c3b7c70b5edd43c5,25,layer=qkv_gate load=verify 32 m=256,62.0,0,nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN,dense_gemm(cublas),19.4,1,0.9894,19.61,9.77
+muse_bf16_proj,c3b7c70b5edd43c5,25,layer=qkv_gate load=verify 32 m=256,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,19.61,9.77
+muse_bf16_proj,c3b7c70b5edd43c5,25,layer=qkv_gate load=verify 32 m=256,62.0,-,(idle / gaps),(idle / gaps),0.21,,0.0106,19.61,9.77
+muse_bf16_proj,c3b7c70b5edd43c5,26,layer=o load=verify 32 m=256,62.0,0,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),8.1,1,0.8773,9.23,4.48
+muse_bf16_proj,c3b7c70b5edd43c5,26,layer=o load=verify 32 m=256,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,9.23,4.48
+muse_bf16_proj,c3b7c70b5edd43c5,26,layer=o load=verify 32 m=256,62.0,-,(idle / gaps),(idle / gaps),1.13,,0.1227,9.23,4.48
+muse_bf16_proj,c3b7c70b5edd43c5,27,layer=pooler load=verify 32 m=256,62.0,0,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),29.5,1,0.9663,30.53,17.37
+muse_bf16_proj,c3b7c70b5edd43c5,27,layer=pooler load=verify 32 m=256,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,30.53,17.37
+muse_bf16_proj,c3b7c70b5edd43c5,27,layer=pooler load=verify 32 m=256,62.0,-,(idle / gaps),(idle / gaps),1.03,,0.0337,30.53,17.37
+muse_bf16_proj,c3b7c70b5edd43c5,28,layer=unpooler load=verify 32 m=256,62.0,0,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),24.4,1,1.0114,24.13,17.37
+muse_bf16_proj,c3b7c70b5edd43c5,28,layer=unpooler load=verify 32 m=256,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,24.13,17.37
+muse_bf16_proj,c3b7c70b5edd43c5,28,layer=unpooler load=verify 32 m=256,62.0,-,(idle / gaps),(idle / gaps),-0.27,,-0.0114,24.13,17.37
+muse_bf16_proj,c3b7c70b5edd43c5,29,layer=router load=verify 32 m=256,62.0,0,_gemv_splitk,dense_gemm,10.4,1,0.8465,12.29,2.68
+muse_bf16_proj,c3b7c70b5edd43c5,29,layer=router load=verify 32 m=256,62.0,1,"void at::native::vectorized_elementwise_kernel<4, at::nat...",elementwise,0.7,1,0.057,12.29,2.68
+muse_bf16_proj,c3b7c70b5edd43c5,29,layer=router load=verify 32 m=256,62.0,-,(hidden tail),(hidden tail),0.0,,0.0,12.29,2.68
+muse_bf16_proj,c3b7c70b5edd43c5,29,layer=router load=verify 32 m=256,62.0,-,(idle / gaps),(idle / gaps),1.19,,0.0965,12.29,2.68
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,0,_gemv_splitk,dense_gemm,28.7,2,0.2293,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,1,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),26.7,1,0.2133,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,2,"void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),21.8,1,0.1741,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,3,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),13.5,1,0.1078,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,4,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),7.0,1,0.0559,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,5,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.9,1,0.0471,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,6,_epilogue_kernel,moe_epilogue,5.9,1,0.0471,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,7,_attn_kernel,attention,5.4,1,0.0431,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,8,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),5.1,1,0.0407,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.3,1,0.0343,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,10,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.7,1,0.0296,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,11,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),3.4,2,0.0272,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,-,(hidden tail),(hidden tail),8.7,,0.0695,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,0,batch=1 ctx=80000 dist=soft layer=sliding load=decode 1 page=1,46.0,-,(idle / gaps),(idle / gaps),-14.92,,-0.1192,125.18,40.02
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,0,_gemv_splitk,dense_gemm,29.0,2,0.2117,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,1,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),26.5,1,0.1934,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,2,"void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),23.1,1,0.1686,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,3,_attn_kernel,attention,16.0,1,0.1168,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,4,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),12.4,1,0.0905,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,5,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),6.8,1,0.0496,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,6,_epilogue_kernel,moe_epilogue,6.2,1,0.0453,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,7,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,6.0,1,0.0438,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,8,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),5.2,1,0.038,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.4,1,0.0321,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,10,_reduce_kernel,attention_reduce,3.6,1,0.0263,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,11,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.6,1,0.0263,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,-,(hidden tail),(hidden tail),10.0,,0.073,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,1,batch=1 ctx=80000 dist=soft layer=full load=decode 1 page=1,16.0,-,(idle / gaps),(idle / gaps),-15.8,,-0.1154,137.0,44.18
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,0,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),49.2,1,0.2539,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,1,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),39.1,1,0.2018,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,2,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),27.2,2,0.1404,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,3,_gemv_splitk,dense_gemm,26.3,2,0.1357,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,4,nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),12.3,1,0.0635,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,5,_attn_kernel,attention,10.4,1,0.0537,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,6,_epilogue_kernel,moe_epilogue,6.1,1,0.0315,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,7,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.5,1,0.0284,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,8,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.8,1,0.0196,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.5,1,0.0181,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,10,_reduce_kernel,attention_reduce,2.8,1,0.0145,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,11,void sglang::muse_spark::routing_kernel<sglang::muse_spar...,routing,2.7,1,0.0139,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,-,(hidden tail),(hidden tail),4.1,,0.0212,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,2,batch=16 ctx=80000 dist=soft layer=sliding load=decode 16 page=1 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),0.75,,0.0039,193.75,76.72
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,0,_attn_kernel,attention,162.1,1,0.4762,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,1,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),65.7,1,0.193,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,2,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),49.2,1,0.1445,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,3,nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT,dense_gemm(cublas),26.7,2,0.0784,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,4,_gemv_splitk,dense_gemm,26.7,2,0.0784,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,5,nvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),12.3,1,0.0361,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,6,_epilogue_kernel,moe_epilogue,6.1,1,0.0179,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,7,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.8,1,0.017,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,8,_reduce_kernel,attention_reduce,4.5,1,0.0132,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.8,1,0.0112,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,10,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.5,1,0.0103,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,11,void sglang::muse_spark::routing_kernel<sglang::muse_spar...,routing,2.7,1,0.0079,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,-,(hidden tail),(hidden tail),4.0,,0.0118,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,3,batch=16 ctx=80000 dist=soft layer=full load=decode 16 page=1 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),-32.71,,-0.0961,340.39,137.46
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,0,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 56...",moe_gemm(marlin),159.1,2,0.6604,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,1,_gemv_splitk,dense_gemm,27.6,2,0.1146,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,2,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),27.4,2,0.1137,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,3,_attn_kernel,attention,13.4,1,0.0556,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,4,nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),12.4,1,0.0515,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,5,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.7,1,0.0237,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,6,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.1,1,0.017,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,7,_post_expert_norm_weighted_sum_kernel,moe_epilogue,3.9,1,0.0162,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,8,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.8,1,0.0158,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,9,void sglang::muse_spark::routing_kernel<sglang::muse_spar...,routing,2.7,1,0.0112,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,10,"void moe_align_block_size_kernel<int>(int const*, int*, i...",routing,2.7,1,0.0112,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,11,_reduce_kernel,attention_reduce,2.7,1,0.0112,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,-,(hidden tail),(hidden tail),7.1,,0.0295,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,4,batch=32 ctx=80000 dist=soft layer=sliding load=decode 32 page=1 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),-31.7,,-0.1316,240.9,84.51
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,0,_attn_kernel,attention,316.7,1,0.5867,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,1,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 56...",moe_gemm(marlin),138.4,2,0.2564,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,2,_gemv_splitk,dense_gemm,34.8,2,0.0645,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,3,nvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT,dense_gemm(cublas),26.5,2,0.0491,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,4,nvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),12.6,1,0.0233,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,5,_reduce_kernel,attention_reduce,6.1,1,0.0113,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,6,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.6,1,0.0104,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,7,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.3,1,0.008,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,8,_post_expert_norm_weighted_sum_kernel,moe_epilogue,4.0,1,0.0074,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.7,1,0.0069,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,10,void sglang::muse_spark::routing_kernel<sglang::muse_spar...,routing,2.9,1,0.0054,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,11,"void moe_align_block_size_kernel<int>(int const*, int*, i...",routing,2.7,1,0.005,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,-,(hidden tail),(hidden tail),7.1,,0.0132,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,5,batch=32 ctx=80000 dist=soft layer=full load=decode 32 page=1 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),-25.62,,-0.0475,539.78,208.1
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,0,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),65.5,1,0.3661,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,1,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),50.7,1,0.2834,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,2,_gemv_splitk,dense_gemm,29.7,2,0.166,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,3,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),13.4,1,0.0749,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,4,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),7.6,1,0.0425,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,5,_attn_kernel,attention,5.9,1,0.033,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,6,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.8,1,0.0324,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,7,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),5.4,1,0.0302,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,8,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.7,1,0.0263,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,3.8,1,0.0212,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,10,_epilogue_kernel,moe_epilogue,3.7,1,0.0207,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,11,"void cublasLt::splitKreduce_kernel<32, 16, int, float, __...",dense_gemm(cublas),3.5,2,0.0196,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,-,(hidden tail),(hidden tail),10.6,,0.0592,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,6,batch=1 ctx=80000 dist=soft layer=sliding load=verify 1 page=1 q_len=8,46.0,-,(idle / gaps),(idle / gaps),-31.39,,-0.1755,178.91,62.29
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,0,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),65.2,1,0.3503,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,1,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),54.9,1,0.2949,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,2,_gemv_splitk,dense_gemm,31.0,2,0.1665,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,3,_attn_kernel,attention,17.3,1,0.0929,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,4,nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT,dense_gemm(cublas),13.1,1,0.0704,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,5,nvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT,dense_gemm(cublas),7.0,1,0.0376,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,6,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.8,1,0.0312,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,7,nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT,dense_gemm(cublas),5.4,1,0.029,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,8,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.9,1,0.0263,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.0,1,0.0215,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,10,_epilogue_kernel,moe_epilogue,3.7,1,0.0199,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,11,_reduce_kernel,attention_reduce,3.7,1,0.0199,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,-,(hidden tail),(hidden tail),11.4,,0.0612,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,7,batch=1 ctx=80000 dist=soft layer=full load=verify 1 page=1 q_len=8,16.0,-,(idle / gaps),(idle / gaps),-41.26,,-0.2216,186.14,66.44
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,0,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 56...",moe_gemm(marlin),392.8,2,0.7821,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,1,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),29.0,2,0.0577,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,2,nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT,dense_gemm(cublas),25.2,1,0.0502,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,3,nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN,dense_gemm(cublas),16.4,1,0.0327,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,4,_attn_kernel,attention,11.9,1,0.0237,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,5,_gemv_splitk,dense_gemm,9.1,1,0.0181,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,6,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,5.9,1,0.0117,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,7,_reduce_kernel,attention_reduce,5.4,1,0.0108,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,8,_post_expert_norm_weighted_sum_kernel,moe_epilogue,4.9,1,0.0098,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.9,1,0.0098,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,10,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.5,1,0.009,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,11,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::A...",activation,3.6,1,0.0072,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,-,(hidden tail),(hidden tail),12.8,,0.0255,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,8,batch=16 ctx=80000 dist=soft layer=sliding load=verify 16 page=1 q_len=8 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),-24.15,,-0.0481,502.25,126.61
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,0,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 56...",moe_gemm(marlin),407.5,2,0.6135,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,1,_attn_kernel,attention,184.7,1,0.2781,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,2,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),28.1,2,0.0423,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,3,nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT,dense_gemm(cublas),24.1,1,0.0363,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,4,_reduce_kernel,attention_reduce,16.0,1,0.0241,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,5,nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN,dense_gemm(cublas),15.3,1,0.023,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,6,_gemv_splitk,dense_gemm,9.0,1,0.0136,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,7,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,6.2,1,0.0093,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,8,_post_expert_norm_weighted_sum_kernel,moe_epilogue,5.2,1,0.0078,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,9,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.8,1,0.0072,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,10,"void sglang::muse_spark_norm_residual_kernel<8192l, 256, ...",norm/residual,4.4,1,0.0066,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,11,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::A...",activation,3.8,1,0.0057,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,-,(hidden tail),(hidden tail),12.3,,0.0185,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,9,batch=16 ctx=80000 dist=soft layer=full load=verify 16 page=1 q_len=8 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),-57.22,,-0.0862,664.18,188.68
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,0,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 56...",moe_gemm(marlin),536.0,2,0.7868,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,1,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),34.4,2,0.0505,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,2,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),31.6,1,0.0464,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,3,nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN,dense_gemm(cublas),23.0,1,0.0338,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,4,_attn_kernel,attention,18.6,1,0.0273,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,5,_gemv_splitk,dense_gemm,11.7,1,0.0172,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,6,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, ...",norm/residual,8.7,1,0.0128,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,7,_reduce_kernel,attention_reduce,8.1,1,0.0119,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,8,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, ...",norm/residual,7.7,1,0.0113,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,9,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,6.0,1,0.0088,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,10,_post_expert_norm_weighted_sum_kernel,moe_epilogue,5.9,1,0.0087,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,11,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::A...",activation,5.9,1,0.0087,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,-,(hidden tail),(hidden tail),10.2,,0.015,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,10,batch=32 ctx=80000 dist=soft layer=sliding load=verify 32 page=1 q_len=8 spread=agentic,46.0,-,(idle / gaps),(idle / gaps),-26.57,,-0.039,681.23,143.81
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,0,"void sglang::device::marlin_moe::Marlin<__nv_bfloat16, 56...",moe_gemm(marlin),537.5,2,0.5283,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,1,_attn_kernel,attention,342.4,1,0.3365,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,2,_gemv_splitk,dense_gemm,43.0,1,0.0423,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,3,nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT,dense_gemm(cublas),35.1,1,0.0345,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,4,nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT,dense_gemm(cublas),34.3,2,0.0337,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,5,nvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN,dense_gemm(cublas),23.0,1,0.0226,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,6,_reduce_kernel,attention_reduce,16.4,1,0.0161,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,7,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, ...",norm/residual,8.7,1,0.0086,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,8,"void sglang::muse_spark_norm_residual_kernel<8192l, 512, ...",norm/residual,7.8,1,0.0077,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,9,void at::native::(anonymous namespace)::vectorized_layer_...,norm/residual,6.0,1,0.0059,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,10,"void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::A...",activation,5.7,1,0.0056,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,11,_post_expert_norm_weighted_sum_kernel,moe_epilogue,5.2,1,0.0051,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,-,(hidden tail),(hidden tail),10.4,,0.0102,1017.41,267.18
+muse_decode_layer,0108f70b516d4ea7,11,batch=32 ctx=80000 dist=soft layer=full load=verify 32 page=1 q_len=8 spread=agentic,16.0,-,(idle / gaps),(idle / gaps),-58.09,,-0.0571,1017.41,267.18
+muse_moe_w4a16,76d9f4196733442d,0,bs=1 load=decode 1 sharding=ep8,60.0,0,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),26.6,1,0.6432,41.36,11.42
+muse_moe_w4a16,76d9f4196733442d,0,bs=1 load=decode 1 sharding=ep8,60.0,1,"void w4_smallm_kernel<false, 4>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),15.7,1,0.3796,41.36,11.42
+muse_moe_w4a16,76d9f4196733442d,0,bs=1 load=decode 1 sharding=ep8,60.0,2,_epilogue_kernel,moe_epilogue,4.8,1,0.1161,41.36,11.42
+muse_moe_w4a16,76d9f4196733442d,0,bs=1 load=decode 1 sharding=ep8,60.0,3,"smallm_route_kernel(int const*, int*, int*, int, int, int)",routing,1.2,1,0.029,41.36,11.42
+muse_moe_w4a16,76d9f4196733442d,0,bs=1 load=decode 1 sharding=ep8,60.0,-,(hidden tail),(hidden tail),0.0,,0.0,41.36,11.42
+muse_moe_w4a16,76d9f4196733442d,0,bs=1 load=decode 1 sharding=ep8,60.0,-,(idle / gaps),(idle / gaps),-6.94,,-0.1679,41.36,11.42
+muse_moe_w4a16,76d9f4196733442d,1,bs=16 load=decode 16 sharding=ep8,60.0,0,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),49.0,1,0.3498,140.08,52.52
+muse_moe_w4a16,76d9f4196733442d,1,bs=16 load=decode 16 sharding=ep8,60.0,1,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),38.3,1,0.2734,140.08,52.52
+muse_moe_w4a16,76d9f4196733442d,1,bs=16 load=decode 16 sharding=ep8,60.0,2,_epilogue_kernel,moe_epilogue,5.0,1,0.0357,140.08,52.52
+muse_moe_w4a16,76d9f4196733442d,1,bs=16 load=decode 16 sharding=ep8,60.0,3,"smallm_route_kernel(int const*, int*, int*, int, int, int)",routing,1.2,1,0.0086,140.08,52.52
+muse_moe_w4a16,76d9f4196733442d,1,bs=16 load=decode 16 sharding=ep8,60.0,-,(hidden tail),(hidden tail),0.0,,0.0,140.08,52.52
+muse_moe_w4a16,76d9f4196733442d,1,bs=16 load=decode 16 sharding=ep8,60.0,-,(idle / gaps),(idle / gaps),46.58,,0.3325,140.08,52.52
+muse_moe_w4a16,76d9f4196733442d,2,bs=32 load=decode 32 sharding=ep8,60.0,0,"void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 con...",moe_gemm(cuda largem),147.5,1,0.7923,186.16,70.76
+muse_moe_w4a16,76d9f4196733442d,2,bs=32 load=decode 32 sharding=ep8,60.0,1,"void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 co...",moe_gemm(cuda largem),84.2,1,0.4523,186.16,70.76
+muse_moe_w4a16,76d9f4196733442d,2,bs=32 load=decode 32 sharding=ep8,60.0,2,_post_expert_norm_weighted_sum_kernel,moe_epilogue,3.6,1,0.0193,186.16,70.76
+muse_moe_w4a16,76d9f4196733442d,2,bs=32 load=decode 32 sharding=ep8,60.0,3,"largem_route_kernel(int const*, int*, int*, int*, int, in...",routing,3.0,1,0.0161,186.16,70.76
+muse_moe_w4a16,76d9f4196733442d,2,bs=32 load=decode 32 sharding=ep8,60.0,-,(hidden tail),(hidden tail),0.0,,0.0,186.16,70.76
+muse_moe_w4a16,76d9f4196733442d,2,bs=32 load=decode 32 sharding=ep8,60.0,-,(idle / gaps),(idle / gaps),-52.14,,-0.2801,186.16,70.76
+muse_moe_w4a16,76d9f4196733442d,3,bs=8 load=verify 1 sharding=ep8,60.0,0,"void w4_smallm_kernel<true, 8>(uint4 const*, uint2 const*...",moe_gemm(cuda smallm),54.1,1,0.554,97.65,37.32
+muse_moe_w4a16,76d9f4196733442d,3,bs=8 load=verify 1 sharding=ep8,60.0,1,"void w4_smallm_kernel<false, 8>(uint4 const*, uint2 const...",moe_gemm(cuda smallm),40.4,1,0.4137,97.65,37.32
+muse_moe_w4a16,76d9f4196733442d,3,bs=8 load=verify 1 sharding=ep8,60.0,2,_epilogue_kernel,moe_epilogue,3.4,1,0.0348,97.65,37.32
+muse_moe_w4a16,76d9f4196733442d,3,bs=8 load=verify 1 sharding=ep8,60.0,3,"smallm_route_kernel(int const*, int*, int*, int, int, int)",routing,1.2,1,0.0123,97.65,37.32
+muse_moe_w4a16,76d9f4196733442d,3,bs=8 load=verify 1 sharding=ep8,60.0,-,(hidden tail),(hidden tail),0.0,,0.0,97.65,37.32
+muse_moe_w4a16,76d9f4196733442d,3,bs=8 load=verify 1 sharding=ep8,60.0,-,(idle / gaps),(idle / gaps),-1.45,,-0.0149,97.65,37.32
+muse_moe_w4a16,76d9f4196733442d,4,bs=128 load=verify 16 sharding=ep8,60.0,0,"void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 con...",moe_gemm(cuda largem),231.5,1,0.7372,314.01,101.34
+muse_moe_w4a16,76d9f4196733442d,4,bs=128 load=verify 16 sharding=ep8,60.0,1,"void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 co...",moe_gemm(cuda largem),120.3,1,0.3831,314.01,101.34
+muse_moe_w4a16,76d9f4196733442d,4,bs=128 load=verify 16 sharding=ep8,60.0,2,"largem_route_kernel(int const*, int*, int*, int*, int, in...",routing,6.1,1,0.0194,314.01,101.34
+muse_moe_w4a16,76d9f4196733442d,4,bs=128 load=verify 16 sharding=ep8,60.0,3,_post_expert_norm_weighted_sum_kernel,moe_epilogue,4.4,1,0.014,314.01,101.34
+muse_moe_w4a16,76d9f4196733442d,4,bs=128 load=verify 16 sharding=ep8,60.0,-,(hidden tail),(hidden tail),0.0,,0.0,314.01,101.34
+muse_moe_w4a16,76d9f4196733442d,4,bs=128 load=verify 16 sharding=ep8,60.0,-,(idle / gaps),(idle / gaps),-48.29,,-0.1538,314.01,101.34
+muse_moe_w4a16,76d9f4196733442d,5,bs=256 load=verify 32 sharding=ep8,60.0,0,"void w4_largem_kernel<true, 4, 2>(uint4 const*, uint2 con...",moe_gemm(cuda largem),314.7,1,0.7248,434.21,108.94
+muse_moe_w4a16,76d9f4196733442d,5,bs=256 load=verify 32 sharding=ep8,60.0,1,"void w4_largem_kernel<false, 4, 2>(uint4 const*, uint2 co...",moe_gemm(cuda largem),160.6,1,0.3699,434.21,108.94
+muse_moe_w4a16,76d9f4196733442d,5,bs=256 load=verify 32 sharding=ep8,60.0,2,"largem_route_kernel(int const*, int*, int*, int*, int, in...",routing,10.6,1,0.0244,434.21,108.94
+muse_moe_w4a16,76d9f4196733442d,5,bs=256 load=verify 32 sharding=ep8,60.0,3,_post_expert_norm_weighted_sum_kernel,moe_epilogue,5.5,1,0.0127,434.21,108.94
+muse_moe_w4a16,76d9f4196733442d,5,bs=256 load=verify 32 sharding=ep8,60.0,-,(hidden tail),(hidden tail),0.0,,0.0,434.21,108.94
+muse_moe_w4a16,76d9f4196733442d,5,bs=256 load=verify 32 sharding=ep8,60.0,-,(idle / gaps),(idle / gaps),-57.19,,-0.1317,434.21,108.94

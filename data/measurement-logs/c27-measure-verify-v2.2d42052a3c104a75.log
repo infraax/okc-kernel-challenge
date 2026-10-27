@@ -1,0 +1,223 @@
+S attn verify v2: gpu=NVIDIA_H200 used=36s of 240s ovh=4.83us(subtracted) seeds=3 reps=5 shapes=5/5; x = reference variant / variant (verify: B128S3W4, decode: C64S3W2 = board)
+S #9 verify16 us: board=161.6 B128S3W4=161.9(x1.00) B64S4W4=188.0(x0.86) B128S2W4=183.1(x0.88) B128S4W4=242.6(x0.67) B128S3W8=288.8(x0.56) B128S2W8=338.8(x0.48) B128P384=210.2(x0.77) B128P192=207.7(x0.78) B256S2W8=297.9(x0.54) B256S3W8=260.6(x0.62) B128P512=167.4(x0.97)
+S #9 max output rel L2 vs B128S3W4: 1.8e-04; BAD variants: none
+S #11 verify32 us: board=321.4 B128S3W4=321.6(x1.00) B64S4W4=364.6(x0.88) B128S2W4=363.5(x0.88) B128S4W4=474.1(x0.68) B128S3W8=567.6(x0.57) B128S2W8=666.2(x0.48) B128P384=410.0(x0.78) B128P192=413.0(x0.78) B256S2W8=581.2(x0.55) B256S3W8=508.3(x0.63) B128P512=321.5(x1.00)
+S #11 max output rel L2 vs B128S3W4: 2.3e-04; BAD variants: none
+S #7 verify1 us: board=20.7 B128S3W4=24.8(x1.00) B64S4W4=20.9(x1.18) B128S2W4=24.6(x1.01) B128S4W4=33.7(x0.74) B128S3W8=38.0(x0.65) B128S2W8=42.0(x0.59) B128P384=25.0(x0.99) B128P192=25.1(x0.99) B256S2W8=35.4(x0.70) B256S3W8=32.7(x0.76) B128P512=25.0(x0.99)
+S #7 max output rel L2 vs B128S3W4: 1.1e-04; BAD variants: none
+S #3 decode16 us: board=104.0 C64S3W2=104.7(x1.00) C128S3W2=181.3(x0.58) C128S2W2=126.2(x0.83) C128S3W4=129.9(x0.81) C128S4W2=226.6(x0.46) C128P528=210.1(x0.50) C128P792=168.1(x0.62) C64S4W2=114.0(x0.92) C64S3W4=127.4(x0.82) C128S2W4=133.2(x0.79) C128S4W4=134.7(x0.78) C128S3W4P792=122.5(x0.86)
+S #3 max output rel L2 vs C64S3W2: 2.2e-04; BAD variants: none
+S #5 decode32 us: board=190.0 C64S3W2=191.3(x1.00) C128S3W2=334.2(x0.57) C128S2W2=227.7(x0.84) C128S3W4=229.2(x0.83) C128S4W2=413.7(x0.46) C128P528=405.7(x0.47) C128P792=310.8(x0.62) C64S4W2=206.1(x0.93) C64S3W4=241.4(x0.79) C128S2W4=242.0(x0.79) C128S4W4=233.6(x0.82) C128S3W4P792=219.5(x0.87)
+S #5 max output rel L2 vs C64S3W2: 2.5e-04; BAD variants: none
+C B128S3W4 regs=255 spills=0 smem=98304 cp.async=48 wgmma=26 mma=0 ex2=148 bar=27
+C B64S4W4 regs=185 spills=0 smem=69632 cp.async=32 wgmma=18 mma=0 ex2=84 bar=25
+C B128S2W4 regs=255 spills=0 smem=65536 cp.async=32 wgmma=26 mma=0 ex2=148 bar=26
+C B128S4W4 regs=255 spills=0 smem=131072 cp.async=64 wgmma=26 mma=0 ex2=148 bar=29
+C B128S3W8 regs=164 spills=0 smem=106496 cp.async=24 wgmma=30 mma=0 ex2=84 bar=36
+C B128S2W8 regs=154 spills=0 smem=73728 cp.async=16 wgmma=30 mma=0 ex2=84 bar=34
+C B128P384 regs=255 spills=0 smem=98304 cp.async=48 wgmma=26 mma=0 ex2=148 bar=27
+C B128P192 regs=255 spills=0 smem=98304 cp.async=48 wgmma=26 mma=0 ex2=148 bar=27
+C B256S2W8 regs=232 spills=0 smem=139264 cp.async=32 wgmma=46 mma=0 ex2=148 bar=38
+C B256S3W8 regs=237 spills=0 smem=204800 cp.async=48 wgmma=46 mma=0 ex2=148 bar=39
+C B128P512 regs=255 spills=0 smem=98304 cp.async=48 wgmma=26 mma=0 ex2=148 bar=27
+C C64S3W2 regs=205 spills=0 smem=38912 cp.async=72 wgmma=0 mma=80 ex2=24 bar=31
+C C128S3W2 regs=255 spills=56 smem=73728 cp.async=144 wgmma=0 mma=144 ex2=40 bar=31
+C C128S2W2 regs=255 spills=30 smem=40960 cp.async=96 wgmma=0 mma=144 ex2=40 bar=27
+C C128S3W4 regs=196 spills=0 smem=73728 cp.async=72 wgmma=0 mma=76 ex2=24 bar=31
+C C128S4W2 regs=255 spills=60 smem=106496 cp.async=192 wgmma=0 mma=144 ex2=40 bar=35
+C C128P528 regs=255 spills=56 smem=73728 cp.async=144 wgmma=0 mma=144 ex2=40 bar=31
+C C128P792 regs=255 spills=56 smem=73728 cp.async=144 wgmma=0 mma=144 ex2=40 bar=31
+C C64S4W2 regs=205 spills=0 smem=55296 cp.async=96 wgmma=0 mma=80 ex2=24 bar=35
+C C64S3W4 regs=144 spills=0 smem=38912 cp.async=36 wgmma=0 mma=44 ex2=16 bar=22
+C C128S2W4 regs=202 spills=0 smem=40960 cp.async=48 wgmma=0 mma=76 ex2=24 bar=27
+C C128S4W4 regs=196 spills=0 smem=106496 cp.async=96 wgmma=0 mma=76 ex2=24 bar=35
+C C128S3W4P792 regs=196 spills=0 smem=73728 cp.async=72 wgmma=0 mma=76 ex2=24 bar=31
+S 23 B lines dropped for the 14 KB cap (the S lines hold the seed medians)
+B attn #9 seed=11 | board us=162.94 x=0.99
+B attn #9 seed=11 | B128S3W4 us=161.92 x=1.00 err=0.0e+00/0.0e+00
+B attn #9 seed=11 | B64S4W4 us=187.97 x=0.86 err=7.5e-05/5.6e-06
+B attn #9 seed=11 | B128S2W4 us=183.07 x=0.88 err=0.0e+00/0.0e+00
+B attn #9 seed=11 | B128S4W4 us=242.91 x=0.67 err=0.0e+00/0.0e+00
+B attn #9 seed=11 | B128S3W8 us=288.77 x=0.56 err=7.8e-08/5.2e-08
+B attn #9 seed=11 | B128S2W8 us=338.75 x=0.48 err=7.8e-08/5.2e-08
+B attn #9 seed=11 | B128P384 us=210.24 x=0.77 err=1.7e-04
+B attn #9 seed=11 | B128P192 us=207.68 x=0.78 err=1.7e-04
+B attn #9 seed=11 | B256S2W8 us=297.89 x=0.54 err=8.4e-05/7.5e-06
+B attn #9 seed=11 | B256S3W8 us=260.51 x=0.62 err=8.4e-05/7.5e-06
+B attn #9 seed=11 | B128P512 us=168.13 x=0.96 err=1.5e-04
+B attn #9 seed=12 | board us=161.63 x=1.00
+B attn #9 seed=12 | B128S3W4 us=161.86 x=1.00 err=0.0e+00/0.0e+00
+B attn #9 seed=12 | B64S4W4 us=188.38 x=0.86 err=7.6e-05/5.5e-06
+B attn #9 seed=12 | B128S2W4 us=183.97 x=0.88 err=0.0e+00/0.0e+00
+B attn #9 seed=12 | B128S4W4 us=242.59 x=0.67 err=0.0e+00/0.0e+00
+B attn #9 seed=12 | B128S3W8 us=288.99 x=0.56 err=0.0e+00/5.3e-08
+B attn #9 seed=12 | B128S2W8 us=339.30 x=0.48 err=0.0e+00/5.3e-08
+B attn #9 seed=12 | B128P384 us=210.21 x=0.77 err=1.7e-04
+B attn #9 seed=12 | B128P192 us=207.87 x=0.78 err=1.8e-04
+B attn #9 seed=12 | B256S2W8 us=296.90 x=0.55 err=5.2e-05/7.7e-06
+B attn #9 seed=12 | B256S3W8 us=260.93 x=0.62 err=5.2e-05/7.7e-06
+B attn #9 seed=12 | B128P512 us=167.39 x=0.97 err=1.6e-04
+B attn #9 seed=13 | board us=160.64 x=1.01
+B attn #9 seed=13 | B128S3W4 us=161.98 x=1.00 err=0.0e+00/0.0e+00
+B attn #9 seed=13 | B64S4W4 us=187.14 x=0.87 err=4.0e-05/5.5e-06
+B attn #9 seed=13 | B128S2W4 us=182.91 x=0.89 err=0.0e+00/0.0e+00
+B attn #9 seed=13 | B128S4W4 us=242.59 x=0.67 err=0.0e+00/0.0e+00
+B attn #9 seed=13 | B128S3W8 us=288.64 x=0.56 err=0.0e+00/5.4e-08
+B attn #9 seed=13 | B128S2W8 us=337.92 x=0.48 err=0.0e+00/5.4e-08
+B attn #9 seed=13 | B128P384 us=210.53 x=0.77 err=1.5e-04
+B attn #9 seed=13 | B128P192 us=207.01 x=0.78 err=1.8e-04
+B attn #9 seed=13 | B256S2W8 us=301.28 x=0.54 err=7.7e-05/7.8e-06
+B attn #9 seed=13 | B256S3W8 us=260.58 x=0.62 err=7.7e-05/7.8e-06
+B attn #9 seed=13 | B128P512 us=167.20 x=0.97 err=1.6e-04
+B attn #11 seed=11 | board us=321.41 x=1.00
+B attn #11 seed=11 | B128S3W4 us=322.14 x=1.00 err=0.0e+00/0.0e+00
+B attn #11 seed=11 | B64S4W4 us=364.58 x=0.88 err=7.7e-05/3.7e-06
+B attn #11 seed=11 | B128S2W4 us=364.19 x=0.88 err=0.0e+00/0.0e+00
+B attn #11 seed=11 | B128S4W4 us=474.08 x=0.68 err=0.0e+00/0.0e+00
+B attn #11 seed=11 | B128S3W8 us=567.62 x=0.57 err=0.0e+00/5.4e-08
+B attn #11 seed=11 | B128S2W8 us=665.95 x=0.48 err=0.0e+00/5.4e-08
+B attn #11 seed=11 | B128P384 us=411.46 x=0.78 err=1.9e-04
+B attn #11 seed=11 | B128P192 us=414.08 x=0.78 err=2.3e-04
+B attn #11 seed=11 | B256S2W8 us=579.10 x=0.56 err=5.6e-05/5.1e-06
+B attn #11 seed=11 | B256S3W8 us=509.44 x=0.63 err=5.6e-05/5.1e-06
+B attn #11 seed=11 | B128P512 us=323.65 x=1.00 err=1.9e-04
+B attn #11 seed=12 | board us=321.34 x=1.00
+B attn #11 seed=12 | B128S3W4 us=321.57 x=1.00 err=0.0e+00/0.0e+00
+B attn #11 seed=12 | B64S4W4 us=363.87 x=0.88 err=7.2e-05/3.8e-06
+B attn #11 seed=12 | B128S2W4 us=362.85 x=0.89 err=0.0e+00/0.0e+00
+B attn #11 seed=12 | B128S4W4 us=472.93 x=0.68 err=0.0e+00/0.0e+00
+B attn #11 seed=12 | B128S3W8 us=566.94 x=0.57 err=7.1e-06/5.4e-08
+B attn #11 seed=12 | B128S2W8 us=666.24 x=0.48 err=7.1e-06/5.4e-08
+B attn #11 seed=12 | B128P384 us=409.25 x=0.79 err=1.8e-04
+B attn #11 seed=12 | B128P192 us=411.81 x=0.78 err=2.1e-04
+B attn #11 seed=12 | B256S2W8 us=581.25 x=0.55 err=4.8e-05/5.3e-06
+B attn #11 seed=12 | B256S3W8 us=506.91 x=0.63 err=4.8e-05/5.3e-06
+B attn #11 seed=12 | B128P512 us=321.47 x=1.00 err=1.9e-04
+B attn #11 seed=13 | board us=322.50 x=0.99
+B attn #11 seed=13 | B128S3W4 us=320.16 x=1.00 err=0.0e+00/0.0e+00
+B attn #11 seed=13 | B64S4W4 us=364.99 x=0.88 err=3.6e-05/4.0e-06
+B attn #11 seed=13 | B128S2W4 us=363.49 x=0.88 err=0.0e+00/0.0e+00
+B attn #11 seed=13 | B128S4W4 us=474.14 x=0.68 err=0.0e+00/0.0e+00
+B attn #11 seed=13 | B128S3W8 us=567.68 x=0.56 err=0.0e+00/5.4e-08
+B attn #11 seed=13 | B128S2W8 us=667.58 x=0.48 err=0.0e+00/5.4e-08
+B attn #11 seed=13 | B128P384 us=410.02 x=0.78 err=2.0e-04
+B attn #11 seed=13 | B128P192 us=413.02 x=0.78 err=2.1e-04
+B attn #11 seed=13 | B256S2W8 us=581.82 x=0.55 err=5.3e-05/5.9e-06
+B attn #11 seed=13 | B256S3W8 us=508.29 x=0.63 err=5.3e-05/5.9e-06
+B attn #11 seed=13 | B128P512 us=321.44 x=1.00 err=2.1e-04
+B attn #7 seed=11 | board us=20.58 x=1.20
+B attn #7 seed=11 | B128S3W4 us=24.77 x=1.00 err=0.0e+00/0.0e+00
+B attn #7 seed=11 | B64S4W4 us=20.80 x=1.19 err=4.9e-05
+B attn #7 seed=11 | B128S2W4 us=24.58 x=1.01 err=0.0e+00/0.0e+00
+B attn #7 seed=11 | B128S4W4 us=33.60 x=0.74 err=0.0e+00/0.0e+00
+B attn #7 seed=11 | B128S3W8 us=38.02 x=0.65 err=0.0e+00/5.1e-08
+B attn #7 seed=11 | B128S2W8 us=41.89 x=0.59 err=0.0e+00/5.1e-08
+B attn #7 seed=11 | B128P384 us=24.99 x=0.99 err=0.0e+00/0.0e+00
+B attn #7 seed=11 | B128P192 us=25.06 x=0.99 err=0.0e+00/0.0e+00
+B attn #7 seed=11 | B256S2W8 us=35.42 x=0.70 err=1.1e-04
+B attn #7 seed=11 | B256S3W8 us=32.58 x=0.76 err=1.1e-04
+B attn #7 seed=11 | B128P512 us=25.15 x=0.98 err=0.0e+00/0.0e+00
+B attn #7 seed=12 | board us=20.67 x=1.20
+B attn #7 seed=12 | B128S3W4 us=24.77 x=1.00 err=0.0e+00/0.0e+00
+B attn #7 seed=12 | B64S4W4 us=21.28 x=1.16 err=9.8e-05
+B attn #7 seed=12 | B128S2W4 us=24.64 x=1.01 err=0.0e+00/0.0e+00
+B attn #7 seed=12 | B128S4W4 us=33.66 x=0.74 err=0.0e+00/0.0e+00
+B attn #7 seed=12 | B128S3W8 us=37.86 x=0.65 err=0.0e+00/5.1e-08
+B attn #7 seed=12 | B128S2W8 us=42.05 x=0.59 err=0.0e+00/5.1e-08
+B attn #7 seed=12 | B128P384 us=24.80 x=1.00 err=0.0e+00/0.0e+00
+B attn #7 seed=12 | B128P192 us=25.09 x=0.99 err=0.0e+00/0.0e+00
+B attn #7 seed=12 | B256S2W8 us=35.55 x=0.70 err=1.1e-04
+B attn #7 seed=12 | B256S3W8 us=32.70 x=0.76 err=1.1e-04
+B attn #7 seed=12 | B128P512 us=24.96 x=0.99 err=0.0e+00/0.0e+00
+B attn #7 seed=13 | board us=20.67 x=1.20
+B attn #7 seed=13 | B128S3W4 us=24.90 x=1.00 err=0.0e+00/0.0e+00
+B attn #7 seed=13 | B64S4W4 us=20.93 x=1.19 err=6.4e-05
+B attn #7 seed=13 | B128S2W4 us=24.42 x=1.02 err=0.0e+00/0.0e+00
+B attn #7 seed=13 | B128S4W4 us=33.73 x=0.74 err=0.0e+00/0.0e+00
+B attn #7 seed=13 | B128S3W8 us=38.02 x=0.65 err=0.0e+00/5.1e-08
+B attn #7 seed=13 | B128S2W8 us=42.05 x=0.59 err=0.0e+00/5.1e-08
+B attn #7 seed=13 | B128P384 us=25.02 x=0.99 err=0.0e+00/0.0e+00
+B attn #7 seed=13 | B128P192 us=24.99 x=1.00 err=0.0e+00/0.0e+00
+B attn #7 seed=13 | B256S2W8 us=35.39 x=0.70 err=4.9e-05
+B attn #7 seed=13 | B256S3W8 us=32.67 x=0.76 err=4.9e-05
+B attn #7 seed=13 | B128P512 us=24.93 x=1.00 err=0.0e+00/0.0e+00
+B attn #3 seed=11 | board us=104.03 x=1.00
+B attn #3 seed=11 | C64S3W2 us=104.48 x=1.00 err=0.0e+00/0.0e+00
+B attn #3 seed=11 | C128S3W2 us=181.31 x=0.58 err=2.1e-04
+B attn #3 seed=11 | C128S2W2 us=126.24 x=0.83 err=2.1e-04
+B attn #3 seed=11 | C128S3W4 us=130.40 x=0.80 err=2.1e-04
+B attn #3 seed=11 | C128S4W2 us=227.07 x=0.46 err=2.1e-04
+B attn #3 seed=11 | C128P528 us=210.08 x=0.50 err=2.2e-04
+B attn #3 seed=11 | C128P792 us=168.06 x=0.62 err=1.7e-04
+B attn #3 seed=11 | C64S4W2 us=114.05 x=0.92 err=0.0e+00/0.0e+00
+B attn #3 seed=11 | C64S3W4 us=127.62 x=0.82 err=0.0e+00/5.7e-08
+B attn #3 seed=11 | C128S2W4 us=133.25 x=0.78 err=2.1e-04
+B attn #3 seed=11 | C128S4W4 us=134.66 x=0.78 err=2.1e-04
+B attn #3 seed=11 | C128S3W4P792 us=123.01 x=0.85 err=1.7e-04
+B attn #3 seed=12 | board us=103.26 x=1.01
+B attn #3 seed=12 | C64S3W2 us=104.74 x=1.00 err=0.0e+00/0.0e+00
+B attn #3 seed=12 | C128S3W2 us=177.60 x=0.59 err=1.6e-04
+B attn #3 seed=12 | C128S2W2 us=123.01 x=0.85 err=1.6e-04
+B attn #3 seed=12 | C128S3W4 us=127.81 x=0.82 err=1.6e-04
+B attn #3 seed=12 | C128S4W2 us=225.98 x=0.46 err=1.6e-04
+B attn #3 seed=12 | C128P528 us=211.36 x=0.50 err=1.9e-04
+B attn #3 seed=12 | C128P792 us=166.43 x=0.63 err=1.5e-04
+B attn #3 seed=12 | C64S4W2 us=113.15 x=0.93 err=0.0e+00/0.0e+00
+B attn #3 seed=12 | C64S3W4 us=125.31 x=0.84 err=0.0e+00/5.7e-08
+B attn #3 seed=12 | C128S2W4 us=132.38 x=0.79 err=1.6e-04
+B attn #3 seed=12 | C128S4W4 us=133.41 x=0.79 err=1.6e-04
+B attn #3 seed=12 | C128S3W4P792 us=121.95 x=0.86 err=1.5e-04
+B attn #3 seed=13 | board us=103.97 x=1.01
+B attn #3 seed=13 | C64S3W2 us=105.25 x=1.00 err=0.0e+00/0.0e+00
+B attn #3 seed=13 | C128S3W2 us=182.40 x=0.58 err=1.6e-04
+B attn #3 seed=13 | C128S2W2 us=126.21 x=0.83 err=1.6e-04
+B attn #3 seed=13 | C128S3W4 us=129.89 x=0.81 err=1.6e-04
+B attn #3 seed=13 | C128S4W2 us=226.59 x=0.46 err=1.6e-04
+B attn #3 seed=13 | C128P528 us=209.57 x=0.50 err=2.0e-04
+B attn #3 seed=13 | C128P792 us=168.42 x=0.62 err=2.0e-04
+B attn #3 seed=13 | C64S4W2 us=114.34 x=0.92 err=0.0e+00/0.0e+00
+B attn #3 seed=13 | C64S3W4 us=127.36 x=0.83 err=0.0e+00/5.9e-08
+B attn #3 seed=13 | C128S2W4 us=133.73 x=0.79 err=1.6e-04
+B attn #3 seed=13 | C128S4W4 us=134.69 x=0.78 err=1.6e-04
+B attn #3 seed=13 | C128S3W4P792 us=122.50 x=0.86 err=2.0e-04
+B attn #5 seed=11 | board us=191.04 x=1.01
+B attn #5 seed=11 | C64S3W2 us=192.67 x=1.00 err=0.0e+00/0.0e+00
+B attn #5 seed=11 | C128S3W2 us=334.18 x=0.58 err=1.8e-04
+B attn #5 seed=11 | C128S2W2 us=228.35 x=0.84 err=1.8e-04
+B attn #5 seed=11 | C128S3W4 us=231.52 x=0.83 err=1.8e-04
+B attn #5 seed=11 | C128S4W2 us=413.73 x=0.47 err=1.8e-04
+B attn #5 seed=11 | C128P528 us=405.63 x=0.47 err=2.1e-04
+B attn #5 seed=11 | C128P792 us=312.22 x=0.62 err=1.7e-04
+B attn #5 seed=11 | C64S4W2 us=207.78 x=0.93 err=0.0e+00/0.0e+00
+B attn #5 seed=11 | C64S3W4 us=238.62 x=0.81 err=0.0e+00/5.7e-08
+B attn #5 seed=11 | C128S2W4 us=243.39 x=0.79 err=1.8e-04
+B attn #5 seed=11 | C128S4W4 us=235.55 x=0.82 err=1.8e-04
+B attn #5 seed=11 | C128S3W4P792 us=219.52 x=0.88 err=1.7e-04
+B attn #5 seed=12 | board us=189.25 x=1.01
+B attn #5 seed=12 | C64S3W2 us=191.20 x=1.00 err=0.0e+00/0.0e+00
+B attn #5 seed=12 | C128S3W2 us=334.50 x=0.57 err=1.9e-04
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-26 08:50:40 74:74 SyncActivityProfilerHandler.cpp:46] profiler_stop
+
